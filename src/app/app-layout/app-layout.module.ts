@@ -192,6 +192,7 @@ import { MapComponent } from './asset-tracker/map/map.component';
 import { AssetTrackerCriminalactivityComponent } from './asset-tracker/asset-tracker-criminalactivity/asset-tracker-criminalactivity.component';
 import { AssetTrackerInterrogationComponent } from './asset-tracker/asset-tracker-interrogation/asset-tracker-interrogation.component';
 import { AssetTrackerExibitComponent } from './asset-tracker/asset-tracker-exibit/asset-tracker-exibit.component';
+import { AssertTrackerOfficersComponent } from './asset-tracker/assert-tracker-officers/assert-tracker-officers.component';
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     // suppressScrollX: true
 };
@@ -343,7 +344,8 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
         MapComponent,
         AssetTrackerCriminalactivityComponent,
         AssetTrackerInterrogationComponent,
-        AssetTrackerExibitComponent
+        AssetTrackerExibitComponent,
+        AssertTrackerOfficersComponent
     ],
     imports: [
         CommonModule,
