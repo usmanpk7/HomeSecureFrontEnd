@@ -1,0 +1,8 @@
+.fileInfoBox{
+    background: rgba(86, 105, 49, 0.25);
+    border: 1px solid #C5E0B4;
+    box-sizing: border-box;
+    border-radius: 5px;
+    width: 100%;
+    height: 42px;
+}

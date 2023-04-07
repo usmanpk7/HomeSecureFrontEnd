@@ -1,0 +1,137 @@
+:host ::ng-deep .incident .p-tabview-title {
+    line-height: 1 !important;
+    font-family: 'Inter' !important;
+    font-weight: 700 !important;
+    font-size: 0.9rem !important;
+    align-items: center !important;
+    color: #FF6C88 !important;
+    cursor: pointer;
+}
+
+::ng-deep .incident .p-tabview .p-tabview-panels {
+    padding: 0px !important;
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+}
+
+:host ::ng-deep .incident .p-tabview .p-tabview-nav li .p-tabview-nav-link {
+    background: #f8f8f8 !important;
+    border-bottom: 3px solid #FF6C88 !important;
+    border-radius: 0px !important;
+}
+
+:host ::ng-deep .incident .p-tabview .p-tabview-nav li.p-highlight .p-tabview-nav-link {
+    background: #FF6C88 !important;
+    border-color: #FF6C88 !important;
+    border: 1px solid #FF6C88 !important;
+    color: #ffffff !important;
+}
+
+:host ::ng-deep .incident .p-tabview .p-tabview-nav li.p-highlight .p-tabview-nav-link .p-tabview-title {
+    color: #ffffff !important;
+}
+
+:host ::ng-deep .incident ul.p-tabview-nav li:first-child span {
+    background-image: none !important;
+    background: no-repeat;
+    padding-left: 0;
+    background-size: none;
+    font-size: 0.9rem !important;
+}
+:host ::ng-deep .incident ul.p-tabview-nav li:first-child {
+    width: 25%;
+}
+:host ::ng-deep .incident ul.p-tabview-nav li:nth-child(2) {
+    width: 25%;
+}
+:host ::ng-deep .incident ul.p-tabview-nav li:nth-child(3) {
+    width: 25%;
+}
+:host ::ng-deep .incident ul.p-tabview-nav li:nth-child(4) {
+    width: 25%;
+}
+:host ::ng-deep .incident ul.p-tabview-nav li:nth-child(2) span {
+    background-image: none !important;
+    background: no-repeat;
+    padding-left: 0;
+    background-size: none;
+    font-size: 0.9rem !important;
+}
+:host ::ng-deep .incident ul.p-tabview-nav li:nth-child(3) span {
+    background-image: none !important;
+    background: no-repeat;
+    padding-left: 0;
+    background-size: none;
+    font-size: 0.9rem !important;
+}
+:host ::ng-deep .incident ul.p-tabview-nav li:nth-child(4) span {
+    background-image: none !important;
+    background: no-repeat;
+    padding-left: 0;
+    background-size: none;
+    font-size: 0.9rem !important;
+}
+
+.bg-custom-location-card1 {
+    background-color: #d5f8ff;
+}
+.text-custom-location-card1 {
+    color: #337078;
+}
+.bg-custom-location-card2 {
+  background-color: #FFE1DB;
+}
+.text-custom-location-card2 {
+  color: #EF4A25;
+}
+.bg-custom-location-card3 {
+  background-color: #f8f7b6;
+}
+.text-custom-location-card3 {
+  color: #A79251;
+}
+
+.map-div {
+  width: 100%; 
+  height: calc(80vh)
+}
+
+#GIS3:checked + .dropdown {
+  background: #FF6C88 !important;
+  border-radius: 5px !important;
+}
+#GIS3:checked + .dropdown .election-category-title {
+  color: #FFFFFF !important;
+}
+#GIS3:checked + .dropdown .election-category-title .fas {
+color: #FFFFFF !important;
+}
+
+#MAP3:checked + .dropdown {
+  background: #FF6C88 !important;
+  border-radius: 5px !important;
+}
+#MAP3:checked + .dropdown .election-category-title {
+  color: #FFFFFF !important;
+}
+#MAP3:checked + .dropdown .election-category-title .fas {
+color: #FFFFFF !important;
+}
+
+.dropdown .election-category-title {
+  line-height: 1 !important;
+  font-family: 'Inter' !important;
+  font-weight: 700 !important;
+  font-size: 0.7rem !important;
+  align-items: center !important;
+  color: #FF6C88 !important;
+  cursor: pointer;
+}
+.dropdown {
+  border-bottom: 3px solid #FF6C88 !important;
+}
+
+.visually-hidden {
+  position: absolute;
+  left: -100vw;   
+}

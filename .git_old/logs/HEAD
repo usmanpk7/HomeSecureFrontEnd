@@ -1,0 +1,110 @@
+0000000000000000000000000000000000000000 72e47b5fa9ad7350a2c53748acac011e4c4d3bef FaizanButt1997 <fazybutt1997@gmail.com> 1667332920 +0500	clone: from https://github.com/MArslanRiaz96/HomeSecureFrontend
+72e47b5fa9ad7350a2c53748acac011e4c4d3bef bf8493c06cadfce975cc96aa8329d1bc0b11e077 FaizanButt1997 <fazybutt1997@gmail.com> 1667332949 +0500	checkout: moving from main to idev
+bf8493c06cadfce975cc96aa8329d1bc0b11e077 72e47b5fa9ad7350a2c53748acac011e4c4d3bef FaizanButt1997 <fazybutt1997@gmail.com> 1667499574 +0500	checkout: moving from idev to main
+72e47b5fa9ad7350a2c53748acac011e4c4d3bef bf8493c06cadfce975cc96aa8329d1bc0b11e077 FaizanButt1997 <fazybutt1997@gmail.com> 1667499576 +0500	checkout: moving from main to idev
+bf8493c06cadfce975cc96aa8329d1bc0b11e077 bf8493c06cadfce975cc96aa8329d1bc0b11e077 FaizanButt1997 <fazybutt1997@gmail.com> 1667590134 +0500	checkout: moving from idev to logintask_11_5_2022
+bf8493c06cadfce975cc96aa8329d1bc0b11e077 e0fb3181ad87ab873ce7af388bbdff558038f9f0 FaizanButt1997 <fazybutt1997@gmail.com> 1667931290 +0500	commit: login page design
+e0fb3181ad87ab873ce7af388bbdff558038f9f0 bf8493c06cadfce975cc96aa8329d1bc0b11e077 FaizanButt1997 <fazybutt1997@gmail.com> 1667932163 +0500	checkout: moving from logintask_11_5_2022 to idev
+bf8493c06cadfce975cc96aa8329d1bc0b11e077 c5b73422dd5c5ab52e0081bea28897598b405308 FaizanButt1997 <fazybutt1997@gmail.com> 1667932175 +0500	pull origin idev: Fast-forward
+c5b73422dd5c5ab52e0081bea28897598b405308 c5b73422dd5c5ab52e0081bea28897598b405308 FaizanButt1997 <fazybutt1997@gmail.com> 1667932329 +0500	checkout: moving from idev to tenantpagetask_11_8_2022
+c5b73422dd5c5ab52e0081bea28897598b405308 8d29d8202681eecd9c3945541d49881e4698c52a FaizanButt1997 <fazybutt1997@gmail.com> 1668282807 +0500	commit: tenant dashboard
+8d29d8202681eecd9c3945541d49881e4698c52a c5b73422dd5c5ab52e0081bea28897598b405308 FaizanButt1997 <fazybutt1997@gmail.com> 1668365190 +0500	checkout: moving from tenantpagetask_11_8_2022 to idev
+c5b73422dd5c5ab52e0081bea28897598b405308 cc8d1bdc5d97b64cea20e1777b5eb4547440b6e9 FaizanButt1997 <fazybutt1997@gmail.com> 1668365204 +0500	pull origin idev: Fast-forward
+cc8d1bdc5d97b64cea20e1777b5eb4547440b6e9 cc8d1bdc5d97b64cea20e1777b5eb4547440b6e9 FaizanButt1997 <fazybutt1997@gmail.com> 1668365311 +0500	checkout: moving from idev to dashboard_11_13_22
+cc8d1bdc5d97b64cea20e1777b5eb4547440b6e9 e6479f1c428ac70e711063d1a62daf901df7a8ad FaizanButt1997 <fazybutt1997@gmail.com> 1668795381 +0500	commit: topbarside bar
+e6479f1c428ac70e711063d1a62daf901df7a8ad 5d84d0d00e6cd89db7876b9087c6c8e362a5dce9 FaizanButt1997 <fazybutt1997@gmail.com> 1669049589 +0500	commit: dashboard changes
+5d84d0d00e6cd89db7876b9087c6c8e362a5dce9 7833d028f034170a62622a26c34b9ad91627c66f FaizanButt1997 <fazybutt1997@gmail.com> 1669228321 +0500	pull --no-commit origin dashboard_11_13_22: Fast-forward
+7833d028f034170a62622a26c34b9ad91627c66f 73152d67b1b6a24eb310a1efca578963a8d23306 FaizanButt1997 <fazybutt1997@gmail.com> 1669236158 +0500	pull --no-commit origin dashboard_11_13_22: Fast-forward
+73152d67b1b6a24eb310a1efca578963a8d23306 3b09697577abd183d0c3995d3bcc9c5e05411ba3 FaizanButt1997 <fazybutt1997@gmail.com> 1669236199 +0500	commit: login, logout, tenantdashboard some work on dashboard (24_11_2022)
+3b09697577abd183d0c3995d3bcc9c5e05411ba3 97de004a8df1b0f5d65383146976663833729b4f FaizanButt1997 <fazybutt1997@gmail.com> 1669318969 +0500	pull --no-commit origin dashboard_11_13_22: Fast-forward
+97de004a8df1b0f5d65383146976663833729b4f 97de004a8df1b0f5d65383146976663833729b4f FaizanButt1997 <fazybutt1997@gmail.com> 1669319023 +0500	checkout: moving from dashboard_11_13_22 to 25_11_2022_ElectionDashboardFilter
+97de004a8df1b0f5d65383146976663833729b4f f6a003d7f243920deeeb8db30d99c34a1bd748c1 FaizanButt1997 <fazybutt1997@gmail.com> 1669408839 +0500	commit: New Project setup after service.proxie updation
+f6a003d7f243920deeeb8db30d99c34a1bd748c1 c47d9b54e4b4b1bc54c749db0802f0c75d1ac5d6 FaizanButt1997 <fazybutt1997@gmail.com> 1669651701 +0500	commit: filter api cahnges
+c47d9b54e4b4b1bc54c749db0802f0c75d1ac5d6 ade3f310f95297e45a6b5f59ec82522eff9da835 FaizanButt1997 <fazybutt1997@gmail.com> 1669747948 +0500	checkout: moving from 25_11_2022_ElectionDashboardFilter to idev
+ade3f310f95297e45a6b5f59ec82522eff9da835 ade3f310f95297e45a6b5f59ec82522eff9da835 FaizanButt1997 <fazybutt1997@gmail.com> 1669748005 +0500	checkout: moving from idev to 29_11_2022_ElectionDashboard
+ade3f310f95297e45a6b5f59ec82522eff9da835 52450ee08de8a6e8d82e079e2a0803a5c46df686 FaizanButt1997 <fazybutt1997@gmail.com> 1669748228 +0500	commit: filter searc done
+52450ee08de8a6e8d82e079e2a0803a5c46df686 2bdcf61d8c0aa007a434fbc534edb45e5ef06c88 FaizanButt1997 <fazybutt1997@gmail.com> 1669748403 +0500	commit: remove debugger
+2bdcf61d8c0aa007a434fbc534edb45e5ef06c88 cf89ce326ad40d5e0e2da5527bda514d1d76e946 FaizanButt1997 <fazybutt1997@gmail.com> 1669753631 +0500	pull --no-commit origin idev: Fast-forward
+cf89ce326ad40d5e0e2da5527bda514d1d76e946 e0fb3181ad87ab873ce7af388bbdff558038f9f0 FaizanButt1997 <fazybutt1997@gmail.com> 1669753767 +0500	checkout: moving from 29_11_2022_ElectionDashboard to logintask_11_5_2022
+e0fb3181ad87ab873ce7af388bbdff558038f9f0 ade3f310f95297e45a6b5f59ec82522eff9da835 FaizanButt1997 <fazybutt1997@gmail.com> 1669753772 +0500	checkout: moving from logintask_11_5_2022 to idev
+ade3f310f95297e45a6b5f59ec82522eff9da835 cf89ce326ad40d5e0e2da5527bda514d1d76e946 FaizanButt1997 <fazybutt1997@gmail.com> 1669753789 +0500	pull --no-commit origin idev: Fast-forward
+cf89ce326ad40d5e0e2da5527bda514d1d76e946 cf89ce326ad40d5e0e2da5527bda514d1d76e946 FaizanButt1997 <fazybutt1997@gmail.com> 1669753812 +0500	checkout: moving from idev to 30-11-2022_Dashboard
+cf89ce326ad40d5e0e2da5527bda514d1d76e946 45dbc81a754bb5c48a2a06adfb532d8997b3f6a9 FaizanButt1997 <fazybutt1997@gmail.com> 1670268650 +0500	commit: election dashboard card
+45dbc81a754bb5c48a2a06adfb532d8997b3f6a9 cf89ce326ad40d5e0e2da5527bda514d1d76e946 FaizanButt1997 <fazybutt1997@gmail.com> 1670268665 +0500	checkout: moving from 30-11-2022_Dashboard to idev
+cf89ce326ad40d5e0e2da5527bda514d1d76e946 45dbc81a754bb5c48a2a06adfb532d8997b3f6a9 FaizanButt1997 <fazybutt1997@gmail.com> 1670268754 +0500	checkout: moving from idev to 30-11-2022_Dashboard
+45dbc81a754bb5c48a2a06adfb532d8997b3f6a9 cf89ce326ad40d5e0e2da5527bda514d1d76e946 FaizanButt1997 <fazybutt1997@gmail.com> 1670269798 +0500	checkout: moving from 30-11-2022_Dashboard to idev
+cf89ce326ad40d5e0e2da5527bda514d1d76e946 686ec5768cd88c7a9f78d858b39856ab8881569f FaizanButt1997 <fazybutt1997@gmail.com> 1670269999 +0500	pull --no-commit origin idev: Fast-forward
+686ec5768cd88c7a9f78d858b39856ab8881569f 686ec5768cd88c7a9f78d858b39856ab8881569f FaizanButt1997 <fazybutt1997@gmail.com> 1670270067 +0500	checkout: moving from idev to 6-12-2022-dashboard-chart
+686ec5768cd88c7a9f78d858b39856ab8881569f 686ec5768cd88c7a9f78d858b39856ab8881569f FaizanButt1997 <fazybutt1997@gmail.com> 1670270815 +0500	checkout: moving from 6-12-2022-dashboard-chart to idev
+686ec5768cd88c7a9f78d858b39856ab8881569f 45dbc81a754bb5c48a2a06adfb532d8997b3f6a9 FaizanButt1997 <fazybutt1997@gmail.com> 1670271408 +0500	checkout: moving from idev to 30-11-2022_Dashboard
+45dbc81a754bb5c48a2a06adfb532d8997b3f6a9 686ec5768cd88c7a9f78d858b39856ab8881569f FaizanButt1997 <fazybutt1997@gmail.com> 1670271545 +0500	checkout: moving from 30-11-2022_Dashboard to idev
+686ec5768cd88c7a9f78d858b39856ab8881569f 555437c5a2ba9fda11418718f48c06ec36aa7b66 FaizanButt1997 <fazybutt1997@gmail.com> 1670349740 +0500	pull origin idev: Fast-forward
+555437c5a2ba9fda11418718f48c06ec36aa7b66 555437c5a2ba9fda11418718f48c06ec36aa7b66 FaizanButt1997 <fazybutt1997@gmail.com> 1670439809 +0500	checkout: moving from idev to 12_8_2022_chart
+555437c5a2ba9fda11418718f48c06ec36aa7b66 555437c5a2ba9fda11418718f48c06ec36aa7b66 FaizanButt1997 <fazybutt1997@gmail.com> 1671049181 +0500	checkout: moving from 12_8_2022_chart to idev
+555437c5a2ba9fda11418718f48c06ec36aa7b66 555437c5a2ba9fda11418718f48c06ec36aa7b66 FaizanButt1997 <fazybutt1997@gmail.com> 1671049260 +0500	checkout: moving from idev to 12_8_2022_chart
+555437c5a2ba9fda11418718f48c06ec36aa7b66 a78b49da6309cfacb0b6b957704b5ea1e69812a7 FaizanButt1997 <fazybutt1997@gmail.com> 1671049861 +0500	commit: latest implementation
+a78b49da6309cfacb0b6b957704b5ea1e69812a7 555437c5a2ba9fda11418718f48c06ec36aa7b66 FaizanButt1997 <fazybutt1997@gmail.com> 1671049883 +0500	checkout: moving from 12_8_2022_chart to idev
+555437c5a2ba9fda11418718f48c06ec36aa7b66 4bdf0e52b83b918c31ea97e67c2ad5ab52dcdefe FaizanButt1997 <fazybutt1997@gmail.com> 1671049900 +0500	pull origin idev: Fast-forward
+4bdf0e52b83b918c31ea97e67c2ad5ab52dcdefe a78b49da6309cfacb0b6b957704b5ea1e69812a7 FaizanButt1997 <fazybutt1997@gmail.com> 1671050205 +0500	checkout: moving from idev to 12_8_2022_chart
+a78b49da6309cfacb0b6b957704b5ea1e69812a7 ea506851ec311ca0d764e8eb171dd7e1faccf537 FaizanButt1997 <fazybutt1997@gmail.com> 1671053731 +0500	commit: latest cahnges cards filter mentioned by ammanuel
+ea506851ec311ca0d764e8eb171dd7e1faccf537 4bdf0e52b83b918c31ea97e67c2ad5ab52dcdefe FaizanButt1997 <fazybutt1997@gmail.com> 1671134353 +0500	checkout: moving from 12_8_2022_chart to idev
+4bdf0e52b83b918c31ea97e67c2ad5ab52dcdefe 8749dd1d0cc93ab4253a25656407dd6726e37915 FaizanButt1997 <fazybutt1997@gmail.com> 1671134377 +0500	pull origin idev: Fast-forward
+8749dd1d0cc93ab4253a25656407dd6726e37915 ea506851ec311ca0d764e8eb171dd7e1faccf537 FaizanButt1997 <fazybutt1997@gmail.com> 1671135096 +0500	checkout: moving from idev to 12_8_2022_chart
+ea506851ec311ca0d764e8eb171dd7e1faccf537 6d686ba7221a0d095a4e52afa6b9b47f7445723a FaizanButt1997 <fazybutt1997@gmail.com> 1671139798 +0500	commit (merge): Merge branch '12_8_2022_chart' of https://github.com/MArslanRiaz96/HomeSecureFrontend into 12_8_2022_chart
+6d686ba7221a0d095a4e52afa6b9b47f7445723a 9bc0e292fe255f487571273274ba6c35f597f578 FaizanButt1997 <fazybutt1997@gmail.com> 1671139849 +0500	commit: missing one
+9bc0e292fe255f487571273274ba6c35f597f578 f55a912ae82b9092800552eb3cdf3788b114df83 FaizanButt1997 <fazybutt1997@gmail.com> 1671221022 +0500	checkout: moving from 12_8_2022_chart to december2022_faizan
+f55a912ae82b9092800552eb3cdf3788b114df83 8061df554bfe383ef0c25749dfd7a30ce484d6d9 FaizanButt1997 <fazybutt1997@gmail.com> 1671223000 +0500	pull origin december2022_faizan: Fast-forward
+8061df554bfe383ef0c25749dfd7a30ce484d6d9 7c6050e216ef494fd470f98d4adcde0ec45afce8 FaizanButt1997 <fazybutt1997@gmail.com> 1671224509 +0500	commit: resolve UI cnflicts issue
+7c6050e216ef494fd470f98d4adcde0ec45afce8 5dc2957539fa1ec9c9ae19dcedcde6641c4067d0 FaizanButt1997 <fazybutt1997@gmail.com> 1671567851 +0500	commit: Political Party Candidate Implementation
+5dc2957539fa1ec9c9ae19dcedcde6641c4067d0 ae0a06d2ead9262c25d22e98745da87a390bee95 FaizanButt1997 <fazybutt1997@gmail.com> 1671738705 +0500	pull origin december2022_faizan: Fast-forward
+ae0a06d2ead9262c25d22e98745da87a390bee95 bde39defb0e2e783a132b185de0d66b03d134626 FaizanButt1997 <fazybutt1997@gmail.com> 1671739595 +0500	pull origin december2022_faizan: Fast-forward
+bde39defb0e2e783a132b185de0d66b03d134626 77b2fc351f6c9fc435a0057426d4580dc4c4dd65 FaizanButt1997 <fazybutt1997@gmail.com> 1671740315 +0500	commit: latest issue fixation candidate and filter
+77b2fc351f6c9fc435a0057426d4580dc4c4dd65 db66af7a6dcdad9b3a11e8ac7e2bdf07b8eefef6 FaizanButt1997 <fazybutt1997@gmail.com> 1671821334 +0500	pull origin december2022_faizan: Fast-forward
+db66af7a6dcdad9b3a11e8ac7e2bdf07b8eefef6 a4c1f0934c3fbea9a4259f81fc36a24f0f3344c1 FaizanButt1997 <fazybutt1997@gmail.com> 1672170354 +0500	commit: presidential candidate updation
+a4c1f0934c3fbea9a4259f81fc36a24f0f3344c1 edb01a1bf6792380d0209e2834d0ee846e3ba759 FaizanButt1997 <fazybutt1997@gmail.com> 1673297278 +0500	commit: polling unit changes
+edb01a1bf6792380d0209e2834d0ee846e3ba759 ef8a3a60929f5c934368cbbf6daf0e67d81fddca FaizanButt1997 <fazybutt1997@gmail.com> 1673299678 +0500	commit (merge): Merge branch 'december2022_faizan' of https://github.com/MArslanRiaz96/HomeSecureFrontend into december2022_faizan
+ef8a3a60929f5c934368cbbf6daf0e67d81fddca 03983c29f8fe6b14809381330687dcd77dbdcbf2 FaizanButt1997 <fazybutt1997@gmail.com> 1673382310 +0500	commit: a
+03983c29f8fe6b14809381330687dcd77dbdcbf2 97de004a8df1b0f5d65383146976663833729b4f FaizanButt1997 <fazybutt1997@gmail.com> 1673382396 +0500	checkout: moving from december2022_faizan to dashboard_11_13_22
+97de004a8df1b0f5d65383146976663833729b4f 686ec5768cd88c7a9f78d858b39856ab8881569f FaizanButt1997 <fazybutt1997@gmail.com> 1673382443 +0500	checkout: moving from dashboard_11_13_22 to 6-12-2022-dashboard-chart
+686ec5768cd88c7a9f78d858b39856ab8881569f 03983c29f8fe6b14809381330687dcd77dbdcbf2 FaizanButt1997 <fazybutt1997@gmail.com> 1673382596 +0500	checkout: moving from 6-12-2022-dashboard-chart to december2022_faizan
+03983c29f8fe6b14809381330687dcd77dbdcbf2 629dca312b7151da39a18fdfe6658fab1bca13e3 FaizanButt1997 <fazybutt1997@gmail.com> 1674585621 +0500	commit: latest changes political party grading
+629dca312b7151da39a18fdfe6658fab1bca13e3 01c313008575aa453330c321cd54b869f550c6a1 FaizanButt1997 <fazybutt1997@gmail.com> 1674590522 +0500	checkout: moving from december2022_faizan to january2023_faizan
+01c313008575aa453330c321cd54b869f550c6a1 248d2f3fec174a9eec17067518936d70c6a814ae FaizanButt1997 <fazybutt1997@gmail.com> 1674672230 +0500	pull origin january2023_faizan: Fast-forward
+248d2f3fec174a9eec17067518936d70c6a814ae da900ac997d4b9843c1bdf73f416331e3c06885e FaizanButt1997 <fazybutt1997@gmail.com> 1674674324 +0500	pull origin january2023_faizan: Fast-forward
+da900ac997d4b9843c1bdf73f416331e3c06885e 013b32663f851dace5bcd1c07bafdb5859eac4f6 FaizanButt1997 <fazybutt1997@gmail.com> 1674915300 +0500	commit: table chart cvhanges
+013b32663f851dace5bcd1c07bafdb5859eac4f6 4f00e0cf7555933a4b5682f6295b2d0d95a83fd5 FaizanButt1997 <fazybutt1997@gmail.com> 1675103883 +0500	pull origin january2023_faizan: Fast-forward
+4f00e0cf7555933a4b5682f6295b2d0d95a83fd5 6eddc4499cda56e627d6d7bc694bb465986adbe2 FaizanButt1997 <fazybutt1997@gmail.com> 1675203094 +0500	commit: territory table changes has been pushed
+6eddc4499cda56e627d6d7bc694bb465986adbe2 16df30a15358de6dec28e2e612e888b069a1ea19 FaizanButt1997 <fazybutt1997@gmail.com> 1675373884 +0500	commit: Territory Dropdown filter work has been done & electionpollingunit vote column also added in table.
+16df30a15358de6dec28e2e612e888b069a1ea19 8c049fbe00b079aaf2909ee029c665d16a7550c7 FaizanButt1997 <fazybutt1997@gmail.com> 1675451570 +0500	pull origin january2023_faizan: Fast-forward
+8c049fbe00b079aaf2909ee029c665d16a7550c7 4bdb2d93fe41204986a144389593f8c0000c99d4 FaizanButt1997 <fazybutt1997@gmail.com> 1675884895 +0500	commit: latest cahnges pushed
+4bdb2d93fe41204986a144389593f8c0000c99d4 2999ab8ba677119c182089ebe058b0611f03c725 FaizanButt1997 <fazybutt1997@gmail.com> 1676060206 +0500	pull origin january2023_faizan: Fast-forward
+2999ab8ba677119c182089ebe058b0611f03c725 e928aa7bb765c8fdc6a6a44e0c33591995ddaa37 FaizanButt1997 <fazybutt1997@gmail.com> 1676066734 +0500	commit: 1.Remove time taking API (DONE)
+e928aa7bb765c8fdc6a6a44e0c33591995ddaa37 418b889be2e440d691c3affbeff34c9b3f772594 FaizanButt1997 <fazybutt1997@gmail.com> 1676066846 +0500	commit: a
+418b889be2e440d691c3affbeff34c9b3f772594 9f9447b56434602e0be9d9f3292021ba6f987fe7 FaizanButt1997 <fazybutt1997@gmail.com> 1676407105 +0500	pull origin january2023_faizan: Fast-forward
+9f9447b56434602e0be9d9f3292021ba6f987fe7 68db44d3f8bbfa66dc6f40755467b007daa670ad FaizanButt1997 <fazybutt1997@gmail.com> 1676412011 +0500	commit: added image on card
+68db44d3f8bbfa66dc6f40755467b007daa670ad 466a311f7230180ec36f7d37c7ca9fa81b974292 FaizanButt1997 <fazybutt1997@gmail.com> 1676924161 +0500	pull origin january2023_faizan: Fast-forward
+466a311f7230180ec36f7d37c7ca9fa81b974292 48e1e2a18acf3cabfedc0b6f2e9ff2c9604ea005 FaizanButt1997 <fazybutt1997@gmail.com> 1677015349 +0500	commit: code loading issue fix & many other issue fix and now submit api call simultaneously
+48e1e2a18acf3cabfedc0b6f2e9ff2c9604ea005 8749dd1d0cc93ab4253a25656407dd6726e37915 FaizanButt1997 <fazybutt1997@gmail.com> 1677052222 +0500	checkout: moving from january2023_faizan to idev
+8749dd1d0cc93ab4253a25656407dd6726e37915 18f698500802e5f9d7675d403ef1363931304442 FaizanButt1997 <fazybutt1997@gmail.com> 1677052269 +0500	checkout: moving from idev to january2023_faizan
+18f698500802e5f9d7675d403ef1363931304442 3aca1cde930191051b7f215d7874276108cf48cf FaizanButt1997 <fazybutt1997@gmail.com> 1677056641 +0500	commit: issue fixation
+3aca1cde930191051b7f215d7874276108cf48cf 9c8cc5e1bf7665b411f14015d92c66c4c6a0463b FaizanButt1997 <fazybutt1997@gmail.com> 1677057420 +0500	commit: update dashboard
+9c8cc5e1bf7665b411f14015d92c66c4c6a0463b 9c8cc5e1bf7665b411f14015d92c66c4c6a0463b FaizanButt1997 <fazybutt1997@gmail.com> 1677278498 +0500	reset: moving to HEAD
+9c8cc5e1bf7665b411f14015d92c66c4c6a0463b a10b679b7f7b06877f32e98a203a646de5eb7e5e FaizanButt1997 <fazybutt1997@gmail.com> 1677278617 +0500	checkout: moving from january2023_faizan to february2023_faizan
+a10b679b7f7b06877f32e98a203a646de5eb7e5e 50643589337e2d14c5509acfab3b7aa30a5a0604 FaizanButt1997 <fazybutt1997@gmail.com> 1677280472 +0500	commit: changes has been done
+50643589337e2d14c5509acfab3b7aa30a5a0604 67ca66bf402747476892dd5bc16c4a719bf91207 FaizanButt1997 <fazybutt1997@gmail.com> 1677344032 +0500	commit: table scrolling issue resolved
+67ca66bf402747476892dd5bc16c4a719bf91207 c471e420dceaa67ccac4396794eb75611b2748c3 FaizanButt1997 <fazybutt1997@gmail.com> 1677344086 +0500	pull origin february2023_faizan: Merge made by the 'ort' strategy.
+c471e420dceaa67ccac4396794eb75611b2748c3 8749dd1d0cc93ab4253a25656407dd6726e37915 FaizanButt1997 <fazybutt1997@gmail.com> 1677525835 +0500	checkout: moving from february2023_faizan to idev
+8749dd1d0cc93ab4253a25656407dd6726e37915 5b4dc7eace6b860b006a38272d33346ed5625028 FaizanButt1997 <fazybutt1997@gmail.com> 1677526060 +0500	pull origin idev: Fast-forward
+5b4dc7eace6b860b006a38272d33346ed5625028 64253ad3cbcf1b4b04d7b4b4e789315971159d21 FaizanButt1997 <fazybutt1997@gmail.com> 1677526209 +0500	checkout: moving from idev to february2023_faizan
+64253ad3cbcf1b4b04d7b4b4e789315971159d21 e580c2fae95b7a909740f33b0e40d00f012f3d42 FaizanButt1997 <fazybutt1997@gmail.com> 1677620488 +0500	commit: changes has been done
+e580c2fae95b7a909740f33b0e40d00f012f3d42 cd99cd27a203c399b16af3a5e2292dfad15b7458 FaizanButt1997 <fazybutt1997@gmail.com> 1677871375 +0500	pull origin february2023_faizan: Fast-forward
+cd99cd27a203c399b16af3a5e2292dfad15b7458 10806079e3481f480c533f26097c2d8244b5d607 FaizanButt1997 <fazybutt1997@gmail.com> 1678002505 +0500	commit: Latest changes pushed
+10806079e3481f480c533f26097c2d8244b5d607 6e0e0f299b282fc4377cb8d340cbe3dd50576df9 FaizanButt1997 <fazybutt1997@gmail.com> 1678125731 +0500	pull origin february2023_faizan: Fast-forward
+6e0e0f299b282fc4377cb8d340cbe3dd50576df9 670f79e4bfa98ec4a244dc6f5023ec59725e1cd2 FaizanButt1997 <fazybutt1997@gmail.com> 1678225336 +0500	commit: territory table cahnges done
+670f79e4bfa98ec4a244dc6f5023ec59725e1cd2 45858466b617777a9793119cc8eceb627a5b0f9a FaizanButt1997 <fazybutt1997@gmail.com> 1678299918 +0500	pull origin february2023_faizan: Fast-forward
+45858466b617777a9793119cc8eceb627a5b0f9a 5ad19995af0cf481f680d14098a97ff2dd22fee9 FaizanButt1997 <fazybutt1997@gmail.com> 1678746177 +0500	commit: changes latest pushed
+5ad19995af0cf481f680d14098a97ff2dd22fee9 dbb6d9c4aa420e2ed69b7b666de077b54785aec7 FaizanButt1997 <fazybutt1997@gmail.com> 1678919559 +0500	commit: Dynamic dashboard changes
+dbb6d9c4aa420e2ed69b7b666de077b54785aec7 86565a886402efe1e8e841cef78f5f4037e0a0eb FaizanButt1997 <fazybutt1997@gmail.com> 1678919588 +0500	pull origin february2023_faizan: Merge made by the 'ort' strategy.
+86565a886402efe1e8e841cef78f5f4037e0a0eb a3f4ddd3fbdea03076cc2049adfed80da79368fb FaizanButt1997 <fazybutt1997@gmail.com> 1678996470 +0500	pull origin february2023_faizan: Fast-forward
+a3f4ddd3fbdea03076cc2049adfed80da79368fb 2b7fb7241bfd897b79fa7135b8efd74fdacd8a7c FaizanButt1997 <fazybutt1997@gmail.com> 1679093138 +0500	commit: please push changes
+2b7fb7241bfd897b79fa7135b8efd74fdacd8a7c 24eecd8be577cf2fb456404529077cf538a292be FaizanButt1997 <fazybutt1997@gmail.com> 1679340473 +0500	pull origin february2023_faizan: Fast-forward

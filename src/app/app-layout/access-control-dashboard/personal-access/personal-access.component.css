@@ -1,0 +1,70 @@
+::ng-deep .personal-grid .gridheader {
+    background-color: #213315 !important;
+    color: rgb(255, 255, 255) !important;
+}
+::ng-deep .personal-grid .p-datatable-thead
+{
+    background-color: #213315 !important;
+}
+::ng-deep .personal-grid .p-datatable-scrollable-header {
+    border-radius: 23px !important;
+}
+::ng-deep .personal-grid .p-datatable-scrollable-body{
+    border-radius: 23px !important;
+    margin-top:7px !important;
+}
+::ng-deep .personal-grid .p-datatable .p-datatable-tbody > tr{
+    background: #B7A643 !important;
+    color: white;
+}
+::ng-deep .personal-grid .p-datatable .p-datatable-thead > tr > th {
+    border: 0px solid #213315 !important;
+}
+::ng-deep .personal-grid .p-datatable .p-datatable-tbody > tr > td {
+    border: 0px solid #B7A643 !important;
+}
+.lock > i{
+    font-size: 20px;
+    color: black;
+}
+.hr{
+    border: 1px solid rgba(255, 255, 255, 0.07);
+}
+.ap-btn{
+    background: #56633C;
+    border-radius: 21px;
+    padding: 3px;
+    text-align: center;
+}
+.rj-btn{
+    background: #9F1730;
+    border-radius: 21px;
+    padding: 3px;
+    text-align: center;
+}
+.ap-btn>span,.rj-btn>span{
+    font-size: 14px;
+}
+.brk-hr{
+    justify-items: center;
+text-align: center;
+display: grid;
+}
+.text-w{
+    color: white;
+}
+
+/* Card  */
+.text-center{
+    text-align: center;
+}
+.card2{
+    background: linear-gradient(180deg, rgba(88, 94, 52, 0.66) -24.04%, rgba(183, 166, 67, 0.4752) 79.61%);
+border: 2px solid rgba(33, 51, 21, 0.56);
+box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+border-radius: 18px;
+color: white;
+}
+.card2 .inner-item p{
+margin-bottom: 3px !important;
+}

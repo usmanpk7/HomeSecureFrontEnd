@@ -1,0 +1,203 @@
+import { Component, Injector, OnInit, ViewChild } from '@angular/core';
+import { FooterActionButton } from '@app/app-layout/indent-dashboard/model/footer-action-button';
+<<<<<<< Updated upstream
+import { QRModelComponent } from '@app/app-layout/indent-dashboard/model/qrmodel/qrmodel.component';
+import { DailogComponent } from '@app/shared/common/custom/dailog/dailog.component';
+=======
+import { DailogComponent } from '@app/shared/custom/dailog/dailog.component';
+>>>>>>> Stashed changes
+import { AppConsts } from '@shared/AppConsts';
+import { AppComponentBase } from '@shared/common/app-component-base';
+import { EncryptionDecryptionService } from '@shared/encryption-decryption.service';
+import { EncryptionkeyDto, EncryptionkeyServiceProxy, ItemCategoriesDto, ItemsTypesDto, ProfileServiceProxy, UserServiceProxy, VarietyBatchDto, VarietyBatchServiceProxy } from '@shared/service-proxies/service-proxies';
+
+@Component({
+  selector: 'app-batch-list',
+  templateUrl: './batch-list.component.html',
+  styleUrls: ['./batch-list.component.css']
+})
+export class BatchListComponent extends AppComponentBase implements OnInit {
+<<<<<<< Updated upstream
+  @ViewChild('modalCreate', { static: true }) modalCreate: QRModelComponent;
+    profilePicture:string=AppConsts.appBaseUrl + '/assets/common/images/default-profile-picture.png';
+=======
+  @ViewChild('dynamicModal', { static: true }) dynamicModal: DailogComponent;
+    profilePicture: string = AppConsts.appBaseUrl + '/assets/common/images/default-profile-picture.png';
+>>>>>>> Stashed changes
+    userName = '';
+  footerActionButton: Array<FooterActionButton>;
+  batchDto: Array<VarietyBatchDto>;
+  first = 0;
+    row = 10;
+    skipCount = 0;
+    maxResultCount = 1;
+    storeVariations: Array<any>;
+    storeCheck: boolean;
+    value: boolean;
+    creatorName: string;
+    modifierName: string;
+    creatorRoles: string;
+    encryptionKey: string;
+    viewType: number;
+    encryptionKeys: Array<EncryptionkeyDto>;
+    dynamicValue: string;
+  constructor(private varietyBatchProxy: VarietyBatchServiceProxy,
+     private decryptService: EncryptionDecryptionService,
+     private userServiceProxy: UserServiceProxy,
+     private encryptionKeyProxy: EncryptionkeyServiceProxy,
+     private _profileServiceProxy: ProfileServiceProxy,
+     injector: Injector) {
+    super(injector);
+    this.batchDto = [];
+    this.isLoading = false;
+    this.storeVariations = [];
+    this.storeCheck = false;
+    this.value = true;
+    this.viewType = 1;
+    this.encryptionKeys = [];
+  }
+
+  ngOnInit(): void {
+    this.getAllEncryptionKeys();
+    this.getAll();
+  }
+  getAllEncryptionKeys() {
+    this.encryptionKeyProxy.getAll(this.appSession.tenantId, undefined, undefined, undefined, 0, 1000)
+  .subscribe(data => {
+   if (data) {
+    this.encryptionKeys = data.items;
+   }
+  });
+ }
+  paginate(event) {
+    this.first = event.first ;
+    this.maxResultCount = (this.first + 1) * this.row; //10
+    this.skipCount = this.first * this.row;
+}
+  onExpandRow(item: any) {
+   this.getUserDetail(item.creatorUserId);
+}
+  handleChange(event) {
+
+  }
+  opendailogForQRCode(value:string)
+  {
+    var result=this.decryptItem(value);
+    this.modalCreate.open();
+  }
+  getItemCategory(categories: Array<ItemCategoriesDto>) {
+    let itemCategories = JSON.parse(localStorage.getItem('itemCategories'));
+     let categoryName = '-----';
+     if (categories.length > 0) {
+         let categoryId = categories.map(x => x.categoryId).shift();
+        categoryName = itemCategories.filter(x => x.Id === categoryId).map(x => x.name).shift();
+      }
+      return categoryName;
+  }
+  getItemType(type: Array<ItemsTypesDto>) {
+    let itemTypes = JSON.parse(localStorage.getItem('itemTypes'));
+     let name = '-----';
+     if (type.length > 0) {
+         let Id = type.map(x => x.itemTypeId).shift();
+        name = itemTypes.filter(x => x.Id === Id).map(x => x.name).shift();
+      }
+      return name;
+  }
+  getAll() {
+    this.isLoading = true;
+   this.varietyBatchProxy.getAll(this.appSession.tenantId, undefined, undefined, undefined, 0, 1000).subscribe(data => {
+    debugger
+      if (data) {
+        {
+            this._profileServiceProxy.getProfilePicture().subscribe(result => {
+                if (result && result.profilePicture) {
+                    this.profilePicture = 'data:image/jpeg;base64,' + result.profilePicture;
+
+                }
+<<<<<<< Updated upstream
+             this.batchDto= data.items;
+             console.log(data.items);
+             console.log(this.batchDto);
+                this.userName=this.appSession.user.userName;
+=======
+             this.batchDto = data.items;
+                this.userName = this.appSession.user.userName;
+>>>>>>> Stashed changes
+            });
+        }
+
+      }
+      this.isLoading = false;
+    });
+  }
+<<<<<<< Updated upstream
+  decryptItem(data: string){
+    try {
+      debugger
+      console.log();
+   let result= this.decryptService.decrypt(data,"4700384107437838");
+   console.log(result);
+   return result;
+=======
+  decryptItem(data: string, keyId: number= 1) {
+    try {
+      let keyvalue = this.encryptionKeys.filter(x => x.id === keyId).shift();
+      let decryptData = this.decryptService.decrypt(data, keyvalue?.keyValue);
+   return decryptData;
+>>>>>>> Stashed changes
+  } catch (err) {
+
+  }
+  }
+  getUserDetail(Id): any {
+    if (Id) {
+    this.userServiceProxy.getUserForEdit(Id).subscribe(data => {
+        if (data) {
+            this.creatorName = data.user.name + ' ' + data.user.surname;
+            this.creatorRoles = data.roles.filter(x => x.isAssigned === true).map(x => x.roleDisplayName).join(' | ');
+        }
+    });
+  }
+  }
+  getUserName(Id) {
+    let users = JSON.parse(localStorage.getItem('users'));
+    let name = '';
+    if (users) {
+       name = users.filter(x => x.Id === Id).map(x => x.name).shift();
+     }
+     return name;
+  }
+  getFirstUserRole(Id) {
+    let users = JSON.parse(localStorage.getItem('users'));
+    let name = '';
+    if (users) {
+       let Role = users.filter(x => x.Id === Id).map(x => x.Roles).shift();
+       if (Role) {
+            name = Role.map(x => x.roleName);
+       }
+     }
+     return name;
+  }
+ViewChange(event) {
+  let id = event.target.id;
+  if (id === 'card') {
+   this.viewType = 2;
+  } else {
+    this.viewType = 1;
+  }
+}
+getwarehouse(Id) {
+}
+closedynamicmodal() {
+  this.dynamicModal.hide();
+}
+ViewCodes(value: string, Type: number) {
+if (Type === 1) {
+ let data = this.decryptItem(value, 1);
+ this.dynamicValue = data;
+  this.dynamicModal.show();
+} else if (Type === 2 ) {
+
+}
+}
+}

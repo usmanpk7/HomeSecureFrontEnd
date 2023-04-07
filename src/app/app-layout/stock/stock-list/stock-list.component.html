@@ -1,0 +1,539 @@
+<div *ngIf="isLoading" >
+</div>
+<p-table #dataTable dataKey="id" [value]="ItemsListDto" [scrollable]="true" scrollHeight="400px"
+    [(rows)]="row" (onPage)="paginate($event)" [first]="first" [rowsPerPageOptions]="[5,10,15,20]"
+    [paginator]="true" [lazy]="false" rowExpandMode="single" [globalFilterFields]="['ItemName','sku','itemTypes','itemCategory']">
+      <ng-template pTemplate="header" style="text-align: center;">
+
+        <tr>
+            <th class="gridheader" pSortableColumn="intentNo">
+                Sku
+                <p-sortIcon field="intentNo"></p-sortIcon>
+            </th>
+            <th class="gridheader" pSortableColumn="controlNumber">
+                Store Name
+                <p-sortIcon field="controlNumber"></p-sortIcon>
+            </th>
+            <th class="gridheader" pSortableColumn="voucherToType">Store Type
+                <p-sortIcon field="voucherToType"></p-sortIcon>
+            </th>
+            <th class="gridheader" pSortableColumn="AKADA">
+                Store Category
+                <p-sortIcon field="AKADA"></p-sortIcon>
+            </th>
+            <th class="gridheader" pSortableColumn="reasonForIndent" colspan="2">
+                varriety
+                <p-sortIcon field="reasonForIndent"></p-sortIcon>
+            </th>
+            <th class="gridheader" pSortableColumn="reasonForIndent" colspan="3">
+
+                <table>
+                    <tr>
+                        <!-- <p-sortIcon field="reasonForIndent"></p-sortIcon> -->
+                        <th>STORE HOUSE</th>
+                        <th>varriety</th>
+                        <th>QTY</th>
+                    </tr>
+                </table>
+
+            </th>
+            <th class="gridheader" colspan="3">tracking settings
+
+            </th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" style="color: white; height: 7px;" let-item let-expanded="expanded"
+            let-rowIndex="rowIndex">
+            <tr class="body-td" [pRowToggler]="item" [ngClass]="{
+         'sub-table-even': rowIndex % 2 == 1,
+         'sub-table-odd': rowIndex % 2 == 0}" (click)="onExpandRow(item)" role="button" aria-expanded="false"
+            aria-controls="collapseExample">
+
+            <td style="border-left: 2px #213315 solid; word-break: break-all;">{{item.sku}}</td>
+            <td style="border-left: 2px #213315 solid; word-break: break-all;"> {{item.ItemName}}</td>
+            <td style="border-left: 2px #213315 solid; word-break: break-all;">{{item.itemTypes}}</td>
+            <td style="border-left: 2px #213315 solid; word-break: break-all;">{{item.itemCategory}}</td>
+            <td colspan="2" style="border-left: 2px #213315 solid; word-break: break-all;">
+                <table>
+                    <tbody>
+                        <tr style="border-bottom: 2px solid #213315;">
+                            <td style="text-align: center;padding: 2px;" colspan="2">
+                                color
+                            </td>
+                            <td style="border-left: 2px #213315 solid;text-align: center;padding: 2px;">
+                                Red
+                            </td>
+
+                        </tr>
+                        <tr>
+
+                            <td colspan="4" style="text-align: center;padding: 2px;">
+
+                            </td>
+
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+            <td colspan="3" style="border-left: 2px #213315 solid; word-break: break-all;">
+                <table>
+                    <tbody>
+                        <tr style="border-bottom: 2px solid #213315;">
+                            <td style="text-align: center;padding: 2px;" colspan="2">
+                                SW/AKADA-002
+                            </td>
+                            <td style="border-left: 2px #213315 solid;text-align: center;padding: 2px;">
+                                Color
+                            </td>
+                            <td style="border-left: 2px #213315 solid;text-align: center;padding: 2px;">
+                                100000</td>
+                        </tr>
+                        <tr>
+
+                            <td colspan="4" style="text-align: center;padding: 2px;">
+
+                            </td>
+
+                        </tr>
+                    </tbody>
+                </table>
+                </td>
+            <td style="font-size: 9px;border-left: 2px #213315 solid;font-weight: 700;" colspan="3">
+                <table>
+                    <tbody>
+                        <tr style="border-bottom: 2px solid #213315;">
+                            <td style="text-align: center;padding: 2px;" colspan="2">
+                                Track Weight
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;padding: 2px;" colspan="2">
+                                TRACK QUANITITY
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    </ng-template>
+    variety item store
+    <ng-template pTemplate="rowexpansion2" let-item>
+        <tr style="background-color: #213315;">
+            <td colspan="13">
+                <div dataKey="id" class="expansion" style="color: #eef0f8;">
+                    <div class="col-md-12 p-0">
+                        <p class="m-0">Variety Store Items</p>
+                    </div>
+                   <div class="row yellow-grid">
+                       <div class="col-md-12 p-5">
+                    <p-table #dataTable2 dataKey="id" [value]="itemsDto"
+                    rowExpandMode="single">
+                <ng-template pTemplate="header" style="text-align: center;">
+                  <tr>
+                      <th class="gridheader2" colspan="3"></th>
+                      <th class="gridheader2">sn Code</th>
+                      <th class="gridheader2">Store Name</th>
+                      <th class="gridheader2">Store Type</th>
+                      <th class="gridheader2">Store House</th>
+                      <th class="gridheader2">Depot</th>
+                      <th class="gridheader2">Quantity</th>
+                      <th class="gridheader2" colspan="3"></th>
+                  </tr>
+                </ng-template>
+                  <ng-template pTemplate="body" style="color: white;" let-authorization let-expanded="expanded" let-rowIndex="rowIndex">
+                      <tr class="body-td" [pRowToggler]="authorization" role="button" aria-expanded="false"
+                          aria-controls="collapseExample"  [ngClass]="{
+                            'sub-table-even': rowIndex % 2 == 1,
+                            'sub-table-odd': rowIndex % 2 == 0}" >
+                          <td   colspan="3" style="padding-left: 16px; border-left: 0px;">
+                            <div class="row">
+                        <div class="col-md-6 rt-border p-0" style="text-align: center;">
+                            <div class="col-md-12 p-0">
+                        <p class="m-0">Variety Item</p>
+                        </div>
+                       <div class="col-md-12">
+                        <div class="col-md-12 p-2">
+                            <button
+                            class="btn btn-sm btn-primary bg-grey-btn">view</button>
+                    </div>
+                       </div>
+                    </div>
+                    <div class="col-md-6 p-0" style="text-align: center;">
+                          <b><p style="color: #213315;font-weight: 700;">Download</p></b>
+                   <div class="row">
+                    <div class="col-md-6 rt-border pr-0">
+                        <img src="../../../assets/images/widget/excel-1.svg"
+                        style="padding: 0px;">
+                    </div>
+                    <div class="col-md-6 pl-0">
+                        <img src="../../../assets/images/widget/pdf-1.svg"
+                        style="padding: 0px;">
+                        </div>
+                   </div>
+                </div>
+                </div>
+                          </td>
+                          <td class="border-green" style="text-align: center;">asdasd</td>
+                          <td class="border-green" style="text-align: center;">asdasd</td>
+                          <td  class="border-green" style="text-align: center;">asdasds
+                          </td>
+                          <td class="border-green" style="text-align: center;">asdasds
+                        </td>
+                        <td class="border-green" style="text-align: center;">asdasds
+                        </td>
+                        <td class="border-green" style="text-align: center;">asdasds
+                        </td>
+                        <td style="font-size: 9px;border-left: 2px #213315 solid;font-weight: 700;" colspan="3">
+                            <table>
+                                <tbody>
+                                    <tr style="border-bottom: 2px solid #213315;">
+                                        <td style="text-align: center;padding: 2px;">
+                                            <img src="../../../assets/images/widget/small_profile.svg"
+                                                style=" width: 20px;height: 20px;border-radius: 11px;">Major Gen
+                                        </td>
+                                        <td style="border-left: 2px #213315 solid;text-align: center;padding: 2px;">
+                                            Colog
+                                        </td>
+                                        <td style="border-left: 2px #213315 solid;text-align: center;padding: 2px;">
+                                            {{item.creationTime}}</td>
+                                    </tr>
+                                    <tr>
+
+                                        <td colspan="4" style="text-align: center;padding: 2px;">
+                                            <img src="../../../assets/images/widget/check_star.svg"
+                                            style="height: 20px;">
+                                        </td>
+
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                      </ng-template>
+                      <ng-template pTemplate="rowexpansion" let-item>
+                        <tr style="background-color:transparent;">
+                            <td colspan="12">
+                                <div dataKey="id"  style="color: #eef0f8;">
+                                    <div class="col-md-12 p-0">
+                                        <p class="m-0">Variety Store Items</p>
+                                    </div>
+                                   <div class="row yellow-grid">
+                                       <div class="col-md-12 p-2 "  style="background:#8e8636;">
+                                    <p-table #dataTable3 dataKey="id" [value]="itemsDto"
+                                    rowExpandMode="single">
+                                <ng-template pTemplate="header" style="text-align: center;">
+                                  <tr>
+                                      <th class="gridheader2">SN/Code</th>
+                                      <th class="gridheader2">Store V.Name</th>
+                                      <th class="gridheader2">Stores V.No</th>
+                                      <th class="gridheader2">Stores Position Status</th>
+                                      <th class="gridheader2">Depot</th>
+                                      <th class="gridheader2">Store House</th>
+
+                                      <th class="gridheader2" colspan="4">Identity Tool</th>
+                                  </tr>
+                                </ng-template>
+                                  <ng-template pTemplate="body" style="color: white;" let-authorization let-expanded="expanded" let-rowIndex="rowIndex">
+                                      <tr class="body-td" [pRowToggler]="authorization" role="button" aria-expanded="false"
+                                          aria-controls="collapseExample"  [ngClass]="{
+                                            'sub-table2-even': rowIndex % 2 == 1,
+                                            'sub-table2-odd': rowIndex % 2 == 0}" >
+                                          <td    style="padding-left: 16px; border-left: 0px;">
+                                            asdasd
+                                          </td>
+                                          <td class="border-green" style="text-align: center;">asdasd</td>
+                                          <td class="border-green" style="text-align: center;">asdasd</td>
+                                          <td  class="border-green" style="text-align: center;">asdasds
+                                          </td>
+                                          <td class="border-green" style="text-align: center;">asdasds
+                                        </td>
+                                        <td class="border-green" style="text-align: center;">asdasds
+                                        </td>
+
+                                        <td style="font-size: 9px;border-left: 2px #213315 solid;font-weight: 700;" colspan="4">
+                                            <div class="row">
+                                                <div class="col-md-2" style="font-size: 9px;border-right: 2px #213315 solid;font-weight: 700;">
+                                                <span> QRC</span>
+                                                </div>
+
+                                               <div class="col-md-10">
+                                                <button
+                                                class="btn btn-sm btn-primary tool-cr">Read</button>
+                                                <button
+                                                class="btn btn-sm btn-primary tool-cr">Write</button>
+                                                <button
+                                                class="btn btn-sm btn-primary tool-cr">View</button>
+                                                <button
+                                                class="btn btn-sm btn-primary tool-cr">Print</button>
+                                               </div>
+                                               <hr class="hr mr-2" style="width: 92%; background: #213315; margin: 8px;">
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-2" style="font-size: 9px;border-right: 2px #213315 solid;font-weight: 700;">
+                                                <span> NFC</span>
+                                                </div>
+
+                                               <div class="col-md-10">
+                                                <button
+                                                class="btn btn-sm btn-primary tool-cr">Read</button>
+                                                <button
+                                                class="btn btn-sm btn-primary tool-cr">Write</button>
+                                                <button
+                                                class="btn btn-sm btn-primary tool-cr">View</button>
+                                                <button
+                                                class="btn btn-sm btn-primary tool-cr">Print</button>
+                                               </div>
+                                               <hr class="hr mr-2" style="width: 92%; background: #213315; margin: 8px;">
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-2" style="font-size: 9px;border-right: 2px #213315 solid;font-weight: 700;">
+                                                <span> RFID</span>
+                                                </div>
+
+                                               <div class="col-md-10">
+                                                <button
+                                                class="btn btn-sm btn-primary tool-cr">Read</button>
+                                                <button
+                                                class="btn btn-sm btn-primary tool-cr">Write</button>
+                                                <button
+                                                class="btn btn-sm btn-primary tool-cr">View</button>
+                                                <button
+                                                class="btn btn-sm btn-primary tool-cr">Print</button>
+                                               </div>
+                                               <hr class="hr mr-2" style="width: 92%; background: #213315; margin: 8px;">
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-2" style="font-size: 9px;border-right: 2px #213315 solid;font-weight: 700;">
+                                                <span> BarCode</span>
+                                                </div>
+
+                                               <div class="col-md-10">
+                                                <button
+                                                class="btn btn-sm btn-primary tool-cr">Read</button>
+                                                <button
+                                                class="btn btn-sm btn-primary tool-cr">Write</button>
+                                                <button
+                                                class="btn btn-sm btn-primary tool-cr">View</button>
+                                                <button
+                                                class="btn btn-sm btn-primary tool-cr">Print</button>
+                                               </div>
+                                            </div>
+                                        </td>
+                                      </tr>
+                                      </ng-template>
+                                   </p-table>
+                                </div>
+                                   </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </ng-template>
+                   </p-table>
+                </div>
+                   </div>
+                </div>
+            </td>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="rowexpansion" let-rowIndex="rowIndex" let-item>
+
+        <tr  class="body-td" [ngClass]="{
+            'sub-table-even': rowIndex % 2 == 1,
+            'sub-table-odd': rowIndex % 2 == 0}" style="background-color: #213315;">
+
+            <td style="border-left: 2px #213315 solid; word-break: break-all;">{{decryptItem(item.sku)}}</td>
+            <td style="border-left: 2px #213315 solid; word-break: break-all;"> {{decryptItem(item.itemName)}}</td>
+            <td style="border-left: 2px #213315 solid; word-break: break-all;">{{getItemType(item.itemsTypes)}}</td>
+            <td style="border-left: 2px #213315 solid; word-break: break-all;">{{getItemCategory(item.itemCategories)}}</td>
+            <td colspan="2" style="border-left: 2px #213315 solid; word-break: break-all;">
+                <table>
+                    <tbody>
+                        <tr style="border-bottom: 2px solid #213315;">
+                            <td style="text-align: center;padding: 2px;" colspan="1">
+                                color
+                            </td>
+                            <td style="border-left: 2px #213315 solid;text-align: center;padding: 2px;" *ngFor="let items of VarietyDto">
+                                <table>
+                                    <tr>{{items.vName}}</tr>
+                                    <hr>
+                                    <tr>Blue</tr>
+                                    <hr>
+                                    <tr>Green</tr>
+                                </table>
+                            </td>
+
+                        </tr>
+                        <tr style="border-bottom: 2px solid #213315;">
+                            <td style="text-align: center;padding: 2px;" colspan="1">
+                                Size
+                            </td>
+                            <td style="border-left: 2px #213315 solid;text-align: center;padding: 2px;">
+                                <table>
+                                    <tr>Large</tr>
+                                    <hr>
+                                    <tr>Small</tr>
+                                    <hr>
+                                    <tr>Extra Large</tr>
+                                </table>
+                            </td>
+
+                        </tr>
+                        <tr style="border-bottom: 2px solid #213315;" >
+                            <td style="text-align: center;padding: 2px;" colspan="1">
+                                Make
+                            </td>
+                            <td style="border-left: 2px #213315 solid;text-align: center;padding: 2px;">
+                                <table>
+                                    <tr>Localy Made</tr>
+                                    <hr>
+                                    <tr>Foreign Make</tr>
+
+                                </table>
+                            </td>
+
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+            <td colspan="3" style="border-left: 2px #213315 solid; word-break: break-all;" >
+
+                <table>
+                    <tr>
+                        <td>Akada</td>
+                        <td>210000</td>
+                    </tr>
+                </table>
+
+                <table class="mt-3" *ngFor="let items of houseStore">
+                    <tbody>
+
+                        <tr style="border-bottom: 2px solid #213315;">
+
+                            <td style="text-align: center;padding: 2px;" colspan="2">
+                                {{items.name}}
+                            </td>
+                            <td style="border-left: 2px #213315 solid;text-align: center;padding: 2px;" colspan="2">
+                               <table>
+                                   <tr>
+                                       <td>Red</td>
+                                       <td>1,00000</td>
+                                   </tr>
+                                   <tr>
+                                    <td>Blue</td>
+                                    <td>1,00000</td>
+                                   </tr>
+                               </table>
+                            </td>
+
+                        </tr>
+                        <tr style="border-bottom: 2px solid #213315;">
+
+                            <td style="text-align: center;padding: 2px;" colspan="2">
+                                SW/AKADA-012
+                            </td>
+                            <td style="border-left: 2px #213315 solid;text-align: center;padding: 2px;" colspan="2">
+                               <table>
+                                   <tr>
+                                       <td>Red</td>
+                                       <td>10,000</td>
+                                   </tr>
+
+                               </table>
+                            </td>
+
+                        </tr>
+                    </tbody>
+                </table>
+
+                <table class="mt-5">
+                    <tr>
+                        <td>Cody</td>
+                        <td>90,000</td>
+                    </tr>
+                </table>
+
+                <table class="mt-3">
+
+                    <tbody>
+
+                        <tr style="border-bottom: 2px solid #213315;">
+
+                            <td style="text-align: center;padding: 2px;" colspan="2">
+                                SW/AKADA-002
+                            </td>
+                            <td style="border-left: 2px #213315 solid;text-align: center;padding: 2px;" colspan="2">
+                               <table>
+                                   <tr>
+                                       <td>Red</td>
+                                       <td>1,00000</td>
+                                   </tr>
+                                   <tr>
+                                    <td>Red</td>
+                                    <td>1,00000</td>
+                                   </tr>
+                               </table>
+                            </td>
+
+                        </tr>
+                        <tr style="border-bottom: 2px solid #213315;">
+
+                            <td style="text-align: center;padding: 2px;" colspan="2">
+                                SW/AKADA-012
+                            </td>
+                            <td style="border-left: 2px #213315 solid;text-align: center;padding: 2px;" colspan="2">
+                               <table>
+                                   <tr>
+                                       <td>Red</td>
+                                       <td>10,000</td>
+                                   </tr>
+
+                               </table>
+                            </td>
+
+                        </tr>
+                    </tbody>
+                </table>
+
+                </td>
+            <td style="font-size: 9px;border-left: 2px #213315 solid;font-weight: 700;" colspan="3">
+                <table>
+                    <tbody>
+                        <tr >
+                            TRACK WEIGHT
+                        </tr>
+                        <tr>
+                            LOW LEVEL ALERT :  3,433
+                        </tr>
+
+                    </tbody>
+                </table>
+
+                <table class="mt-5">
+                    <tbody>
+                        <tr >
+                            TRACK QUANITITY
+                        </tr>
+                        <tr>
+                            LOW LEVEL ALERT :  3,433
+                        </tr>
+
+                    </tbody>
+                </table>
+            </td>
+
+        </tr>
+    </ng-template>
+</p-table>
+<div class="col-md-12 pt-4 pb-4" style="text-align: center;">
+    <div>
+        <svg width="787" height="23" viewBox="0 0 787 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="21.0514" y="7" width="746.516" height="9" fill="#585E34" />
+            <rect x="21.0514" y="7" width="218.611" height="9" fill="#B7A643" />
+            <path
+                d="M21.0514 1.54983V21.4502C21.0514 22.8282 18.3626 23.5182 16.79 22.5439L0.731102 12.5937C-0.243701 11.9897 -0.243701 11.0103 0.731102 10.4063L16.79 0.456149C18.3626 -0.518283 21.0514 0.171862 21.0514 1.54983Z"
+                fill="#B7A643" />
+            <path
+                d="M765.949 1.54983V21.4502C765.949 22.8282 768.637 23.5182 770.21 22.5439L786.269 12.5937C787.244 11.9897 787.244 11.0103 786.269 10.4063L770.21 0.456149C768.637 -0.518283 765.949 0.171862 765.949 1.54983Z"
+                fill="#585E34" />
+        </svg>
+    </div>
+</div>

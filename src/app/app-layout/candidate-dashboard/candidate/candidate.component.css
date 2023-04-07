@@ -1,0 +1,9 @@
+::ng-deep .imprt-btn button{
+    border-radius: 22px !important;
+    width: 11% !important; 
+    
+}
+::ng-deep .canidate .dropdown .p-dropdown{
+    width: 100% !important;
+    height: calc(1.5em + 1.3rem + 2px) !important;
+}

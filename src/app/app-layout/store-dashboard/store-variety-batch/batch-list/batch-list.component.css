@@ -1,0 +1,50 @@
+.bg-grey-btn{
+    background-color: #294416;
+    border: 0px solid #294416;
+    border-radius: 22px;
+}
+.rt-border{
+    border-right: 2px #213315 solid;
+}
+.view-active{
+    background-color: #37780b;
+    border-radius: 22px;
+}
+.priority_circle {
+    width: 25px;
+    margin-right: 10px;
+    height: 25px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    color: white;
+    border: 1px solid #FFA600;
+    background: #FFA600;
+}
+.tool-cr{
+    background: #E49E1B !important;
+    border-radius: 49px !important;
+    height: 18px !important;
+    line-height: 0px !important;
+    font-size: 8px;
+    width: 36px;
+}
+.card-hr-show{
+    display: block;
+}
+::ng-deep .dynamicModal{
+    width: 33vw !important;
+}
+::ng-deep .dynamicModal input{
+    background: #9b9f55 !important;
+    color:white !important;
+}
+:ng-deep .dynamicModal .modal-body{
+    padding: 7px !important;
+}
+:ng-deep .dynamicModal.head {
+   text-align: center !important;
+}
+:ng-deep .dynamicModal .head h3{
+    color:white !important;
+}

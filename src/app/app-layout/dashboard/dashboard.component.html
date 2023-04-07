@@ -1,0 +1,89 @@
+<div class="col-md-12 pt-5">
+    <div
+        class="col-md-2 welcome-message">
+        Welcome Sir
+    </div>
+    <div class="col-md-6 pr-9">
+        <div class="input-group">
+            <input type="search" id="form1" class="form-control" placeholder="Search Category" aria-label="Search" />
+            <span class="input-group-btn">
+                <button class="btn btn-default btn-white" type="button">
+                    <i class="fa fa-search text-custom-danger"></i>
+                </button>
+            </span>
+        </div>
+    </div>
+    <div class="col-md-3 pl-9">
+        <div class="dropdown show">
+            <a class="" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <div class="navbar-textCustom navbarText pt-1 pb-1 pl-3 pr-3 float-left">
+                    <img class="navbar-img " [src]="profilePicture"/>
+                    <span class="navbar-img-span mr-5 ml-5">SWITCH TO OTHER MODULE</span>
+                    <img src="../../../assets/Dashboard/ArrowDownDashboard.png" />
+                </div>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+              <span class="dropdown-item cursor" routerLink="/home/dashboard" >Election Monitor</span>
+              <span class="dropdown-item cursor" >Election Reporting</span>
+              <span class="dropdown-item cursor" >Emergency</span>
+              <span class="dropdown-item cursor" routerLink="/home/incident-dashboard" >Incident</span>
+              <span class="dropdown-item cursor" >Asset Tracker</span>
+            </div>
+          </div>
+
+    </div>
+</div>
+<div class="col-md-12">
+    <span class="text-primary mb-3">
+        <!-- <b>2023 > Parlimentry Election > Other Country</b> -->
+    </span>
+</div>
+
+<div class="row">
+    <!-- class="col-md-8 mb-3" -->
+    <div  [ngClass]="maximize == true ? 'col-md-12 mb-3' : 'col-md-8 mb-3'" >
+        <app-election-filter-category [livefeedcompref]="livefeedComponent" [candidatcompref]="filtercandidate" [analyticscompref]="filtercandidate2"  [electiondetailcompref]="filtercandidate3" [electionpollingcompref]="filtercandidate4"></app-election-filter-category>
+        <div class="card mb-3 custom-height-candidate">
+            <div class="card-body p-5">
+                <app-election-candidates #filtercandidate ></app-election-candidates>
+            </div>
+        </div>
+        <div class="card mb-3">
+            <div class="card-body p-5">
+                <app-election-detail #filtercandidate3></app-election-detail>
+            </div>
+        </div>
+        <!-- <div class="card mb-3">
+            <span [ngClass]="maximize == true ? 'fa fa-arrow-left' : 'fa fa-arrows-alt'" style="font-size:23px;text-align: end;color: #FF6C88 !important;cursor: pointer;" (click)="ToggleDiv()"></span>
+            <div class="card-body">
+                <app-election-analytics #filtercandidate2></app-election-analytics>
+            </div>
+
+        </div> -->
+    </div>
+    <!-- class="col-md-4 pl-0 mt-35" -->
+    <div  [ngClass]="maximize == true ? 'hide pl-0 mt-35' : 'col-md-4 pl-0 mt-35'" >
+        <div class="card mb-3">
+            <div class="card-body p-5">
+                <app-election-livefeeds #livefeedComponent></app-election-livefeeds>
+            </div>
+        </div>
+        <div class="card mb-3">
+            <div class="card-body p-5">
+                <app-election-polling-activity-timeline #filtercandidate4></app-election-polling-activity-timeline>
+            </div>
+        </div>
+        <div class="card mb-3">
+            <div class="card-body p-5">
+                <app-election-agents></app-election-agents>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12 mt-3">
+        <div class="card mb-3">
+            <div class="card-body">
+                <app-election-analytics #filtercandidate2></app-election-analytics>
+            </div>
+        </div>
+    </div>
+</div>

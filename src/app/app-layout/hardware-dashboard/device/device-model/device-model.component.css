@@ -1,0 +1,16 @@
+::ng-deep .p-inputswitch .p-inputswitch-slider:before{
+    background: #4F8B3B;
+}
+::ng-deep .p-inputswitch .p-inputswitch-slider{
+    background: #405838;
+}
+::ng-deep .p-inputswitch.p-inputswitch-checked .p-inputswitch-slider:before {
+    background: #4F8B3B;;
+}
+::ng-deep .p-checkbox .p-checkbox-box {
+    background: #638b49;
+}
+::ng-deep .p-inputswitch.p-inputswitch-checked .p-inputswitch-slider {
+    background: #405838 !important;
+    border-color: #405838 !important;
+}

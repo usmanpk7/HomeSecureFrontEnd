@@ -1,0 +1,238 @@
+<!-- <div class="col-md-12 p-0 mainSection mt-10 mb-10">
+    <div class="col-md-12 pt-5" style="padding: 0 0 25px 6px; margin-top: 10px; text-align: center;">
+        <app-eqis-text-card [text]="'Total Stores'" [count]="intentAnalyticsResult.totalItemsInStock"
+            [icon]="'fa-bars'" [percentage]="''">
+        </app-eqis-text-card>
+        <app-eqis-text-card [text]="'Critical Low Stores'" [count]="intentAnalyticsResult.totalMissingItem"
+            [icon]="'fa-calculator'" [percentage]="''">
+        </app-eqis-text-card>
+        <app-eqis-text-card [text]="'Low Stores'" [count]="intentAnalyticsResult.totalItemsReturned" [icon]="'fa-user-times'"
+            [percentage]="''">
+        </app-eqis-text-card>
+        <app-eqis-text-card [text]="'Out Of Stock'" class="outOfStock" [count]="intentAnalyticsResult.totalItemsUnAuthorized" [icon]="'fa-user'"
+            [percentage]="''">
+        </app-eqis-text-card>
+        <app-eqis-text-card [text]="'Expired Stock'" class="ExpiredStock" [count]="intentAnalyticsResult.totalItemsDisplace" [icon]="'fa-user'"
+            [percentage]="''">
+        </app-eqis-text-card>
+
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12 third" style="max-width: 100% !important;padding: 20px;/* margin-right: 5px; */">
+        <div class="row inner2" style="font-size: 10px !important;color:white;">
+            <div class="col" style="margin: 5px;
+            background: #B7A643;
+            border-radius: 16px;">
+
+                <img src="../../../assets/svgImages/Vectorredthumb.svg"
+                    style="margin-top: 13px;height: 16px;position: absolute;margin-left: 2px;">
+                <label
+                    style="/* text-align: center; */color: white;position: absolute;margin-left: 29px;margin-top: 15px;font-size: 11px;">Submition</label>
+            </div>
+            <div class="col" style="margin: 5px;
+            background: #818B4E;
+            border-radius: 16px;">
+
+                <img src="../../../assets/svgImages/Vectorbluethumb.svg"
+                    style="margin-top: 13px;height: 16px;position: absolute;margin-left: 2px;">
+                <label
+                    style="/* text-align: center; */color: white;position: absolute;margin-left: 29px;margin-top: 15px;font-size: 11px;">Authorization</label>
+            </div>
+
+            <div class="col" style="margin: 5px;
+            background: #818B4E;
+            border-radius: 16px;">
+
+                <img src="../../../assets/images/widget/Vector.svg"
+                    style="margin-top: 13px;height: 16px;position: absolute;margin-left: 2px;">
+                <label
+                    style="/* text-align: center; */color: white;position: absolute;margin-left: 29px;margin-top: 15px;font-size: 11px;">ABOUT TO EXPIRY</label>
+            </div>
+
+            <div class="col" style="margin: 5px;
+            background: #818B4E;
+            border-radius: 16px;">
+
+                <img src="../../../assets/images/widget/Vector (1).svg"
+                    style="margin-top: 13px;height: 16px;position: absolute;margin-left: 2px;">
+                <label
+                    style="/* text-align: center; */color: white;position: absolute;margin-left: 29px;margin-top: 15px;font-size: 11px;">OUT OF STORES</label>
+            </div>
+
+            <div class="col" style="margin: 5px;
+            background: #818B4E;
+            border-radius: 16px;">
+
+                <img src="../../../assets/images/widget/Vector (2).svg"
+                    style="margin-top: 13px;height: 16px;position: absolute;margin-left: 2px;">
+                <label
+                    style="/* text-align: center; */color: white;position: absolute;margin-left: 29px;margin-top: 15px;font-size: 11px;">EXPIRED</label>
+            </div>
+
+            <div class="col" style=" margin: 5px;
+            background: #818B4E;
+            border-radius: 16px;">
+
+                <img src="../../../assets/images/widget/Vector (3).svg"
+                    style="margin-top: 13px;height: 16px;position: absolute;margin-left: 2px;">
+                <label
+                    style="/* text-align: center; */color: white;position: absolute;margin-left: 29px;margin-top: 15px;font-size: 11px;">EXPIRED STORES</label>
+            </div>
+
+            <div class="col" style=" margin: 5px;
+            background: #818B4E;
+            border-radius: 16px;">
+
+                <img src="../../../assets/images/widget/Vector (4).svg"
+                    style="margin-top: 13px;height: 16px;position: absolute;margin-left: 2px;">
+                <label
+                    style="/* text-align: center; */color: white;position: absolute;margin-left: 29px;margin-top: 15px;font-size: 11px;">Missing / Displaced</label>
+            </div>
+
+
+        </div>
+
+
+        <div class="col-md-12 mt-3" style="background: #3C5934;
+        border-radius: 41px;">
+            <h4 style="color:white;font-size: 15px;padding-top: 6px;text-align: center;">
+                <img src="../../../assets/svgImages/Vectorstart.svg">
+                Critical Items Request
+                <img src="../../../assets/svgImages/Vectorstart.svg">
+            </h4>
+            <h4 style="text-align: center;"><Img src="../../../assets/svgImages/lines.svg" /></h4>
+            <div class="col-md-12">
+                <div id="item_data" class="list-group list-group-horizontal text-nowrap overflow-auto">
+                    <eqis-image-card [eqisclass]="'col-md-12'" style="margin-right: 2%;"
+                        *ngFor="let item of getCriticalLowItemList.lowLevelCriticalItemDetails;"
+                        [image]="item.item.itemImage" [title]="decryptItem(item.item.itemName, item.item.encryptionKeyId)"
+                        [primaryValue]="item.quantity" [secondaryValue]="item.percentage"></eqis-image-card>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="col-md-12" style="margin-top: 20px;">
+
+            <div class="list-group list-group-horizontal text-nowrap justify-content-center overflow-auto" *ngIf="itemAnalytics">
+                <app-eqis-text-card-detail [text]="'Total Stores'" [nodes]="itemAnalytics.criticalLowStores" [cardColor]="{background: 'rgba(80, 119, 70, 0.64)',
+                    border: '2px solid rgba(33, 51, 21, 0.56)'}"
+                    [icon]="'fa-bars'" [percentage]="''">
+                </app-eqis-text-card-detail>
+                <app-eqis-text-card-detail [text]="'Total Stores'" [nodes]="itemAnalytics.lowStores"  [cardColor]=""
+                    [icon]="'fa-bars'" [percentage]="''">
+                </app-eqis-text-card-detail>
+                <app-eqis-text-card-detail [text]="'Total Stores'" [nodes]="itemAnalytics.outOfStock"  [cardColor]="{background: 'linear-gradient(180deg, rgba(255, 11, 11, 0.41) 0%, rgba(255, 0, 0, 0.41) 100%)',
+                border: '2px solid rgba(33, 51, 21, 0.56)'}"
+                    [icon]="'fa-bars'" [percentage]="''">
+                </app-eqis-text-card-detail>
+                <app-eqis-text-card-detail [text]="'Total Stores'" [nodes]="itemAnalytics.expiredStock" [cardColor]="{background: 'linear-gradient(180deg, rgba(109, 119, 58, 0.91) 0%, rgba(88, 123, 79, 0.91) 100%)',
+                border: '2px solid rgba(33, 51, 21, 0.56)'}"
+                    [icon]="'fa-bars'" [percentage]="''">
+                </app-eqis-text-card-detail>
+            </div>
+
+        </div>
+    </div>
+</div>
+<br>
+<br>
+
+<div class="col-md-12 mainSection pt-5 pb-5">
+    <section class="pb-5">
+        <div class="col-md-12 Round-Pannel3">
+            <div class="col-md-12 mt-7 mb-4">
+                <div class="col-md-5 Search-Panel">
+                    <i class="fa fa-search col-md-1 pt-3"></i>
+                    <input type="text" class="form-control col-md-11 " (input)="SearchValue($event.target.value)"
+                        placeholder="Search" style="border:0px;background: transparent; color: #eef0f8;">
+                </div>
+                <div class="col-md-1"></div>
+                <div class="col-md-2">
+                    <p-dropdown class="styleSupplier"
+                    class="dropdown" placeholder="DEPOT"[style]="{ width: '100%', background: 'linear-gradient(270.46deg, #239521 2.77%, rgba(46, 67, 36, 0) 99.6%)', color: '#6CA944' }" styleClass="form-control" ></p-dropdown>
+                </div>
+                <div class="col-md-2">
+                    <p-dropdown class="styleSupplier"
+                    class="dropdown" placeholder="DEPOT" [style]="{ width: '100%', background: 'linear-gradient(270.46deg, #239521 2.77%, rgba(46, 67, 36, 0) 99.6%)', color: '#6CA944' }" styleClass="form-control" ></p-dropdown>
+                </div>
+                <div class="col-md-2">
+                    <p-dropdown placeholder="STORE HOUSE" class="styleSupplier" class="dropdown" [style]="{ width: '100%', background: 'linear-gradient(270.46deg, #239521 2.77%, rgba(46, 67, 36, 0) 99.6%)', color: '#6CA944' }" styleClass="form-control" ></p-dropdown>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <button type="button" class="btn">Items</button>
+                <button type="button" class="btn">Organization Unit</button>
+                <button type="button" class="btn">Warehouse</button>
+                <button type="button" class="btn">Approval Status</button>
+                <button type="button" class="btn">Intent Reason</button>
+                <button type="button" class="btn"></button>
+                <button type="button" class="btn">Alert
+                    <span
+                        style=" height: 20px;width: 20px;font-size: 15px;background-color: #FF3429;border-radius: 50%;display: inline-block;">
+                        3</span>
+                </button>
+
+
+            </div>
+            <div class="col-md-12 pt-5">
+                <eqis-dropdown [isActive]="tab==1?'true':''" id="tab1" class="equis-btn2" [title]="'Stock'"
+                    (click)="onTabChange($event)"></eqis-dropdown>
+                <eqis-dropdown class="equis-btn2" id="tab2" [title]="'Stock'" (click)="onTabChange($event)"
+                    [isActive]="tab==2?'true':''"></eqis-dropdown>
+                <eqis-dropdown [isActive]="tab==3?'true':''" class="equis-btn2" [title]="'Issue Order'"
+                    (click)="onTabChange($event)" id="tab3"></eqis-dropdown>
+                <eqis-dropdown class="equis-btn2" [isActive]="tab==4?'true':''" id="tab4" [title]="'Release Order'"
+                    (click)="onTabChange($event)"></eqis-dropdown>
+                <p-dropdown  class="dropdown" placeholder="Column"   [style]="{float: 'right' }" styleClass="form-control" ></p-dropdown>
+
+            </div>
+
+            <div class="col-md-12" *ngIf="tab===1">
+                <app-stock-list #search></app-stock-list>
+            </div>
+
+
+            <div class="col-md-12" style="margin-top: -2px; color: #cdcdcd;" *ngIf="tab===2">
+                <b>coming soon</b>
+            <div class="col-md-12" style="margin-top: -2px; color: #cdcdcd;" *ngIf="tab===3">
+                <b>coming soon</b>
+            </div>
+            <div class="col-md-12" style="margin-top: -2px; color: #cdcdcd;" *ngIf="tab===4">
+                <b>coming soon</b>
+              </div>
+            <div class="col-md-12 p-10" style="margin-top: -2px; color: #cdcdcd;" *ngIf="tab===5">
+                <b>coming soon</b>
+            </div>
+            <div class="col-md-12 p-10" style="margin-top: -2px; color: #cdcdcd;" *ngIf="tab===6">
+                <b>coming soon</b>
+            </div>
+        </div>
+
+    </section>
+</div>
+
+<div class="row pb-3" style="justify-content: center;">
+    <div class="col-md-10 footer-btnPanel">
+        <div class="col-md-12 p-4" style="display: flex;" *ngIf="footerActionButton">
+            <button *ngFor="let item of footerActionButton" type="button" class="btn btn2"
+                (click)="onFooterActionButton(item.type)">
+                <i class="{{item.icon}}"></i>
+                {{item.title}}
+            </button>
+        </div>
+    </div>
+    <app-create-intent-form #createIntentFormComponent ></app-create-intent-form>
+        <app-authority-number-model #authorityNumber ></app-authority-number-model>
+ <!-- <app-create-issue-request #issueRequest></app-create-issue-request>
+    <app-create-store #createStoreRelease></app-create-store>
+    <app-create-dispatch #createDispatch></app-create-dispatch>
+    <app-IssueProvisios #IssueProvision></app-IssueProvisios>
+    <app-create-store-form #createStore></app-create-store-form>
+    <app-add-store-category #createStoreCategory></app-add-store-category>
+    <app-create-varriety-batch #createVarrietyBatch></app-create-varriety-batch>
+    <app-add-store-type #createStoreType></app-add-store-type>
+    <app-create-supplier #createStoreSupplier></app-create-supplier>
+    <app-create-manufacturer-form #createStoreManufacturer></app-create-manufacturer-form> --> -->

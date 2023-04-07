@@ -1,0 +1,250 @@
+.parent {
+    display: flex;
+    /* flex-direction: column; */
+    display: block;
+    border: 2px solid #FAFAFAFA;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    top: 0;
+    padding: 1px;
+    margin-left: .1px;
+    margin-top: 22px;
+  }
+
+  .header{
+    display: flex;
+    color: #FF6C88;
+    border-bottom: 3px solid #FF6C88;
+    justify-content: center;
+   align-items: center;
+   width: 100%;
+   
+  }
+  .heading{
+    display: flex;
+    margin-top: 30px;   
+    text-transform: uppercase;
+    font-size: 17px;
+    font-weight: 500;
+  }
+  .icon-after-headings{
+  width: 18px;
+  height: 18px; 
+  margin-top: 25px;
+  margin-left: .5rem;
+  align-self: center;
+  }
+  
+
+.btns{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 10px;
+}
+
+.b1{
+    width: 160px;
+    height: 30px;
+    border-radius: 3px;
+    margin-left: 1px;
+    background-color: rgb(231, 221, 240);
+    border: 1px solid rgb(231, 221, 240);
+    color: #7664f0;
+    font-size: 15px;
+    position: relative;
+}
+.b2{
+    color: #7664f0;
+    font-size: 15px;
+    border: 2px solid  #8574F1;
+    width: 160px;
+    height: 30px;
+    border-radius: 3px;
+    margin-left: 1px;
+    position: relative;
+    border-radius: 3px;
+    background-color:rgb(231, 221, 240);
+}
+.b3{
+       color: white;
+        font-size: 15px;
+        border: 1px solid rgb(231, 221, 240);
+        width: 160px;
+        height: 30px;
+        border-radius: 3px;
+        margin-left: 1px;
+        border-radius: 3px;
+        background-color: #8574F1;
+        position:relative;
+}
+.local_pharmacy{
+    position: absolute;
+    left: 2%;
+    top: 17%;
+    width: 10%;
+}
+.video_call{
+    position: absolute;
+    left: 2%;
+    top: 25%;
+    width: 10%;
+}
+.splash-image{
+    
+    margin-top: 20px;
+    width: 100%;
+    height: 35vh;
+}
+
+
+.kano{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 10px;
+}
+.kano-btn{
+    background-color: #8574F1;
+    width: 100px;
+    height: 30px;
+    color: white;
+    font-size: 15px;
+    border: 1px solid #8574F1;
+    border-radius: 4px;
+}
+.text{
+    font-size: 11px;
+    font-size: 600;
+    margin-left: 8px;
+}
+
+.uploaded{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+.up-by{
+    font-size: 11px;
+    font-weight: 600;
+}
+.timestamp{
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.watch{
+    display: flex;
+    justify-content: center;
+    margin: 15px auto;
+    width: 200px;
+    height: 30px;
+    color: white;
+    border-radius: 5px;
+    border: 1px solid #FF6C88;
+    background-color: #FF6C88;
+    align-items: center;
+    font-size: 15px;
+    margin-bottom: 20px;
+}
+
+
+.kano{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 10px;
+}
+.kano-btn{
+    background-color: #8574F1;
+    width: 100px;
+    height: 30px;
+    color: white;
+    font-size: 15px;
+    border: 1px solid #8574F1;
+    border-radius: 4px;
+}
+.text{
+    font-size: 11px;
+    font-size: 600;
+    margin-left: 8px;
+}
+
+.uploaded{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+.up-by{
+    font-size: 11px;
+    font-weight: 600;
+}
+.timestamp{
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.watch{
+    display: flex;
+    justify-content: center;
+    margin: 15px auto;
+    width: 200px;
+    height: 30px;
+    color: white;
+    border-radius: 5px;
+    border: 1px solid #FF6C88;
+    background-color: #FF6C88;
+    align-self: center;
+    font-size: 15px;
+    margin-bottom: 20px;
+}
+
+
+/* Media Queries */
+@media(max-width:720px){
+
+    .parent{
+        width: 220%;
+    }
+    .heading{
+        font-size: 3px;
+    }
+    .btns{
+        margin-top: 2px;
+        display: flex;
+    }
+  .b1,.b2{
+    font-size: 2px;
+    font-weight: 700;
+  }
+  .watch{
+    margin: 1px auto;
+    font-size: 2.3px;
+    height: 5px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+  }
+  .kano-btn{
+    font-size: 2px;
+    width: 20px;
+  }
+
+img{
+    height: 60vh;
+    margin-top: 2px;
+}
+  .text{
+    font-size: 1.9px;
+    font-weight: 500;
+  }
+  .uploaded{
+    margin-top: 2px;
+  }
+  .up-by,.timestamp{
+    font-size: 2px;
+  }
+  .icon-after-headings{
+    width: 2.6px;
+    height: 2.6px;
+  }
+}

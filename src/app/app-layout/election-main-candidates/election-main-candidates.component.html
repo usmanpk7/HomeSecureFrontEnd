@@ -1,0 +1,162 @@
+<div class="row pt-5">
+    <div class="col-md-4 welcome-message">Welcome To the Election Livefeed Jane</div>
+    <div class="col-md-3">
+        <div class="input-group">
+            <input type="search" id="form1" class="form-control" placeholder="Search Category" aria-label="Search" />
+            <span class="input-group-btn">
+                <button class="btn btn-default bg-white" type="button">
+                    <i class="fa fa-search text-custom-danger"></i>
+                </button>
+            </span>
+        </div>
+    </div>
+    <div class="col-md-2 pl-9">
+        <div class="dropdown2 p-2 pb-4 rescue-filter-dropdown">
+            <a
+                class="fs-07"
+                href="#"
+                role="button"
+                id="dropdownMenuLink"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+            >
+                <span class="text-custom-danger mr-3 text-uppercase fs-09"><b>Sort By Year </b> </span>
+                <img src="/assets/Dashboard/Vector.png" width="15" class="float-right mt-1" />
+            </a>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <a class="dropdown-item bg-custom-dropdown" href="javascript:void(0)">
+                    <span class="text-custom-danger text-uppercase"><b>Year</b></span>
+                </a>
+                <a class="dropdown-item pt-1 pb-1" href="javascript:void(0)">
+                    <input
+                        type="checkbox"
+                        name="checkbox"
+                        class="checkbox_id"
+                        id="RescueFilter"
+                        style="width: 4px"
+                        value="value"
+                    />
+                    <label for="RescueFilter" class="rescue-filter-label">
+                        <span class="text-uppercase text-custom-danger font-bold">2018 </span>
+                    </label>
+                </a>
+                <a class="dropdown-item pt-1 pb-1" href="javascript:void(0)">
+                    <input
+                        type="checkbox"
+                        name="checkbox"
+                        class="checkbox_id"
+                        id="RescueFilter"
+                        style="width: 4px"
+                        value="value"
+                    />
+                    <label for="RescueFilter" class="rescue-filter-label">
+                        <span class="text-uppercase text-custom-danger font-bold">2019 </span>
+                    </label>
+                </a>
+                <a class="dropdown-item pt-1 pb-1" href="javascript:void(0)">
+                    <input
+                        type="checkbox"
+                        name="checkbox"
+                        class="checkbox_id"
+                        id="RescueFilter"
+                        style="width: 4px"
+                        value="value"
+                    />
+                    <label for="RescueFilter" class="rescue-filter-label">
+                        <span class="text-uppercase text-custom-danger font-bold">2020 </span>
+                    </label>
+                </a>
+                <a class="dropdown-item pt-1 pb-1" href="javascript:void(0)">
+                    <input
+                        type="checkbox"
+                        name="checkbox"
+                        class="checkbox_id"
+                        id="RescueFilter"
+                        style="width: 4px"
+                        value="value"
+                    />
+                    <label for="RescueFilter" class="rescue-filter-label">
+                        <span class="text-uppercase text-custom-danger font-bold">2021 </span>
+                    </label>
+                </a>
+                <a class="dropdown-item pt-1 pb-1" href="javascript:void(0)">
+                    <input
+                        type="checkbox"
+                        name="checkbox"
+                        class="checkbox_id"
+                        id="RescueFilter"
+                        style="width: 4px"
+                        value="value"
+                    />
+                    <label for="RescueFilter" class="rescue-filter-label">
+                        <span class="text-uppercase text-custom-danger font-bold">2022 </span>
+                    </label>
+                </a>                
+                <a class="dropdown-item pt-1 pb-1" href="javascript:void(0)">
+                    <button class="btn btn-block btn-sm btn-custom-apply">
+                        <span class="text-uppercase text-custom-danger font-bold">Apply </span>
+                    </button>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 pl-9">
+        <div class="dropdown show">
+            <a
+                class=""
+                href="#"
+                role="button"
+                id="dropdownMenuLink"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+            >
+                <div class="navbar-textCustom navbarText pt-1 pb-1 pl-3 pr-3 float-left">
+                    <img
+                        class="navbar-img"
+                        [src]="profilePicture"
+                    />
+                    <span class="navbar-img-span mr-5 ml-5">Switch to other tenant</span>
+                    <img src="../../../assets/Dashboard/ArrowDownDashboard.png" />
+                </div>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <span class="dropdown-item cursor" routerLink="/home/dashboard">Election Monitor</span>
+                <span class="dropdown-item cursor" routerLink="/home/dashboard">Election Reporting</span>
+                <span class="dropdown-item cursor">Emergency</span>
+                <span class="dropdown-item cursor" routerLink="/home/incident">Incident</span>
+                <span class="dropdown-item cursor">Asset Tracker</span>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="col-md-2">
+        <button class="btn btn-primary btn-block">CREATE INCIDENT</button>
+    </div> -->
+</div>
+<div class="row mt-3">
+    <div class="col-md-12">
+        <div class="card h-100">
+             <div class="card-body p-2">
+                <div class="col-md-12 ecandidate">  
+                    <p-tabView>
+                        <p-tabPanel header="CANDIDATE STATICTIS">
+                            <app-candidate-information></app-candidate-information>
+                        </p-tabPanel>
+                        <p-tabPanel header="LIVE STATS">
+                            <app-candidate-livestates></app-candidate-livestates>
+                        </p-tabPanel>
+                        <p-tabPanel header="CANDIDATE INFORMATION">
+                            <app-candidate-ranking></app-candidate-ranking>
+                        </p-tabPanel>
+                        <p-tabPanel header="CANDIDATE RANKING">
+                            <app-candidate-statistics></app-candidate-statistics>
+                        </p-tabPanel>
+                    </p-tabView>
+                </div>
+             </div>   
+        </div>
+
+    </div>
+    
+</div>

@@ -1,0 +1,596 @@
+<!-- 
+<p-dialog header="Create Device" [(visible)]="displayResponsive">
+    <div style="width: 800px">
+        <div class="app-modal-body">
+            <form
+                autocomplete="off"
+                [formGroup]="createDeviceForm"
+                (ngSubmit)="submit()"
+                class="createform"
+            >
+                <div class="popup">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <p class="mt-3" style="color: black; font-weight: bold">Device Details</p>
+                                    <label  style="color: #fff"><strong >Device Name</strong></label>
+                                    <input
+                                    style="color: white"
+                                        type="text"
+                                        formControlName="deviceName"
+                                        name="deviceName"
+                                        class="form-control"
+                                        [ngClass]="{ 'is-invalid': submitted && f.deviceName.errors }"
+                                        />
+                                        <div *ngIf="submitted && f.deviceName.errors" class="invalid-feedback">
+                                            <div *ngIf="f.deviceName.errors.required">Device Name is required</div>
+                                        </div>
+                                </div>
+                            </div>
+
+                            <div class="col" style="padding: 0% 2% 0% 2%">
+                                <p class="mt-3" style="color: black; font-weight: bold">Device SETTINGS</p>
+
+                                <div class="form-group">
+                                    <label style="color: #fff"><strong >Device Address</strong></label>
+                                    <input
+                                    style="color:#ffffff"
+                                        type="text"
+                                        formControlName="deviceAddress"
+                                        name="deviceAddress"
+                                        class="form-control"
+                                        [ngClass]="{ 'is-invalid': submitted && f.deviceAddress.errors }"
+                                        />
+                                        <div *ngIf="submitted && f.deviceAddress.errors" class="invalid-feedback">
+                                            <div *ngIf="f.deviceAddress.errors.required">Device Address is required</div>
+                                        </div>
+                                </div>
+                            </div>
+
+                            <div class="col">
+                                <div class="row mt-8"></div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-4">
+
+                                <div class="form-group">
+                                    <label><strong style="color: #fff">Device RFID</strong></label>
+                                    <input
+                                    style="color: #fff;"
+                                        type="text"
+                                        formControlName="deviceRFID"
+                                        name="deviceRFID"
+                                        class="form-control"
+                                        [ngClass]="{ 'is-invalid': submitted && f.deviceRFID.errors }"
+                                        />
+                                        <div *ngIf="submitted && f.deviceRFID.errors" class="invalid-feedback">
+                                            <div *ngIf="f.deviceRFID.errors.required">Device RFID is required</div>
+                                        </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label><strong style="color: #fff">Device Type</strong></label>
+                                    <div class="border1 mb-3">
+                                        <p-dropdown
+                                            [options]="DeviceType"
+                                            formControlName="deviceType"
+                                            class="dropdown"
+                                            name="deviceType"
+                                            optionLabel="name"
+                                            [style]="{ width: '100%' }"
+                                            styleClass="form-control"
+                                            optionValue="id"
+                                        ></p-dropdown>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label><strong style="color: #fff">Device Modal</strong></label>
+                                    <img (click)="openModelForm()" role="button" src="../../../../assets/images/widget/add_category.svg" style="height: 19px;float: right;">
+
+                                    <div class="border1 mb-3">
+                                        <p-dropdown
+                                            [options]="modalList"
+                                            formControlName="modalId"
+                                            class="dropdown"
+                                            name="modalId"
+                                            optionLabel="name"
+                                            [style]="{ width: '100%' }"
+                                            styleClass="form-control"
+                                            optionValue="code"
+                                        ></p-dropdown>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="form-group">
+                                    <p class="mt-3" style="color:white; font-weight: bold">Device Description</p>
+                                    <textarea
+                                        style="
+                                            height: 130px;
+                                            background: rgba(86, 105, 49, 0.25);
+                                            border: 1px solid rgba(197, 224, 180, 0.33);
+                                            box-sizing: border-box;
+                                            border-radius: 10px;
+                                            color:#ffffff;
+                                        "
+                                        formControlName="deviceDescription"
+                                        name="deviceDescription"
+                                        class="form-control color-b"
+                                        rows="4"
+                                        f
+                                    ></textarea>
+                                </div>
+                            </div>
+
+
+                            <div class="col">
+                                <div
+                                    style="
+                                        padding: 10px;
+                                        background: linear-gradient(180deg, rgba(33, 51, 21, 0.55) 0%, #bec168 100%);
+                                        border-radius: 10px;
+                                    "
+                                >
+                                    <table class="table table-borderless">
+                                        <tbody>
+                                            <tr
+                                                style="
+                                                    border-bottom: 5px solid #4a6c39;
+                                                    background-color: transparent;
+                                                    color: #e8c40b;
+                                                    border-top: hidden;
+
+                                                "
+                                            >
+                                                <th>Setting Name</th>
+                                                <th>Control</th>
+                                                <th>Configure</th>
+                                            </tr>
+                                            <tr class="mt-5" style="background-color: transparent; color: white">
+                                                <td style="width: 34%">isActive</td>
+                                                <td style="width: 50%">
+                                                        <input
+                                                type="checkbox"
+                                                formControlName="isActicedefault"
+                                                id="isActicedefault"
+                                                class="switch_1"
+                                            />
+
+                                                </td>
+                                                <td style="width: 34%"></td>
+                                            </tr>
+                                            <tr style="background-color: transparent; " style="border: hidden">
+                                                <td style="width: 50%; color: white" >
+                                                    <div class="" style="margin-bottom: 17px">
+                                                        <input
+                                                            id="autoReverseGP01"
+                                                            formControlName="autoReverseGP01"
+                                                            class=""
+                                                            style="
+                                                                accent-color: #12b28c;
+                                                                margin-right: 5px;
+                                                                width: 10px !important;
+                                                                height: 10px !important;
+                                                            "
+                                                            type="checkbox"
+                                                            value="on"
+                                                            checked=""
+                                                        />
+                                                        <label class="form-check-label" style="font-size: 10px; margin-left: 3px;">
+                                                            AutoReverseGPO1
+                                                        </label>
+
+                                                        <input
+                                                        id="autoRTimeGP01"
+                                                        formControlName="autoRTimeGP01"
+                                                        type="number"
+                                                        style="
+                                                            margin-left: 11px;
+                                                            background: rgba(182, 182, 182, 0.12);
+                                                            width: 50px;
+                                                            border: 1px solid #858b53;
+                                                            box-sizing: border-box;
+                                                            border-radius: 7px;
+                                                        "
+                                                    />
+
+                                                    </div>
+                                                    <div class="">
+                                                        <input
+                                                            id="autoReverseGP02"
+                                                            formControlName="autoReverseGP02"
+                                                            class=""
+                                                            style="
+                                                                accent-color: #12b28c;
+                                                                margin-right: 5px;
+                                                                width: 10px !important;
+                                                                height: 10px !important;
+                                                            "
+                                                            type="checkbox"
+
+                                                        />
+                                                        <label class="form-check-label" style="font-size: 10px; margin-left: 3px;">
+                                                            AutoReverseGPO2
+                                                        </label>
+                                                        <input
+                                                        id="autoRTimeGP02"
+                                                        formControlName="autoRTimeGP02"
+                                                        type="number"
+                                                        style="
+                                                            margin-left: 11px;
+                                                            background: rgba(182, 182, 182, 0.12);
+                                                            width: 50px;
+                                                            border: 1px solid #858b53;
+                                                            box-sizing: border-box;
+                                                            border-radius: 7px;
+                                                        "
+                                                    />
+                                                    </div>
+                                                </td>
+                                                <td style="width: 50%; color: white">
+                                                    <div class="" style="margin-bottom: 17px">
+                                                        <input
+                                                            id="autoReverseGP03"
+                                                            formControlName="autoReverseGP03"
+                                                            class=""
+                                                            style="
+                                                                accent-color: #12b28c;
+                                                                margin-right: 5px;
+                                                                width: 10px !important;
+                                                                height: 10px !important;
+                                                            "
+                                                            type="checkbox"
+
+                                                        />
+                                                        <label class="form-check-label" style="font-size: 10px;margin-left: 3px;">
+                                                            AutoReverseGPO3
+                                                        </label>
+
+                                                        <input
+                                                        id="autoRTimeGP03"
+                                                        formControlName="autoRTimeGP03"
+                                                        type="number"
+                                                        style="
+                                                            margin-left: 11px;
+                                                            background: rgba(182, 182, 182, 0.12);
+                                                            width: 50px;
+                                                            border: 1px solid #858b53;
+                                                            box-sizing: border-box;
+                                                            border-radius: 7px;
+                                                        "
+                                                    />
+                                                    </div>
+                                                    <div class="">
+                                                        <input
+                                                            id="autoReverseGP04"
+                                                            formControlName="autoReverseGP04"
+                                                            class=""
+                                                            style="
+                                                                accent-color: #12b28c;
+                                                                margin-right: 5px;
+                                                                width: 10px !important;
+                                                                height: 10px !important;
+                                                            "
+                                                            type="checkbox"
+
+                                                        />
+                                                        <label class="form-check-label" style="font-size: 10px;margin-left: 3px;">
+                                                            AutoReverseGPO4
+                                                        </label>
+
+                                                        <input
+                                                        id="autoRTimeGP04"
+                                                        formControlName="autoRTimeGP04"
+                                                        type="number"
+                                                        style="
+                                                            margin-left: 11px;
+                                                            background: rgba(182, 182, 182, 0.12);
+                                                            width: 50px;
+                                                            border: 1px solid #858b53;
+                                                            box-sizing: border-box;
+                                                            border-radius: 7px;
+                                                        "
+                                                    />
+                                                    </div>
+                                                </td>
+
+                                            </tr>
+                                            <hr >
+                                            <tr style="background-color: transparent; color: white; ">
+                                                <td colspan="3">Notification / Alert</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <table class="table">
+                                        <tbody>
+
+                                            <tr style="background-color: transparent ;">
+                                                <td style="border: 0px; width: 50%">
+
+                                                    <input
+                                                            id="isActiveGPO1"
+                                                            formControlName="isActiveGPO1"
+                                                            class=""
+                                                            style="
+                                                                accent-color: #12b28c;
+                                                                margin-right: 5px;
+                                                                width: 10px !important;
+                                                                height: 10px !important;
+                                                            "
+                                                            type="checkbox"
+                                                            value="on"
+                                                            checked=""
+                                                        />
+                                                    <label
+                                                        class="form-check-label"
+                                                        style="font-size: 10px; margin-left: 3px;"
+                                                    >
+                                                    isActiveGPO1
+                                                    </label>
+
+                                                    <input
+                                                        id="defaultGPO1"
+                                                        formControlName="defaultGPO1"
+                                                        type="number"
+                                                        style="
+                                                            margin-left: 11px;
+                                                            background: rgba(182, 182, 182, 0.12);
+                                                            width: 50px;
+                                                            border: 1px solid #858b53;
+                                                            box-sizing: border-box;
+                                                            border-radius: 7px;
+                                                        "
+                                                    />
+                                                </td>
+                                                <td style="border: 0px; width: 50%">
+                                                    <input
+                                                    id="isActiveGPO2"
+                                                    formControlName="isActiveGPO2"
+                                                    class=""
+                                                    style="
+                                                        accent-color: #12b28c;
+                                                        margin-right: 5px;
+                                                        width: 10px !important;
+                                                        height: 10px !important;
+                                                    "
+                                                    type="checkbox"
+                                                    value="on"
+                                                    checked=""
+                                                />
+
+                                                    <label
+                                                        class="form-check-label"
+                                                        style="font-size: 10px; margin-top: -10px; margin-left: 3px;"
+                                                    >
+                                                    isActiveGPO2
+                                                    </label>
+
+                                                    <input
+                                                        id="defaultGPO2"
+                                                        formControlName="defaultGPO2"
+                                                        type="number"
+                                                        style="
+                                                            background: rgba(182, 182, 182, 0.12);
+                                                            border: 1px solid #858b53;
+                                                            box-sizing: border-box;
+                                                            border-radius: 7px;
+                                                            width: 50px;
+                                                            margin-left: 10px;
+                                                        "
+                                                    />
+                                                </td>
+                                            </tr>
+
+                                            <tr style="background-color: transparent ;">
+                                                <td style="border: 0px; width: 50%">
+                                                    <input
+                                                    id="isActiveGPO3"
+                                                    formControlName="isActiveGPO3"
+                                                    class=""
+                                                    style="
+                                                        accent-color: #12b28c;
+                                                        margin-right: 5px;
+                                                        width: 10px !important;
+                                                        height: 10px !important;
+                                                    "
+                                                    type="checkbox"
+                                                    value="on"
+                                                    checked=""
+                                                />
+                                                    <label
+                                                        class="form-check-label"
+                                                        style="font-size: 10px; margin-left: 3px;"
+                                                    >
+                                                    isActiveGPO3
+                                                    </label>
+
+                                                    <input
+                                                        id="defaultGPO3"
+                                                        formControlName="defaultGPO3"
+                                                        type="number"
+                                                        style="
+                                                            margin-left: 11px;
+                                                            background: rgba(182, 182, 182, 0.12);
+                                                            width: 50px;
+                                                            border: 1px solid #858b53;
+                                                            box-sizing: border-box;
+                                                            border-radius: 7px;
+                                                        "
+                                                    />
+                                                </td>
+                                                <td style="border: 0px; width: 50%">
+
+                                                    <input
+                                                    id="isActiveGPO4"
+                                                    formControlName="isActiveGPO4"
+                                                    class=""
+                                                    style="
+                                                        accent-color: #12b28c;
+                                                        margin-right: 5px;
+                                                        width: 10px !important;
+                                                        height: 10px !important;
+                                                    "
+                                                    type="checkbox"
+                                                    value="on"
+                                                    checked=""
+                                                />
+                                                    <label
+                                                        class="form-check-label"
+                                                        style="font-size: 10px; margin-top: -10px; margin-left: 3px;"
+                                                    >
+                                                    isActiveGPO4
+                                                    </label>
+
+                                                    <input
+                                                        id="defaultGPO4"
+                                                        formControlName="defaultGPO4"
+                                                        type="number"
+                                                        style="
+                                                            background: rgba(182, 182, 182, 0.12);
+                                                            border: 1px solid #858b53;
+                                                            box-sizing: border-box;
+                                                            border-radius: 7px;
+                                                            width: 50px;
+                                                            margin-left: 10px;
+                                                        "
+                                                    />
+                                                </td>
+                                            </tr>
+
+                                            <tr style="background-color: transparent ;">
+                                                <td style="border: 0px; width: 50%">
+                                                    <input
+                                                        id="mergControlGpo1"
+                                                        formControlName="mergControlGpo1"
+                                                        style="
+                                                            accent-color: #12b28c;
+                                                            margin-right: 5px;
+                                                            width: 10px !important;
+                                                            height: 10px !important;
+                                                        "
+                                                        type="checkbox"
+                                                        value=""
+                                                        checked=""
+                                                    />
+                                                    <label
+                                                        class="form-check-label"
+
+                                                        style="font-size: 10px; margin-left: 3px"
+                                                    >
+                                                    mergControlGpo1
+                                                    </label>
+
+
+                                                </td>
+                                                <td style="border: 0px; width: 50%">
+                                                    <input
+                                                        id="mergControlGpo2"
+                                                        formControlName="mergControlGpo2"
+
+                                                        style="
+                                                            accent-color: #12b28c;
+                                                            margin-right: 5px;
+                                                            width: 10px !important;
+                                                            height: 10px !important;
+                                                        "
+                                                        type="checkbox"
+                                                        value=""
+                                                        checked=""
+                                                    />
+                                                    <label
+                                                        class="form-check-label"
+                                                        for="flexCheckChecked"
+                                                        style="font-size: 10px; margin-left: 3px; margin-top: -10px"
+                                                    >
+                                                    mergControlGpo2
+                                                    </label>
+
+
+                                                </td>
+                                            </tr>
+                                            <tr style="background-color: transparent ;">
+                                                <td style="border: 0px; width: 50%">
+                                                    <input
+                                                        id="mergControlGpo3"
+                                                        formControlName="mergControlGpo3"
+                                                        style="
+                                                            accent-color: #12b28c;
+                                                            margin-right: 5px;
+                                                            width: 10px !important;
+                                                            height: 10px !important;
+                                                        "
+                                                        type="checkbox"
+
+                                                    />
+                                                    <label
+                                                        class="form-check-label"
+
+                                                        style="font-size: 10px; margin-left: 3px"
+                                                    >
+                                                    mergControlGpo3
+                                                    </label>
+
+
+                                                </td>
+                                                <td style="border: 0px; width: 50%">
+                                                    <input
+                                                        id="mergControlGpo4"
+                                                        formControlName="mergControlGpo4"
+
+                                                        style="
+                                                            accent-color: #12b28c;
+                                                            margin-right: 5px;
+                                                            width: 10px !important;
+                                                            height: 10px !important;
+                                                        "
+                                                        type="checkbox"
+
+                                                    />
+                                                    <label
+                                                        class="form-check-label"
+                                                        for="flexCheckChecked"
+                                                        style="font-size: 10px; margin-left: 3px; margin-top: -10px"
+                                                    >
+                                                    mergControlGpo4
+                                                    </label>
+
+
+                                                </td>
+                                            </tr>
+
+
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 float-right text-center mt-5 mb-5">
+                            <button
+                                type="submit"
+                                class="btn rounded-pill"
+                                style="
+                                    background: linear-gradient(180deg, #b7a643 0%, #8a8f35 100%);
+                                    border: 2px solid #566931;
+                                    box-sizing: border-box;
+                                    border-radius: 30px;
+                                    color: #ffffff;
+                                "
+
+                            >
+                                Submit
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</p-dialog>
+
+<app-create-modal-form #CreateModelForm></app-create-modal-form> -->

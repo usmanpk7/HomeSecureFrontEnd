@@ -1,0 +1,569 @@
+.Round-Nav-Control {
+    width: 766px;
+    height: 50px;
+    left: 325px;
+    top: 543px;
+
+    background: #213315;
+    border-radius: 30px;
+
+}
+
+.Round-Pannel {
+
+    width: 788px;
+    height: 469px;
+    left: 315px;
+    top: 535px;
+    color: rgba(50, 72, 41, 0.72) rgba(117, 151, 116, 0.72);
+    background: linear-gradient(112.26deg, rgba(50, 72, 41, 0.72) 1.96%, rgba(117, 151, 116, 0.72) 96.79%);
+    mix-blend-mode: normal;
+    border-radius: 32px;
+
+}
+
+.Nav-Heading {
+    color: #FFFFFF;
+    font-weight: 700;
+    font: Roboto;
+    line-height: 25.44px;
+    size: 20px;
+    font-style: normal;
+    margin-top: 13px;
+    margin-left: -43px;
+    font-size: 20px;
+}
+
+.Circle-Number {
+    background-color: #376419;
+    border-radius: 30px;
+    height: 21px;
+    width: 21px;
+    color: white;
+    text-align: center;
+    margin-top: 15px;
+    font-size: 12px;
+    padding-top: 2.5px;
+
+}
+
+.Table-Row {
+    background-color:
+        #B7A643;
+    mix-blend-mode: normal;
+    border-radius: 15px;
+    margin-top: 9px;
+    margin-right: 10px;
+    width: 761px;
+    height: 36px;
+    left: 326px;
+    top: 611px;
+
+}
+
+.Heading-Table-Row {
+    font-size: 18px;
+    color: white;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    line-height: 21px;
+    position: absolute;
+    width: 48px;
+    height: 21px;
+    left: 52px;
+    top: 6px;
+}
+
+.Data-Table-Col {
+    position: absolute;
+    width: 21px;
+    height: 21px;
+    left: 85px;
+    top: -4px;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 21px;
+    color: #FFFFFF;
+
+}
+
+.Shoe-Circle {
+    width: 103.88px;
+    height: 83.13px;
+    margin-top: 19.43px;
+    margin-left: 17.12px;
+    margin-right: 7.99px;
+
+
+}
+
+.Circle-Dot {
+    background-color: #759774;
+    height: 122px;
+    width: 129px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.Info-Text {
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 43px;
+    margin-left: 34px;
+    margin-right: 43px;
+
+}
+
+.Round-Pannel3 {
+    background-color: #213315;
+    border-radius: 51px;
+}
+
+.Search-Panel {
+    border: 2px solid #376419;
+    box-sizing: border-box;
+    border-radius: 23px;
+    background:
+        rgba(55, 100, 25, 0.35);
+}
+
+.Search-Text {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 27px;
+    letter-spacing: -0.01em;
+    color: rgba(255, 255, 255, 0.95);
+    margin-left: 51px;
+    margin-top: -25px;
+}
+
+.mainSection {
+    background: #425a3a;
+    border-radius: 30px;
+}
+
+/* button */
+.Round-Pannel3 .btn {
+    border: 3px solid #BEC168;
+    box-sizing:
+        border-box;
+    font-size: 12px;
+    color: white;
+    border-radius: 30px;
+    margin-top: 13px;
+}
+
+.Round-Pannel3 .btn2,
+.footer-btnPanel .btn2 {
+    background: #C5E0B4 !important;
+    border: 3px solid #BEC168 !important;
+    box-sizing: border-box !important;
+    border-radius: 30px !important;
+    width: 94% !important;
+    font-family: Roboto !important;
+    font-style: normal !important;
+    font-weight: 500 !important;
+    font-size: 18px !important;
+    line-height: 21px !important;
+    letter-spacing: -0.01em !important;
+    color: #376419 !important;
+}
+
+.Round-Pannel3 .btn2>button>i,
+.footer-btnPanel .btn2 i {
+    color: #376419;
+}
+
+.Round-Pannel3 .table svg {
+    width: 49px
+}
+
+.footer-btnPanel {
+    height: 64px;
+    border-radius: 28px;
+    background: #B7A643;
+    margin-top: 34px;
+}
+
+::ng-deep .Round-Pannel3 .equis-btn2 button {
+    border-radius: 4px !important;
+    height: 100%;
+    background: #C5E0B4 !important;
+    border: 3px solid #BEC168 !important;
+    box-sizing: border-box !important;
+    font-family: Roboto !important;
+    font-style: normal !important;
+    font-weight: 500 !important;
+    font-size: 13px !important;
+    line-height: 21px !important;
+    letter-spacing: -0.01em !important;
+    color: #376419 !important;
+    margin-left: 0px;
+    margin-right: 10px;
+    margin-bottom: 8px;
+    padding-left: 10px;
+    padding-right: 15px;
+}
+
+::ng-deep .Round-Pannel3 .equis-btn2 button.active {
+    background-color: #b7a643 !important;
+    padding-bottom: 18px !important;
+    margin-bottom: 0px !important;
+    border-bottom: none !important;
+}
+
+
+
+/* Required Attention  */
+.main-holder2 {
+    float: right;
+    padding: 1px 20px;
+    background: red;
+    width: 86%;
+    height: 557px;
+    border-radius: 42px;
+    /* margin-left: 70%; */
+    background: linear-gradient(180deg, rgba(190, 193, 104, 0.92) 0%, rgba(33, 51, 21, 0.6) 118.47%);
+}
+
+.main-holder2 h2 {
+    font-weight: bold;
+    background: green;
+    padding: 10px;
+    border-radius: 42px;
+    text-align: center;
+    background: #C5E0B4;
+    border: 3px solid #BEC168;
+    box-sizing: border-box;
+    border-radius: 30px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 25px;
+    line-height: 29px;
+    letter-spacing: -0.01em;
+    color: rgba(33, 33, 33, 0.96);
+}
+
+.main-holder2 .four-columns {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-around;
+    padding: 2px 10px;
+    color: green;
+}
+
+.main-holder2 .four-columns .heading {
+    border-bottom: 1px solid #213315;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 19px;
+    line-height: 22px;
+    letter-spacing: -0.01em;
+    color: #3C5934;
+}
+
+.main-holder2 .four-columns .body {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 18px;
+    letter-spacing: -0.01em;
+    color: #FFFFFF;
+}
+
+.main-holder2 .four-columns button {
+    background: rgba(60, 89, 52, 0.51);
+    border: 2px solid #376419;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 25px;
+    width: 98px;
+    height: 39px;
+}
+
+
+/* new Style of intentRequestform grid */
+
+.last_inner {
+    margin: 0px;
+    background: #213315;
+    border-radius: 51px;
+}
+
+table.dataTable thead th {
+    padding: 10px 18px;
+    border-bottom: 1px solid #111;
+}
+
+table.dataTable tbody td {
+    padding: 8px 10px;
+    width: 15%;
+}
+
+::ng-deep .gridheader {
+    background-color: #B7A643 !important;
+    border-bottom-color: black !important;
+    color: black !important;
+    text-align: center !important;
+}
+
+::ng-deep .body-td>td {
+    border-bottom-color: black !important;
+    text-align: center !important;
+    color: rgb(241, 239, 239) !important;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.priority_circle {
+    width: 25px;
+    margin-right: 10px;
+    height: 25px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    color: white;
+    border: 1px solid #FFA600;
+}
+
+.inner-table {
+    max-height: 158px;
+    overflow: auto;
+    overflow-y: scroll;
+}
+
+.comment1 {
+    background: #C5E0B4;
+    border-radius: 11px;
+    font-size: 10px;
+    padding: 7px;
+}
+
+.comment1>p {
+    color: #111;
+}
+
+.priority_circle.active {
+    background-color: #FFA600;
+
+}
+
+.inner-table>tbody>tr {
+    border-bottom: 1px solid !important;
+    font-size: 10px !important;
+}
+
+.carousel-indicators {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin-right: 15%;
+    margin-bottom: -1rem;
+    margin-left: 15%;
+    list-style: none;
+}
+
+.carousel.jcarousel-list.jcarousel-list-horizontal {
+    width: max-content !important;
+}
+
+.carousel-control-prev-icon {
+    background-image: url(../../../assets/images/widget/right_arrow.svg);
+}
+
+.carousel-control-next-icon {
+    background-image: url(../../../assets/images/widget/left_arrow.svg);
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 15%;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+    background: 0 0;
+    border: 0;
+    opacity: .5;
+    transition: opacity .15s ease;
+}
+
+::ng-deep .p-datatable-scrollable-body {
+    overflow-x: hidden !important;
+}
+
+::ng-deep .p-datatable-scrollable-body::-webkit-scrollbar {
+    width: 10px !important;
+    height: 40px !important;
+}
+
+::ng-deep .p-datatable-scrollable-body::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::ng-deep .p-datatable-scrollable-body::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+::ng-deep .p-datatable-scrollable-body::-webkit-scrollbar-thumb:hover {
+
+    background: #555;
+}
+
+::ng-deep .p-datatable-scrollable-body .sub-table-even {
+    background: #507746 !important;
+}
+
+::ng-deep .p-datatable-scrollable-body .sub-table-odd {
+    background: #6D773A !important;
+}
+
+/* end new Style of intentRequestform grid */
+
+
+
+
+
+/* Required Attention  */
+.main-holder2 {
+    float: right;
+    padding: 1px 20px;
+    background: red;
+    width: 86%;
+    height: 557px;
+    border-radius: 42px;
+    /* margin-left: 70%; */
+    background: linear-gradient(180deg, rgba(190, 193, 104, 0.92) 0%, rgba(33, 51, 21, 0.6) 118.47%);
+}
+
+.main-holder2 h2 {
+    font-weight: bold;
+    background: green;
+    padding: 10px;
+    border-radius: 42px;
+    text-align: center;
+    background: #C5E0B4;
+    border: 3px solid #BEC168;
+    box-sizing: border-box;
+    border-radius: 30px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 25px;
+    line-height: 29px;
+    letter-spacing: -0.01em;
+    color: rgba(33, 33, 33, 0.96);
+}
+
+.main-holder2 .four-columns {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-around;
+    padding: 2px 10px;
+    color: green;
+}
+
+.main-holder2 .four-columns .heading {
+    border-bottom: 1px solid #213315;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 19px;
+    line-height: 22px;
+    letter-spacing: -0.01em;
+    color: #3C5934;
+}
+
+.main-holder2 .four-columns .body {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 18px;
+    letter-spacing: -0.01em;
+    color: #FFFFFF;
+}
+
+.main-holder2 .four-columns button {
+    background: rgba(60, 89, 52, 0.51);
+    border: 2px solid #376419;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 25px;
+    width: 98px;
+    height: 39px;
+}
+.bg-yellow{
+    background: #E49E0C !important;
+}
+
+
+/* PrimeNg Grid  filter and pagination background color*/
+
+
+:host ::ng-deep .p-datatable .p-datatable-header {
+    background: #213315 !important;
+    border: none !important;
+    border-width: 0 0 0 0 !important;
+}
+:host ::ng-deep .p-datatable .p-paginator-bottom {
+    border-width:  0 0 0 0 !important;
+    background: #B7A643 !important;
+}
+
+::ng-deep .dynamicModal{
+    width: 33vw !important;
+}
+::ng-deep .dynamicModal input{
+    background: #9b9f55 !important;
+    color:white !important;
+}
+:ng-deep .dynamicModal .modal-body{
+    padding: 7px !important;
+}
+:ng-deep .dynamicModal.head {
+   text-align: center !important;
+}
+:ng-deep .dynamicModal .head h3{
+    color:white !important;
+}
+.round-number{
+    height: 14px;
+    width: 15px;
+    font-size: 10px;
+    background-color: #FF3429;
+    border-radius: 50%;
+    display: inline-block;
+    text-align: center;
+
+}
+.pointer{
+    cursor: pointer;
+}

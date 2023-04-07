@@ -1,0 +1,21 @@
+<!--
+ <div class="col-md-12 pt-5">
+    <eqis-dropdown [isActive]="tab==1?'true':''" id="tab1" class="equis-btn2" [title]="'Store Batch Listing'"
+        (click)="onTabChange($event)"></eqis-dropdown>
+    <eqis-dropdown class="equis-btn2" id="tab2" [title]="'Variety'" (click)="onTabChange($event)"
+        [isActive]="tab==2?'true':''"></eqis-dropdown>
+    <eqis-dropdown [isActive]="tab==3?'true':''" class="equis-btn2" [title]="'Variety Category'"
+        (click)="onTabChange($event)" id="tab3"></eqis-dropdown>
+</div>
+
+<div class="col-md-12" *ngIf="tab===1">
+ <app-batch-list #search></app-batch-list>
+</div>
+
+<div class="col-md-12" style="margin-top: -2px; color: #cdcdcd;" *ngIf="tab===2">
+    <app-variety-list #search></app-variety-list>
+
+<div class="col-md-12" style="margin-top: -2px; color: #cdcdcd;" *ngIf="tab===3">
+  <app-variety-category-list #search></app-variety-category-list>
+</div>
+ -->

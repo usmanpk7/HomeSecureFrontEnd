@@ -1,0 +1,526 @@
+<!--
+<p-dialog header="Add Store" [(visible)]="displayResponsive">
+    <div style="width: 800px">
+        <div class="app-modal-body">
+            <form autocomplete="off" [formGroup]="createStoreForm" (ngSubmit)="submit()" class="createform">
+                <div class="popup">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <p class="mt-3" style="color: black; font-weight: bold">STORE DETAILS</p>
+                                    <label class="form-label">Store Name</label>
+                                    <input
+                                        type="text"
+                                        formControlName="itemName"
+                                        name="itemName"
+                                        class="form-control"
+                                        [ngClass]="{ 'is-invalid': submitted && f.itemName.errors }"
+                                    />
+                                    <div *ngIf="submitted && f.itemName.errors" class="invalid-feedback">
+                                        <div *ngIf="f.itemName.errors.required">Store Name is required</div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label"><strong>SKU</strong></label>
+                                    <input type="text" formControlName="sku" name="sku" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.sku.errors }"/>
+                                    <div *ngIf="submitted && f.itemName.errors" class="invalid-feedback">
+                                        <div *ngIf="f.itemName.errors.required">SKU is required</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                            </div>
+
+                            <div class="col" style="padding: 0% 2% 0% 2%;">
+                                <p class="mt-3" style="color: black; font-weight: bold">STORE SETTINGS</p>
+
+                                    <div class="col-md-5 mb-3">
+                                        <p-dropdown [options]="wherehouseNumber" formControlName="encryptId"  name="encryptId"  optionLabel="name" styleClass="form-control" optionValue="code"></p-dropdown>
+                                    </div>
+
+
+                                <div class="form-group mt-5">
+                                    <input
+                                        style="
+                                            width: 260px;
+                                            height: 106px;
+                                            background: rgba(86, 105, 49, 0.25);
+                                            border: 1px solid #c5e0b4;
+                                            box-sizing: border-box;
+                                            border-radius: 10px;
+                                        "
+                                    />
+                                </div>
+                            </div>
+
+                            <div class="col">
+                                <div class="row mt-8">
+                                    <div class="col-sm-8">
+                                        <div class="mt-4">
+                                            <label class="title">Authenticate Stores</label>
+                                        </div>
+
+                                        <div class="mt-4">
+                                            <label class="title">Print Item</label>
+                                        </div>
+
+                                        <div class="mt-4">
+                                            <label class="title">Print Rack</label>
+                                        </div>
+
+                                        <div class="mt-4">
+                                            <label class="title">Print Qty</label>
+                                        </div>
+
+                                        <div class="mt-4">
+                                            <label class="title">Print Varriant</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="mt-4">
+                                            <div class="switch_box box_1">
+                                                <input type="checkbox" formControlName="authenticate" id="authenticate" class="switch_1" />
+                                            </div>
+                                        </div>
+
+                                        <div class="mt-7">
+                                            <div class="switch_box box_1">
+                                                <input type="checkbox" formControlName="itemPrint" id="itemPrint" class="switch_1" />
+                                            </div>
+                                        </div>
+
+                                        <div class="mt-7">
+                                            <div class="switch_box box_1">
+                                                <input type="checkbox" formControlName="rackPrint" id="rackPrint" class="switch_1" />
+                                            </div>
+                                        </div>
+
+                                        <div class="mt-7">
+                                            <div class="switch_box box_1">
+                                                <input type="checkbox" formControlName="qtyPrint" id="qtyPrint" class="switch_1" />
+                                            </div>
+                                        </div>
+
+                                        <div class="mt-7">
+                                            <div class="switch_box box_1">
+                                                <input type="checkbox" formControlName="variantPrint" id="variantPrint" class="switch_1" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <div>
+                                        <label class="form-label"><strong>Store Photo</strong></label>
+                                    </div>
+                                    <a
+                                        (click)="Image.click()"
+                                        class="btn rounded-pill mt-3"
+                                        >Upload Attachment</a
+                                    ><br />
+                                    <input type="file" #Image (change)="handleFileInput($event.target.files)" hidden />
+
+                                    <div class="form-grop">
+
+                                            <div style="text-align: center;
+                                            margin-top: 46px;
+                                            height: 104.21px;
+                                            background: #3C5934;
+                                            border: 1px solid #000000;
+                                            box-sizing: border-box;
+                                            border-radius: 10px;">
+                                                <div class="product_circle" style="margin-top: 10px;display: inline-table;">
+                                                    <img class="rounded-circle" style="width: 58px;height: 60px;margin-top: 11px;margin-left: 5px;" [src]="fileUpload" />
+                                                </div>
+                                            </div>
+
+                                    </div>
+
+
+                                </div>
+
+                                <p class="mt-3" style="color: black; font-weight: bold">STORE ATTRIBUTES</p>
+
+                                <div class="form-group">
+                                    <label><strong style="color: #fff">Store code/Control Number</strong></label>
+                                    <input type="text" formControlName="code"
+                                    name="code" class="form-control" />
+                                </div>
+
+
+
+
+                            </div>
+
+
+                            <div class="col">
+                                <div style="
+                           padding: 10px;
+                           margin-top: 7px;
+                            background: linear-gradient(180deg, rgba(33, 51, 21, 0.55) 0%, #BEC168 100%);
+                            border-radius: 10px;">
+
+                                <table class="table table-borderless" style="color: white;">
+                                    <tbody>
+                                        <tr style="border-bottom: 5px solid #4A6C39;background-color: transparent;color: #E8C40B;border: hidden">
+                                            <th>Setting Name</th>
+                                            <th>Control</th>
+                                            <th>Configure</th>
+                                        </tr>
+                                        <tr style="background-color: transparent;border: hidden; margin-top: 7px">
+                                            <td style="width: 34%;">
+                                                Track Stores
+                                            </td>
+                                            <td style="width: 34%;">
+                                                <div class="switch_box box_1">
+                                                    <input type="checkbox" formControlName="storeTrack" id="storeTrack" class="switch_1" />
+                                                </div>
+                                            </td>
+                                            <td style="width: 34%;">
+
+                                            </td>
+                                        </tr>
+                                        <tr style="background-color: transparent;border-bottom: 1px solid white;margin-top: 15px">
+                                            <td style="width: 34%; ">
+                                                <div class="" style="margin-bottom: 17px;">
+                                                    <input id="stockAlert" formControlName="stockAlert" style="accent-color: #12B28C;margin-right: 5px;width: 10px !important;height: 10px !important;" type="checkbox" value="on" checked="">
+                                                    <label class="form-check-label" for="flexCheckChecked">
+                                                        Low Stock Alert
+                                                    </label>
+                                                </div>
+                                                <div style="margin-bottom: 5px;">
+                                                    <input id="stockValue" formControlName="stockValue" class="" style="accent-color: #12B28C;margin-right: 5px;width: 10px !important;height: 10px !important;" type="checkbox" value="on" checked="">
+                                                    <label class="form-check-label" for="flexCheckChecked">
+                                                        Low Stock Value
+                                                    </label>
+                                                </div>
+                                            </td>
+                                            <td style="width: 34%;">
+
+
+                                            </td>
+                                            <td style="width: 34%;">
+
+                                            </td>
+                                        </tr>
+
+                                        <tr style="background-color: transparent;margin-top: 5px;">
+                                            <td colspan="3">
+                                                Notification / Alert
+                                            </td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                                <table class="table">
+                                    <tbody>
+                                        <tr style="background-color: transparent; border: hidden">
+                                            <td style="border: 0px;width: 50%;">
+                                                <input id="qtyTrack" formControlName="qtyTrack" class="" style="accent-color: #12B28C;margin-right: 5px;width: 10px !important;height: 10px !important;" type="checkbox" value="" checked="">
+                                                <label class="form-check-label" style="font-size: 8px;">
+                                                    Low Stores
+                                                </label>
+
+                                                <label class="form-check-label" style="margin-left: 16px;font-size: 8px;">
+                                                    <input type="checkbox" formControlName="alertLow" id="alertLow" class="switch_1" />
+
+                                                </label>
+
+                                                <input id="lowStoreqty" formControlName="lowStoreqty" type="number" style="background: rgba(182, 182, 182, 0.12);
+                                            width: 50px;border: 1px solid #858B53;
+                                            box-sizing: border-box;
+                                            margin-left: 15px;
+                                            border-radius: 7px;">
+                                            </td>
+                                            <td style="border: 0px;width: 50%;">
+                                                <input id="low_early_story_check" class="" style="accent-color: #12B28C;margin-right: 5px;width: 10px !important;height: 10px !important;" type="checkbox" value="" checked="">
+                                                <label class="form-check-label" style="font-size: 8px;margin-top: -10px;">
+                                                    Low Stores <br>Early warning
+                                                </label>
+
+                                                <input id="llEarlywarning" formControlName="llEarlywarning" type="number" style="background: rgba(182, 182, 182, 0.12);
+                                            border: 1px solid #858B53;
+                                            box-sizing: border-box;
+                                            border-radius: 7px;width: 50px;margin-left: 10px;">
+                                            </td>
+                                        </tr>
+                                        <tr style="background-color: transparent;;">
+                                            <td style="border: 0px;width: 50%;">
+                                                <input id="alertExpiry" formControlName="alertExpiry" style="accent-color: #12B28C;margin-right: 5px;width: 10px !important;height: 10px !important;" type="checkbox" value="" checked="">
+                                                <label class="form-check-label" style="font-size: 8px;">
+                                                    Expire Stores
+                                                </label>
+
+                                                <input id="lowStoreWeight" formControlName="lowStoreWeight" type="number" style="margin-left: 11px;background: rgba(182, 182, 182, 0.12);
+                                            width: 50px;border: 1px solid #858B53;
+                                            box-sizing: border-box;
+                                            border-radius: 7px;">
+                                            </td>
+                                            <td style="border: 0px;width: 50%;">
+                                                <input class="" style="accent-color: #12B28C;margin-right: 5px;width: 10px !important;height: 10px !important;" type="checkbox" value="" id="flexCheckChecked" checked="">
+                                                <label class="form-check-label" for="flexCheckChecked" style="font-size: 8px;margin-top: -10px;">
+                                                    Early Warning <br> Expiry Stores Alert
+                                                </label>
+
+                                                <input id="expireEarlyWarning" formControlName="expireEarlyWarning" type="number" style="background: rgba(182, 182, 182, 0.12);
+                                            border: 1px solid #858B53;
+                                            box-sizing: border-box;
+                                            border-radius: 7px;width: 50px;margin-left: 10px;">
+                                            </td>
+                                        </tr>
+                                        <tr style="background-color: transparent;;">
+                                            <td style="border: 0px;width: 50%;">
+                                                <input id="low_story_check" class="" style="accent-color: #12B28C;margin-right: 5px;width: 10px !important;height: 10px !important;" type="checkbox" value="" checked="">
+                                                <label class="form-check-label" style="font-size: 8px;">
+                                                    Low Stores Weight
+                                                </label>
+
+                                                <label class="form-check-label" style="margin-left: 16px;font-size: 8px;">
+                                                    <input type="checkbox" formControlName="storeTrack" id="storeTrack" class="switch_1" />
+
+                                                </label>
+
+                                                <input id="lowStoreWeight" formControlName="lowStoreWeight" type="number" style="background: rgba(182, 182, 182, 0.12);
+                                            width: 50px;border: 1px solid #858B53;
+                                            box-sizing: border-box;
+                                            margin-left: 15px;
+                                            border-radius: 7px;">
+                                            </td>
+                                            <td style="border: 0px;width: 50%;">
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                            </div>
+                            </div>
+
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-4">
+
+                                <div class="form-group">
+                                    <label><strong style="color: #fff">Pack Type</strong></label>
+                                    <div class="border1 mb-3">
+                                        <p-dropdown [options]="itemPack" formControlName="itemPack" class="dropdown"  placeholder="Select Pack Type" name="itemPack"   optionLabel="name" [style]="{ width: '100%' }" styleClass="form-control" optionValue="id"></p-dropdown>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label><strong style="color: #fff">Store Types</strong></label>
+
+                                    <div class=" border1 mb-3">
+
+                                        <p-dropdown [options]="typeId" [(ngModel)]="StoreTypeSelectedVal" formControlName="itemType" class="dropdown" placeholder="Select Store/Item Type" name="itemType" (onChange)="getSelectedStoreType($event)"   optionLabel="name" [style]="{ width: '100%' }" styleClass="form-control"></p-dropdown>
+
+                                    </div>
+
+
+
+                                </div>
+                                <div class="" style="width: 100%;/* margin-left: 3%; *//* margin-top: -21px; */">
+                                    <table style="margin-top: 20px;/* text-align: center; */ font-size: 12px;">
+                                        <tbody>
+                                            <tr style="color: black;">
+                                                <td style="width: 7%;"></td>
+                                                <td><strong style="color: #fff">Store Types</strong></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <div class="second" style="height: 137px;padding: 8px;overflow: scroll;">
+                                        <table id="select_files_table" style="height: 137px;font-size: 10px;padding: 8px;" class="table table-borderless table-hover">
+                                            <tbody *ngFor="let stortype of this.StoreTypeList">
+                                                <td style="width: 2%;padding-right: 0px;padding-left: 0px;"> <img (click)="deleteStoreTypes(stortype.index)" id="file_img_0" src="../../../../assets/images/crose.svg" style="width:20px;"></td>
+                                                <td style="color: #fff">{{stortype.Name}}</td>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label><strong style="color: #fff">Stored Category</strong></label>
+                                    <img (click)="modalAuthorityNumberForm()" role="button" src="../../../../assets/images/widget/add_category.svg" style="height: 19px;float: right;">
+                                    <div class=" border1 mb-3">
+
+                                        <p-dropdown [options]="categoryid" [(ngModel)]="StoreCategorylist" placeholder="Select Store/Item Category"   (onChange)="getSelectedStoreCategory($event)" class="styleSupplier" formControlName="itemCategory" class="dropdown"  name="itemCategory"   optionLabel="name" [style]="{ width: '100%' }" styleClass="form-control"></p-dropdown>
+                                    </div>
+
+
+
+                                </div>
+                                <div class="" style="width: 100%;/* margin-left: 3%; *//* margin-top: -21px; */">
+                                    <table style="margin-top: 20px;/* text-align: center; */ font-size: 12px;">
+                                        <tbody>
+                                            <tr style="color: black;">
+                                                <td style="width: 7%;"></td>
+                                                <td ><strong style="color: #fff">Stored Category</strong></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <div class="second" style="height: 137px;padding: 8px;overflow: scroll;">
+                                        <table id="select_files_table" style="height: 137px;font-size: 10px;padding: 8px;" class="table table-borderless table-hover">
+                                            <tbody *ngFor="let categoty of this.SelectedCategoryList">
+                                                <td style="width: 2%;padding-right: 0px;padding-left: 0px;"> <img (click)="deleteCategoryStore(categoty.index)" id="file_img_0" src="../../../../assets/images/crose.svg" style="width:20px;"></td>
+                                                <td style="color: #fff">{{categoty.Name}}</td>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
+                                <hr style="background-color: #fff" />
+
+                            </div>
+                            <div class="col-md-8">
+                                <div class="form-group">
+                                    <p class="mt-3" style="color: black; font-weight: bold">STORE DESCRIPTION</p>
+                                    <textarea
+                                        style="
+                                            height: 205px;
+                                            background: rgba(86, 105, 49, 0.25);
+                                            border: 1px solid rgba(197, 224, 180, 0.33);
+                                            box-sizing: border-box;
+                                            border-radius: 10px;
+                                        "
+                                        formControlName="details"
+                                        name="details"
+                                        class="form-control color-b"
+                                        rows="4"
+                                        f
+                                    ></textarea>
+                                </div>
+                                <div class="form-group" style="margin-top: 20px;">
+
+                                    <label class="m-0">
+                                        <b
+                                            style="
+                                                width: 134px;
+                                                height: 19px;
+                                                font-family: 'Roboto';
+                                                font-style: normal;
+                                                font-weight: 700;
+                                                font-size: 18px;
+                                                line-height: 21px;
+                                                letter-spacing: -0.01em;
+
+                                                color: #e4e4b6;
+                                            "
+                                            >EQIS LABELS</b
+                                        >
+                                    </label>
+
+                                        <div id="item_data" class="list-group list-group-horizontal text-nowrap overflow-auto"
+                                            style="padding: 10px;  width: 100%;
+
+                                            overflow-x: auto;
+                                            background: #646A39;
+                                            border-radius: 10px;
+                                            display: flex; ">
+                                                <div style="width: 214px;text-align: center;margin-right: 20px;margin-left: 20px;">
+                                                    <p style="color:#E4E4B6">RFID</p>
+                                                    <img src="../../../../assets/images/widget/RFID.svg">
+                                                    <p>
+                                                        <input id="rfId" formControlName="rfId" style="color:#E4E4B6;background: #505925;" type="text">
+
+                                                    </p>
+                                                </div>
+
+                                                <div style="width: 214px;text-align: center;margin-right: 20px;margin-left: 20px;">
+                                                    <p style="color:#E4E4B6">NFC</p>
+                                                    <img src="../../../../assets/images/widget/NFC.svg">
+                                                    <p>
+                                                        <input id="nfC" formControlName="nfC" style="color:#E4E4B6;background: #505925;" type="text">
+
+                                                    </p>
+                                                </div>
+
+                                                <div style="width: 214px;text-align: center;margin-right: 20px;margin-left: 20px;">
+                                                    <p style="color:#E4E4B6">QRC</p>
+                                                    <img src="../../../../assets/images/widget/QRCODE.svg">
+                                                    <p>
+                                                        <input id="qrC" formControlName="qrC" style="color:#E4E4B6;background: #505925;" type="text">
+
+                                                    </p>
+                                                </div>
+
+                                                <div style="width: 214px;text-align: center;margin-right: 20px;margin-left: 20px;">
+                                                    <p style="color:#E4E4B6">Barcode</p>
+                                                    <img src="../../../../assets/images/widget/BARCODE.svg">
+                                                    <p>
+                                                        <input id="barCode" formControlName="barCode" style="color:#E4E4B6;background: #505925;" type="text">
+
+                                                    </p>
+                                                </div>
+
+
+
+
+                                        </div>
+
+
+                                </div>
+
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label><strong style="color: #fff">SUPPLIER</strong></label>
+                                    <div class="border1 mb-3">
+                                        <p-dropdown [options]="supplierId" class="styleSupplier" formControlName="itemSupplier" class="dropdown"  name="itemSupplier"   optionLabel="name" [style]="{ width: '100%' }" styleClass="form-control" optionValue="code"></p-dropdown>
+
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label><strong style="color: #fff">MANUFACTURER</strong></label>
+                                    <div class=" border1 mb-3">
+
+                                        <p-dropdown [options]="manufacturerId" class="styleManufacturer" formControlName="itemManufacturer" class="dropdown"  name="itemManufacturer"   optionLabel="name" [style]="{ width: '100%' }" styleClass="form-control" optionValue="code"></p-dropdown>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="row">
+                                    <div class="col-md-12" style="margin-top: 20px;">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 float-right text-center mt-5 mb-5">
+                            <button
+                                type="submit"
+                                class="btn rounded-pill"
+                                style="
+                                    background: linear-gradient(180deg, #b7a643 0%, #8a8f35 100%);
+                                    border: 2px solid #566931;
+                                    box-sizing: border-box;
+                                    border-radius: 30px;
+                                    color: #ffffff;
+                                "
+
+                            >
+                                Submit
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</p-dialog>
+
+<app-add-store-category #createStoreCategory></app-add-store-category>
+ -->

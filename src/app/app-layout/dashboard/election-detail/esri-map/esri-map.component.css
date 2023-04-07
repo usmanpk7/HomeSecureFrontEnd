@@ -1,0 +1,7 @@
+
+.esri-view {
+    padding: 0;
+    margin: 0;
+    height: 400px; /*pixels here, as an example instead of percentage*/
+    width: 100%;
+}

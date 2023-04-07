@@ -1,0 +1,89 @@
+.asset-monitoring-grid {
+    height: 467px;    background: #425a3a;
+    mix-blend-mode: normal;
+    border-radius: 32px;
+    padding: 1%;
+    padding-top: 0px;
+}
+
+
+
+.asset-monitoring-grid p {
+    padding-top: 10px;
+    margin-top: 15px;
+    padding-left: 19px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 21px;
+    color: #FFFFFF;
+}
+
+.asset-monitoring-grid th {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 14px;
+    color: #FFFFFF;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background:#425a3a;
+    border: 0;
+}
+
+.asset-monitoring-grid tbody {
+    height: 272px;
+    background: rgba(183, 166, 67, 0.85);
+    border-radius: 10px !important;
+}
+
+.asset-monitoring-grid td {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 13px;
+    line-height: 14px;
+    color: #FFFFFF;
+    background: rgba(183, 166, 67, 0.85);
+    border: 0;
+}
+/*
+.asset-monitoring-grid table {
+
+    border-collapse: collapse;
+    width: 100%;}
+
+.asset-monitoring-grid td,
+th {
+
+    text-align: left;
+    padding: 11px;
+} */
+progress {
+  border: none;
+  height: 10px;
+}
+
+progress {
+  color: #213315;
+}
+
+progress::-webkit-progress-value {
+  background: #213315;
+}
+
+progress::-moz-progress-bar {
+  background: green;
+}
+:host ::ng-deep .p-datatable .p-datatable-header {
+    background: #213315 !important;
+    border: none !important;
+    border-width: 0 0 0 0 !important;
+}
+:host ::ng-deep .p-datatable .p-paginator-bottom {
+    border-width:  0 0 0 0 !important;
+    background: #B7A643 !important;
+}

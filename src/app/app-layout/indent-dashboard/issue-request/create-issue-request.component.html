@@ -1,0 +1,145 @@
+<!-- <p-dialog header="ISSUE REQUEST" [(visible)]="displayResponsive" style="color: #FFF; font-size:30px">
+<div style="width: 900px;">
+    <form autocomplete="off" [formGroup]="createRequestRelease" (ngSubmit)="submit()"  class="createform" style="padding: 20px;">
+        <div class="row">
+           <div class="col-md-3">
+               <h5 class="text-center mt-3"> Select Authority Number</h5>
+           </div>
+           <div class="col-md-3">
+           </div>
+           <div class="col-md-3">
+           </div>
+           <div class="col-md-3">
+               <div class="input-group mb-3">
+                   <select style="width : 184px;height: 45px;color: #FFF;border-radius: 10px;background-color: #8C894C;border: 1px solid #676C3D;" id="requestAuthorityFormId"
+                    formControlName="requestAuthorityFormId" name="requestAuthorityFormId"
+                     class="form-control mdb-select md-form color-w " (change)="onChangeAuthorityNumber($event)">
+                  <option [value]="item.id" *ngFor="let item of authorityNumber">{{item.authorityNumber}}</option>
+               </select>
+               </div>
+            </div>
+       </div>
+       <hr>
+       <div class="row">
+           <div class="col-md-3">
+               <h5 class="text-center mt-3" style="text-align: left !important;">Assigned to</h5>
+           </div>
+           <div class="col-md-3">
+           </div>
+           <div class="col-md-3">
+           </div>
+           <div class="col-md-3">
+               <div class="col-md-6">
+                   <label for="Yes" class="ml-2 mr-2 " id="yes-label" >Depot</label>
+                   <input type="radio" id="Ye"  value="1"  formControlName="categoryPartNo" name="categoryPartNo" (change)="ChangeWarehouse('1')" >
+               </div>
+               <div class="col-md-6">
+                   <label for="Yes" class="ml-2 mr-2 " id="no-label" >BOD</label>
+                   <input type="radio" id="Yes"  value="2"  formControlName="categoryPartNo" name="categoryPartNo" (change)="ChangeWarehouse('2')">
+               </div>
+           </div>
+       </div>
+       <hr>
+       <div class="row">
+           <div class="col-md-4">
+               <h5 class="text-center mt-3" style="text-align: left !important;">Select a Depot / Wearhouse</h5>
+           </div>
+           <div class="col-md-2">
+           </div>
+           <div class="col-md-3">
+           </div>
+           <div class="col-md-3">
+               <div class="input-group mb-3">
+                   <select style="width : 184px;height: 45px;color: #FFF;border-radius: 10px;background-color: #8C894C;border: 1px solid #676C3D;" 
+                   id="wareHouseId" formControlName="warehouseId" name="wareHouseId"
+                    class="form-control mdb-select md-form color-b" (change)="onChangeWareHouse($event)" 
+                     [ngClass]="{ 'inValid': submitted && validators.warehouseId.errors}">
+                   <option value="" [selected]="wareHouseId==0">Select WareHouse</option>
+                   <option [value]="item.id" *ngFor="let item of wareHouseList">{{item.name}}</option>
+               </select>
+               </div>
+               <div *ngIf="submitted && validators.warehouseId.errors">
+                <div *ngIf="validators.warehouseId.errors.required " class="text-danger">Field is required</div>
+            </div>
+           </div>
+       </div>
+       <hr>
+       <div class="row">
+        <div class="col-md-4">
+            <h5 class="text-center mt-3" style="text-align: left !important;">Organization Unit</h5>
+        </div>
+        <div class="col-md-2">
+        </div>
+        <div class="col-md-3">
+        </div>
+        <div class="col-md-3">
+            <div class="input-group mb-3">
+                <select style="width : 184px;height: 45px;color: #FFF;border-radius: 10px;background-color: #8C894C;border: 1px solid #676C3D;"  id="organizationUnitId" 
+                formControlName="organizationUnitId" 
+                name="organizationUnitId" class="form-control mdb-select md-form color-b" 
+                  [ngClass]="{ 'inValid': submitted && validators.organizationUnitId.errors}">
+                    <option >select OrganizationUnit</option>
+                  <option  *ngFor="let userunit of organizationUnitList" [value]="userunit.code">{{userunit.name}}</option>
+            </select>
+            </div>
+            <div *ngIf="submitted && validators.organizationUnitId.errors">
+                <div *ngIf="validators.organizationUnitId.errors.required " class="text-danger">Field is required</div>
+            </div>
+        </div>
+    </div>
+    <hr>
+       <div class="row">
+           <div class="col-md-4">
+               <h5 class="text-center mt-3" style="text-align: left !important;">Upload Attachment</h5>
+           </div>
+           <div class="col-md-2">
+           </div>
+           <div class="col-md-3">
+           </div>
+           <div class="col-md-3">
+
+            <a (click)="Image.click()"><span class="fa fa-upload fa-3x" style="color: #FFF;float: right;"></span>
+                <input type="file"  #Image (change)="handleFileInput($event.target.files)" hidden >
+            </a><div   name="hardCopyAttachment" ></div><br>
+           </div>
+       </div>
+       <hr>
+     <div class="row">
+           <div class="col-md-3">
+               <h5 class="text-center mt-3" style="text-align: left !important;">File Name & File Size</h5>
+           </div>
+           <div class="col-md-3">
+           </div>
+           <div class="col-md-3">
+            <input type="text" class="form-control color-w" disabled id="filename" [placeholder]="filename" rows="4" f>
+            <div *ngIf="submitted && validators.hardCopyAttachment.errors">
+                <div *ngIf="validators.hardCopyAttachment.errors.required" class="text-danger">Field is required</div>
+               </div> 
+          </div>
+           <div class="col-md-3">
+               <input type="text" class="form-control color-w" disabled id="fileSize" [placeholder]="fileSize" rows="4" f>
+           </div>
+       </div>
+     
+       <hr>
+       <br>
+       <div class="row">
+           <div class="col-md-3">
+           </div>
+           <div class="col-md-3">
+           </div>
+           <div class="col-md-3">
+           </div>
+           <div class="col-md-3">
+               <div>
+                   <button type="button" class="btn dangers" (click)="close()">Cancel</button>
+                   <button  [disabled]="issubmitted"  class="btn primary1">{{btnText}}</button>
+               </div>
+           </div>
+       </div>
+       </form>
+
+</div>
+</p-dialog>
+
+ -->

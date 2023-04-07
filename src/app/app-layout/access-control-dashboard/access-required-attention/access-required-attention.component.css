@@ -1,0 +1,76 @@
+.asset-monitoring-grid {
+    height: 467px;
+       /* background: #425a3a; */
+       /* background: #213315; */
+    mix-blend-mode: normal;
+    border-radius: 32px;
+    padding: 1%;
+    padding-top: 0px;
+}
+
+.asset-monitoring-grid-table {
+    height: 393px;    overflow: auto;
+    border-radius: 13px;
+}
+
+.asset-monitoring-grid p {
+    padding-top: 10px;
+    margin-top: 15px;
+    padding-left: 19px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 21px;
+    /* color: #FFFFFF; */
+}
+
+.asset-monitoring-grid th {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 14px;
+    color: #3C5934;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    /* background:#425a3a; */
+    background: rgb(154 160 85);
+
+
+}
+
+.asset-monitoring-grid tbody {
+    height: 272px;
+    /* background: rgba(183, 166, 67, 0.85); */
+    border-radius: 10px !important;
+}
+
+.asset-monitoring-grid td {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 13px;
+    line-height: 14px;
+    /* color: #FFFFFF; */
+}
+
+.asset-monitoring-grid table {
+
+    border-collapse: collapse;
+    width: 100%;}
+
+.asset-monitoring-grid td,
+th {
+
+    text-align: left;
+    padding: 11px;
+}
+::ng-deep .req-drpdown .p-dropdown{
+width: 100% !important;
+background: #787735 !important;
+border: 1px solid #9db186 !important;
+box-sizing: border-box !important;
+border-radius: 10px !important;
+}

@@ -1,0 +1,20 @@
+<div class="row">
+    <div class="col-md-12 pl-0">
+        <div class="text-center dropdown text-custom-danger mb-2">
+            <span class="election-category-title text-uppercase">Analytics <i class="fas fa-external-link-alt ml-3 text-custom-danger"></i></span>
+        </div>
+    </div>
+    <div class="col-md-12 mt-3 pl-0 analytics">
+        <p-tabView>
+            <p-tabPanel header="Election Territory  Result ">
+                <app-voter-ratio #childVoterComponent></app-voter-ratio>
+            </p-tabPanel>
+            <p-tabPanel header="POLITICAL PARTY GRADING">
+                <app-political-party-grading #childpoliticalpartyComponent></app-political-party-grading>
+            </p-tabPanel>
+            <p-tabPanel header="POLITICAL ACTIVITY">
+                <app-political-activity></app-political-activity>
+            </p-tabPanel>
+        </p-tabView>
+    </div>
+</div>

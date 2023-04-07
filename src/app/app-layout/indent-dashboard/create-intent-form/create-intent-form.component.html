@@ -1,0 +1,261 @@
+<!-- 
+<p-dialog header="Create Intent" class="intent-form" [(visible)]="displayResponsive" [style]="{width: '60vw'}">
+    <form autocomplete="off" [formGroup]="createIntentForm" class="md-float-material" >
+         <div class="popup">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group ">
+                            <label for="" class="mb-2"><b>Number</b></label>
+                            <input type="text" class="form-control rounded-pill"
+                            formControlName="intentNo">
+                            <span class="text-danger ml-3" *ngIf="isValid(createIntentForm.controls.intentNo)">
+                                This field is required</span>
+                        </div>
+                        <div class="form-group">
+                            <p class="mt-3"><strong>Request Class</strong></p>
+
+
+                            <input type="radio" id="normal" name="intentClass" value="1"
+                                formControlName="intentClass">
+                            <label for="normal" class="ml-2 mr-2 color-w">Normal</label>
+
+                            <input type="radio" id="Special" name="intentClass" value="2"
+                                formControlName="intentClass">
+                            <label for="Special" class="ml-2 mr-2 color-w">Special</label>
+                        </div>
+
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="" class="mb-2"><b>Control Number</b></label>
+                            <input type="text" class="form-control rounded-pill" formControlName="controlNumber">
+                            <span class="text-danger ml-3" *ngIf="isValid(createIntentForm.controls.controlNumber)">
+                                This field is required</span>
+                        </div>
+                        <div class="form-group  text-center">
+                            <p class="mt-3"><strong>Priority</strong></p>
+                            <div class="wrap">
+                                <input type="range" class="range" min="1" max="5" step="1" value="1"
+                                    formControlName="priority" #ranger (input)="slider($event)">
+                                <div class="track" #track>
+                                    <div class="track-inner"></div>
+                                </div>
+                                <div class="thumb" #thumb></div>
+                            </div>
+                            <span class="range-value">{{this.rangValue}}</span>
+                        </div>
+                     
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label><strong>Data Stored Required</strong></label>
+                            <input type="date" class="form-control rounded-pill"
+                                formControlName="dateStoresRequired">
+                            <span class="text-danger ml-3"
+                                *ngIf="isValid(createIntentForm.controls.dateStoresRequired)">
+                                This field is required</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row row1">
+                    <div class="col-md-8">
+                        <div class=" col-md-12 mt-3 custome-slider p-0 pb-2">
+                            <a (click)="GetVoucher(1)">
+                                <div class="col-md-12" [ngClass]="{'owl-active': voucherTypeId == 1}">
+                                    <img src="../../../assets/images/widget/Group 69.png" alt="" class="img-fluid"
+                                        style="max-width:80px;">
+                                    <p class="text-center"><b>USER</b></p>
+                                </div>
+                            </a>
+                            <a (click)="GetVoucher(2)">
+                                <div class="col-md-12" [ngClass]="{'owl-active': voucherTypeId == 2}">
+                                    <img src="../../../assets/images/widget/Group 70.png" alt="" class="img-fluid"
+                                        style="max-width: 80px;">
+
+                                    <p class="text-center"><b>WEARHOUSE</b></p>
+
+                                </div>
+                            </a>
+                            <a (click)="GetVoucher(3)">
+                                <div class="col-md-12 " [ngClass]="{'owl-active': voucherTypeId == 3}">
+                                    <img src="../../../assets/images/widget/Group 71.png" alt="" class="img-fluid"
+                                        style="max-width: 80px;">
+
+                                    <p class="text-center"><b>UNIT</b></p>
+
+                                </div>
+                            </a>
+                            <a (click)="GetVoucher(4)">
+                                <div class="col-md-12" [ngClass]="{'owl-active': voucherTypeId == 4}">
+                                    <img src="../../../assets/images/widget/Group 72.png" alt="" class="img-fluid"
+                                        style="max-width: 80px;">
+
+                                    <p class="text-center"><b>BRIGADE</b></p>
+
+                                </div>
+                            </a>
+                            <a (click)="GetVoucher(5)">
+                                <div class="col-md-12" [ngClass]="{'owl-active': voucherTypeId == 5}">
+                                    <img src="../../../assets/images/widget/Group 69.png" alt="" class="img-fluid"
+                                        style="max-width:80px;">
+                                    <p class="text-center"><b>Division</b></p>
+                                </div>
+                            </a>
+                            <a (click)="GetVoucher(6)">
+                                <div class="col-md-12" [ngClass]="{'owl-active': voucherTypeId == 6}">
+                                    <img src="../../../assets/images/widget/Group 71.png" alt="" class="img-fluid"
+                                        style="max-width:80px;">
+                                    <p class="text-center"><b>Org.Unit</b></p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-4 right">
+                        <h5 class="text-center mt-3">Select Voucher To</h5>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1"
+                                style="background-color: transparent;"><i class="fas fa-search"></i></span>
+                            <select id="vouchers" name="voucherId" class="form-control mdb-select md-form"
+                                (change)="onVocuherChange($event.target.value)" formControlName="voucherId">
+                                <option value="" selected>Choose your option</option>
+                                <option [value]="v.id" *ngFor="let v of vouchers">{{v.name}}</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row row2 pt-2">
+                    <div class="col-md-5">
+                        <div class="form-group pt-15">
+                            <label for="description" class="form-label">Description of package</label>
+                            <textarea class="form-control color-b" id="description"
+                                formControlName="descriptionOfPackage" rows="6" f></textarea>
+                            <span class="text-danger ml-3"
+                                *ngIf="isValid(createIntentForm.controls.descriptionOfPackage)">
+                                This field is required</span>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <div class="dropdown mt-3">
+                                <button class="btn btn-secondary dropdown-toggle form-control" type="button"
+                                    id="dropdownMenuButton1" data-bs-toggle="dropdown"
+                                    aria-expanded="false">Choose</button>
+                                <ul class="dropdown-menu intentDropDown" aria-labelledby="dropdownMenuButton1">
+                                    <li><a class="dropdown-item"
+                                            (click)="GetIntentReason($event,enumIntentReason.To_replace_unserviceable)"
+                                            value="enumIntentReason.To_replace_unserviceable">To Replace
+                                            Unsericeable</a></li>
+                                    <li><a class="dropdown-item"
+                                            (click)="GetIntentReason($event ,enumIntentReason.Storeholding_units)">Store
+                                            Holding Unit</a> </li>
+                                    <li><a class="dropdown-item"
+                                            (click)="GetIntentReason($event,enumIntentReason.Workshop_Repair_Programme)">
+                                            Work Shop Repair Program</a></li>
+                                    <li><a class="dropdown-item"
+                                            (click)="GetIntentReason($event,enumIntentReason.To_complete_Initial_Scale_Famto_Fatso_CES)">To
+                                            Complete Intial Scale Famto Fatso CES</a></li>
+                                    <li><a class="dropdown-item"
+                                            (click)="GetIntentReason($event,enumIntentReason.In_excess_of_scale)">In
+                                            Excess Of Scale</a></li>
+                                    <li><a class="dropdown-item"
+                                            (click)="GetIntentReason($event,enumIntentReason.On_payment)">On
+                                            Payment</a></li>
+                                    <li><a class="dropdown-item"
+                                            (click)="GetIntentReason($event,enumIntentReason.To_replace_stores_last_stolen_or_damaged_by_neglect)">To
+                                            Replace Stores Last Stolen</a></li>
+                                    <li><a class="dropdown-item"
+                                            (click)="GetIntentReason($event,enumIntentReason.Stores_required_for_authorised_Projects)">Stores
+                                            Required For Authorised Project</a></li>
+                                </ul>
+                            </div>
+                            <label for="exampleFormControlTextarea1" class="form-label">Select Reason of
+                                Intent</label>
+                            <textarea [readonly]="true" class="form-control color-b" id="intentReasonText"
+                                rows="6">{{intentReasonText}}</textarea>
+                                <span class="text-danger ml-3"
+                            *ngIf="createIntentForm.controls.intentReasonId.errors?.invalid ">
+                            This field is required</span>
+
+                        </div>
+                    </div>
+                    <div class="col-md-4 right">
+                        <div class="form-group">
+                            <a (click)="Image.click()" class="btn rounded-pill mt-3">Upload Attachment</a><br>
+                            <input type="file" #Image (change)="handleFileInput($event.target.files)" hidden>
+                            <label for="exampleFormControlTextarea1" class="form-label">File Name</label>
+                            <div class="second" style="height: 137px;padding: 8px;overflow: scroll;">
+                                <table id="select_files_table" style="height: 137px;font-size: 10px;padding: 8px;" class="table table-borderless table-hover">
+                                    <tbody >
+                                        <tr *ngFor="let file of fileList">
+                                        <td style="width: 2%;padding-right: 0px;padding-left: 0px;"> <img (click)="deletefile(file.index)" id="file_img_0" src="../../../../assets/images/crose.svg" style="width:20px;"></td>
+                                        <td style="color: #fff">{{file.Name}}</td>
+                                        <td style="color: #fff">{{file.size}}</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <span class="text-danger ml-3"
+                            *ngIf="createIntentForm.controls.hardCopyAttachment.errors?.invalid ">
+                            This field is required</span>
+                        </div>
+                    </div>
+                    <div class="row row3 pb-5">
+                        <div class="col-md-9" style="color: #2a2c32;">
+                            <span class="mt-3 pr-3">Slected Item</span>
+                            <p-dropdown [options]="itemDropDownList"   
+                             class="item-dropdown"  [filter]="true" [filterBy]="'name'"
+                              class="dropdown"  name="name" (onChange)="searchIntentItem($event)"   formControlName="itemId"
+                            optionLabel="name"  optionValue="id" [style]="{ width: '40%' }" styleClass="form-control"></p-dropdown>
+                            <div class="row row4 mt-3">
+                                <div class="col-md-12">
+                                    <div class="col-md-12 p-0 mt-3 custome-slider">
+                                        <div class="col-md-6 p-0" *ngFor="let item of intentItems; let i=index">
+                                            <div class="col-md-5  text-center">
+                                                <img src="{{item.itemImage}}" alt="check link"
+                                                    class="img-fluid mt-6" style="max-width: 80%;">
+                                                <p style="word-wrap: break-word;"><b>{{decryptItemName(item)}}</b></p>
+                                            </div>
+                                            <div class="col-md-7">
+                                                <div class="form-group mt-3">
+                                                    <input type="radio" id="weight" name="radio-{{i}}"
+                                                        [checked]="item.weight ===true">
+                                                    <label for="radio-{{i}}" class="ml-2 mr-2 color-w">Weight</label>
+
+                                                    <input type="radio" id="number" name="radio-{{i}}"
+                                                        [checked]="item.number === true">
+                                                    <label for="radio-{{i}}" class="ml-2 mr-2 color-w">Number</label>
+
+                                                    <input type="number" value="0" id="qty" name="qty-{{i}}" class="form-control mt-2 color-b"
+                                                        [value]="item.qty">
+                                                    <a type="button" *ngIf="!item.isSelected "
+                                                        class="btn btn-success rounded-pill mt-3"
+                                                        (click)="selectItem($event,item.id)">Select</a>
+                                                    <a type="button" *ngIf="item.isSelected "
+                                                        class="btn btn-success rounded-pill mt-3"
+                                                        (click)="unselectItem(item.id)">unSelect</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-md-3 right text-center">
+                            <button type="submit" class="btn rounded-pill" (click)="submit()"
+                                [disabled]="createIntentForm.invalid">{{btnText}}</button>
+
+                        </div>
+                    </div>
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </form>
+
+</p-dialog>
+ -->

@@ -1,0 +1,550 @@
+<!-- <div  class="row" style="margin-top: 50px" *ngIf="intentDto">
+<div class="p-0 pr-6" style="max-height: 797px;">
+<img src="../../../assets/images/widget/rectangle-verticale.svg" style="width: 37px;
+height: 100%;"/>
+</div>
+<div class="col-md-11 p-0">
+<div class="row bg-grey-br">
+<div class="col-md-12 p-0 pt-3">
+<div class="col-md-3">
+    <div class="col-md-3 pl-0">
+    <img src="../../../assets/images/widget/1card.svg" style="width: 40px;">
+</div>
+<div class="col-md-9 pl-0">
+    <label class="m-0"> <b style="color:#E8C40B ;">Intent Number</b>
+    </label>
+    <p class="f-w">{{intentDto.intentNo}}</p>
+</div>
+</div>
+<div class="col-md-8">
+    <div class="row" style="height: 60px;">
+    <div class="col-md-2" style="/* text-align: center; */position: relative;">
+        <img src="../../../assets/svgImages/Rectangle 46rect1.svg"
+            style="height: 70%;margin-top: 2px;  position: absolute;">
+        <img src="../../../assets/svgImages/Vectorredthumb.svg"
+            style="margin-top: 10px;height: 16px;position: absolute;margin-left: 31px;">
+        <label
+            style="/* text-align: center; */color: white;position: absolute;margin-left: 59px;margin-top: 9px;font-size: 11px;">Submition</label>
+    </div>
+    <div class="col-md-2" style="margin-left: 25px;/* text-align: center; */position: relative;">
+        <img src="../../../assets/svgImages/Rectangle 47rec2.svg"
+            style="height: 70%;margin-top: 2px;  position: absolute;">
+        <img src="../../../assets/svgImages/Vectorbluethumb.svg"
+            style="margin-top: 10px;height: 16px;position: absolute;margin-left: 24px;">
+        <label
+            style="/* text-align: center; */color: white;position: absolute;margin-left: 46px;margin-top: 9px;font-size: 11px;">Authorization</label>
+    </div>
+
+    <div class="col-md-2" style="margin-left: 25px;/* text-align: center; */position: relative;">
+        <img src="../../../assets/svgImages/Rectangle 48rec3.svg"
+            style="height: 70%;margin-top: 2px;  position: absolute;">
+        <img src="../../../assets/svgImages/Vectorissued.svg"
+            style="margin-top: 10px;height: 16px;position: absolute;margin-left: 27px;">
+        <label
+            style="/* text-align: center; */color: white;position: absolute;margin-left: 57px;margin-top: 9px;font-size: 11px;">Issued</label>
+    </div>
+
+    <div class="col-md-2" style="margin-left: 25px;/* text-align: center; */position: relative;">
+        <img src="../../../assets/svgImages/Rectangle 49rec4.svg"
+            style="height: 70%;margin-top: 2px;  position: absolute;">
+        <img src="../../../assets/svgImages/Vectorrelsesad.svg"
+            style="margin-top: 10px;height: 16px;position: absolute;margin-left: 27px;">
+        <label
+            style="/* text-align: center; */color: white;position: absolute;margin-left: 57px;margin-top: 9px;font-size: 11px;">Released</label>
+    </div>
+    <div class="col-md-2" style="margin-left: 18px;/* text-align: center; */position: relative;">
+        <img src="../../../assets/svgImages/Rectangle 50rec5.svg"
+            style="height: 70%;margin-top: 2px;  position: absolute;">
+        <img src="../../../assets/svgImages/Vectordilivered.svg"
+            style="margin-top: 10px;height: 16px;position: absolute;margin-left: 27px;">
+        <label
+            style="/* text-align: center; */color: white;position: absolute;margin-left: 57px;margin-top: 9px;font-size: 11px;">Delivered</label>
+    </div>
+</div>
+</div>
+</div>
+<div class="col-md-12 p-0 pb-8">
+    <div class="col-md-3">
+        <div class="col-md-3 pl-0">
+        <img src="../../../assets/images/widget/1date.svg" style="width: 40px;">
+    </div>
+    <div class="col-md-9 pl-0">
+        <label class="m-0"> <b style="color:#E8C40B ;">Store Required On</b>
+        </label>
+        <p class="f-w">
+            {{intentDto.dateStoresRequired.toString()|date}}
+           </p>
+    </div>
+    <div class="col-md-3">
+    </div>
+    <div class="col-md-9 pl-0">
+        <label class="m-0"> <b style="color:#E8C40B ;">Submitted On</b>
+        </label>
+        <p class="f-w">{{intentDto.creationTime.toString()|date:['MMM d, y, h:mm:ss a']}}</p>
+    </div>
+    </div>
+    <div class="col-md-6">
+     <div class="col-md-12 p-0 pb-2">
+    <div class="col-md-2 p-3 mr-3" style=" width: 103px;
+    height: 79px; background: #2E4324; border-radius: 50%; text-align: center;">
+        <p-knob [(ngModel)]="value1" valueTemplate="{value}%" [size]="60" textColor="white" valueColor="#FBE4A9" rangeColor="#A6883A"></p-knob>
+    </div>
+    <div class="col-md-2 p-3 mr-3" style=" width: 103px;
+    height: 79px; background: #2E4324; border-radius: 50%; text-align: center;">
+        <p-knob [(ngModel)]="value2" valueTemplate="{value}%" [size]="60" textColor="white" valueColor="#FBE4A9" rangeColor="#A6883A"></p-knob>
+    </div>
+    <div class="col-md-2 p-3 mr-3" style=" width: 103px;
+    height: 79px; background: #2E4324; border-radius: 50%; text-align: center;">
+        <p-knob [(ngModel)]="value3" valueTemplate="{value}%" [size]="60" textColor="white" valueColor="#FBE4A9" rangeColor="#A6883A"></p-knob>
+    </div>
+    <div class="col-md-2 p-3 mr-3" style=" width: 103px;
+    height: 79px;background: #2E4324; border-radius: 50%; text-align: center;">
+        <p-knob [(ngModel)]="value4" valueTemplate="{value}%" [size]="60" textColor="white" valueColor="#FBE4A9" rangeColor="#A6883A"></p-knob>
+    </div>
+    <div class="col-md-2 p-3" style=" width: 103px;
+    height: 79px;background: #2E4324; border-radius: 50%; text-align: center;">
+        <p-knob [(ngModel)]="value5" valueTemplate="{value}%" [size]="60" textColor="white" valueColor="#FBE4A9" rangeColor="#A6883A"></p-knob>
+    </div>
+     </div>
+     <div class="col-md-12 p-0">
+        <div class="row">
+            <label class="pr-2" style="width: auto;"><b style="color:#E8C40B ;">Periorty:</b></label>
+            <div class="priority_circle"  [ngClass]="{'active':intentDto.priority===1}">
+                <p style="padding-top: 2px;">1</p>
+            </div>
+            <div class="priority_circle" [ngClass]="{'active':intentDto.priority===2}" >
+                <p style="padding-top: 2px;">2</p>
+            </div>
+            <div class="priority_circle" [ngClass]="{'active':intentDto.priority===3}" >
+                <p style="padding-top: 2px;">3</p>
+            </div>
+            <div class="priority_circle" [ngClass]="{'active':intentDto.priority===4}" >
+                <p style="padding-top: 2px;">4</p>
+            </div>
+            <div class="priority_circle" [ngClass]="{'active':intentDto.priority===5}">
+                <p style="padding-top: 2px;">5</p>
+            </div>
+            <div class="col-md-6">
+                <div class="col-md-7">
+                    <label class="m-0"> <b style="color:#E8C40B ;">Voucher Class</b>
+                    </label>
+                    </div>
+                    <div class="col-md-5 reason-intent">
+                      <span style="font-size: 12px;" >{{getIntentClass(intentDto.intentClass)}}</span>
+                     </div>
+            </div>
+        </div>
+
+     </div>
+    </div>
+    <div class="col-md-3" *ngIf="user">
+        <div class="col-md-3 pl-0">
+        <img src="../../../assets/images/widget/person.svg" style="width: 40px;">
+    </div>
+    <div class="col-md-9 pl-0">
+        <label class="m-0"> <b style="color:#E8C40B ;">Submitted By</b>
+        </label>
+        <p class="f-w">{{getuserName()}}</p>
+    </div>
+    <div class="col-md-3">
+    </div>
+    <div class="col-md-9 pl-0">
+        <label class="m-0"> <b style="color:#E8C40B ;">Roles</b>
+        </label>
+        <p class="f-w"> {{getUserRole()}}</p>
+    </div>
+    </div>
+</div>
+<div class="col-md-12 p-0">
+    <div class="row">
+    <div class="col-md-5">
+        <div class="col-md-12">
+        <label class="m-0"> <b style="color:#E8C40B ;">Voucher Type</b>
+        </label>
+        <div class="col-md-12 slider-item p-0 voucherType">
+            <div class="" style="overflow: auto; display: flex;">
+           <div class="col-md-2 text-center p-0 pt-2 ml-2" [ngClass]="{'active':intentDto.voucherToType===1}"  >
+               <p>User</p>
+               <img src="../../../assets/images/widget/Group 69.png" width="100%"/>
+               <div class="col-md-12 p-0">
+                   <hr class="hr">
+               </div>
+           </div>
+           <div class="col-md-2  text-center p-0 pt-2 ml-2" [ngClass]="{'active':intentDto.voucherToType===2}" >
+            <p>Warehouse</p>
+            <img src="../../../assets/images/widget/Group 70.png" width="100%"/>
+            <div class="col-md-12 p-0">
+                <hr class="hr">
+            </div>
+        </div>
+        <div class="col-md-2 text-center p-0 pt-2  ml-2" [ngClass]="{'active':intentDto.voucherToType===3}" >
+            <p>Unit</p>
+            <img src="../../../assets/images/widget/Group 71.png" width="100%"/>
+            <div class="col-md-12 p-0">
+                <hr class="hr">
+            </div>
+        </div>
+        <div class="col-md-2 text-center p-0 pt-2  ml-2" [ngClass]="{'active':intentDto.voucherToType===4}">
+            <p>Brigades</p>
+            <img src="../../../assets/images/widget/Group 72.png" width="100%"/>
+            <div class="col-md-12 p-0">
+                <hr class="hr">
+            </div>
+        </div>
+        <div class="col-md-2  text-center p-0 pt-2 ml-2" [ngClass]="{'active':intentDto.voucherToType===5}" >
+            <p>Divisions</p>
+            <img src="../../../assets/images/widget/Group 69.png" width="100%"/>
+            <div class="col-md-12 p-0">
+                <hr class="hr">
+            </div>
+        </div>
+        <div class="col-md-2  text-center p-0 pt-2 ml-2" [ngClass]="{'active':intentDto.voucherToType===6}">
+            <p>Org. Unit</p>
+            <img src="../../../assets/images/widget/Group 70.png" width="100%"/>
+            <div class="col-md-12 p-0">
+                <hr class="hr">
+            </div>
+        </div>
+    </div>
+
+    </div>
+        </div>
+        <div class="col-md-12 pt-5">
+            <label class="m-0"> <b style="color:#E8C40B ;">Store Categories</b>
+            </label>
+            <div class="col-md-12 slider-item p-0 voucherType" >
+               <div class="col-md-2 text-center p-0 ml-2"  [ngClass]="{'active':intentDto.voucherToType===1}" >
+                   <p>User</p>
+                   <img src="../../../assets/images/widget/Group 69.png" width="100%"/>
+                   <div class="col-md-12 p-0">
+                    <hr class="hr">
+                </div>
+               </div>
+               <div class="col-md-2  text-center p-0 ml-2"  [ngClass]="{'active':intentDto.voucherToType===2}">
+                <p>Warehouse</p>
+                <img src="../../../assets/images/widget/Group 70.png" width="100%"/>
+                <div class="col-md-12 p-0">
+                    <hr class="hr">
+                </div>
+            </div>
+            <div class="col-md-2 text-center p-0 ml-2"  [ngClass]="{'active':intentDto.voucherToType===3}">
+                <p>Unit</p>
+                <img src="../../../assets/images/widget/Group 71.png" width="100%"/>
+                <div class="col-md-12 p-0">
+                    <hr class="hr">
+                </div>
+            </div>
+            <div class="col-md-2 text-center p-0 ml-2"  [ngClass]="{'active':intentDto.voucherToType===4}">
+                <p>Brigades</p>
+                <img src="../../../assets/images/widget/Group 72.png" width="100%"/>
+                <div class="col-md-12 p-0">
+                    <hr class="hr">
+                </div>
+            </div>
+            <div class="col-md-2  text-center p-0 ml-2"  [ngClass]="{'active':intentDto.voucherToType===5}">
+                <p>Divisions</p>
+                <img src="../../../assets/images/widget/Group 69.png" width="100%"/>
+                <div class="col-md-12 p-0">
+                    <hr class="hr">
+                </div>
+            </div>
+
+        </div>
+        </div>
+        <div class="col-md-12 pt-5">
+            <label class="m-0"> <b style="color:#e6e6e6 ;">Store Request: <span>{{RequestedItemDto.length}}</span></b>
+            </label>
+            <div class="col-md-12 p-0 rquest-item-grid">
+                <p-table #dataTable [value]="RequestedItemDto" [scrollable]="true" scrollHeight="208px" [paginator]="false">
+                    <ng-template pTemplate="header">
+                        <tr>
+                            <th *ngFor="let column of columns">{{column.name}}</th>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="body"  let-item >
+                        <tr class="body-td">
+                            <td>
+                                <div class="col-md-5 p-0"><img src="../../../assets/images/widget/smallboot.svg">
+                                </div><div class="col-md-7 p-0 mt-2" style="word-break: break-all;">
+                                    {{decryptItemName(item.item)}}
+                                </div>
+                            </td>
+                            <td>{{item.item.categoryId}}</td>
+                            <td>{{(item.qtyNumberRequired+item.qtyWeightRequired)}}</td>
+                        </tr>
+                    </ng-template>
+                </p-table>
+
+             </div>
+        </div>
+   </div>
+    <p-divider layout="vertical" align="center"></p-divider>
+    <div class="col-md-3 p-0">
+      <div class="col-md-12 p-0">
+        <label class="m-0"> <b style="color:#E8C40B ;">Description</b>
+        </label>
+        <div class="col-md-12 p-0 gradient-y f-w">
+         <p class="p-5">  {{intentDto.descriptionOfPackage}}
+        </p>
+
+         </div>
+      </div>
+      <div class="col-md-12 p-0 pt-5">
+          <div class="col-md-12 p-0 pb-3" style="background: #6D773A;border-radius: 5px;">
+              <div class="col-md-12 p-0" style="background: #B7A643;
+              border-radius: 9px; color: #e6e6e6;">
+                <h3 class="p-2 m-0">Remarks</h3>
+              </div>
+              <div class="col-md-12 pt-3" style="overflow-y: auto;
+              height:338px;" *ngIf="remarks.length>0">
+
+                  <div class="p-3 mb-3" style="background: #1E5C24;border-radius: 7px;" *ngFor="let item of remarks">
+                  <div class="row">
+                      <div class="col-md-3">
+                          <img src="{{profilePicture}}" style="border-radius: 50%;height: 20px;width: 20px;" />
+                      </div>
+                      <div class="col-md-4 f-w p-0"><p>{{item.createdBy}}</p></div>
+                      <div class="col-md-5 f-w" style="text-align: end; font-size: 10px;">{{item.creationTime|luxonFromNow}}</div>
+                  </div>
+                  <div class="row pt-3">
+                      <div class="col-md-12 f-w f-s8">
+                          <span>{{item.remarkDescription}}</span>
+                      </div>
+                  </div>
+                </div>
+              </div>
+            <div class="col-md-12 pt-3" style="text-align: end;" *ngIf="!IsRemarkBtnHide">
+                <a class="btn btn-sm f-w" (click)="ShowRemark()" style="background: #1E5C24;border-radius: 7px;">Add</a>
+
+            </div>
+            <div class="col-md-12 remarks pt-5" *ngIf="IsRemarkShow">
+                <textarea name="parent_text" [(ngModel)]="RemarksText"></textarea>
+                <div class="col-md-12 pt-3" style="text-align: end;">
+              <a class="btn btn-sm f-w" (click)="AddRemark(intentDto.id)">Save</a>
+              <a class="btn btn-sm f-w" (click)="CancelRemark()">Cancel</a>
+              </div>
+            </div>
+          </div>
+      </div>
+      <div class="col-md-12 p-0 pt-5" style="text-align: center;">
+          <h6 class="f-w">Your Approval Required</h6>
+          <button  class="btn btn-primary bg-yellow">Approve</button>
+      </div>
+    </div>
+    <p-divider layout="vertical" align="center"></p-divider>
+    <div class="col-md-3 p-0">
+        <div class="col-md-12 p-0">
+            <div class="col-md-9 p-0">
+            <label class="m-0"> <b style="color:#E8C40B ;">Reason For Intent</b>
+            </label>
+            </div>
+            <div class="col-md-3 p-0 reason-intent">
+              <span >{{getIntentReason(intentDto.reasonForIndent)}}</span>
+             </div>
+          </div>
+          <div class="col-md-12 p-0 pt-5">
+              <div class="col-md-12 p-0 pb-3" style="background: #6D773A;border-radius: 5px;">
+                  <div class="col-md-12 p-0" style="background: #B7A643;
+                  border-radius: 9px; color: #e6e6e6;">
+                 <div class="p-2">
+                     <div class="col-md-2 p-0"  style="background:#1E5C24;border-radius: 7px ; text-align: center;">
+                        <img src="../../../assets/images/widget/comment-icon.svg" style="cursor: pointer;" (click)="ShowComment()" width= "31px"/>
+                        <span id="count_comments" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="margin-left: -2px;height: 16px;width: 16px;font-size: 8px;margin-top: -7px;">{{commentlength}}</span>
+                     </div>
+                     <div class="col-md-6 p-0">
+                        <h5 class="p-2 m-0">{{selectedOptionsText}}</h5>
+                    </div>
+                    <div class="col-md-1 p-0" style="text-align: end;">
+                        <a type="button" style="background: transparent; border: 0px">
+                            <img src="../../../assets/images/widget/apprive.svg"  style="height: 21px;width:21px;padding: 2px;"/>
+                        </a>
+                     </div>
+                     <div class="col-md-1 p-0" style="text-align: end;">
+                        <a href="javascript:void(0)" (click)="loadNotes()" id="change_to_notes" style="background: transparent;border: 0px;" type="button"><img src="../../../../assets/images/paper.svg" style="height: 21px;width:21px;padding: 2px;"></a>
+
+                     </div>
+                     <div class="col-md-1 p-0" style="text-align: end;">
+                        <a href="javascript:void(0)"  style="background: transparent;border: 0px;" type="button">
+                            <img src="../../../../assets/images/filedownload.svg" (click)="showfile()" style="height: 21px;width:21px;/* float: right;padding: 2px; */"></a>
+                     </div>
+                 </div>
+                  </div>
+                  <div *ngIf="getComments">
+                    <div class="col-md-12 parent-comment pt-5" *ngIf="IsParentDiv">
+                        <textarea name="parent_text" [(ngModel)]="commentText"></textarea>
+                        <div class="col-md-12 pt-3" style="text-align: end;">
+                        <a class="btn btn-sm f-w" (click)="SaveComment(0,intentDto.id,true)">Save</a>
+                        <a class="btn btn-sm f-w" (click)="cancelComment()">Cancel</a>
+                     </div>
+                   </div>
+                      <div class="col-md-12 pt-3" style="overflow-y: auto;
+                      height: 482px;">
+                          <div class="p-3 mb-3" style="background: #759774;border-radius: 7px;" *ngFor="let item of filterParentComments()">
+                          <div class="row">
+                              <div class="col-md-3">
+                              <img src="{{profilePicture}}" style="border-radius: 50%;height: 22px;width: 22px;"/>
+                              </div>
+                              <div class="col-md-4 f-w p-0"><p>{{item.createdBy}}</p></div>
+                              <div class="col-md-5 f-w" style="text-align: end; font-size: 10px;">{{item.creationTime|luxonFromNow}}  </div>
+                          </div>
+                          <div class="row pt-3">
+                              <div class="col-md-12 f-w f-s8">
+                                  <span>{{item.noteDescription}}</span>
+                              </div>
+                          </div>
+                          <div class="row pt-3">
+                            <div class="col-md-12" >
+                                <i class="fa fa-reply fa-flip-horizontal reply" ></i><a (click)="appendCommentArea($event,item.id,intentDto.id)" style="cursor: pointer;"><span class="reply pl-2">Reply</span></a>
+                            </div>
+                        </div>
+                          <div class="p-3" style="background: rgba(136, 125, 62, 0.49);border-radius: 7px;" *ngIf="filterChileComments(item.id).length>0">
+                        <div class="inner-comment"  *ngFor ="let item2 of filterChileComments(item.id)">
+                            <div class="row">
+                                <div class="col-md-3">
+                                <img src="{{profilePicture}}" width="100%" />
+                                </div>
+                                <div class="col-md-6 f-w p-0"><p>{{item2.createdBy}}</p></div>
+                                <div class="col-md-3 f-w" style="text-align: end; font-size: 10px;">{{item2.creationTime|luxonFromNow}}</div>
+                            </div>
+                            <div class="row pt-3">
+                                <div class="col-md-12 f-w f-s8">
+                                    <span>{{item2.noteDescription}}</span>
+                                </div>
+                            </div>
+                            <div class="row pt-3">
+                                <div class="col-md-6" >
+                                    <span class="reply pl-2">1 Like</span>
+                                </div>
+                                <div class="col-md-6" style="text-align: end;" >
+                                    <i class="fa fa-reply fa-flip-horizontal reply" ></i><a (click)="appendCommentArea($event,item.id,intentDto.id)" style="cursor: pointer;"><span class="reply pl-2">Reply</span></a>
+                                </div>
+                            </div>
+                            <div class="divider">
+                                <p-divider  align="center"></p-divider>
+                               </div>
+                        </div>
+
+
+                          </div>
+                        </div>
+
+                      </div>
+                  <div class="col-md-12 pt-3" style="text-align: end;" *ngIf="!IsParentDiv">
+                    <a class="btn btn-sm f-w" (click)="ShowComment()" style="background: #759774;font-size: 9px;color: white;float: right;margin-top: 6px;">Add</a>
+
+                </div>
+
+
+                        </div>
+
+                    </div>
+
+                  </div>
+                  <div *ngIf="Notes">
+                    <div class="remark" style="overflow-y: scroll;height: 369px;border: 1px solid ;"  id="comment_lists">
+                        <div class="col-md-12 p-3 mb-3"   style="background: #759774;border-radius: 7px;"  *ngFor="let note of eqisNotesList">
+                            <div class="row">
+                                <div class="col-md-12" style="background-color: #759774;border-radius: 7px">
+                                    <div id="top_comment_19" class="col-md-12" style=" margin-top: 10px;">
+                                        <img  [src]="profilePicture"  style="border-radius: 50%;height: 22px;width: 22px;" >
+                                        <label style="font-weight: 100;font-size: 10px;color: black;" id="0_profile_id">Emmanuel SMITH</label>
+                                        <label id="time_ago_19" style="font-weight: 100;float: right;font-size: 10px;margin-top: 6px;color:#B4BBC6;">      </label>
+                                        <div _ngcontent-wjy-c268="" class="col-md-12 f-w f-s8"><span>{{note.noteDescription}}</span></div>                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <button id="add_comment" class="btn btn-default" style="font-size: 9px;background:#759774;color: white;float: right;margin-top: 6px;" (click)="AddNotes()"> Add</button>
+                      </div>
+                  </div>
+                 <div *ngIf="getFile">
+                    <div class="col-md-12" style="background-color: #1E5C24;">
+                        <table class="table">
+                            <thead>
+                                <tr style="background-color: #1E5C24;font-size: 10px;color: white;">
+                                    <th id="filescount">{{this.GetFilesCount}} Files</th>
+                                    <th id="total_filesize"></th>
+                                    <th>Download</th>
+                                </tr>
+                            </thead>
+                            <tbody *ngFor="let item of  this.FilesDto ;" >
+                                <tr style="background-color: #1E5C24;font-size: 10px;color: white;">
+                                    <td style="font-size: 10px;"><img [src]="item.uploadFiles" style="width: 25px;"><b> {{GetfileName(item.uploadFiles)}} </b> <br><span id="image_0"></span>   </td>
+                                    <th id="total_filesize"></th>
+                                    <th>
+                                        <a href="javascript:void(0)"  style="background: transparent;border: 0px;" type="button">
+                                        <img src="../../../../assets/images/filedownload.svg" (click)="downloadeFile(item.uploadFiles)" style="height: 21px;width:21px;/* float: right;padding: 2px; */"></a></th>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-md-12">
+                        <button id="add_comment" class="btn btn-default" style="font-size: 9px;background:#759774;color: white;float: right;margin-top: 6px;" (click)="AddAttachmentPopup()"> Add</button>
+                      </div>
+                 </div>
+              </div>
+          </div>
+    </div>
+</div>
+</div>
+<div class="col-md-12 pt-5"></div>
+</div>
+
+<div class="col-md-12 pt-6 p-0">
+<div class="col-md-1 p-0" style="width: 5%;">
+    <img src="../../../assets/images/widget/verticale-rectangle-sm.svg" style="width:28px;"/>
+    </div>
+    <div class="col-md-11 p-0">
+        <div class="row bg-grey-br">
+            <div class="col-md-10 text-center">
+              <p class="f-w pt-3">NO FILE,</p>
+              <p class="f-w"> Approve and Add Authority</p>
+            </div>
+            <div class="col-md-2 ">
+           <div class=" col-md-12 p-0 pt-5" style="text-align: end;">
+               <a class="btn btn-sm plus-round-btn"><i class="fa fa-plus f-w"></i></a>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-md-12 pt-6 p-0">
+    <div class="col-md-1 p-0" style="width: 5%;">
+        <img src="../../../assets/images/widget/verticale-rectangle-sm.svg" style="width:28px;"/>
+        </div>
+        <div class="col-md-11 p-0">
+            <div class="row bg-grey-br">
+                <div class="col-md-10 text-center">
+                  <p class="f-w pt-3">NO FILE,</p>
+                  <p class="f-w"> Approve and Add Authority</p>
+                </div>
+                <div class="col-md-2 ">
+               <div class=" col-md-12 p-0 pt-5" style="text-align: end;">
+                   <a class="btn btn-sm plus-round-btn"><i class="fa fa-plus f-w"></i></a>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12 pt-6 p-0">
+        <div class="col-md-1 p-0" style="width: 5%;">
+            <img src="../../../assets/images/widget/verticale-rectangle-sm.svg" style="width:28px;"/>
+            </div>
+            <div class="col-md-11 p-0">
+                <div class="row bg-grey-br">
+                    <div class="col-md-10 text-center">
+                      <p class="f-w pt-3">NO FILE,</p>
+                      <p class="f-w"> Approve and Add Authority</p>
+                    </div>
+                    <div class="col-md-2 ">
+                   <div class=" col-md-12 p-0 pt-5" style="text-align: end;">
+                       <a class="btn btn-sm plus-round-btn"><i class="fa fa-plus f-w"></i></a>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+<app-Add-popup-Model #SaveModel [IfAttachment]="IsAttachment" [ModelHeading]="HeaderText" [IntentFormId]="IntentFormId" (RefershFilesTable)="showfile()" (RefereshNotes)="LoadNotes()"></app-Add-popup-Model> -->

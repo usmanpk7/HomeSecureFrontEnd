@@ -1,0 +1,10 @@
+<div style="display: block;">
+    <p-chart type="doughnut"
+     [data]="data"
+     [options]="chartOptions"
+       width="350" height="350"
+       ></p-chart>
+       <div *ngIf="true" [appLoading]="Loading" >
+    </div>
+
+  </div>

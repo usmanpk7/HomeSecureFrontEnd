@@ -1,0 +1,253 @@
+
+
+
+.parent{
+    
+    display: flex;
+    /* flex-direction: column; */
+    display: block;
+    border: 2px solid #FAFAFAFA;
+    width: 100%;
+    margin-top: 2rem;
+    padding: 1rem;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.15);
+}
+.btns{
+    display: flex;
+    justify-content: start;
+    gap: .8rem;
+}
+.live{
+    width: 50%;
+    height: 42px;
+    background-color: rgb(97, 97, 207);
+    font-size: 15px;
+    border: 2px solid rgb(97, 97, 207);
+    border-radius: 6px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.line-text{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   color: white;
+   font-weight: 500;
+   text-transform: uppercase;
+   margin-top: 12px;
+}
+.local_pharmacy{
+    position: absolute;
+    left: 2%;
+    top: 17%;
+}
+.filter{
+    position: relative;
+    border-radius: 6px;
+    color:#FF5575;
+    width: 50%;
+    height: 42px;
+    background-color: #FFD8DF;
+    font-size: 14px;
+    border: 2px solid #FF5575;
+    font-weight: 500;
+    text-align: center;
+}
+.dots-image{
+    position: absolute;
+    right: 2%;
+    top: 27%;
+
+}
+
+
+.text{
+    display: flex;
+    justify-content: space-between;
+}
+.select-text, .scroll{
+    font-size: 1rem;
+    margin-top: 1rem;
+}
+
+.dots{
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+    justify-content: space-evenly;
+}
+.region{
+    color: #FF8DA3;
+    font-size: 15px;
+    font-weight: 600;
+}
+.dot-1, .dot-2,.dot-3, .dot-4, .dot-5, .dot-6, .dot-7, .dot-8, .dot-9, .dot-10,
+.dot-11, .dot-12{
+    display: flex;
+    align-items: center;
+    margin-right: 6px;
+}
+.pink-dot{
+    display: flex;
+    border-radius: 50%;
+    background-color: brown;
+    height: 14px;
+    width: 14px;
+}
+.yellow-dot{
+    display: flex;
+    border-radius: 50%;
+    background-color: yellow;
+    height: 20px;
+    width: 30px;
+}
+
+.blue-dot{
+    display: flex;
+    border-radius: 50%;
+    background-color: rgb(100, 100, 187);
+    height: 14px;
+    width: 14px;
+}
+
+.text-bul{
+    font-size: 15px;
+}
+
+
+.child{
+    display: flex;
+    justify-content: start;
+    margin-top: 2rem;
+    gap: 2rem;
+}
+.gis{
+    
+    text-transform: uppercase;
+    color: rgb(212, 102, 102);
+    border-bottom: 2px solid rgb(219, 104, 104);
+    padding-bottom: 2rem;
+    width: 60px;
+    height: 12px;
+    font-size: 15px;
+   
+}
+.google{
+    margin-bottom: .6rem;
+    font-size: 15px;
+    text-transform: uppercase;
+    color: rgb(219, 104, 104);
+    border-bottom: 2px solid rgb(219, 104, 104);
+    width: 160px;
+    height: 12px;
+    padding-bottom: 2rem;
+    text-align: center;
+    margin-left: 12px;
+}
+.sat{
+    display: flex;
+    gap: .5rem;
+}
+.switch-image{
+    width: 30px;
+    height: 20px;
+    align-self: center;
+    justify-self: center;
+    margin-right: 30px;
+}
+.satellite{
+    color: rgb(177, 107, 243);
+    font-size: 15px;
+    align-self: center;
+    justify-content: center;
+    margin-left: 180px;
+}
+.icon-after-headings{
+    width: 10px;
+    height: 10px;
+    margin-left: .5rem;
+    align-self: center;
+  }
+.map-part{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: .5rem;
+    margin-left: 60px;
+}
+.map-text{
+    justify-self: end;
+    align-self: center;
+    font-size: 15px;
+    color: rgb(177, 107, 243);
+}
+.map-image{
+    width: 100%;
+    margin-top: 1rem;
+    height: 70vh;
+}
+.on-image{
+    width: 35px;
+    height: 20px;
+    align-self: center;
+    justify-self: center;
+}
+
+/* Media Queries */
+
+@media(max-width:720px){
+    
+    .parent{
+        margin-top: 2rem;
+        width: 220%;
+    }
+    .live, .filter{
+        font-size: 2rem;
+        font-weight: 700;
+    }
+    .select-text, .scroll{
+        font-size: 1.5rem;
+        margin-top: 1rem;
+        font-weight: 700;
+    }
+    .text-bul{ 
+        font-size: 1.5rem;
+        font-weight: 700;
+    }
+    .dot-1, .dot-2, .dot-3, .dot-4, .dot-5, .dot-6, .dot-7, .dot-8, .dot-9, .dot-10,
+.dot-11, .dot-12{
+    display: flex;
+    border-radius: 50%;
+    background-color: brown;
+    height: 1rem;
+    width: 1rem;
+    gap: 2rem;
+    align-items: center;
+    margin-right: 2.5rem;
+}
+.dots{
+    gap:4.8rem;
+}
+
+.gis{
+    padding-bottom: 3rem;
+    width: 120px;
+    height: 12px;
+    height: .1rem;
+    font-size: 2rem;   
+}
+.google{
+    padding-bottom: 3rem;
+    width: 17rem;
+    height: .1rem;
+    font-size: 2rem;
+}
+.map-image{
+    width: 100%;
+    margin-top: 1rem;
+    height: 120vh;
+}
+
+}

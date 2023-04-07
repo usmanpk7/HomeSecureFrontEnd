@@ -1,0 +1,130 @@
+.form-control{
+    left: 0px;
+right: 0px;
+top: 0px;
+bottom: 0px;
+
+border: 1px solid #C5E0B4;
+box-sizing: border-box;
+border-radius: 10px;
+background-color: #A69D56;
+}
+
+.form-label{
+
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 500;
+line-height: 16px;
+letter-spacing: -0.01em;
+text-transform: capitalize;
+font-feature-settings: 'cpsp' on;
+
+color: #FFFFFF;
+}
+
+.hrv{
+    border:         none;
+    height:         50vh;
+    width:          1px;
+    float: right;
+    height: 70%;
+    background: #fff;
+    top: 30%;
+}
+img{
+    height: 79.693359375px;
+width: 80.1083984375px;
+left: -1886.8514404296875px;
+top: -494.11688232421875px;
+border-radius: 50px;
+background: linear-gradient(180deg, rgba(255, 255, 255, 0.71) 0%, rgba(55, 100, 25, 0.94) 100%);
+box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.25);
+}
+
+.imgbd{
+    width: 208px;
+height: 104.21px;
+
+border: 1px solid #676C3D;
+box-sizing: border-box;
+border-radius: 10px;
+background-color: #828036;
+}
+
+.hrdesign{
+    width: 150px;
+height: 0px;
+
+border: 1px solid #C5E0B4;
+}
+
+.settinghr{
+    width: 303px;
+height: 0px;
+
+border: 4px solid rgba(74, 108, 57, 0.86);
+}
+
+/* Switch 1 Specific Styles Start */
+
+
+
+input[type="checkbox"].switch_1{
+	font-size: 30px;
+	-webkit-appearance: none;
+	   -moz-appearance: none;
+	        appearance: none;
+	width: 28px;
+	height: 9px;
+	background: #405838;
+	border-radius: 3em;
+	position: relative;
+	cursor: pointer;
+	outline: none;
+	-webkit-transition: all .2s ease-in-out;
+	transition: all .2s ease-in-out;
+  }
+
+  input[type="checkbox"].switch_1:checked{
+	background: #405838;
+  }
+
+  input[type="checkbox"].switch_1:after{
+	position: absolute;
+	content: "";
+	width: 11px;
+	height: 9px;
+	border-radius: 50%;
+	background: #4F8B3B;
+	-webkit-box-shadow: 0 0 .25em rgba(0,0,0,.3);
+	        box-shadow: 0 0 .25em rgba(0,0,0,.3);
+	-webkit-transform: scale(.7);
+	        transform: scale(.7);
+	left: 0;
+	-webkit-transition: all .2s ease-in-out;
+	transition: all .2s ease-in-out;
+  }
+
+  input[type="checkbox"].switch_1:checked:after{
+	left: calc(100% - 0.40em);
+  }
+
+/* Switch 1 Specific Style End */
+
+
+::ng-deep .p-dropdown {
+    width: 206px;
+                                                height: 36px;
+
+                                                background: #787735;
+                                                border: 1px solid #9db186;
+                                                box-sizing: border-box;
+                                                border-radius: 10px;
+}
+
+  ::ng-deep .p-dialog-content .p-dropdown.p-disabled{
+    background-color: #8C894C !important;
+    border: 1px solid #676C3D !important;
+  }
+

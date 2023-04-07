@@ -1,0 +1,78 @@
+<div class="d-flex flex-column flex-root">
+    <div class="bg-white bg-module" id="kt_login">
+        <div class="login-aside d-flex flex-column flex-row-auto p-15">
+            <div class="row mt-15">
+                <div class="col-md-2">
+                    <img width="50" src="../../../assets/electro pro web.png">
+                     <img width="100" src="../../../assets/NavBarLogo2.png">
+                </div>
+                <div class="col-md-10 pt-4 pl-10">
+                    <h2><b>WELCOME, {{userName | uppercase}}</b></h2>
+                </div>
+            </div>
+            <div class="row mt-10">
+                <div class="col-md-12 text-center">
+                    <button
+                        (mouseover)="changeStyleIn($event)"
+                        (mouseout)="changeStyleOut($event)"
+                        type="button"
+                        class="btn btn-light-primary font-weight-bold bg-white bb-danger col-md-12"
+                    >
+                        <span class="btn-custom-design">
+                            {{ 'SWITCH TO OTHER MODULE' | localize }}
+                        </span>
+                    </button>
+                </div>
+            </div>
+            <div class="row mt-10">
+                <div class="col tenant-card text-center mr-2 p-4">
+                    <div class="tenant-card-span">Election Monitor</div>
+                    <img src="../../../assets/tenant1.png" width="120" />
+                    <button (click)="GoToDashboard('Election')" type="button" class="btn btn-sm btn-block tenant-card-btn">
+                        SELECT
+                    </button>
+                </div>
+                <div class="col tenant-card text-center mr-2 p-4">
+                    <div class="tenant-card-span">Election Reporting</div>
+                    <img src="../../../assets/tenant2.png" width="120" />
+                    <button type="button" class="btn btn-sm btn-block tenant-card-btn">
+                        SELECT
+                    </button>
+                </div>
+                <div class="col tenant-card text-center mr-2 p-4">
+                    <div class="tenant-card-span">Emergency</div>
+                    <img src="../../../assets/tenant3.png" width="120" />
+                    <button type="button" class="btn btn-sm btn-block tenant-card-btn">
+                        SELECT
+                    </button>
+                </div>
+                <div class="col tenant-card text-center mr-2 p-4">
+                    <div class="tenant-card-span mb-7">Incident</div>
+                    <img src="../../../assets/tenant4.png" width="180" />
+                    <button (click)="GoToDashboard('Incident')" type="button" class="btn btn-sm btn-block tenant-card-btn">
+                        SELECT
+                    </button>
+                </div>
+                <div class="col tenant-card text-center p-4">
+                    <div class="tenant-card-span mb-4">Asset Tracker</div>
+                    <img src="../../../assets/tenant5.png" width="180" />
+                    <button (click)="GoToDashboard('Asset')" type="button" class="btn btn-sm btn-block tenant-card-btn">
+
+                        SELECT
+                    </button>
+                </div>
+                
+            </div>
+
+            <div class="row">
+                <div class="col text-center mt-20">
+                    <button
+                        type="button" (click)="logout()"
+                        class="btn font-size-h6 px-8 py-4 my-3 mr-3 eqis-login-btn logout-btn">
+                        <img src="../../../assets/arrow_drop_down_circle.png" /> {{ 'LOG OUT' | localize }}
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,73 @@
+<!-- <style>
+    .spinner-img {
+  height: 20vh;
+  width: 20vh;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  color: red;
+}
+</style>
+<p-dialog [(header)]="ModelHeading" [(visible)]="displayResponsive" [style]="{width: '20vw'}">
+
+
+    <form autocomplete="off"   class="createform" style="padding: 20px;">
+        <div *ngIf="IfAttachment">
+
+
+        <div *ngIf="loading"  style="position: relative;z-index: 50000;opacity: 2;">
+            <img class="spinner-img" src="../assets/loader.gif">
+          </div>
+     <div class="row">
+        <div class="col-md-12">
+             <div class="input-group mb-3">
+                <input type="file" class="form-control" (change)="handleFileInput($event.target.files)">
+            </div>
+        </div>
+
+     </div>
+
+       <div class="row">
+           <div class="col-md-3">
+
+           </div>
+        <div class="col-md-3 " style="float: right; text-align: center;">
+            <button type="submit" class="btn rounded-pill" style="background: linear-gradient(180deg, #B7A643 0%, #8A8F35 100%);color: white;"
+                 (click)="submit()">Ok</button>
+
+        </div>
+       </div>
+    </div>
+    <div *ngIf="!IfAttachment">
+
+
+        <div *ngIf="loading"  style="position: relative;z-index: 50000;opacity: 2;">
+            <img class="spinner-img" src="../assets/loader.gif">
+          </div>
+     <div class="row">
+        <div class="col-md-12">
+             <div class="input-group mb-3">
+                <textarea name="parent_text" [(ngModel)]="TextDescription" rows="5" cols="44"></textarea>
+             </div>
+        </div>
+
+     </div>
+
+       <div class="row">
+           <div class="col-md-2">
+
+           </div>
+        <div class="col-md-9 " style="float: right; text-align: center;">
+            <button type="submit" class="btn" style="background: linear-gradient(180deg, #B7A643 0%, #8A8F35 100%);color: white;"
+                 (click)="submitNotes()">Submit</button>
+                 <button type="submit" class="btn" style="background: linear-gradient(180deg, #B7A643 0%, #8A8F35 100%);color: white;"
+                 (click)="close()">Cancel</button>
+
+        </div>
+       </div>
+    </div>
+   </form>
+</p-dialog> -->

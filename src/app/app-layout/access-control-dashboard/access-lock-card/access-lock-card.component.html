@@ -1,0 +1,148 @@
+<!-- <div *ngIf="isLoading" [appLoading]="isLoading">
+</div>
+<div *ngIf="!isLoading" class="row" style="justify-content:center;overflow-y: scroll;
+height: 350px;">
+    <div class="col-md-4 p-0 mb-5 mr-13 parent" *ngFor="let item of warehouseDevices  ;let i = index">
+  <div class="col-md-12 innerCard p-0 p-2" (click)="toogleLockCard(i,item.warehousedeviceId,item.antennaId)">
+     <div class="col-md-9 pl-0 pr-0">
+         <div class="col-md-3 p-0 " style="background: #405838;border-radius: 6px">
+             <img src="assets\images\widget\all.svg " style="width:100%;padding: 6px;">
+         </div>
+         <div class="col-md-9">
+             <input name="antennaWarehouseId" value="{{item.antennaId}}" hidden/>
+             <input name="deviceId" value="{{item.warehousedeviceId}}" hidden/>
+
+             <p>{{item.name}}</p>
+             <p>{{item.antennaName}}</p>
+             <p>({{item.deviceName}})</p>
+         </div>
+     </div>
+     <div class="col-md-3 icons" style="text-align:right;padding: 10px;">
+      <i class="fa fa-wifi" style="color:#4F8B3B;font-size: 20px"></i>&nbsp; &nbsp;
+      <i class="fa fa-battery-half fa-rotate-270" style="color:#4F8B3B;font-size: 17px"></i>
+     </div>
+     <div class="col-md-12 p-0"><hr class="hr" style="margin: 5px;"></div>
+     <div class="col-md-12 p-0" style="text-align:center; color: white;">
+         <span>GPO1</span>&nbsp;
+        <i class="fa fa-square GPO" [ngClass]="item.gpo1" aria-hidden="true"></i>&nbsp;
+        <span>GPO2</span>&nbsp;
+        <i class="fa fa-square GPO"  [ngClass]="item.gpo1" aria-hidden="true"></i>&nbsp;
+        <span>GPO3</span>&nbsp;
+        <i class="fa fa-square GPO"  [ngClass]="item.gpo1" aria-hidden="true"></i>&nbsp;
+        <span>GPO4</span>&nbsp;
+        <i class="fa fa-square GPO"  [ngClass]="item.gpo1" aria-hidden="true"></i>
+     </div>
+     <div class="col-md-8 pl-0">
+        <div class="col-md-3 p-0 " [ngStyle]="{'background': checked[i] ?  'rgba(188, 66, 58, 0.35)':'#405838'}" style="border-radius: 6px;text-align: center;">
+            <img [src]="checked[i]? 'assets/images/widget/redLock.svg' : 'assets/images/widget/greenLock.svg' " style="width:83%;padding: 6px;">
+        </div>
+
+    </div>
+    <form [formGroup]="updateLockStatus">
+    <div class="col-md-4 icons" style="text-align:right;padding: 10px;" >
+        <p-inputSwitch onLabel="Y" offLabel="N" formControlName="check" [(ngModel)]="checked[i]" (click)="updateDeviceStaus(item.warehouseId, item.address, (i), item.lat, item.lng, item.name)"></p-inputSwitch>
+    </div>
+</form>
+  </div>
+
+  <div class="col-md-12 innerCard2 p-2" *ngIf="toogleList[i] !== undefined && toogleList[i] === true">
+    <div  *ngIf="isLoading2"  [appLoading]="isLoading2">
+    </div>
+    <div *ngIf="!isLoading2">
+    <div class="col-md-8 text-center">
+    <h7 class="colr-mat">conected:___________</h7>
+</div>
+<div class="col-md-4 icons text-right">
+  <i class="fa fa-wifi" style="color:#4F8B3B;font-size: 15px"></i>&nbsp; &nbsp;
+        <i class="fa fa-battery-half fa-rotate-270" style="color:#4F8B3B;font-size: 15px"></i>
+</div>
+<div class="col-md-12 innerCard3 p-5 mt-3">
+
+  <div class="col-md-6 p-2 lockdiv" (click)="actionLock(item.antennaId,(i))" [disabled]="isDisabled" style="cursor: pointer;">
+<div class="col-md-12 p-0 lockdiv ">
+    <img [src]="checked[i]? 'assets/images/widget/redLock.svg':'assets/images/widget/greenLock.svg'" class="lockimg">
+</div>
+</div>
+</div>
+<div class="col-md-12 text-center pt-3">
+  <h7 class="colr-mat"> Access Status</h7>
+</div>
+<div class="col-md-12 p-0"><hr class="hr" style="margin: 0px;"></div>
+<div class="col-md-12 icons pt-3">
+<i class="fa fa-check-circle" style="color:#23835e;font-size: 15px"></i>&nbsp; &nbsp;<span style="color: white;">Request Initiated</span>&nbsp; &nbsp;&nbsp; &nbsp;
+      <i class="fa fa-exclamation-circle" style="color:#868d26;font-size: 15px"></i> &nbsp; &nbsp;<span style="color: white;">Waiting Approval</span>
+</div>
+<div class="col-md-12  pt-3 text-right colr-mat" >
+<span class="aproved">{{pendingApprovals}}</span>/<span class="pending">{{totalApprovals}}</span>
+</div>
+<div class="col-md-12 pt-3 p-0 pb-3">
+<div class="col-md-6">
+    <button class="btn btn-sm f-10" (click)="initiatedAccessRequest(item.lockStatus,item.antennaId,item.warehousedeviceId,(i),item.address,item.lat,item.lng)"><i class="fa fa-file"></i> Request Store Access</button>
+</div>
+<div class="col-md-6">
+    <button class="btn btn-sm f-11"><i class="fa fa-file"></i> Access Approval</button>
+</div>
+</div>
+</div>
+  </div>
+</div>
+</div>
+<app-dailog #confirmModal [hideHeader]="true" [dialogClass]="'confirmModal'" [hideFooter]="true" [style]="{width: '20vw'}">
+    <div class="col-md-12 head pt-3" style="text-align: center;">
+    <h3 style="color: white;">{{dynamicHeader}}</h3>
+</div>
+<form autocomplete="off" [formGroup]="confirmationForm" class="dynamicForm" style="padding: 20px;">
+    <div class="row">
+        <p> Are sure to for this purpose ?</p>
+    <div class="col-md-12 pt-3" style="text-align: center;">
+        <button type="button" class="btn btn-primary" (click)="submitLockChange()"
+        *ngIf="!IsSubmit">Yes</button>
+        <button type="button" class="btn btn-primary" [disabled]="true"  *ngIf="IsSubmit"
+        >Submitting...</button>
+        <button type="button" class="btn btn-danger" (click)="close()">No</button>
+
+    </div>
+</div>
+</form>
+</app-dailog>
+<app-dailog #createRequestModal [hideHeader]="true" [dialogClass]="'confirmModal'" [hideFooter]="true" [style]="{width: '20vw'}">
+    <div class="col-md-12 head pt-3" style="text-align: center;">
+    <h3 style="color: white;">Create Access Request</h3>
+</div>
+<form autocomplete="off" [formGroup]="confirmationForm" class="dynamicForm" style="padding: 20px;">
+<div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label><strong style="color: #fff">Lock Number</strong></label>
+                <input class="form-control ac-input" type="number" formControlName="LockNumber" name="LockNumber"/>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label><strong style="color: #fff">Serial Number</strong></label>
+                <input class="form-control ac-input" type="text" formControlName="SerialNumber" name="SerialNumber"/>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label><strong style="color: #fff">Purpose</strong></label>
+                <input class="form-control ac-input" type="text" formControlName="Purpose" name="Purpose"/>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label><strong style="color: #fff">Remarks</strong></label>
+                <input class="form-control ac-input" type="text" formControlName="Remarks" name="Remarks"/>
+            </div>
+        </div>
+    <div class="col-md-12 pt-3" style="text-align: center;">
+        <button type="button" class="btn btn-primary" (click)="createAccessRequest()"
+        *ngIf="!IsSubmit">Submit</button>
+        <button type="button" class="btn btn-primary"  *ngIf="IsSubmit"
+        >Submitting...</button>
+        <button type="button" class="btn btn-danger" (click)="createRequestModal.hide()">Cancel</button>
+
+    </div>
+</div>
+</form>
+</app-dailog> -->

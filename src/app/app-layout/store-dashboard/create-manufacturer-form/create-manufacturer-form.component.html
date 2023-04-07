@@ -1,0 +1,378 @@
+<!-- <p-dialog header="ADD MANUFACTURER" [(visible)]="displayResponsive">
+    <div style="width: 750px">
+        <div class="app-modal-body">
+            <form autocomplete="off" [formGroup]="ManufacturerForm" class="createform">
+                <div class="popup">
+                    <div class="container-fluid">
+                        <div class="row mt-3">
+                            <div class="col-md-3">
+                                <h5
+                                    class="text-center mt-3"
+                                    style="
+                                        font-family: 'Roboto';
+                                        font-style: normal;
+                                        font-weight: 400;
+                                        font-size: 16px;
+                                        line-height: 19px;
+                                        /* identical to box height */
+                                        letter-spacing: 0.02em;
+                                        color: #fdfdfb;
+                                    "
+                                >
+                                    SUPPLIER NAME
+                                </h5>
+
+                            </div>
+                            <div class="col-md-3"></div>
+
+                            <div class="col-md-6">
+                                <div class="input-group mb-3">
+                                    <input
+                                        style="
+                                            width: 369.48px;
+                                            height: 45px;
+
+                                            border: 1px solid #676c3d;
+                                            box-sizing: border-box;
+                                            border-radius: 10px;
+                                            color: #fff;
+                                        "
+                                        formControlName="name"
+                                        name="name"
+                                        type="text"
+                                        class="form-control"
+                                        [ngClass]="{ 'is-invalid': submitted && f.name.errors }"
+                                    />
+                                    <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+                                        <div *ngIf="f.name.errors.required">Supplier Name is required</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr />
+                        <div class="row">
+                            <div class="col-md-2">
+                                <h5
+                                    class="text-center mt-3"
+                                    style="
+                                        font-family: 'Roboto';
+                                        font-style: normal;
+                                        font-weight: 400;
+                                        font-size: 16px;
+                                        line-height: 19px;
+                                        /* identical to box height */
+
+                                        letter-spacing: 0.02em;
+
+                                        color: #e4e4b6;
+                                    "
+                                >
+                                    EMAIL
+                                </h5>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="input-group mb-3">
+                                    <input
+                                        type="email"
+                                        style="
+                                            width: 184px;
+                                            height: 45px;
+
+                                            background: rgba(182, 182, 182, 0.12);
+                                            border: 1px solid #858b53;
+                                            box-sizing: border-box;
+                                            border-radius: 10px;
+                                            color: #fff;
+                                        "
+                                        class="form-control"
+                                        formControlName="email"
+                                        name="email"
+                                    />
+                                </div>
+                            </div>
+                            <div class="col-md-1"></div>
+
+                            <div class="col-md-3">
+                                <h5
+                                    class="text-center mt-3"
+                                    style="
+                                        font-family: 'Roboto';
+                                        font-style: normal;
+                                        font-weight: 400;
+                                        font-size: 16px;
+                                        line-height: 19px;
+                                        /* identical to box height */
+
+                                        letter-spacing: 0.02em;
+
+                                        color: #e4e4b6;
+                                    "
+                                >
+                                    PHONE NUMBER
+                                </h5>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="input-group mb-3">
+                                    <input
+                                        type="text"
+                                        style="
+                                            width: 184px;
+                                            height: 45px;
+
+                                            background: rgba(182, 182, 182, 0.12);
+                                            border: 1px solid #858b53;
+                                            box-sizing: border-box;
+                                            border-radius: 10px;
+                                            color: #fff;
+                                        "
+                                        class="form-control"
+                                        formControlName="phoneNumber"
+                                        name="phoneNumber"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                        <hr />
+                        <div class="row">
+                            <div class="col">
+                                <div class="col-md-2">
+                                    <h5
+                                        class="text-center mt-3"
+                                        style="
+                                            font-family: 'Roboto';
+                                            font-style: normal;
+                                            font-weight: 400;
+                                            font-size: 16px;
+                                            line-height: 19px;
+                                            /* identical to box height */
+
+                                            letter-spacing: 0.02em;
+
+                                            color: #e4e4b6;
+                                        "
+                                    >
+                                    FCTORY NAME
+                                    </h5>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="input-group mb-3">
+                                        <input
+                                            type="text"
+                                            style="
+                                                width: 184px;
+                                                height: 45px;
+
+                                                background: rgba(182, 182, 182, 0.12);
+                                                border: 1px solid #858b53;
+                                                box-sizing: border-box;
+                                                border-radius: 10px;
+                                                color:#fff;
+                                            "
+                                            class="form-control"
+                                            formControlName="factoryName"
+                                            name="factoryName"
+                                        />
+                                    </div>
+                                </div>
+                                <div class="row mt-3">
+                                    <div class="col-sm-4">
+                                        <div class="mt-4">
+                                            <label class="title">ACTIVATE</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="mt-4">
+                                            <div class="switch_box box_1">
+                                                <input type="checkbox" class="switch_1" formControlName="activateManufacturer" id="activateManufacturer"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr />
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="input-group mb-3">
+                                    <input
+                                        type="text"
+                                        (keydown.enter)="$event.preventDefault()"
+                                        value="Enter Address or Select location on map"
+                                        style="
+                                            width: 372.48px;
+
+                                            background: rgba(182, 182, 182, 0.12);
+                                            border: 1px solid #858b53;
+                                            box-sizing: border-box;
+                                            color: #fff;
+                                            border-radius: 10px;
+                                        "
+                                        class="form-control"
+                                        formControlName="address"
+                                        name="address"
+                                        autocorrect="off" autocapitalize="off" spellcheck="off"
+                                        #search
+                                    />
+                                </div>
+                            </div>
+                            <div class="col-md-6 mt-3">
+                                <div class="col-md-6">
+                                    <label
+                                        style="
+                                            font-family: 'Roboto';
+                                            font-style: normal;
+                                            font-weight: 400;
+                                            font-size: 16px;
+                                            line-height: 19px;
+                                            /* identical to box height */
+
+                                            color: #e4e4b6;
+                                        "
+                                        >Google Map</label
+                                    >
+                                    <input
+                                        type="radio"
+                                        style="
+                                            background: #e4e4b6;
+                                            margin-left: 12px;
+                                            border: 1.7px solid #e4e4b6;
+                                            box-sizing: border-box;
+                                        "
+                                    />
+                                </div>
+                                <div class="col-md-6">
+                                    <label
+                                        style="
+                                            font-family: 'Roboto';
+                                            font-style: normal;
+                                            font-weight: 400;
+                                            font-size: 16px;
+                                            line-height: 19px;
+                                            /* identical to box height */
+
+                                            letter-spacing: 0.02em;
+
+                                            color: #e4e4b6;
+                                        "
+                                        >Open Street</label
+                                    >
+                                    <input
+                                        type="radio"
+                                        style="
+                                            background: #e4e4b6;
+                                            margin-left: 12px;
+                                            border: 1.7px solid #e4e4b6;
+                                            box-sizing: border-box;
+                                        "
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                        <hr />
+
+                        <div class="row">
+                            <div class="container-fluid">
+                                <div class="map-responsive">
+                                    <agm-map [latitude]="latitude" [longitude]="longitude" [zoom]="zoom">
+
+                                        <agm-marker [latitude]="latitude" [longitude]="longitude" [markerDraggable]="true" (dragEnd)="markerDragEnd($event)"></agm-marker>
+
+                                      </agm-map>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row mt-3">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <a
+                                        (click)="Image.click()"
+                                        class="btn rounded-pill mt-3"
+                                        style="
+                                            background: rgba(182, 182, 182, 0.12);
+                                            border: 1px solid #858b53;
+                                            color: #fff;
+                                            box-sizing: border-box;
+                                            border-radius: 10px;
+                                        "
+                                        >Upload Attachment
+                                        <span
+                                            class="fa fa-upload fa-2x"
+                                            style="color: #fff; float: right; margin-left: 20px"
+                                        ></span> </a
+                                    ><br />
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+
+                            </div>
+                            <div class="col-md-4 mt-3">
+                                <div class="form-group">
+                                    <a (click)="Image.click()"
+                                        ><span class="fa fa-upload fa-2x" style="color: #fff; float: right"></span>
+                                        <input type="file" hidden #Image (change)="handleFileInput($event.target.files)"/> </a
+                                    ><br />
+                                </div>
+                            </div>
+                        </div>
+                        <hr />
+
+                        <div class="row">
+                            <div
+                                style="
+                                    width: 115px;
+                                    height: 117px;
+                                    left: 5.55px;
+                                    top: 27.55px;
+                                    margin-left: 35px;
+                                    background: #646a39;
+                                    border-radius: 10px;
+                                "
+                            >
+                                <div
+                                    style="
+                                        width: 83px;
+                                        margin-top: 18px;
+                                        height: 84px;
+                                        background: #5b6326;
+                                        border-radius: 10px;
+                                        margin-left: 15px;
+                                        display: flex;
+                                    "
+                                >
+                                    <img
+                                        id="supplier_image"
+                                        [src]="fileUpload"
+
+                                        style="width: 100%"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 float-right text-center mt-5 mb-5">
+                            <button
+                                type="submit"
+                                class="btn rounded-pill"
+                                style="
+                                    width: 88px;
+                                    height: 45px;
+
+                                    background: #787735;
+                                    border: 1px solid #9db186;
+                                    box-sizing: border-box;
+                                    border-radius: 10px;
+                                    color: #ffffff;
+                                "
+                                (click)="submit()"
+
+                            >
+                                Submit
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</p-dialog> -->

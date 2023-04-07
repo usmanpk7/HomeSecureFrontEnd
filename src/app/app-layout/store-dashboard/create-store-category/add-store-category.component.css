@@ -1,0 +1,97 @@
+@import url(https://fonts.googleapis.com/css?family=Lato);
+
+
+h4 {
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
+.input-wrapper {
+    position: relative;
+    line-height: 14px;
+    margin: 0 0px;
+    display: inline-block;
+    width: 100%;
+}
+
+.control-label {
+    color: #B8B874;
+    display: inline-block;
+    font-size: 12px;
+    /* text-transform:uppercase;*/
+    position: absolute;
+    z-index: 2;
+    left: 10px;
+    top: 16px;
+    padding: 0 0px;
+    pointer-events: none;
+    background: #828148;
+    transition: all 300ms ease;
+    transform: translateY(-21px);
+    /*font-style: italic;*/
+    font-weight: 500;
+
+}
+
+
+.form-control:invalid+.control-label {
+    /*color: #2b96f1;*/
+    transform: translateY(-21px);
+    color: #B8B874;
+    font-size: 14px;
+    opacity: 1;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: -0.01em;
+}
+
+.form-group.required .control-label:after {
+    color: #d54040;
+    font-family: 'FontAwesome';
+    font-weight: normal;
+    font-size: 9px;
+    content: "\f069";
+    position: absolute;
+    margin-left: 10px;
+    margin-top: 1px;
+}
+
+input:focus,
+.has-error {
+    outline: none;
+    box-shadow: none !important;
+
+}
+
+.btn {
+    padding: 10px 20px;
+}
+
+img{
+    height: 79.693359375px;
+width: 80.1083984375px;
+left: -1886.8514404296875px;
+top: -494.11688232421875px;
+}
+
+.createform{
+    width: 493.83px;
+height: 430px;
+
+background: linear-gradient(359.66deg, rgba(33, 51, 21, 0.9) -11.74%, rgba(183, 166, 67, 0.82) 111.45%);
+backdrop-filter: blur(4px);
+/* Note: backdrop-filter has minimal browser support */
+
+border-radius: 10px;
+}
+
+.product_circle {
+    width: 89px;
+    height: 82px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.71) 0%, rgba(55, 100, 25, 0.94) 100%);
+    box-shadow: 0px 0px 4px 2px rgb(0 0 0 / 25%);
+    border-radius: 50%;
+}

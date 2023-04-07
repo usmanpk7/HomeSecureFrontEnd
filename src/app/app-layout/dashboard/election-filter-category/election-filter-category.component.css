@@ -1,0 +1,307 @@
+.dropdown .election-category-title {
+    line-height: 1 !important;
+    font-family: 'Inter' !important;
+    font-weight: 700 !important;
+    font-size: 1rem !important;
+    align-items: center !important;
+    color: #FF6C88 !important;
+    cursor: pointer;
+}
+.dropdown .show {
+    margin-top: 20px;
+    width: 215%;
+    height: 25rem;
+    overflow: auto;
+    margin-left: -20px;
+    background: #FFEDF0 !important;
+    border-color: #FF6C88 !important;
+    border-radius: 0px 0px 0px 0px !important;
+}
+
+.welcome-message {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 23px;
+    line-height: 150%;
+    letter-spacing: -0.019em;
+    text-transform: uppercase;
+    color: #ff6c88;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+.dropdown {
+    border-bottom: 3px solid #FF6C88 !important;
+}
+
+.dropdown-menu > .dropdown-item, .dropdown-menu > li > a {
+    white-space: normal !important;
+    padding-right: 0.3rem !important;
+    padding-left: 0.6rem !important;
+}
+
+
+.dropdown.show {
+    background: #FF6C88 !important;
+    border-radius: 5px !important;
+}
+
+.dropdown.show .election-category-title {
+    color: #FFFFFF !important;
+}
+
+.visually-hidden {
+    position: absolute;
+    left: -100vw;
+}
+#toggle:checked + .dropdown {
+    background: #FF6C88 !important;
+    border-radius: 5px !important;
+}
+#toggle:checked + .dropdown .election-category-title {
+    color: #FFFFFF !important;
+}
+#toggle1:checked + .dropdown {
+    background: #FF6C88 !important;
+    border-radius: 5px !important;
+}
+#toggle1:checked + .dropdown .election-category-title {
+    color: #FFFFFF !important;
+}
+#toggle2:checked + .dropdown {
+    background: #FF6C88 !important;
+    border-radius: 5px !important;
+}
+#toggle2:checked + .dropdown .election-category-title {
+    color: #FFFFFF !important;
+}
+
+#toggle5:checked + .custom-badge {
+    background: #FF6C88 !important;
+    border-radius: 5px !important;
+}
+#toggle5:checked + .custom-badge .election-category-title {
+    color: #FFFFFF !important;
+}
+
+.custom-badge{
+    background: #bcbcbc;
+    border-radius: 4px;
+    color: #E2E1FF !important;
+}
+
+.custom-badge .election-category-title {
+    line-height: 1 !important;
+    font-family: 'Inter' !important;
+    font-weight: 700 !important;
+    font-size: 11px !important;
+    align-items: center !important;
+    color: #E2E1FF !important;
+}
+
+.checkbox1 {
+    line-height: 1 !important;
+    font-family: 'Inter' !important;
+    font-weight: 700 !important;
+    font-size: 11px !important;
+    align-items: center !important;
+    color: #FF6C88 !important;
+  }
+  .check {
+    visibility: hidden;
+    background: #FF6C88;
+    color: #FFFFFF !important;
+    display: block;
+    height: 100%;
+  }
+  .active {
+    visibility: visible;
+  }
+
+  .bg-custom-card {
+    background: #E2E1FF;
+    border-radius: 6px;
+}
+
+.text-custom-danger {
+    color: #FF6C88 !important;
+}
+
+.text-custom-primary {
+    color: #6966FF !important;
+}
+
+.checkbox_id:before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 8px;
+    height: 7px;
+    top: 10px;
+    left: 0;
+    border: 1px solid #6966FF;
+    background-color: #FFEDF0;
+}
+
+.checkbox_id:checked:after {
+    content: "";
+    display: block;
+    width: 2px;
+    height: 4px;
+    border: solid #6966FF;
+    border-width: 0 1px 1px 0;
+    transform: rotate(45deg);
+    position: absolute;
+    top: 11px;
+    left: 3px;
+}
+
+#checkbox_id1:before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 8px;
+    height: 7px;
+    top: 4px;
+    left: 0;
+    border: 1px solid #6966FF;
+    background-color: #E2E1FF;
+}
+
+#checkbox_id1:checked:after {
+    content: "";
+    display: block;
+    width: 2px;
+    height: 4px;
+    border: solid #6966FF;
+    border-width: 0 1px 1px 0;
+    transform: rotate(45deg);
+    position: absolute;
+    top: 5px;
+    left: 2px;
+}
+
+.row-fluid {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+}
+.row-fluid > .col-md-4 {
+    flex: 0 0 auto;
+  }
+
+
+.col-md-12 .col1 {
+    position: absolute;
+    width: 10rem;
+}
+.col-md-12 .col2 {
+    position: absolute;
+    width: 7rem;
+    left: 12rem;
+}
+.col-md-12 .col3 {
+    position: absolute;
+    width: 7rem;
+    left: 20rem;
+}
+.col-md-12 .col4 {
+    position: absolute;
+    width: 10rem;
+    left: 28rem;
+}
+.col-md-12 .col5 {
+    position: absolute;
+    width: 12rem;
+    left: 39rem;
+}
+.col-md-12 .col6 {
+    position: absolute;
+    width: 12rem;
+    left: 52rem;
+}
+.col-md-12 .col7 {
+    position: absolute;
+    width: 7rem;
+    left: 65rem;
+}
+.col-md-12 .col8 {
+    position: absolute;
+    width: 7rem;
+    left: 73rem;
+}
+.col-md-12 .col9 {
+    position: absolute;
+    width: 7rem;
+    left: 81rem;
+}
+
+.chart-container {
+    width: 100%;
+    height:70px !important;
+ }
+
+ .slider {
+    -webkit-appearance: none;
+    background-color: #B9AEFF;
+    height: 10px;
+    overflow: hidden;
+    width: 100%;
+  }
+  
+  .slider::-webkit-slider-runnable-track {
+    -webkit-appearance: none;
+    height: 10px;
+  }
+  
+  .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    background: #634EDD;
+    box-shadow: -210px 0 0 200px #634EDD;
+    border-radius: 50%;
+    cursor: pointer;
+    height: 10px;
+    width: 15px;
+    border: 0;
+  }
+
+ .slider::-moz-range-thumb {
+    background: #634EDD;
+    border-radius: 50%;
+    box-shadow: -1010px 0 0 1000px #634EDD;
+    cursor: pointer;
+    height: 10px;
+    width: 15px;
+    border: 0;
+  }
+  
+  .slider::-moz-range-track {
+    background-color: #B9AEFF;
+  }
+  .slider::-moz-range-progress {
+    background-color: #634EDD;
+    height: 20px
+  }
+  .slider::-ms-fill-upper {
+    background-color: #B9AEFF;
+  }
+  .slider::-ms-fill-lower {
+    background-color: #634EDD;
+  }
+
+  .range-label{
+    left: 15px;
+    margin-bottom: 0;
+    z-index: 1 !important;
+    position: absolute;
+    top: 1px;
+  }
+  .range-label2{
+    left: 5.5rem;
+    margin-bottom: 0;
+    z-index: 1 !important;
+    position: absolute;
+    top: 1px;
+  }
+

@@ -1,0 +1,71 @@
+<div class="row mb-4">
+    <div class="col-md-4 pl-0">
+        <div class="text-center dropdown pt-2 text-custom-danger mb-2">
+            <span class="election-category-title text-uppercase">AGENTS <i class="fas fa-external-link-alt ml-3 text-custom-danger"></i></span>
+        </div>
+    </div>  
+    <div class="col-md-4">
+        <button class="btn btn-sm btn-block btn-outline-success br-25">Online</button>
+    </div> 
+    <div class="col-md-4">
+        <button class="btn btn-sm btn-block btn-outline-danger br-25">Offline</button>
+    </div> 
+</div>
+<div class="card-with-scrol col-md-12 pl-5 pr-1">
+    <cdk-virtual-scroll-viewport itemSize="10" class="virtual-scroll-viewport">
+    <div class="row pt-2 mb-2 custom-agent-card" *cdkVirtualFor="let item of electionDeviceLocationActivityData">
+        <div class="col-md-2">
+            <img class="width-100 br-50" src="{{item.userImage}}">
+        </div>
+        <div class="col-md-4 pl-0">
+            <h6 class="text-custom-primary fs-08">{{item.userName}} </h6>
+            <h6 class="text-custom-danger fs-06">{{item.creationTime | niceDateFormatPipe }}, {{item.creationTime | date:'shortTime'}} </h6>
+        </div>
+        <div class="col-md-4 pr-0 text-center">
+            <h6 class="text-dark fs-08">{{item.deviceType}} </h6>
+            <h6 class="text-custom-danger fs-08">{{item.deviceName}} </h6>
+            <!-- <h6 class="text-dark fs-06">Time Spent: 20 Min </h6> -->
+            <!-- <h6 class="text-custom-primary fs-08">
+                <i class="fa fa-phone mr-7 text-custom-primary"></i> 
+                <i class="far fa-comment-dots fa-sm mr-7 text-custom-primary"></i> 
+                <i class="fa fa-envelope mr-7 text-custom-primary"></i> 
+            </h6> -->
+        </div>
+        <div class="col-md-2 text-right pr-5 pl-1">
+            <img width="40" src="{{item.image}}">              
+        </div>
+        <div class="col-md-12">
+            <h6 class="text-custom-primary fs-09 text-center">Location Activity Info</h6>
+            <h6 class="text-dark fs-08">LocationAddress <span class="float-right text-custom-danger"> {{item.locationAddress}}</span></h6>
+            <h6 class="text-dark fs-08">Speed <span class="float-right text-custom-danger"> {{item.speed}}</span></h6>
+            <h6 class="text-dark fs-08">IsGeofenceViolation <span class="float-right text-custom-danger"> {{item.isGeofenceViolation}}</span></h6>
+            <h6 class="text-dark fs-08">GeofenceViolationDistance <span class="float-right text-custom-danger"> {{item.geofenceViolationDistance}}</span></h6>
+            <h6 class="text-dark fs-08">IsGpsOn <span class="float-right text-custom-danger"> {{item.isGpsOn}}</span></h6>
+            <h6 class="text-dark fs-08">IsChargerPluged <span class="float-right text-custom-danger"> {{item.isChargerPluged}}</span></h6>
+            <h6 class="text-dark fs-08">BatteryLevel2 <span class="float-right text-custom-danger"> {{item.batteryLevel2}}</span></h6>
+            <h6 class="text-dark fs-08">NetworkSignalNetwork <span class="float-right text-custom-danger"> {{item.networkSignalNetwork}}</span></h6>
+            <h6 class="text-dark fs-08">IsActive <span class="float-right text-custom-danger"> {{item.isActive}}</span></h6>
+        </div>
+        <!-- <div class="col-md-6">
+            <h6 class="text-custom-primary fs-09 text-center">Device Info</h6>
+            <h6 class="text-dark fs-08">OsVersion <span class="float-right text-custom-danger"> {{item.osVersion}}</span></h6>
+            <h6 class="text-dark fs-08">RfidImei <span class="float-right text-custom-danger"> {{item.rfidImei}}</span></h6>
+            <h6 class="text-dark fs-08">SimNumber <span class="float-right text-custom-danger"> {{item.simNumber}}</span></h6>
+            <h6 class="text-dark fs-08">SendDeviceInfo <span class="float-right text-custom-danger"> {{item.sendDeviceInfo}}</span></h6>
+            <h6 class="text-dark fs-08">DailyActivitySummary <span class="float-right text-custom-danger"> {{item.dailyActivitySummary}}</span></h6>
+            <h6 class="text-dark fs-08">DeviceNotification <span class="float-right text-custom-danger"> {{item.deviceNotification}}</span></h6>
+            <h6 class="text-dark fs-08">SetDate <span class="float-right text-custom-danger"> {{item.setDate | date:'shortDate' }}</span></h6>
+            <h6 class="text-dark fs-08">BatteryLevel <span class="float-right text-custom-danger"> {{item.batteryLevel}}</span></h6>
+            <h6 class="text-dark fs-08">LowLevelThreshold <span class="float-right text-custom-danger"> {{item.lowLevelThreshold}}</span></h6>
+            <h6 class="text-dark fs-08">FullLevelThresold <span class="float-right text-custom-danger"> {{item.fullLevelThresold}}</span></h6>
+            <h6 class="text-dark fs-08">SignalAlert <span class="float-right text-custom-danger"> {{item.signalAlert}}</span></h6>
+            <h6 class="text-dark fs-08">SignalLost <span class="float-right text-custom-danger"> {{item.signalLost}}</span></h6>
+            <h6 class="text-dark fs-08">SignalActive <span class="float-right text-custom-danger"> {{item.signalActive}}</span></h6>
+        </div> -->
+    </div>
+</cdk-virtual-scroll-viewport>
+    
+</div>
+
+
+

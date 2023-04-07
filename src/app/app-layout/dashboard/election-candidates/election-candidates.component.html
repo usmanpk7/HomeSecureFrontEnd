@@ -1,0 +1,243 @@
+<div class="row mb-4">
+    <div class="col-md-12 pl-0">
+        <div class="text-center dropdown pt-2 text-custom-danger mb-2">
+            <span class="election-category-title text-uppercase">CANDIDATES <a routerLink="/home/election-candidates"><i class="fas fa-external-link-alt ml-3 text-custom-danger"></i></a></span>
+        </div>
+    </div>
+    <!-- <div class="col-md-4">
+        <button class="btn btn-sm btn-block btn-outline-success br-25">Top</button>
+    </div>
+    <div class="col-md-4">
+        <button class="btn btn-sm btn-block btn-outline-danger br-25">Bottom</button>
+    </div> -->
+</div>
+<div class="row pr-4 pl-3 pt-0 pb-0" >
+    <div class="col-md-12">
+        <div class="row-fluid">
+                    <div class="col-md-4 pl-0 pr-0 pb-3 mb-2 mr-3 bg-custom-candidate" *ngFor="let item of candidateDataArray; index as i">
+                        <div class="col-md-12 p-2 mb-2 bg-custom-header">
+                            <h6 class="text-white mb-0 fs-1"><i class="fas fa-id-card text-white mr-5"></i>PRESIDENTIAL CANDIDATE <span class="float-right">{{item.prefix}}</span></h6>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h6 class="fs-07">First Name Midle Name Last Name</h6>
+                                </div>
+                                <div class="col-md-12">
+                                    <h6 class="text-custom-primary fs-09">{{item.candidateName}}</h6>
+                                </div>
+                                <div class="col-md-4 pr-0">
+                                    <h6 class="text-dark fs-09">DOB</h6>
+                                </div>
+                                <div class="col-md-8 pl-0 text-right">
+                                    <h6 class="text-custom-primary fs-08"  *ngIf="item?.dateOfBirth">{{item.dateOfBirth | date:'d, MMM y'}}</h6>
+                                </div>
+                                <div class="col-md-12 mt-0">
+                                    <span class="text-dark mr-2 fs-09 bg-custom-danger br-50"></span><span  class="text-dark fs-09" *ngIf="item?.dateOfBirth"><b id="{{i}}_age">{{GetMyAge(item.dateOfBirth)}} yrs</b></span>
+                                </div>
+                                <div class="col-md-12 mt-2 pr-0">
+                                    <img src="{{item.candidatePhoto}}" width="90" height="90">
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h6 class="text-dark fs-08"><b>ANALYTICS </b> <span class="text-custom-primary">TURNOUT</span> </h6>
+                                </div>
+                                <div class="col-md-12">
+                                    <h6 class="text-dark fs-08"><b>RANKING </b> <span class="text-custom-primary float-right"><b>{{item.rankingStatus}}</b></span> </h6>
+                                </div>
+                                <div class="col-md-12">
+                                    <h6 class="text-dark fs-08"><b>TOP LOCAL GOV WON </b> <span class="text-custom-primary float-right"></span> </h6>
+                                </div>
+                                <div class="col-md-12">
+                                    <h6 class="text-dark fs-08"><b>TOTAL STATE WON </b> <span class="text-custom-primary float-right"></span> </h6>
+                                </div>
+                                <div class="col-md-5 pr-0 pt-2">
+                                    <h6 class="text-custom-primary fs-08"><b>VOTES </b></h6>
+                                </div>
+                                <div class="col-md-7 pr-2"  *ngIf="item?.totalElectionCandidateVote">
+                                    <button class="btn btn-block btn-sm p-1 bg-custom-danger"><h6 class="text-white text-right mb-0 fs-08" *ngIf="item?.totalElectionCandidateVote">{{item.totalElectionCandidateVote }}</h6></button>
+                                </div>
+                                <div class="col-md-12 text-center pr-2">
+                                    <h6 class="text-white fs-07 range-label" >
+                                        <b>{{item.totalVotePercentage}}%</b>
+                                    </h6>
+                                    <h6 class="text-dark fs-07 range-label2">
+                                        <b>{{item?.totalElectionCandidateVote}}</b>
+                                    </h6>
+                                    <input type="range" value="{{item.totalVotePercentage}}" min="0" max="100" class="slider" id="customRange1">
+                                </div>
+                                <div class="col-md-12 pr-2 mt-2 float-right">
+                                    <img src="{{item.partyPhoto}}" width="70" height="70" >
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+        </div>
+
+    </div>
+
+    <!-- <div class="row pb-3 mb-2 bg-custom-candidate">
+        <div class="col-md-12 p-2 mb-2 bg-custom-header">
+            <h6 class="text-white mb-0 fs-1"><i class="fas fa-id-card text-white mr-5"></i>PRESIDENTIAL CANDIDATE <span class="float-right">PDP</span></h6>
+        </div>
+        <div class="col-md-6">
+            <div class="row">
+                <div class="col-md-12">
+                    <h6 class="fs-07">First Name Midle Name Last Name</h6>
+                </div>
+                <div class="col-md-12">
+                    <h6 class="text-custom-primary fs-09">EMMANUEL AYOMIDE FAKOYA </h6>
+                </div>
+                <div class="col-md-7">
+                    <h6 class="text-dark fs-09">DATE OF BIRTH </h6>
+                </div>
+                <div class="col-md-5 pl-0">
+                    <h6 class="text-custom-primary fs-08">24, May, 1979  </h6>
+                </div>
+                <div class="col-md-4 pr-0">
+                    <img src="/assets/Dashboard/jane.png" class="width-100">
+                </div>
+                <div class="col-md-4 pr-2">
+                    <img src="/assets/Dashboard/labourparty.png" class="width-100">
+                </div>
+                <div class="col-md-4 mt-4 pr-0">
+                    <span class="text-dark mr-2 fs-07 bg-custom-danger br-50">M</span><span class="fs-07"><b>43yrs</b></span>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="row">
+                <div class="col-md-12">
+                    <h6 class="text-dark fs-08"><b>ANALYTICS </b> <span class="text-custom-primary">TURNOUT</span> </h6>
+                </div>
+                <div class="col-md-12">
+                    <h6 class="text-dark fs-08"><b>RANKING </b> <span class="text-custom-primary"><b>1st</b></span> </h6>
+                </div>
+                <div class="col-md-12">
+                    <h6 class="text-dark fs-08"><b>TOP VOTE REGION </b> <span class="text-custom-primary float-right">LAGOS</span> </h6>
+                </div>
+                <div class="col-md-12">
+                    <h6 class="text-dark fs-08"><b>LOWEST VOTE REGION </b> <span class="text-custom-primary float-right">BENIN CITY</span> </h6>
+                </div>
+                <div class="col-md-6 pr-0 pt-2">
+                    <h6 class="text-custom-primary fs-08"><b>CANDIDATE VOTE </b></h6>
+                </div>
+                <div class="col-md-6 pr-2">
+                    <button class="btn btn-block btn-sm p-1 bg-custom-danger"><h6 class="text-white text-right mb-0 fs-08">2000,0123</h6></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row pb-3 mb-2 bg-custom-candidate">
+        <div class="col-md-12 p-2 mb-2 bg-custom-header">
+            <h6 class="text-white mb-0 fs-1"><i class="fas fa-id-card text-white mr-5"></i>PRESIDENTIAL CANDIDATE <span class="float-right">PDP</span></h6>
+        </div>
+        <div class="col-md-6">
+            <div class="row">
+                <div class="col-md-12">
+                    <h6 class="fs-07">First Name Midle Name Last Name</h6>
+                </div>
+                <div class="col-md-12">
+                    <h6 class="text-custom-primary fs-09">EMMANUEL AYOMIDE FAKOYA </h6>
+                </div>
+                <div class="col-md-7">
+                    <h6 class="text-dark fs-09">DATE OF BIRTH </h6>
+                </div>
+                <div class="col-md-5 pl-0">
+                    <h6 class="text-custom-primary fs-08">24, May, 1979  </h6>
+                </div>
+                <div class="col-md-4 pr-0">
+                    <img src="/assets/Dashboard/emmanuel.png" class="width-100">
+                </div>
+                <div class="col-md-4 pr-2">
+                    <img src="/assets/Dashboard/labourparty.png" class="width-100">
+                </div>
+                <div class="col-md-4 mt-4 pr-0">
+                    <span class="text-dark mr-2 fs-07 bg-custom-danger br-50">M</span><span class="fs-07"><b>43yrs</b></span>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="row">
+                <div class="col-md-12">
+                    <h6 class="text-dark fs-08"><b>ANALYTICS </b> <span class="text-custom-primary">TURNOUT</span> </h6>
+                </div>
+                <div class="col-md-12">
+                    <h6 class="text-dark fs-08"><b>RANKING </b> <span class="text-custom-primary"><b>1st</b></span> </h6>
+                </div>
+                <div class="col-md-12">
+                    <h6 class="text-dark fs-08"><b>TOP VOTE REGION </b> <span class="text-custom-primary float-right">LAGOS</span> </h6>
+                </div>
+                <div class="col-md-12">
+                    <h6 class="text-dark fs-08"><b>LOWEST VOTE REGION </b> <span class="text-custom-primary float-right">BENIN CITY</span> </h6>
+                </div>
+                <div class="col-md-6 pr-0 pt-2">
+                    <h6 class="text-custom-primary fs-08"><b>CANDIDATE VOTE </b></h6>
+                </div>
+                <div class="col-md-6 pr-2">
+                    <button class="btn btn-block btn-sm p-1 bg-custom-danger"><h6 class="text-white text-right mb-0 fs-08">2000,0123</h6></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row pb-3 mb-2 bg-custom-candidate"> -->
+        <!-- <div class="col-md-12 p-2 mb-2 bg-custom-header">
+            <h6 class="text-white mb-0 fs-1"><i class="fas fa-id-card text-white mr-5"></i>PRESIDENTIAL CANDIDATE <span class="float-right">PDP</span></h6>
+        </div>
+        <div class="col-md-6">
+            <div class="row">
+                <div class="col-md-12">
+                    <h6 class="fs-07">First Name Midle Name Last Name</h6>
+                </div>
+                <div class="col-md-12">
+                    <h6 class="text-custom-primary fs-09">EMMANUEL AYOMIDE FAKOYA </h6>
+                </div>
+                <div class="col-md-7">
+                    <h6 class="text-dark fs-09">DATE OF BIRTH </h6>
+                </div>
+                <div class="col-md-5 pl-0">
+                    <h6 class="text-custom-primary fs-08">24, May, 1979  </h6>
+                </div>
+                <div class="col-md-4 pr-0">
+                    <img src="/assets/Dashboard/jane.png" class="width-100">
+                </div>
+                <div class="col-md-4 pr-2">
+                    <img src="/assets/Dashboard/labourparty.png" class="width-100">
+                </div>
+                <div class="col-md-4 mt-4 pr-0">
+                    <span class="text-dark mr-2 fs-07 bg-custom-danger br-50">M</span><span class="fs-07"><b>43yrs</b></span>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="row">
+                <div class="col-md-12">
+                    <h6 class="text-dark fs-08"><b>ANALYTICS </b> <span class="text-custom-primary">TURNOUT</span> </h6>
+                </div>
+                <div class="col-md-12">
+                    <h6 class="text-dark fs-08"><b>RANKING </b> <span class="text-custom-primary"><b>1st</b></span> </h6>
+                </div>
+                <div class="col-md-12">
+                    <h6 class="text-dark fs-08"><b>TOP VOTE REGION </b> <span class="text-custom-primary float-right">LAGOS</span> </h6>
+                </div>
+                <div class="col-md-12">
+                    <h6 class="text-dark fs-08"><b>LOWEST VOTE REGION </b> <span class="text-custom-primary float-right">BENIN CITY</span> </h6>
+                </div>
+                <div class="col-md-6 pr-0 pt-2">
+                    <h6 class="text-custom-primary fs-08"><b>CANDIDATE VOTE </b></h6>
+                </div>
+                <div class="col-md-6 pr-2">
+                    <button class="btn btn-block btn-sm p-1 bg-custom-danger"><h6 class="text-white text-right mb-0 fs-08">2000,0123</h6></button>
+                </div>
+            </div>
+        </div>
+    </div> -->
+</div>
+
+

@@ -1,0 +1,306 @@
+/* create intent Css */
+.basic.modal {
+    background: rgba(0, 0, 0, 0.6);
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1050;
+    display: none;
+    overflow: hidden;
+    -webkit-overflow-scrolling: touch;
+    outline: 0;
+  }
+  .basic.fade {
+    opacity: 0;
+    -webkit-transition: opacity 0.15s linear;
+    -o-transition: opacity 0.15s linear;
+    transition: opacity 0.15s linear;
+  }
+  .basic.fade.in {
+    opacity: 1;
+  }
+  .basic.modal.fade.in .modal-dialog {
+    -webkit-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+  .basic.modal.fade .modal-dialog {
+    -webkit-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+    -webkit-transform: translate(0, -25%);
+    -ms-transform: translate(0, -25%);
+    -o-transform: translate(0, -25%);
+    transform: translate(0, -25%);
+    margin-top: 66px;
+  }
+  .basic .basic-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 16px;
+    color: #292b2c;
+  }
+  .basic .basic-close-light-box {
+    position: absolute;
+    top: -31px;
+    right: -20px;
+    font-size: 30px;
+    color: #fff;
+    text-shadow: none;
+  }
+  .basic h5 {
+    margin-bottom: 0;
+    color: #757575;
+    font-size: 16px;
+    font-family: 'TajawalBold', sans-serif !important;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-right: 10px;
+  }
+  .basic .modal-dialog.modal-sm {
+    min-width: 50% !important;
+  }
+  #modal-container .modal-dialog {
+    min-width: 50% !important;
+  }
+  .modal-sm-center {
+    margin-left: 40%;
+    margin-top: 10%;
+    margin: auto;
+  }
+  
+  
+  
+  
+  
+  /* Intent form CSS */
+  
+  
+  /* .overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 500ms;
+    visibility: hidden;
+    opacity: 0;
+  }
+  
+  .overlay:target {
+    visibility: visible;
+    opacity: 1;
+  } */
+  
+  
+  
+  .popup .close {
+    /* position: absolute; */
+    top: 20px;
+    right: 30px;
+    transition: all 200ms;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+  }
+  
+  .popup .content {
+    max-height: 30%;
+    overflow: auto;
+  }
+  
+  .popup .form-control {
+    background: transparent !important ;
+  }
+  
+  .container-fluid .right button {
+    background-color: transparent;
+  }
+  
+  .container-fluid .row1 {
+    margin-top: 0px;
+    border-radius: 8px;
+    background-color: #7C7C35;
+  }
+  
+  .container-fluid ::placeholder {
+    color: white;
+  }
+  
+  .container-fluid .row2 .dropdown-toggle {
+    background-color: transparent;
+  }
+  
+  .container-fluid .row2 .right a {
+    background-color: #7C7C35;
+    color: white;
+  }
+  .btn-grey{
+    background-color: #7C7C35;
+    color: white;
+  }
+  .container-fluid .row3 .right a ,.container-fluid .row3 .right button {
+    margin-top: 110px;
+    background-color: #7C7C35;
+    color: white;
+  }
+  .container-fluid .row3{
+    margin-right: calc(-.5 * var(--bs-gutter-x));
+      margin-left: calc(-.5 * var(--bs-gutter-x));
+      width: 100%;
+  }
+  .container-fluid .row3 input {
+    border: none;
+    border: 1px solid white;
+    background-color: transparent;
+  }
+  
+  .container-fluid .row4 .form-group a {
+    background-color: #7C7C35;
+    color: white;
+    border: none;
+  }
+  .container-fluid .row4{
+    --bs-gutter-x: 1.5rem;
+      --bs-gutter-y: 0;
+      display: flex;
+      flex-wrap: wrap;
+      margin-right: calc(-.5 * var(--bs-gutter-x));
+      margin-left: calc(-.5 * var(--bs-gutter-x));
+  }
+  .container-fluid .row4 {
+    background-color: #4F5931;
+    border-radius: 8px;
+  }
+  .container-fluid{
+    padding: 0px 20px !important;
+  }
+  
+  
+  /* range css */
+  
+  ::ng-deep .intent-form .wrap {
+    width: 100% !important;
+    position: relative !important;
+    top: 50% !important;
+    left:50% !important;
+    transform: translate(-50%, -50%) !important;
+  }
+  
+  ::ng-deep .intent-form .range {
+    width: 100% !important;
+    cursor: pointer !important;
+    opacity: 0 !important;
+  }
+  
+  ::ng-deep .intent-form .range::-ms-tooltip {
+    display: none !important;
+  }
+  
+  ::ng-deep .intent-form .track {
+    width: 100% !important;
+    height: 4px !important;
+    background: #DDDDDD !important;
+    position: absolute !important;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none !important;
+  }
+  
+  ::ng-deep .intent-form .track-inner {
+    width: 20%;;
+    height: 100% !important;
+    background: #376419 !important;
+  }
+  
+  ::ng-deep .intent-form .thumb {
+    width: 16px !important;
+    height: 16px !important;
+    background: #AAAAAA !important;
+    border-radius: 50% !important;
+    position: absolute !important;
+    top: 50%;
+    left: 20%;
+    transform: translate(0%, -50%);
+    pointer-events: none !important;
+  }
+  .range-value{
+    font-size: 15px;
+    font-weight: 600;
+    color: #30322f;
+  }
+  .column-gap {
+  
+    column-gap: 40px;
+  }
+  .row1 {
+    margin-top: 20px;
+    border-radius: 8px;
+    background-color: #7C7C35;
+  }
+  .color-w{
+    color: white;
+  }
+  .color-b{
+    color: #35373c;
+    font-weight: 700;
+  }
+  .intentDropDown{
+    background: #767830;
+  }
+  .popup .container-fluid .text-danger{
+    color:#b52232 !important;
+  }
+  .popup .container-fluid .inValid{
+    border-color:#b52232 !important;
+  }
+  .owl-active{
+    background: #958c41;
+    border-radius: 13px;
+  }
+  ::ng-deep .intent-form #owl-carousel2 .owl-nav{
+    display: none !important;
+  }
+  .custome-slider{
+    display: flex;
+    overflow: auto;
+  }
+  .range{
+    background: linear-gradient(to right, rgb(55, 100, 25), rgb(122, 0, 255) 0%, rgb(211, 237, 255) 0%, rgb(222, 225, 226) 100%);
+}
+::ng-deep .intent-form .p-dropdown {
+  background: #787735;
+  border: 1px solid #9db186;
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+
+::ng-deep .intent-form .p-dialog-content .p-dropdown.p-disabled{
+  background-color: #8C894C !important;
+  border: 1px solid #676C3D !important;
+}
+::ng-deep .intent-form .p-dropdown-panel .p-dropdown-header,
+::ng-deep .intent-form .p-dropdown-panel .p-dropdown-header .p-dropdown-filter{
+  background-color: #8C894C !important;
+  border: 1px solid #676C3D !important;
+}
+.spinner-img {
+  height: 20vh;
+  width: 20vh;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  color: red;
+}
+:ng-deep .swal2-icon-show {
+  margin-left: 40px !important;
+}
+  /* create intent Css */

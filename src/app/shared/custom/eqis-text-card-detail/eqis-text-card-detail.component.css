@@ -1,0 +1,73 @@
+.rectangle-1 {
+    background: #6D773A;
+    box-sizing: border-box;
+    height: 102px;
+    background: linear-gradient(139.04deg, rgba(117, 151, 116, 0.7) 44.02%, rgba(117, 151, 116, 0.7) 76.77%);
+    box-shadow: 14px 4px 4px rgb(0 0 0 / 25%);
+    border-radius: 14px;
+    margin-right: 3.33%;
+
+}
+
+.rectangle-1-text {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: -0.01em;
+    color: #FFFFFF;
+}
+
+.rectangle-1-counter {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 13px;
+    line-height: 21px;
+    letter-spacing: -0.01em;
+    color: #FFFFFF;
+    float: right;
+}
+.rectangle-1-counter-value {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 21px;
+    letter-spacing: -0.01em;
+    color: #FFFFFF;
+    float: right;
+}
+.pl-1, .px-1 {
+   
+    padding-top: 3% !important;
+}
+.rectangle-1-percentage {
+    font-family: Roboto;
+    font-style: normal;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 14px;
+    letter-spacing: -0.01em;
+    color: #FFFFFF;
+    float: right;
+}
+::ng-deep .card_indend .p-tree{
+    background: transparent !important;
+    padding: 5px !important;
+}
+::ng-deep .card_indend .p-tree .p-tree-container .p-treenode .p-treenode-content .p-tree-toggler{
+    color: black !important;
+}
+::ng-deep .card_indend .p-tree .p-treenode-children{
+    padding-left: 0 !important;
+}
+::ng-deep .card_indend .p-tree .p-tree-container .p-treenode .p-treenode-content{
+    padding-bottom: 0 !important;
+}
+button { margin-right: .5rem;
+} 
+:host ::ng-deep .p-tree a { color: '#2196f3' }
+
+::ng-deep .p-tree-container {overflow-x: hidden !important;}

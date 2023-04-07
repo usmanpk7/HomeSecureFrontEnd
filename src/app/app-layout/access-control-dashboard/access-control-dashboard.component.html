@@ -1,0 +1,117 @@
+<!-- <div class="col-md-12 pt-10" style="padding: 0 0 25px 6px; margin-top: 10px; text-align: center;">
+    <app-eqis-text-card [text]="'Total Store House Lock'" [count]="storehouseProcessAnalyticsResult.totalStorehouseLock"
+        [icon]="'fa-bars'" [percentage]="''">
+    </app-eqis-text-card>
+    <app-eqis-text-card [text]="'Active Store House Lock'" [count]="storehouseProcessAnalyticsResult.totalStorehouseUnLock"
+        [icon]="'fa-calculator'" [percentage]="''">
+    </app-eqis-text-card>
+    <app-eqis-text-card [text]="'Open Store House Locks'" [count]="storehouseProcessAnalyticsResult.totalStorehouseOpenLoack" [icon]="'fa-user-times'"
+        [percentage]="''">
+    </app-eqis-text-card>
+    <app-eqis-text-card [text]="'Closed Store House Locks'" [count]="storehouseProcessAnalyticsResult.totalStorehouseClosedLock" [icon]="'fa-user'"
+        [percentage]="''">
+    </app-eqis-text-card>
+    <app-eqis-text-card [text]="'My Access Approvals'" class="accessApproval" [count]="storehouseProcessAnalyticsResult.totalStorehouseWaitingApproval" [icon]="'fa-user'"
+        [percentage]="''">
+    </app-eqis-text-card>
+
+</div>
+<div class="row">
+    <div class="col-md-9 third" style="max-width: 70% !important;padding: 20px;/* margin-right: 5px; */">
+        <div class="col-md-12 p-0" style="margin-top: 20px;">
+           <div class="row">
+                <div class="col-md-12 p-0">
+                    <div class="map-responsive">
+                        <agm-map [latitude]="lat" #map [longitude]="lng" [zoom]="zoom" (mapReady)="onMapReady($event)">
+                            <agm-marker
+                           *ngFor="let item of mapDataList"
+                                [latitude]="item.lat"
+                                [longitude]="item.lng"
+                                [markerDraggable]="false"
+                            >
+                            <agm-info-window>
+                               <div >
+                                <img style="border-radius: 10px;" width="200px" src="../../../assets/amoTable.png" alt="">
+                                <div class="map" style="text-align: center;">
+                                    <p style="color: #3E4958; font-family: 'Aclonica';
+                                    font-style: normal;
+                                    font-weight: 400;
+                                    font-size: 14px;
+                                    line-height: 149.8%;">1Hr : 20min:43 sec</p>
+                                    <p style="color: #3E4958; font-family: 'Acme';
+                                    font-style: normal;
+                                    font-weight: 400;
+                                    font-size: 12px;
+                                    line-height: 15px;">{{item.openUser}} OPENS | <span>2 ALARMS</span> </p>
+                               </div>
+                              </agm-info-window>
+                        </agm-marker>
+        </agm-map>
+                    </div>
+            </div></div>
+
+        </div>
+
+    </div>
+    <div class="col-md-3 right_line" style="margin-left: 15px;padding-top: 15px;text-align: center;margin-top: 28px;">
+        <app-access-required-attention></app-access-required-attention>
+    </div>
+</div>
+<div class="row">
+<div class="col-md-12  mainSection p-8 mt-5">
+    <app-access-lock-card [organizationUnitId]="organizationUnitId"></app-access-lock-card>
+</div>
+</div>
+<div class="row pt-5">
+    <div class="col-md-12 p-0 mainSection">
+        <app-personal-access></app-personal-access>
+    </div>
+</div>
+<div class="row pt-5">
+    <div class="col-md-12 mainSection pt-5 pb-5">
+        <section class="pb-5">
+            <div class="col-md-12 Round-Pannel3">
+                <div class="col-md-12 mt-7 mb-4">
+                    <div class="col-md-6 Search-Panel">
+                        <i class="fa fa-search col-md-1 pt-3"></i>
+                        <input type="text" class="form-control col-md-11 " (input)="searchTerm($event.target.value)"
+                            placeholder="Search" style="border:0px;background: transparent; color: #eef0f8;">
+                    </div>
+                    <div class="col-md-6"></div>
+                </div>
+
+ <div class="col-md-12 pt-5">
+    <eqis-dropdown [isActive]="tab==1?'true':''" id="tab1" class="equis-btn2" [title]="'All'"
+        (click)="onTabChange($event)"></eqis-dropdown>
+    <eqis-dropdown class="equis-btn2" id="tab2" [title]="'Access Granted'" (click)="onTabChange($event)"
+        [isActive]="tab==2?'true':''"></eqis-dropdown>
+    <eqis-dropdown [isActive]="tab==3?'true':''" class="equis-btn2" [title]="'Access Rejected'"
+        (click)="onTabChange($event)" id="tab3"></eqis-dropdown>
+    <eqis-dropdown class="equis-btn2" [isActive]="tab==4?'true':''" id="tab4" [title]="'Pending Approvals'"
+        (click)="onTabChange($event)"></eqis-dropdown>
+</div>
+
+<div class="col-md-12" *ngIf="tab===1">
+ <app-all-list #search></app-all-list>
+</div>
+
+<div class="col-md-12" style="margin-top: -2px; color: #cdcdcd;" *ngIf="tab===2">
+   <app-access-granted #search></app-access-granted>
+
+</div>
+<div class="col-md-12" style="margin-top: -2px; color: #cdcdcd;" *ngIf="tab===3">
+ <app-access-rejected #search></app-access-rejected>
+</div>
+<div class="col-md-12" style="margin-top: -2px; color: #cdcdcd;" *ngIf="tab===4">
+<app-pending-approvals #search></app-pending-approvals>
+  </div>
+<div class="col-md-12" style="margin-top: -2px; color: #cdcdcd;" *ngIf="tab===5">
+</div>
+<div class="col-md-12 p-10" style="margin-top: -2px; color: #cdcdcd;" *ngIf="tab===6">
+    <b>coming soon</b>
+</div>
+            </div>
+
+        </section>
+    </div>
+</div> -->

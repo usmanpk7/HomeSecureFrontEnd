@@ -1,0 +1,52 @@
+
+<div class="col-md-12 pt-5">
+    <div
+        class="col-md-2 welcome-message">
+        Welcome, Jane
+    </div>
+    <div class="col-md-6 pr-9">
+        <div class="input-group">
+            <input type="search" id="form1" class="form-control" placeholder="Search Category" aria-label="Search" />
+            <span class="input-group-btn">
+                <button class="btn btn-default btn-white" type="button">
+                    <i class="fa fa-search text-custom-danger"></i>
+                </button>
+            </span>
+        </div>
+    </div>
+    <div class="col-md-3 pl-9">
+        <div class="dropdown show">
+            <a class="" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <div class="navbar-textCustom navbarText pt-1 pb-1 pl-3 pr-3 float-left">
+                    <img class="navbar-img " [src]="profilePicture"/>
+                    <span class="navbar-img-span mr-5 ml-5">SWITCH TO OTHER MODULE</span>
+                    <img src="../../../assets/Dashboard/ArrowDownDashboard.png" />
+                </div>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+              <span class="dropdown-item cursor" routerLink="/home/dashboard" >Election Monitor</span>
+              <span class="dropdown-item cursor" >Election Reporting</span>
+              <span class="dropdown-item cursor" >Emergency</span>
+              <span class="dropdown-item cursor" routerLink="/home/incident-dashboard" >Incident</span>
+              <span class="dropdown-item cursor" routerLink="/home/asset-tracker">Asset Tracker</span>
+            </div>
+          </div>
+
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+<div class="col-md-7">
+    <app-asset-tracker-yearsection></app-asset-tracker-yearsection>
+    <app-map></app-map>
+    <app-asset-tracker-criminalactivity></app-asset-tracker-criminalactivity>
+</div>
+
+<div class="col-md-5">
+    <app-asset-tracker-interrogation></app-asset-tracker-interrogation>
+    <app-asset-tracker-exibit></app-asset-tracker-exibit>
+</div>
+
+</div>
+</div>

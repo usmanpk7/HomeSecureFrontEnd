@@ -1,0 +1,81 @@
+.rt-border{
+    border-right: 2px #213315 solid;
+}
+.grid-elipse{
+    background: #294416;
+     border-radius: 50%;
+      text-align: center;
+}
+.comment1 {
+    background: #C5E0B4;
+    border-radius: 11px;
+    font-size: 10px;
+    padding: 7px;
+}
+
+.comment1>p {
+    color: #111;
+}
+.bg-grey-btn{
+    background-color: #3C593482;
+    border: 2px solid #376419;
+    border-radius: 22px;
+}
+::ng-deep .p-inputswitch .p-inputswitch-slider:before{
+    background: #4F8B3B;
+}
+::ng-deep .p-inputswitch .p-inputswitch-slider{
+    background: #405838;
+}
+::ng-deep .p-inputswitch.p-inputswitch-checked .p-inputswitch-slider:before {
+    background: #4F8B3B;
+}
+::ng-deep .p-checkbox .p-checkbox-box {
+    background: #638b49;
+}
+::ng-deep .p-checkbox .p-checkbox-box.p-highlight {
+    border-color: #12B28C !important;
+    background: #12B28C;
+}
+.hr{
+    background: #ffffff;
+}
+::ng-deep .green-grid{
+    background: linear-gradient(359.66deg, rgba(33, 51, 21, 0.9) -11.74%, rgba(183, 166, 67, 0.82) 111.45%) !important
+}
+::ng-deep .green-grid .border-green{
+     word-break: break-all !important;
+}
+::ng-deep .green-grid .gridheader2 {
+    background: #344D2C !important;
+    border-bottom-color: #344D2C !important;
+    color: #ffffff !important;
+    text-align: center !important;
+}
+
+::ng-deep .green-grid .body-td>td {
+    text-align: center !important;
+    color: rgb(241, 239, 239) !important;
+}
+::ng-deep .green-grid .bg-grey-btn {
+    background: #294416 !important;
+}
+
+::ng-deep .green-grid .sub-table2-odd {
+    background: #6D773A!important;
+}
+::ng-deep .green-grid .sub-table2-even {
+    background: #7C7D53!important;
+}
+::ng-deep .green-grid .p-datatable .p-datatable-tbody > tr{
+    background: #213315 !important;
+}
+.view-active{
+    background-color: #405838;
+}
+.ap-btn{
+    background: #56633C;
+    border-radius: 21px;
+    padding: 3px;
+    text-align: center;
+}

@@ -1,0 +1,146 @@
+<!-- <style>
+    .spinner-img {
+        height: 20vh;
+        width: 20vh;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        color: red;
+    }
+</style>
+<p-dialog header="Create Antenna" [(visible)]="displayResponsive">
+    <form autocomplete="off" [formGroup]="createAntennaForm" class="createform" style="padding: 20px">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label><strong style="color: #fff">Antenna Name</strong></label>
+                    <input
+                        style="
+                            height: 45px;
+                            border: 1px solid #676c3d;
+                            background: #918d4e;
+                            box-sizing: border-box;
+                            border-radius: 10px;
+                            color:#ffffff;
+                        "
+                        class="form-control"
+                        type="text"
+                        tabindex="1"
+                        formControlName="antennaName"
+                        name="antennaName"
+                        [ngClass]="{ 'is-invalid': submitted && f.antennaName.errors }"
+                    />
+                    <div *ngIf="submitted && f.antennaName.errors" class="invalid-feedback">
+                        <div *ngIf="f.antennaName.errors.required">Antenna Name is required</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label><strong style="color: #fff">Device Name</strong></label>
+                    <p-dropdown [options]="deviceList" formControlName="deviceId" class="dropdown"  name="deviceId"   optionLabel="name" [style]="{ width: '100%' }" styleClass="form-control" optionValue="code"></p-dropdown>
+
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="row ">
+            <div class="col-sm-4">
+                <div class="mt-4">
+                    <label class="title" style="color: white;">IsActive</label>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="mt-4">
+                    <div class="switch_box box_1">
+                        <p-inputSwitch onLabel="Y" offLabel="N" (onChange)="handleChange($event)" formControlName="isActive" name="isActive" ></p-inputSwitch>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label><strong style="color: #fff">Antenna Code</strong></label>
+                    <input
+                        style="
+                            height: 45px;
+                            border: 1px solid #676c3d;
+                            background: #918d4e;
+                            box-sizing: border-box;
+                            border-radius: 10px;
+                            color:#ffffff;
+                        "
+                        class="form-control"
+                        type="text"
+                        tabindex="1"
+                        formControlName="antennaCode"
+                        name="antennaCode"
+                        [ngClass]="{ 'is-invalid': submitted && f.antennaName.errors }"
+                    />
+                    <div *ngIf="submitted && f.antennaCode.errors" class="invalid-feedback">
+                        <div *ngIf="f.antennaCode.errors.required">Antenna Code is required</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label><strong style="color: #fff">Antenna Address</strong></label>
+                    <input
+                        style="
+                            height: 45px;
+                            border: 1px solid #676c3d;
+                            background: #918d4e;
+                            box-sizing: border-box;
+                            border-radius: 10px;
+                            color:#ffffff;
+                        "
+                        class="form-control"
+                        type="text"
+                        tabindex="1"
+                        formControlName="antennaAddress"
+                        name="antennaAddress"
+                        required
+                    />
+                </div>
+        </div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="col-md-9"></div>
+            <div class="col-md-3 mt-5" style="float: right">
+                <button
+                    type="submit"
+                    class="btn rounded-pill"
+                    style="
+                        width: 88px;
+                        height: 45px;
+
+                        background: #787735;
+                        border: 1px solid #9db186;
+                        box-sizing: border-box;
+                        border-radius: 10px;
+                        color: #ffffff;
+                    "
+                    (click)="submit()"
+                >
+                    Submit
+                </button>
+            </div>
+        </div>
+    </form>
+</p-dialog> -->

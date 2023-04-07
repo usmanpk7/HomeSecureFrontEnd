@@ -1,0 +1,11 @@
+
+ <div class="col-md-12 pt-5">
+    <eqis-dropdown [isActive]="tab==1?'true':''" id="tab1" class="equis-btn2" [title]="'Antenna-Warehouse-List'"
+        (click)="onTabChange($event)"></eqis-dropdown>
+
+</div>
+
+<div class="col-md-12" *ngIf="tab===1">
+ <app-antenna-warehouse-list></app-antenna-warehouse-list>
+</div>
+

@@ -1,0 +1,42 @@
+.rt-border{
+    border-right: 2px #213315 solid;
+}
+.grid-elipse{
+    background: #294416;
+     border-radius: 50%;
+      text-align: center;
+}
+.comment1 {
+    background: #C5E0B4;
+    border-radius: 11px;
+    font-size: 10px;
+    padding: 7px;
+}
+
+.comment1>p {
+    color: #111;
+}
+.bg-grey-btn{
+    background-color: #3C593482;
+    border: 2px solid #376419;
+    border-radius: 22px;
+}
+::ng-deep .p-inputswitch .p-inputswitch-slider:before{
+    background: #4F8B3B;
+}
+::ng-deep .p-inputswitch .p-inputswitch-slider{
+    background: #405838;
+}
+::ng-deep .p-inputswitch.p-inputswitch-checked .p-inputswitch-slider:before {
+    background: #4F8B3B;
+}
+::ng-deep .p-checkbox .p-checkbox-box {
+    background: #638b49;
+}
+::ng-deep .p-checkbox .p-checkbox-box.p-highlight {
+    border-color: #12B28C !important;
+    background: #12B28C;
+}
+.hr{
+    background: #ffffff;
+}

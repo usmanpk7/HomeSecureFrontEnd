@@ -1,0 +1,44 @@
+<!-- <p-dialog header="Add RELEASE Confirmation" [(visible)]="displayResponsive" style="color: #FFF; font-size:30px">
+    <div style="width:500px">
+        <form autocomplete="off" [formGroup]="createStoreReleaseDispatch" class="createform" style="padding: 20px;">
+        <div class="row">
+
+                    <div class="col-sm-6">
+                        <label class="form-label">Package RfId</label>
+                        <input type="text" formControlName="packageRfid" class="form-control" />
+                        <span class="text-danger ml-3" *ngIf="isValid(createStoreReleaseDispatch.controls.packageRfid)">
+                            This field is required</span>
+                    </div>
+                    <div class="col-sm-6">
+                        <label class="form-label">Package Qrc</label>
+                        <input type="text" formControlName="packageQrc" id="packageQrc" class="form-control" />
+                        <span class="text-danger ml-3" *ngIf="isValid(createStoreReleaseDispatch.controls.packageQrc)">
+                            This field is required</span>
+                    </div>
+                </div>            
+            
+        <hr>
+        <div class="row">
+            <div class="col">
+                <label class="form-label">Package Qrc</label>
+                <input type="text" formControlName="packageBarCode" id="packageBarCode" class="form-control" />
+                <span class="text-danger ml-3" *ngIf="isValid(createStoreReleaseDispatch.controls.packageBarCode)">
+                    This field is required</span>
+            </div>
+        </div>
+        <hr>
+        <br>
+        <div class="row">
+            
+            <div class="col" >
+                <div style="float: right;">
+                    <button type="button" class="btn dangers" (click)="close()">Cancel</button>
+                    <button type="submit" class="btn primary1"  [disabled]="issubmitted" (click)="submit()">{{btnText}}</button>
+                </div>
+            </div>
+        </div>
+        </form>
+    </div>
+</p-dialog>
+
+ -->

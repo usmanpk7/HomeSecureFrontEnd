@@ -1,0 +1,29 @@
+<!-- 
+ <div class="col-md-12 pt-5 canidate">
+    <eqis-dropdown [isActive]="tab==1?'true':''" id="tab1" class="equis-btn2" [title]="'Candidate'"
+        (click)="onTabChange($event)"></eqis-dropdown>
+    <eqis-dropdown class="equis-btn2" id="tab2" [title]="'Interview Location'" (click)="onTabChange($event)"
+        [isActive]="tab==2?'true':''"></eqis-dropdown>
+    <eqis-dropdown [isActive]="tab==3?'true':''" class="equis-btn2" [title]="'Category'"
+        (click)="onTabChange($event)" id="tab3"></eqis-dropdown>
+
+        <eqis-dropdown style="padding-left:28%;" (click)="ExcelFileUpload.click()" class=" equis-btn2 imprt-btn"  [title]="'Import'">
+        </eqis-dropdown>
+        <input type="file" accept=".csv,.xls,.xlsx" #ExcelFileUpload  maxFileSize="10000000"  (change)="uploadExcel($event.target.files)" hidden/>
+
+        <eqis-dropdown  class="equis-btn2 imprt-btn" [title]="'Export'" (click)="exportToExcel()"></eqis-dropdown>
+        <p-dropdown  class="dropdown" placeholder="Column"   [style]="{ width: '100%', float:'right' }" styleClass="form-control" ></p-dropdown>
+</div>
+
+<div class="col-md-12" *ngIf="tab===1">
+    <app-candidate-list #search></app-candidate-list>
+</div>
+
+<div class="col-md-12" style="margin-top: -2px; color: #cdcdcd;" *ngIf="tab===2">
+   <app-candidate-interview-location #search></app-candidate-interview-location>
+
+</div>
+<div class="col-md-12" style="margin-top: -2px; color: #cdcdcd;" *ngIf="tab===3">
+    <app-candidate-category #search></app-candidate-category>
+</div>
+ -->

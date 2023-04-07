@@ -1,0 +1,162 @@
+<div class="row">
+    <div class="col-md-12 pl-0">
+        <div class="text-center dropdown text-custom-danger mb-2">
+            <span class="election-category-title text-uppercase">LIVE FEED <a routerLink="/home/election-gallery" target="_blank"><i class="fas fa-external-link-alt ml-3 text-custom-danger"></i></a></span>
+        </div>
+    </div>
+    <div class="col-md-12 mt-3 pl-0 livefeed">
+        <p-tabView>
+            <p-tabPanel header="IMAGES">
+                <cdk-virtual-scroll-viewport itemSize="10" class="virtual-scroll-viewport">
+                <div class="card mb-3 bg-livefeed-card" *cdkVirtualFor="let item of electionGalleryImageResult">
+                    <div class="card-body p-4">
+                        <div class="row" >
+                            <div class="col-md-12">
+                                <img src="{{item.contentLink}}" class="width-100">
+                            </div>
+                            <div class="col-md-4 mt-3">
+                                <button class="btn btn-primary btn-block">
+                                    <span><marquee direction="left" class="" scrolldelay="600" behavior="loop">{{item.electionWardName}}</marquee></span>
+
+                                </button>
+                            </div>
+                            <div class="col-md-8 mt-3 pt-3 pl-0">
+                                <h6>{{item.electionPollingUnitName}}</h6>
+                            </div>
+                            <div class="col-md-6 mt-3">
+                                 <h6 class="fs-09">Uploaded By: {{item.userName}}</h6>
+                            </div>
+                            <div class="col-md-6 mt-3">
+                                <h6 class="fs-09">(Timestamp){{item.creationTime | date:'medium' }}</h6>
+                           </div>
+                        </div>
+                    </div>
+
+                </div>
+            </cdk-virtual-scroll-viewport>
+                <div class="card" [hidden]="electionGalleryImageResult.length == 0">
+                    <div class="card-body p-4">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <button (click)="viewMoreGallery('Image')" class="btn btn-default btn-block text-white bg-custom-danger"><i class="fas fa-caret-circle-down text-white mr-5"></i> VIEW MORE</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </p-tabPanel>
+            <p-tabPanel header="LIVE">
+                <cdk-virtual-scroll-viewport itemSize="10" class="virtual-scroll-viewport">
+                <div class="card mb-3 bg-livefeed-card" *cdkVirtualFor="let item of electionGalleryLiveResult">
+                    <div class="card-body p-4">
+                        <div class="row" >
+                            <div class="col-md-12">
+                                <div id="videoFrameContainer">
+                                    <iframe id='fp_embed_player' [src]="item.contentLink | safe" onerror="this.location.reload();" marginwidth='0' width="100%" marginheight='0' frameborder='0' scrolling='no' allowfullscreen='allowfullscreen'></iframe>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mt-3">
+                                <button class="btn btn-primary btn-block">
+                                    <span><marquee direction="left" class="" scrolldelay="600" behavior="loop">{{item.electionWardName}}</marquee></span>
+                                </button>
+                            </div>
+                            <div class="col-md-8 mt-3 pt-3 pl-0">
+                                <h6>{{item.electionPollingUnitName}}</h6>
+                            </div>
+                            <div class="col-md-6 mt-3">
+                                 <h6 class="fs-09">Uploaded By: {{item.userName}}</h6>
+                            </div>
+                            <div class="col-md-6 mt-3">
+                                <h6 class="fs-09">
+                                    <marquee direction="left" scrolldelay="600" behavior="loop">(Timestamp){{item.creationTime | date:'medium' }}</marquee>
+                                </h6>
+                           </div>
+                        </div>
+                    </div>
+
+                </div>
+            </cdk-virtual-scroll-viewport>
+                <div class="card" [hidden]="electionGalleryLiveResult.length == 0">
+                    <div class="card-body p-4">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <button (click)="viewMoreGallery('Live')" class="btn btn-default btn-block text-white bg-custom-danger"><i class="fas fa-caret-circle-down text-white mr-5"></i> VIEW MORE</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </p-tabPanel>
+            <p-tabPanel header="VIDEO">
+                <cdk-virtual-scroll-viewport itemSize="10" class="virtual-scroll-viewport">
+                <div class="card mb-3 bg-livefeed-card" *cdkVirtualFor="let item of electionGalleryVideoResult">
+                    <div class="card-body p-4">
+                        <div class="row" >
+                            <div class="col-md-12">
+                                <vg-player>
+                                    <vg-overlay-play></vg-overlay-play>
+                                    <vg-buffering></vg-buffering>
+
+                                    <vg-scrub-bar>
+                                        <vg-scrub-bar-current-time></vg-scrub-bar-current-time>
+                                        <vg-scrub-bar-buffering-time></vg-scrub-bar-buffering-time>
+                                    </vg-scrub-bar>
+
+                                    <vg-controls>
+                                        <vg-play-pause></vg-play-pause>
+                                        <vg-playback-button></vg-playback-button>
+
+                                        <vg-time-display vgProperty="current" vgFormat="mm:ss"></vg-time-display>
+
+                                        <vg-scrub-bar style="pointer-events: none;"></vg-scrub-bar>
+
+                                        <vg-time-display vgProperty="left" vgFormat="mm:ss"></vg-time-display>
+                                        <vg-time-display vgProperty="total" vgFormat="mm:ss"></vg-time-display>
+
+                                        <vg-track-selector></vg-track-selector>
+                                        <vg-mute></vg-mute>
+                                        <vg-volume></vg-volume>
+
+                                        <vg-fullscreen></vg-fullscreen>
+                                    </vg-controls>
+                                    <video [vgMedia]="media" #media id="singleVideo" preload="auto" controls>
+                                        <source src="{{item.contentLink}}" type="video/mp4">
+                                    </video>
+                                </vg-player>
+                            </div>
+                            <div class="col-md-4 mt-3">
+                                <button class="btn btn-primary btn-block">
+                                    <span><marquee direction="left" class="" scrolldelay="600" behavior="loop">{{item.electionWardName}}</marquee></span>
+                                </button>
+                            </div>
+                            <div class="col-md-8 mt-3 pt-3 pl-0">
+                                <h6>{{item.electionPollingUnitName}}</h6>
+                            </div>
+                            <div class="col-md-6 mt-3">
+                                 <h6 class="fs-09">Uploaded By: {{item.userName}}</h6>
+                            </div>
+                            <div class="col-md-6 mt-3">
+                                <h6 class="fs-09">
+                                    <marquee direction="left" scrolldelay="600" behavior="loop">(Timestamp){{item.creationTime | date:'medium' }}</marquee>
+                                </h6>
+                           </div>
+                        </div>
+                    </div>
+
+                </div>
+            </cdk-virtual-scroll-viewport>
+                <div class="card" [hidden]="electionGalleryVideoResult.length == 0">
+                    <div class="card-body p-4">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <button (click)="viewMoreGallery('Video')" class="btn btn-default btn-block text-white bg-custom-danger"><i class="fas fa-caret-circle-down text-white mr-5"></i> VIEW MORE</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </p-tabPanel>
+
+        </p-tabView>
+    </div>
+</div>

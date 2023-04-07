@@ -1,0 +1,131 @@
+
+  .color-w{
+   color: white;
+ }
+ .color-b{
+   color: #35373c;
+   font-weight: 600;
+ }
+
+ .popup .container-fluid .text-danger{
+   color:#b52232 !important;
+ }
+ .popup .container-fluid .inValid{
+   border-color:#b52232 !important;
+ }
+ .owl-active{
+   background: #958c41;
+   border-radius: 13px;
+ }
+ .app-modal-header {
+   background: linear-gradient(359.66deg, rgba(33, 51, 21, 0.9) -11.74%, rgba(183, 166, 67, 0.82) 111.45%);
+}
+ .rounded-pill {
+   border-radius: 50rem !important;
+}
+h5{
+   text-align: left !important;
+   font-family: Arial, Helvetica, sans-serif;
+   font-size: 16px;
+   font-style: normal;
+   font-weight: normal;
+   font-size: 16px;
+   line-height: 19px;
+   letter-spacing: 0.02em;
+   color: #E4E4B6;
+}
+input[type="number"],input[type="text"]  {
+   /* background-color: #8C894C;
+   border: none; */
+
+background: rgba(182, 182, 182, 0.12);
+border: 1px solid #858B53;
+box-sizing: border-box;
+border-radius: 10px;
+ }
+
+select{
+   border: 1px solid #676C3D;
+   border-radius: 10px;
+   width : 184px;
+   height: 45px;
+   color: #FFF;
+   background-color: #8C894C;
+ }
+
+ .createStoreRow{
+     border-bottom: #FFF;
+ }
+ hr{
+   background: #B2B76F;
+   height: 2px;
+   width: 100%;
+ }
+
+ .dangers{
+   width: 89px;
+   height: 45px;
+   background: #8A2424;
+   border: 1px solid #9DB186;
+   box-sizing: border-box;
+   border-radius: 10px;
+   color: #FFF;
+   }
+ .primary1{
+   width: 89px;
+   height: 45px;
+   background: #787735;
+   border: 1px solid #9DB186;
+   box-sizing: border-box;
+   border-radius: 10px;
+   color: #FFF;
+   }
+   input[type='radio']:after {
+       width: 15px;
+       height: 15px;
+       border-radius: 15px;
+       top: -2px;
+       left: -1px;
+       position: relative;
+       background-color: transparent;
+       content: '';
+       display: inline-block;
+       visibility: visible;
+       border: 2px solid white;
+   }
+
+   input[type='radio']:checked:after {
+       width: 15px;
+       height: 15px;
+       border-radius: 15px;
+       top: -2px;
+       left: -1px;
+       position: relative;
+       background-color: #3699FF;
+       content: '';
+       display: inline-block;
+       visibility: visible;
+       border: 2px solid white;
+   }
+ select option{
+       background-color: #8C894C;
+       color:#FFF;
+   }
+   #yes-label, #no-label{
+       float: left;
+   }
+
+   #Yes,#False{
+       float: right;
+   }
+   h2{
+       font-family: Roboto;
+       font-style: normal;
+       font-weight: bold;
+       font-size: 18px;
+       line-height: 21px;
+       letter-spacing: -0.01em;
+       color: #E4E4B6;
+   }
+
+

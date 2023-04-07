@@ -1,0 +1,546 @@
+<div class="row mt-4">
+    <div class="col-md-2 pl-0">
+        <div class="dropdown-multiple">
+            <a id="dLabel" role="button" data-toggle="dropdown" class="btn btn-sm" data-target="#" href="#">
+                <span class="dd-custom font-bold">Filters</span> <i class="fas fa-ellipsis-v dd-custom ml-3"></i>
+            </a>
+            <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+                <li class="dropdown-submenu">
+                    <a tabindex="-1" href="javascript:void(0)">Country</a>
+                    <ul class="dropdown-menu">
+                        <li *ngFor="let obj of electionCountries; index as i"><a href="javascript:void(0)" (click)="filterByCountry()" tabindex="-1" >{{obj.electionCountryName}}</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown-submenu">
+                    <a tabindex="-1" href="javascript:void(0)">States</a>
+                    <ul class="dropdown-menu">
+                        <li *ngFor="let obj of electionStatesForDropDown; index as i"><a href="javascript:void(0)" (click)="filterByState(obj.id)" tabindex="-1" >{{obj.electionStateName}}</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown-submenu">
+                    <a tabindex="-1" href="javascript:void(0)">Local Council</a>
+                    <ul class="dropdown-menu">
+                        <li *ngFor="let obj of electionLocalCouncilsForDropDown; index as i"><a href="javascript:void(0)" (click)="filterByLocalCouncil(obj.id)" tabindex="-1">{{obj.electionLocalCouncilName}}</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown-submenu">
+                    <a tabindex="-1" href="javascript:void(0)">Wards</a>
+                    <ul class="dropdown-menu">
+                        <li *ngFor="let obj of electionWardsForDropDown; index as i"><a href="javascript:void(0)" (click)="filterByWard(obj.id)" tabindex="-1">{{obj.electionWardName}}</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown-submenu">
+                    <a tabindex="-1" href="javascript:void(0)">Polling Units</a>
+                    <ul class="dropdown-menu">
+                        <!-- <li>
+                            <a tabindex="-1" href="javascript:void(0)" (click)="filterByPollingUnit(0)"
+                                >
+                                All Polling Units
+                            </a>
+                        </li> -->
+                        <li *ngFor="let obj of pollingunitDataArrayForDropDown; index as i">
+                            <a tabindex="-1" href="javascript:void(0)" (click)="filterByPollingUnit(obj.id)"
+                                >
+                                <!-- <img src="/assets/Dashboard/area_chart.png" width="15" class="mr-3" />  -->
+                                {{obj.electionPollingUnitName}}
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown-submenu">
+                    <a tabindex="-1" href="javascript:void(0)">Political Party</a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a tabindex="-1" href="javascript:void(0)" (click)="filterPoliticalParty('allParties')"
+                                >
+                                <!-- <img src="{{item.partyPhoto}}" width="17" class="mr-3" />  -->
+                                All Parties
+                                </a
+                            >
+                        </li>
+                        <li *ngFor="let item of politicalPartyFilterList; index as i">
+                            <a tabindex="-1" href="javascript:void(0)" (click)="filterPoliticalParty(item.partyName)"
+                                ><img src="{{item.partyPhoto}}" width="17" class="mr-3" />
+                                {{item.partyName}}
+                                </a
+                            >
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="col-md-5 text-right">
+        <input
+            type="checkbox"
+            id="Location3"
+            [(ngModel)]="Location"
+            (change)="ActivitiesToLocation()"
+            class="visually-hidden"
+        />
+        <div class="dropdown p-1 text-center">
+            <label for="Location3">
+                <span class="text-custom-danger font-bold"><b>LOCATION</b> </span>
+            </label>
+        </div>
+    </div>
+    <div class="col-md-5 text-right">
+        <input
+            type="checkbox"
+            id="Activities3"
+            [(ngModel)]="Activities"
+            (change)="LocationToActivites()"
+            class="visually-hidden"
+        />
+        <div class="dropdown p-1 text-center">
+            <label for="Activities3">
+                <span class="text-custom-danger font-bold"><b>ACTIVITES</b> </span>
+            </label>
+        </div>
+    </div>
+</div>
+<div class="row mt-4">
+    <div class="col-md-8 pl-0" [hidden]="!Location">
+        <div class="row">
+            <div class="col-md-2 pr-0">
+                <input
+                    type="checkbox"
+                    id="GIS3"
+                    [(ngModel)]="GISMAP"
+                    (change)="MapTypeGoogleToGIS()"
+                    class="visually-hidden"
+                />
+                <div class="dropdown pb-2 pt-4 text-center">
+                    <label for="GIS3">
+                        <span class="election-category-title"><b>GIS</b> </span>
+                    </label>
+                </div>
+                <button class="btn btn-sm btn block bg-custom-danger text-white">
+                    Filter <i class="fas fa-sm fa-ellipsis-v text-white ml-2"></i>
+                </button>
+            </div>
+            <div class="col-md-2 pr-0">
+                <input
+                    type="checkbox"
+                    id="MAP3"
+                    [(ngModel)]="GOOGLEMAP"
+                    (change)="MapTypeGISToGoogle()"
+                    class="visually-hidden"
+                />
+                <div class="dropdown pb-2 pt-4 text-center">
+                    <label for="MAP3">
+                        <span class="election-category-title"><b>GOOGLE MAP </b> </span>
+                    </label>
+                </div>
+            </div>
+            <div class="col-md-3 pr-0">
+                <input type="checkbox" id="Detail" class="visually-hidden" />
+                <div class="dropdown pb-2 pt-4 text-center">
+                    <label for="Detail">
+                        <span class="election-category-title"
+                            ><b>Detail </b>
+                            <i class="fas fa-external-link-alt text-custom-danger ml-3"></i>
+                        </span>
+                    </label>
+                </div>
+            </div>
+            <div class="col-md-2 text-right mt-7 pr-0">
+                <h6 class="text-custom-primary">Satellite</h6>
+            </div>
+            <div class="col-md-1 mt-7 pr-0">
+                <div class="switch">
+                    <input id="switch-1" type="checkbox" [(ngModel)]="satteliteSwitch" class="switch-input" />
+                    <label for="switch-1" class="switch-label">Switch</label>
+                </div>
+            </div>
+            <div class="col-md-1 text-right mt-7 pr-0">
+                <h6 class="text-custom-primary">Map</h6>
+            </div>
+            <div class="col-md-1 mt-7 pl-2">
+                <div class="switch">
+                    <input id="switch-2" type="checkbox" [(ngModel)]="mapSwitch" class="switch-input" />
+                    <label for="switch-2" class="switch-label">Switch</label>
+                </div>
+            </div>
+        </div>
+        <div class="" [hidden]="!GOOGLEMAP">
+            <div id="map3" class="map-div"></div>
+        </div>
+        <app-esri-map
+            [hidden]="!GISMAP"
+            [center]="mapCenter"
+            [basemap]="basemapType"
+            [zoom]="mapZoomLevel"
+            (mapLoadedEvent)="mapLoadedEvent($event)"
+        >
+        </app-esri-map>
+    </div>
+    <div class="col-md-8 pl-0" [hidden]="!Activities">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="card pt-2 pb-2 pl-3 pr-3 bg-activities-card1 mb-2">
+                    <div class="row text-center">
+                        <div class="col-md-12">
+                            <h6 class="text-custom-primary fs-11 pt-2">32
+                                <img src="/assets/Dashboard/area_chart.png" width="18" class="ml-3 br-50">
+                            </h6>
+                        </div>
+                        <div class="col-md-12">
+                            <h6 class="text-custom-primary fs-07">Total Political Parites</h6>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="card pt-2 pb-2 pl-3 pr-3 bg-activities-card1 mb-2">
+                    <div class="row text-center">
+                        <div class="col-md-12">
+                            <h6 class="text-custom-primary fs-11 pt-2">32
+                                <img src="/assets/Dashboard/pakflag.PNG" width="18" class="ml-3 br-50">
+                            </h6>
+                        </div>
+                        <div class="col-md-12">
+                            <h6 class="text-custom-primary fs-07">democratic part offices</h6>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="card pt-2 pb-2 pl-3 pr-3 bg-activities-card1 mb-2">
+                    <div class="row text-center">
+                        <div class="col-md-12">
+                            <h6 class="text-custom-primary fs-11 pt-2">28
+                                <img src="/assets/Dashboard/pakflag2.PNG" width="18" class="ml-3 br-50">
+                            </h6>
+                        </div>
+                        <div class="col-md-12">
+                            <h6 class="text-custom-primary fs-07">public party offices</h6>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="card pt-2 pb-2 pl-3 pr-3 bg-activities-card1 mb-2">
+                    <div class="row text-center">
+                        <div class="col-md-12">
+                            <h6 class="text-custom-primary fs-11 pt-2">24
+                                <img src="/assets/Dashboard/pakflag.PNG" width="18" class="ml-3 br-50">
+                            </h6>
+                        </div>
+                        <div class="col-md-12">
+                            <h6 class="text-custom-primary fs-07">republic party offices</h6>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="card pt-2 pb-2 pl-3 pr-3 bg-activities-card1 mb-2">
+                    <div class="row text-center">
+                        <div class="col-md-12">
+                            <h6 class="text-custom-primary fs-11 pt-2">21
+                                <img src="/assets/Dashboard/pakflag2.PNG" width="18" class="ml-3 br-50">
+                            </h6>
+                        </div>
+                        <div class="col-md-12">
+                            <h6 class="text-custom-primary fs-07">labour party offices</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="card pt-2 pb-2 pl-3 pr-3 bg-activities-card1 mb-2">
+                    <div class="row text-center">
+                        <div class="col-md-12">
+                            <h6 class="text-custom-primary fs-11 pt-2">22
+                                <img src="/assets/Dashboard/pakflag.PNG" width="18" class="ml-3 br-50">
+                            </h6>
+                        </div>
+                        <div class="col-md-12">
+                            <h6 class="text-custom-primary fs-07">6 party offices</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="card pt-2 pb-2 pl-3 pr-3 bg-activities-card1 mb-2">
+                    <div class="row text-center">
+                        <div class="col-md-12">
+                            <h6 class="text-custom-primary fs-11 pt-2">28
+                                <img src="/assets/Dashboard/pakflag2.PNG" width="18" class="ml-3 br-50">
+                            </h6>
+                        </div>
+                        <div class="col-md-12">
+                            <h6 class="text-custom-primary fs-07">Public party offices</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="card pt-2 pb-2 pl-3 pr-3 bg-activities-card1 mb-2">
+                    <div class="row text-center">
+                        <div class="col-md-12">
+                            <h6 class="text-custom-primary fs-11 pt-2">27
+                                <img src="/assets/Dashboard/pakflag.PNG" width="18" class="ml-3 br-50">
+                            </h6>
+                        </div>
+                        <div class="col-md-12">
+                            <h6 class="text-custom-primary fs-07">7 party offices</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-9 pl-0">
+                <div class="card bg-activities-card2 pt-3 pb-3">
+                    <div class="">
+                        <div class="col-md-12 custom-border-primary">
+                            <h6 class="text-custom-activities">Lagos</h6>
+                            <h6 class="text-custom-activities1 fs-07 font-bold">Ojo 102101, Lagos, igeria</h6>
+                        </div>
+                        <div class="col-md-12 pb-2 text-center">
+                            <img src="/assets/Dashboard/Ellipse-Political-Party.png" />
+                        </div>
+                        <div class="col-md-10">
+                            <button class="btn btn-sm btn-primary pl-7 pr-7">Domestic Party</button>
+                            <h6 class="fs-11">
+                                Contact Person:
+                                <span class="ml-9 fs-09">
+                                </span>
+                                <span class="ml-2 fs-09">Emannuel</span>
+                                <span class="ml-1 fs-09">
+                                <img width="12" class="br-50" src="/assets/Dashboard/emmanuel.png" />
+                                </span>
+                            </h6>
+                        </div>
+                        <div class="col-md-2 text-right">
+                            <img width="18" class="br-50" src="/assets/Dashboard/pakflag2.PNG" />
+                        </div>
+                        <div class="col-md-6 bg-activities-card3 custom-border-primary">
+                            <div class="col-md-2 mt-6">
+                                <i class="fa fa-solid fa-signal text-custom-primary"></i>
+                            </div>
+                            <div class="col-md-10 mt-5 pl-2 mb-1">
+                                <h6 class="text-custom-activities fs-09 mb-1">Lagos State House</h6>
+                                <h6 class="text-custom-primary fs-07">Marina In Lagos Island</h6>
+                            </div>
+                        </div>
+                        <div class="col-md-6 bg-activities-card3 custom-border-primary">
+                            <div class="col-md-2 mt-6">
+                                <i class="fa fa-calendar text-custom-primary"></i>
+                            </div>
+                            <div class="col-md-10 mt-5 pl-2 mb-1">
+                                <h6 class="text-custom-activities fs-09 mb-1">Lagos Stale House</h6>
+                                <h6 class="text-custom-primary fs-07">lekja on the Island</h6>
+                            </div>
+                        </div>
+                        <div class="col-md-6 bg-activities-card3 custom-border-primary">
+                            <div class="col-md-2 mt-6">
+                                <i class="fa fa-solid fa-signal text-custom-primary"></i>
+                            </div>
+                            <div class="col-md-10 mt-custom pl-2 mb-0">
+                                <h6 class="text-custom-activities fs-09 mb-1">Member Participating In Election</h6>
+                                <h6 class="text-custom-primary fs-07">30</h6>
+                            </div>
+                        </div>
+                        <div class="col-md-6 bg-activities-card3 custom-border-primary">
+                            <div class="col-md-2 mt-6">
+                                <i class="fa fa-solid fa-signal text-custom-primary"></i>
+                            </div>
+                            <div class="col-md-10 mt-5 pl-2 mb-1">
+                                <h6 class="text-custom-activities fs-09 mb-1">Staff</h6>
+                                <h6 class="text-custom-primary fs-07">60</h6>
+                            </div>
+                        </div>
+                        <div class="col-md-6 bg-activities-card3 custom-border-primary">
+                            <div class="col-md-2 mt-6">
+                                <i class="fa fa-solid fa-signal text-custom-primary"></i>
+                            </div>
+                            <div class="col-md-10 mt-5 pl-2 mb-1">
+                                <h6 class="text-custom-activities fs-09 mb-1">Office Rooms</h6>
+                                <h6 class="text-custom-primary fs-07">39</h6>
+                            </div>
+                        </div>
+                        <div class="col-md-6 bg-activities-card3 custom-border-primary">
+                            <div class="col-md-2 mt-6">
+                                <i class="fa fa-solid fa-signal text-custom-primary"></i>
+                            </div>
+                            <div class="col-md-10 mt-5 pl-2 mb-1">
+                                <h6 class="text-custom-activities fs-09 mb-1">Conference Hall</h6>
+                                <h6 class="text-custom-primary fs-07">14</h6>
+                            </div>
+                        </div>
+                        <div class="col-md-12 bg-activities-card4 custom-border-primary">
+                            <h6 class="font-bold mt-5 mb-4">Election Activities</h6>
+                        </div>
+                        <div class="col-md-12 bg-activities-card4">
+                            <div class="col-md-7 pl-0 pr-0">
+                                <input
+                                    type="checkbox"
+                                    name="checkbox"
+                                    class="checkbox_id"
+                                    id="workingActivity_id1"
+                                    style="width: 4px"
+                                    value="value"
+                                />
+                                <label for="workingActivity_id1" class="checkbox-label">
+                                    <span class="fs-09">Protest Against unfair Election </span>
+                                </label>
+                            </div>
+                            <div class="col-md-2 pl-0 pr-0 mt-2">
+                                <h6 class="fs-09">12/05/2019</h6>
+                            </div>
+                            <div class="col-md-3 pr-0 pl-0 mt-2 text-right">
+                                <span class="ml-2 fs-09">Emannuel</span>
+                                <span class="ml-1 fs-09">
+                                <img width="20" class="br-50" src="/assets/Dashboard/emmanuel.png" />
+                                </span>
+                            </div>
+                            <div class="col-md-12 ml-7">
+                                <span class="fs-08 font-bold">Airport Road Lahore Nigeria</span>
+                            </div>
+                            <div class="col-md-7 pl-0 pr-0">
+                                <input
+                                    type="checkbox"
+                                    name="checkbox"
+                                    class="checkbox_id"
+                                    id="workingActivity_id2"
+                                    style="width: 4px"
+                                    value="value"
+                                />
+                                <label for="workingActivity_id2" class="checkbox-label">
+                                    <span class="fs-09">Conference on campaign issues </span>
+                                </label>
+                            </div>
+                            <div class="col-md-2 pl-0 pr-0 mt-2">
+                                <h6 class="fs-09">12/07/2019</h6>
+                            </div>
+                            <div class="col-md-3 pr-0 pl-0 mt-2 text-right">
+                                <span class="ml-2 fs-09">Jane</span>
+                                <span class="ml-1 fs-09">
+                                <img width="20" class="br-50" src="/assets/Dashboard/jane.png" />
+                                </span>
+                            </div>
+                            <div class="col-md-12 ml-7">
+                                <span class="fs-08 font-bold">Airport Road Lahore Nigeria</span>
+                            </div>
+                            <div class="col-md-7 pl-0 pr-0">
+                                <input
+                                    type="checkbox"
+                                    name="checkbox"
+                                    class="checkbox_id"
+                                    id="workingActivity_id3"
+                                    style="width: 4px"
+                                    value="value"
+                                />
+                                <label for="workingActivity_id3" class="checkbox-label">
+                                    <span class="fs-09">Conference on election campaign </span>
+                                </label>
+                            </div>
+                            <div class="col-md-2 pl-0 pr-0 mt-2">
+                                <h6 class="fs-09">12/10/2019</h6>
+                            </div>
+                            <div class="col-md-3 pr-0 pl-0 mt-2 text-right">
+                                <span class="ml-2 fs-09">Emannuel</span>
+                                <span class="ml-1 fs-09">
+                                <img width="20" class="br-50" src="/assets/Dashboard/emmanuel.png" />
+                                </span>
+                            </div>
+                            <div class="col-md-12 ml-7">
+                                <span class="fs-08 font-bold">Airport Road Lahore Nigeria</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="col-md-4 pl-0 pr-0 mt-6">
+        <div class="card">
+            <div class="card-body p-2">
+                <div class="row mb-4 ml-0">
+                    <div class="col-md-4 pl-0 pr-1">
+                        <div class="text-center dropdown pt-2 text-custom-danger mb-2"
+                        (click)="GetAllData()">
+                            <span class="election-category-title text-uppercase"
+                                >Party Offices<i class="fas fa-sm fa-external-link-alt ml-1 text-custom-danger"></i
+                            ></span>
+                        </div>
+                    </div>
+                    <div class="col-md-3 pl-1 pr-1">
+                        <button class="btn btn-sm btn-block btn-outline-success br-25 p-2" [ngClass]="{'active':resultedData}" (click)="GetResultedData()">Result</button>
+                    </div>
+                    <div class="col-md-5 pl-1">
+                        <button class="btn btn-sm btn-block btn-outline-danger br-25 p-2" [ngClass]="{'active':withoutResultedData}" (click)="GetWithoutResultedData()">W/out Result</button>
+                    </div>
+                </div>
+                <div class="pr-1 card-with-scrol">
+                    <cdk-virtual-scroll-viewport itemSize="50" class="virtual-scroll-viewport">
+                    <div class="row pt-2 mb-2 ml-1 custom-agent-card" (click)="initMap(item.lat,item.log, item.candidateName)" *cdkVirtualFor="let item of candidateDataArray; index as i">
+                        <div class="col-md-2 pl-1">
+                            <img class="br-50" width="40" src="{{item.partyPhoto}}" />
+                        </div>
+                        <div class="col-md-8 pl-1 pr-0">
+                            <h6 class="text-custom-primary fs-07 mb-4">
+                                <b>
+                                    <marquee direction="left" scrolldelay="600" behavior="loop">{{item.partyName}}</marquee>
+                                </b>
+                            </h6>
+                            <h6 class="fs-08 mb-1 row align-items-end">
+                                <span class="col-3"><img width="18" class="br-50" src="{{item.candidatePhoto}}" /></span>
+                                <span class="col-9">
+                                    <marquee direction="left" class="text-dark fs-08 mb-1" scrolldelay="600" behavior="loop">{{item.candidateName}}</marquee>
+                                </span>
+                            </h6>
+                        </div>
+                        <div class="col-md-2 pl-0 text-right mt-3">
+                            <img width="26" class="br-50" src="{{item.partyPhoto}}" />
+                        </div>
+                        <div class="col-md-2 pl-1"></div>
+                        <div class="col-md-8 pl-1 pr-0 row">
+                            <div class="col-6">
+                                <h6 class="text-dark fs-07 mb-1">
+                                    <b>{{item.label}}</b>
+                                </h6>
+                            </div>
+                            <div class="col-6 pl-0 pr-0">
+                                <h6 class="text-custom-primary fs-07 mb-1">
+                                    <marquee direction="left" class="text-custom-primary fs-08 mb-1" scrolldelay="600" behavior="loop">
+                                        <b>{{item.labelName}}</b>
+                                    </marquee>
+
+                                </h6>
+                            </div>
+                            <div class="col-10">
+                                <h6 class="text-dark fs-07 mb-1">
+                                    <b>{{item.numberLabel}}</b>
+                                </h6>
+                            </div>
+                            <div class="col-2 pl-0 pr-0">
+                                <h6 class="text-custom-primary fs-07 mb-1">
+                                    <b>{{item.numberValue}}</b>
+                                </h6>
+                            </div>
+                            <div class="col-10">
+                                <h6 class="text-dark fs-07 mb-1">
+                                    <b>Votes</b>
+                                </h6>
+                            </div>
+                            <div class="col-2 pl-0 pr-0">
+                                <h6 class="text-custom-primary fs-07 mb-1">
+                                    <b>{{item.totalElectionCandidateVote}}</b>
+                                </h6>
+                            </div>
+                            <div class="col-10">
+                                <h6 class="text-dark fs-07 mb-1">
+                                    <b>Ranking</b>
+                                </h6>
+                            </div>
+                            <div class="col-2 pl-0 pr-0">
+                                <h6 class="text-custom-primary fs-07 mb-1">
+                                    <b>{{item.rankingStatus}}</b>
+                                </h6>
+                            </div>
+                            <div class="col-12">
+                                <h6 class="text-dark fs-07 mb-1">
+                                    <b>Address: {{item.address}}</b>
+                                </h6>
+                            </div>
+                        </div>
+                        <div class="col-md-2 pl-1"></div>
+                    </div>
+                </cdk-virtual-scroll-viewport>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

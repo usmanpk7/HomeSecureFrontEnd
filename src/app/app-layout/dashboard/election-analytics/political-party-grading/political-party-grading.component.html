@@ -1,0 +1,118 @@
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<div class="row mt-3 ">
+    <div class="col-md-3 pl-0 col-md-3 pl-0 pr-0">
+        <div class="card" style="background: #B4A8FE;">
+            <div class="row text-center pt-3">
+            <div class="col-md-4">
+                <h4 style="color: #392F55;">{{totalParties}}</h4>
+            </div>
+            <div class="col-md-8">
+                <h4 style="color: #392F55;">Total Parties</h4>
+            </div>
+            <div class="col-md-12">
+                <h6 style="color:#685294"></h6>
+            </div>
+        </div>
+        </div>
+    </div>
+    <div class="col-md-9 pl-0 pr-0">
+        <!-- <div class="col-md-3">
+            <form>
+                <input type="search" placeholder="Search...">
+                <button type="submit">Search</button>
+              </form>
+        </div>
+        <div class="col-md-3 pl-0">
+                <div class="dropdown p-2 pb-4" style="background: #f0eefc;border-radius: 0px 20px 20px 0px;border-left: 1px solid #6966ff;">
+                    <a class="" href="#" style="font-size: 0.7rem;" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="text-custom-danger mr-3 text-uppercase"><b>Sort By Parties </b>
+                            </span>
+                            <img src="/assets/Dashboard/Vector.png" width="15">
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                      <a class="dropdown-item" href="javascript:void(0)">
+                        <span class="text-custom-danger text-uppercase">Polling Unit</span>
+                      </a>
+                      <a class="dropdown-item" href="javascript:void(0)">
+                        <span class="text-custom-danger text-uppercase">Parties</span>
+                      </a>
+                      <a class="dropdown-item" href="javascript:void(0)">
+                        <span class="text-custom-danger text-uppercase">Election Position</span>
+                      </a>
+                      <a class="dropdown-item" href="javascript:void(0)">
+                        <span class="text-custom-danger text-uppercase">Area</span>
+                      </a>
+                      <a class="dropdown-item" href="javascript:void(0)">
+
+                      </a>
+                    </div>
+                  </div>
+
+        </div> -->
+        <div class="col-md-3 pr-0">
+          <div class="dropdown2 pb-2 pt-2 text-center">
+              <a class="" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <span class="election-category-title2">
+                    <i class="fas fa-pie-chart text-custom-danger mr-3"></i>
+                    <b>View:Chart </b>
+                      <i class="fas fa-ellipsis-v text-custom-danger ml-3"></i>
+                  </span>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <a class="dropdown-item dropdown2" href="javascript:void(0)">
+                  <span class="election-category-title2 text-custom-danger">
+                    <i class="fa fa-table text-custom-danger mr-3"></i>
+                    <b>Table</b>
+                  </span>
+                </a>
+                <a class="dropdown-item dropdown2" href="javascript:void(0)">
+                  <span class="election-category-title2 text-custom-danger">
+                    <i class="fa fa-pie-chart text-custom-danger mr-3"></i>
+                    <b>Chart</b>
+                  </span>
+                </a>
+              </div>
+            </div>
+        </div>
+        <div class="col-md-1">
+          <a href="javascript:void" class="btn btn-circle"><i class="fa fa-refresh fa-2x"></i></a>
+        </div>
+        <div class="col-md-1">
+          <a href="javascript:void" class="btn btn-circle"><i class="fa fa-print fa-2x"></i></a>
+        </div>
+        <div class="col-md-1">
+          <a href="javascript:void" class="btn btn-circle"><i class="fa fa-download fa-2x"></i></a>
+        </div>
+    </div>
+    <div class="col-md-5 pl-0 col-md-3 pl-0 pr-0">
+      <div class="card" style="background: #F0EEFC;">
+          <div class="row text-center pt-3">
+          <div class="col-md-12 mb-4">
+              <h5 style="color: #392F55;">Seats Occupied
+                <i style="color: #392F55;" class="fas fa-ellipsis-v ml-3"></i>
+              </h5>
+          </div>
+          <div class="col-md-9 ml-10 mb-5" style="border-bottom: 1px solid #2925f0;"></div>
+          <div class="col-md-12 mb-5 pl-md-11">
+            <p-chart type="horizontalBar" [data]="basicData" [options]="horizontalOptions"></p-chart>
+          </div>
+      </div>
+      </div>
+  </div>
+  <div class="col-md-7 pl-0 mt-4 pr-0">
+    <div class="row pl-7">
+      <!-- <div class="col-md-6 p-2" style="background: #C6C5FF; border-radius: 15px;">
+        <h6 class="text-custom-primary mb-0">Election Timeline <span class="text-custom-primary ml-15">2023</span></h6>
+      </div> -->
+      <div class="col-md-3">
+        <a href="javascript:void" class="btn btn-block btn-outline-success" style="border-radius: 20px !important;">low activity</a>
+      </div>
+      <div class="col-md-3">
+        <a href="javascript:void" class="btn btn-block btn-outline-danger" style="border-radius: 20px !important;">High activity</a>
+      </div>
+      <div class="col-md-12 pl-35 mt-5">
+        <p-chart type="horizontalBar" [data]="partyGradingData" [options]="partyGradingOptions"></p-chart>
+      </div>
+    </div>
+  </div>
+</div>

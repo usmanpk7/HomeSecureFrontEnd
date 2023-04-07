@@ -1,0 +1,92 @@
+<!-- <div *ngIf="isLoading" [appLoading]="isLoading">
+</div>
+<p-table #dataTable class="storegrid" dataKey="id" [value]="itemsDto" [scrollable]="true" scrollHeight="400px"
+    [(rows)]="row" (onPage)="paginate($event)" [first]="first" [rowsPerPageOptions]="[5,10,15,20]"
+    [paginator]="true" [lazy]="false" rowExpandMode="single" [globalFilterFields]="['deviceModelName','deviceModelNumber']">
+      <ng-template pTemplate="header" style="text-align: center;">
+
+        <tr>
+            <th class="gridheader" pSortableColumn="intentNo">
+                Model Name
+                <p-sortIcon field="intentNo"></p-sortIcon>
+            </th>
+            <th class="gridheader" pSortableColumn="controlNumber">
+                Model Number
+                <p-sortIcon field="controlNumber"></p-sortIcon>
+            </th>
+            <th class="gridheader" pSortableColumn="voucherToType" colspan="3">Description
+                <p-sortIcon field="voucherToType"></p-sortIcon>
+            </th>
+            <th class="gridheader" pSortableColumn="AKADA">
+                IsActive
+                <p-sortIcon field="AKADA"></p-sortIcon>
+            </th>
+            <th class="gridheader" colspan="3">Created By
+                <table>
+                    <tr>
+                        <th  pSortableColumn="">Name
+                        </th>
+                        <th pSortableColumn="">Role
+                        </th>
+                        <th pSortableColumn="">Date/Time
+                        </th>
+                    </tr>
+                </table>
+            </th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" style="color: white;" let-item let-expanded="expanded"
+            let-rowIndex="rowIndex">
+            <tr class="body-td" [pRowToggler]="item" [ngClass]="{
+         'sub-table-even': rowIndex % 2 == 1,
+         'sub-table-odd': rowIndex % 2 == 0}" (click)="onExpandRow(item)" role="button" aria-expanded="false"
+            aria-controls="collapseExample">
+            <td style="border-left: 2px #213315 solid; word-break: break-all;">{{item.deviceModelName}}</td>
+            <td style="border-left: 2px #213315 solid; word-break: break-all;"> {{item.deviceModelNumber}}</td>
+            <td style="border-left: 2px #213315 solid; word-break: break-all;" colspan="3">{{item.deviceDescription}}</td>
+            <td style="border-left: 2px #213315 solid; word-break: break-all;">
+                <p-inputSwitch onLabel="Y" offLabel="N" (onChange)="handleChange($event)" [(ngModel)]="item.isActive" readonly="readonly" ></p-inputSwitch>
+                </td>
+            <td style="font-size: 9px;border-left: 2px #213315 solid;font-weight: 700;" colspan="3">
+                <table>
+                    <tbody>
+                        <tr style="border-bottom: 2px solid #213315;">
+                            <td style="text-align: center;padding: 2px;" colspan="2">
+                                <img src="../../../assets/images/widget/small_profile.svg"
+                                    style=" width: 20px;height: 20px;border-radius: 11px; margin-right: 6px;">{{getUserName(item.creatorUserId)}}
+                            </td>
+                            <td style="border-left: 2px #213315 solid;text-align: center;padding: 2px;">
+                                {{getFirstUserRole(item.creatorUserId)}}
+                            </td>
+                            <td style="border-left: 2px #213315 solid;text-align: center;padding: 2px;">
+                                {{item.creationTime | date}}</td>
+                        </tr>
+                        <tr>
+
+                            <td colspan="4" style="text-align: center;padding: 2px;">
+                                <img src="../../../assets/images/widget/check_star.svg"
+                                style="height: 20px;">
+                            </td>
+
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    </ng-template>
+
+</p-table>
+<div class="col-md-12 pt-4 pb-4" style="text-align: center;">
+    <div>
+        <svg width="787" height="23" viewBox="0 0 787 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="21.0514" y="7" width="746.516" height="9" fill="#585E34" />
+            <rect x="21.0514" y="7" width="218.611" height="9" fill="#B7A643" />
+            <path
+                d="M21.0514 1.54983V21.4502C21.0514 22.8282 18.3626 23.5182 16.79 22.5439L0.731102 12.5937C-0.243701 11.9897 -0.243701 11.0103 0.731102 10.4063L16.79 0.456149C18.3626 -0.518283 21.0514 0.171862 21.0514 1.54983Z"
+                fill="#B7A643" />
+            <path
+                d="M765.949 1.54983V21.4502C765.949 22.8282 768.637 23.5182 770.21 22.5439L786.269 12.5937C787.244 11.9897 787.244 11.0103 786.269 10.4063L770.21 0.456149C768.637 -0.518283 765.949 0.171862 765.949 1.54983Z"
+                fill="#585E34" />
+        </svg>
+    </div>
+</div> -->

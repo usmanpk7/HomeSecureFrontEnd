@@ -1,0 +1,26 @@
+<p-tabView>
+    <p-tabPanel header="Votes">
+        <app-votes #childVoterComponent></app-votes>
+    </p-tabPanel>
+    <p-tabPanel header="Election Result">
+        <app-election-post #childElectionPostComponent></app-election-post>
+    </p-tabPanel>
+    <p-tabPanel header="Political Party">
+        <app-political-party #childPoliticalPartyComponent></app-political-party>
+    </p-tabPanel>
+    <p-tabPanel header="Incidents">
+        <app-incide-nts></app-incide-nts>
+    </p-tabPanel>
+    <!-- <p-tabPanel header="Candidates">
+        <app-candidates></app-candidates>
+    </p-tabPanel> -->
+    <p-tabPanel header="Agents">
+        <app-agents></app-agents>
+    </p-tabPanel>
+    <p-tabPanel header="Live Feeds">    
+        <app-live-feed #childLiveFeedComponent></app-live-feed>
+    </p-tabPanel>
+    <!-- <p-tabPanel header="Results">
+        <app-result></app-result>
+    </p-tabPanel> -->
+</p-tabView>

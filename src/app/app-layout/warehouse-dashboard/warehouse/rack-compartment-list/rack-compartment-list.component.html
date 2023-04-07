@@ -1,0 +1,346 @@
+<!-- <div *ngIf="isLoading" [appLoading]="isLoading"></div>
+<p-table
+    #dataTable
+    class="storegrid"
+    dataKey="id"
+    [value]="rackCompartment"
+    [scrollable]="true"
+    scrollHeight="400px"
+    [(rows)]="row"
+    (onPage)="paginate($event)"
+    [first]="first"
+    [rowsPerPageOptions]="[5, 10, 15, 20]"
+    [paginator]="true"
+    [lazy]="false"
+    rowExpandMode="single"
+    [globalFilterFields]="['compartmentName']"
+>
+    <ng-template pTemplate="header" style="text-align: center">
+        <tr>
+            <th class="gridheader" pSortableColumn="compartmentName">
+                compartment Name
+                <p-sortIcon field="compartmentName"></p-sortIcon>
+            </th>
+            <th class="gridheader" colspan="2" pSortableColumn="rackRfid">
+                rackRfid
+                <p-sortIcon field="rackRfid"></p-sortIcon>
+            </th>
+            <th class="gridheader" pSortableColumn="rackQrc">
+                rackQrc
+                <p-sortIcon field="rackQrc"></p-sortIcon>
+            </th>
+            <th class="gridheader" pSortableColumn="rackNfc">
+                rackNfc
+                <p-sortIcon field="rackNfc"></p-sortIcon>
+            </th>
+            <th class="gridheader" pSortableColumn="rackBarcode">
+                rackBarcode
+                <p-sortIcon field="rackBarcode"></p-sortIcon>
+            </th>
+            <th class="gridheader" colspan="3">
+                Created By
+                <table>
+                    <tr>
+                        <th pSortableColumn="">Name</th>
+                        <th pSortableColumn="">Role</th>
+                        <th pSortableColumn="">Date/Time</th>
+                    </tr>
+                </table>
+            </th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" style="color: white" let-item let-expanded="expanded" let-rowIndex="rowIndex">
+        <tr
+            class="body-td"
+            [pRowToggler]="item"
+            [ngClass]="{
+                'sub-table-even': rowIndex % 2 == 1,
+                'sub-table-odd': rowIndex % 2 == 0
+            }"
+
+            role="button"
+            aria-expanded="false"
+            aria-controls="collapseExample"
+        >
+
+            <td style="border-left: 2px #213315 solid; word-break: break-all">{{item.compartmentName}}</td>
+            <td style="border-left: 2px #213315 solid; word-break: break-all" colspan="2">
+                {{ item.rackRfid }}
+            </td>
+            <td style="border-left: 2px #213315 solid; word-break: break-all">{{ item.rackQrc }}</td>
+
+            <td style="border-left: 2px #213315 solid; word-break: break-all">
+                {{ item.rackNfc }}
+            </td>
+            <td style="border-left: 2px #213315 solid; word-break: break-all">
+                {{ item.rackBarcode }}
+            </td>
+
+            <td style="font-size: 9px; border-left: 2px #213315 solid; font-weight: 700" colspan="3">
+                <table>
+                    <tbody>
+                        <tr style="border-bottom: 2px solid #213315">
+                            <td style="text-align: center; padding: 2px" colspan="2">
+                                <img
+                                    [src]="profilePicture"
+                                    style="width: 20px; height: 20px; border-radius: 11px; margin-right: 6px"
+                                />{{ userName }}
+                            </td>
+                            <td style="border-left: 2px #213315 solid; text-align: center; padding: 2px">
+                                {{ getFirstUserRole(item.creatorUserId) }}
+                            </td>
+                            <td style="border-left: 2px #213315 solid; text-align: center; padding: 2px">
+                                {{ item.creationTime | date }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="4" style="text-align: center; padding: 2px">
+                                <img src="../../../assets/images/widget/check_star.svg" style="height: 20px" />
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="rowexpansion" let-item>
+        <tr style="background-color: #213315">
+            <td colspan="10">
+                <div dataKey="id" style="color: #eef0f8">
+                    <div class="row" style="padding-bottom: 13px">
+                        <div class="col-md-4" style="padding-top: 5px; text-align: center">
+                            <img src="{{ item.itemImage }}" width="30%" />
+                        </div>
+                        <div
+                            class="col-md-2 p-0"
+                            style="padding-top: 5px; display: flex; border-right: solid 1px; border-bottom: 1px solid"
+                        >
+                            <div class="col-md-12">
+                                <h5 style="font-size: 9px">
+                                    <b style="color: #e8c40b">Store Sku:</b> {{ decryptItem(item.sku) }}
+                                </h5>
+                                <h5 style="font-size: 9px">
+                                    <b style="color: #e8c40b">Code:</b> {{ decryptItem(item.code) }}
+                                </h5>
+                                <h5 style="font-size: 9px">
+                                    <b style="color: #e8c40b">Encryption Key:</b> {{ encryptionKey }}
+                                </h5>
+                            </div>
+                        </div>
+                        <div
+                            class="col-md-3 p-0"
+                            style="padding-top: 5px; display: flex; border-right: solid 1px; border-bottom: 1px solid"
+                        >
+                            <div class="col-md-3">
+                                <img src="../../../assets/images/widget/person.svg" />
+                            </div>
+                            <div class="col-md-9">
+                                <h5 style="font-size: 9px">
+                                    <b style="color: #e8c40b">Record Created By:</b> {{ creatorName }}
+                                </h5>
+                                <h5 style="font-size: 9px"><b style="color: #e8c40b">Roles :</b> {{ creatorRoles }}</h5>
+                            </div>
+                        </div>
+                        <div class="col-md-3 p-0" style="padding-top: 7px; display: flex; border-bottom: 1px solid">
+                            <div class="col-md-3">
+                                <img src="../../../assets/images/widget/1date.svg" />
+                            </div>
+                            <div class="col-md-9">
+                                <h5 style="font-size: 9px">
+                                    <b style="color: #e8c40b">Store Modified On:</b>
+                                    {{ item.lastModificationTime }}
+                                </h5>
+                                <h5 style="font-size: 9px">
+                                    <b style="color: #e8c40b">Store Modified By: </b>{{ modifierName }}
+                                </h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" style="margin-top: 5px">
+                        <div class="col-md-5" style="height: 193px; padding-top: 5px; border-right: solid 1px">
+                            <b style="font-size: 10px"
+                                >Total Store Varriation Batch : {{ item.varriationBatch.length }} </b
+                            ><br />
+                            <table>
+                                <tr style="color: #e8c40b">
+                                    <th>Store Name</th>
+                                    <th>Category</th>
+                                    <th>V.Batch ID</th>
+                                    <th>QTY/ Weight</th>
+                                </tr>
+                            </table>
+                            <table class="inner-table">
+                                <tbody>
+                                    <ng-container *ngFor="let item of variteyBatchDTO">
+                                        <tr *ngFor="let variation of item.variationItem">
+                                            <td style="word-break: break-all">
+                                                {{ decryptItem(item.item.itemName) }}
+                                            </td>
+                                            <td></td>
+                                            <td>{{ variation.varriationBatchId }}</td>
+                                            <td>
+                                                {{ variation.varriationBatch.quantity }}/{{
+                                                    variation.varriationBatch.weight
+                                                }}
+                                            </td>
+                                        </tr>
+                                    </ng-container>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="col-md-7">
+                            <div class="row">
+                                <div class="col-md-4" style="padding-top: 5px; border-right: solid 1px">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <b style="font-size: 11px; color: #e8c40b">Store Description</b>
+                                            <div class="comment1">
+                                                <p>{{ decryptItem(item.details) }}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-8" style="padding-top: 5px">
+                                    <div class="row">
+                                        <div class="col-md-12" style="text-align: center">
+                                            <b style="font-size: 11px; color: #e8c40b">Setting</b>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="col-md-12">
+                                                <table style="border-bottom: 3px solid #4a6c39">
+                                                    <tr style="color: #e8c40b">
+                                                        <th colspan="2">Setting Name</th>
+                                                        <th>Control</th>
+                                                        <th>Configure</th>
+                                                    </tr>
+                                                </table>
+                                                <table class="inner-table">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>Track Store</td>
+                                                            <td>
+                                                                <p-inputSwitch
+                                                                    (onChange)="handleChange($event)"
+                                                                    [(ngModel)]="item.isItemTrackAble"
+                                                                    [readonly]="true"
+                                                                ></p-inputSwitch>
+                                                            </td>
+                                                            <td>
+                                                                <div class="col-md-12 p-0">
+                                                                    <button class="btn btn-sm btn-primary bg-grey-btn">
+                                                                        Set-Up
+                                                                    </button>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr style="line-height: 2.5">
+                                                            <td colspan="3">
+                                                                <p-checkbox
+                                                                    name="storeQuantity"
+                                                                    [binary]="true"
+                                                                    label="Low Stock Alert"
+                                                                    [(ngModel)]="item.lowStockAlert"
+                                                                    [readonly]="true"
+                                                                ></p-checkbox
+                                                                ><br />
+                                                                <p-checkbox
+                                                                    name="storeWieght"
+                                                                    [binary]="true"
+                                                                    label="Low Stock Value"
+                                                                    [(ngModel)]="item.lowStockValue"
+                                                                    [readonly]="true"
+                                                                ></p-checkbox>
+                                                            </td>
+                                                            <td>
+                                                                <div class="col-md-12 p-0">
+                                                                    <button class="btn btn-sm btn-primary bg-grey-btn">
+                                                                        View
+                                                                    </button>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <div class="col-md-12 p-0">
+                                                                    <hr class="hr" />
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td >Notification</td>
+                                                            <td>
+                                                                <p-inputSwitch
+                                                                    (onChange)="handleChange($event)"
+                                                                    [(ngModel)]="item.expNotify"
+                                                                    [readonly]="true"
+                                                                ></p-inputSwitch>
+                                                            </td>
+                                                            <td>
+                                                                <div class="col-md-12 p-0">
+                                                                    <button class="btn btn-sm btn-primary bg-grey-btn">
+                                                                        Set-Up
+                                                                    </button>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr style="line-height: 2.5">
+                                                            <td colspan="3">
+                                                                <p-checkbox
+                                                                    class="pr-2"
+                                                                    name="location1"
+                                                                    [binary]="true"
+                                                                    label="Low Store"
+                                                                    [(ngModel)]="item.lowStockValue"
+                                                                    [readonly]="true"
+                                                                ></p-checkbox>
+                                                                <br />
+                                                                <p-checkbox
+                                                                    name="storeWieght"
+                                                                    [binary]="true"
+                                                                    [(ngModel)]="item.lowStockAlert"
+                                                                    label="Expire Store"
+                                                                    [readonly]="true"
+                                                                ></p-checkbox>
+                                                            </td>
+                                                            <td>
+                                                                <div class="col-md-12 p-0">
+                                                                    <button class="btn btn-sm btn-primary bg-grey-btn">
+                                                                        View
+                                                                    </button>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row pt-5">
+                                <button class="btn btn-primary bg-yellow">View</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </ng-template>
+</p-table>
+<div class="col-md-12 pt-4 pb-4" style="text-align: center">
+    <div>
+        <svg width="787" height="23" viewBox="0 0 787 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="21.0514" y="7" width="746.516" height="9" fill="#585E34" />
+            <rect x="21.0514" y="7" width="218.611" height="9" fill="#B7A643" />
+            <path
+                d="M21.0514 1.54983V21.4502C21.0514 22.8282 18.3626 23.5182 16.79 22.5439L0.731102 12.5937C-0.243701 11.9897 -0.243701 11.0103 0.731102 10.4063L16.79 0.456149C18.3626 -0.518283 21.0514 0.171862 21.0514 1.54983Z"
+                fill="#B7A643"
+            />
+            <path
+                d="M765.949 1.54983V21.4502C765.949 22.8282 768.637 23.5182 770.21 22.5439L786.269 12.5937C787.244 11.9897 787.244 11.0103 786.269 10.4063L770.21 0.456149C768.637 -0.518283 765.949 0.171862 765.949 1.54983Z"
+                fill="#585E34"
+            />
+        </svg>
+    </div>
+</div> -->

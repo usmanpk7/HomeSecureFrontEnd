@@ -1,0 +1,115 @@
+<!--
+
+<div class="col-md-12 p-5 personal-grid">
+        <p-table #dataTable dataKey="id" [value]="recentActivityList" [scrollable]="true" scrollHeight="300px"
+        [(rows)]="row"  [first]="first" [rowsPerPageOptions]="[5,10,15,20]"
+         [lazy]="false" >
+          <ng-template pTemplate="header" style="text-align: center;">
+
+            <tr>
+                <th class="gridheader">Store House</th>
+                <th class="gridheader">
+                    Depot
+                </th>
+                <th class="gridheader" colspan="2">
+                    Lock Status
+                </th>
+                <th class="gridheader">Last Activity
+                </th>
+                <th class="gridheader" pSortableColumn="AKADA">
+                    Access By
+                </th>
+                <th class="gridheader">
+                    Approval Status
+                </th>
+                <th class="gridheader">
+                    Approved By
+                </th>
+                <th class="gridheader">
+                    Duration
+                </th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" style="color: white;" let-item let-expanded="expanded"
+                let-rowIndex="rowIndex">
+                <tr class="body-td" [pRowToggler]="item"  role="button" aria-expanded="false"
+                aria-controls="collapseExample">
+
+                <td>{{item.storehouseName}}</td>
+                <td style="word-break: break-all;">{{item.depotName}}</td>
+                <td  colspan="2" class="lock">
+                <i class="fa fa-battery-half"></i>&nbsp;&nbsp;
+                <i class="fa fa-wifi"></i>&nbsp;&nbsp;
+                <i *ngIf="!item.lockOpened" class="fa fa-lock"></i>
+                <i  *ngIf="item.lockOpened" class="fa fa-unlock"></i>
+
+                </td>
+                <td style="word-break: break-all;">{{item.lastActivity}}</td>
+                <td style="word-break: break-all;">
+                    <img src="../../../assets/images/widget/small_profile.svg"
+                    style=" width: 20px;height: 20px;border-radius: 11px; margin-right: 6px;"> {{item.accessBy}}
+                </td>
+                <td style="word-break: break-all;">
+                <div class="col-md-12 ap-btn"  *ngIf="item.approvalStatus">
+                    <span>Approved</span>
+                </div>
+                <div class="col-md-12 rj-btn"  *ngIf="!item.approvalStatus">
+                    <span>Rejected</span>
+                </div>
+                </td>
+                <td>
+                    {{item.approvedBy}}
+                </td>
+                <td style=" word-break: break-all;">
+                   {{item.duration|luxonFromNow}}
+                    </td>
+            </tr>
+        </ng-template>
+    </p-table>
+</div>
+<div class="col-md-12 brk-hr">
+    <div class="col-md-5">
+        <h7 class="text-w">Recent Personal Access</h7>
+        <hr class="hr">
+    </div>
+</div>
+<div class="col-md-12 pb-5">
+    <div class="list-group list-group-horizontal text-nowrap overflow-auto">
+        <div class="col-md-5 card2 pb-5 mr-4" *ngFor="let item of recentActivityList">
+        <div class="col-m-12 text-center pt-2">
+            <h5>STORE HOUSE</h5>
+            <p>{{item.storehouseName}}</p>
+        </div>
+        <div class="col-md-8 p-0 inner-item">
+            <div class="col-md-12 p-0">
+            <div class="col-md-2 p-0 ">
+                <img src="assets\images\widget\small_profile.svg " style="width:100%;border-radius: 12px;">
+            </div>
+            <div class="col-md-10">
+                <p>{{getuser(item.creatorUserId)}}</p>
+                <p>Core Commander</p>
+            </div>
+        </div>
+        <div class="col-md-12 p-0 pt-5">
+            <div class="col-md-2 p-0 ">
+                <img src="assets\images\widget\1date.svg " style="width:100%;">
+            </div>
+            <div class="col-md-10">
+                <p style="color:#E8C40B;">Store House Access At: </p>
+                <p> {{item.duration|luxonFromNow}}</p>
+            </div>
+            </div>
+        </div>
+        <div class="col-md-4" style="display: grid;justify-items: center;">
+            <div class="col-md-10">
+                <p style="margin: 3px;">Unlocked</p>
+            </div>
+            <div class="col-md-9" style="background: #405838;border-radius: 6px;text-align: center;">
+                <img src="assets\images\widget\greenLock.svg" style="width:100%;padding: 6px;">
+            </div>
+        </div>
+
+        </div>
+
+    </div>
+</div> -->

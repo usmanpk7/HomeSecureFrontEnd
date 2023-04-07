@@ -1,0 +1,186 @@
+.mainSection {
+    background: #425a3a;
+    border-radius: 30px;
+}
+.Round-Pannel3 .btn {
+    border: 3px solid #BEC168;
+    box-sizing:
+        border-box;
+    font-size: 12px;
+    color: white;
+    border-radius: 30px;
+    margin-top: 13px;
+}
+
+.Round-Pannel3 .btn2,
+.footer-btnPanel .btn2 {
+    background: #C5E0B4 !important;
+    border: 3px solid #BEC168 !important;
+    box-sizing: border-box !important;
+    border-radius: 30px !important;
+    width: 94% !important;
+    font-family: Roboto !important;
+    font-style: normal !important;
+    font-weight: 500 !important;
+    font-size: 18px !important;
+    line-height: 21px !important;
+    letter-spacing: -0.01em !important;
+    color: #376419 !important;
+}
+
+.Search-Panel {
+    border: 2px solid #376419;
+    box-sizing: border-box;
+    border-radius: 23px;
+    background:
+        rgba(55, 100, 25, 0.35);
+}
+
+.Search-Text {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 27px;
+    letter-spacing: -0.01em;
+    color: rgba(255, 255, 255, 0.95);
+    margin-left: 51px;
+    margin-top: -25px;
+}
+.Round-Pannel3 .btn2>button>i,
+.footer-btnPanel .btn2 i {
+    color: #376419;
+}
+
+.Round-Pannel3 .table svg {
+    width: 49px
+}
+
+.footer-btnPanel {
+    height: 64px;
+    border-radius: 28px;
+    background: #B7A643;
+    margin-top: 34px;
+}
+
+::ng-deep .Round-Pannel3 .equis-btn2 button {
+    border-radius: 4px !important;
+    height: 100%;
+    background: #C5E0B4 !important;
+    border: 3px solid #BEC168 !important;
+    box-sizing: border-box !important;
+    font-family: Roboto !important;
+    font-style: normal !important;
+    font-weight: 500 !important;
+    font-size: 13px !important;
+    line-height: 21px !important;
+    letter-spacing: -0.01em !important;
+    color: #376419 !important;
+    margin-left: 0px;
+    margin-right: 10px;
+    margin-bottom: 8px;
+    padding-left: 10px;
+    padding-right: 15px;
+}
+
+::ng-deep .Round-Pannel3 .equis-btn2 button.active {
+    background-color: #b7a643 !important;
+    padding-bottom: 18px !important;
+    margin-bottom: 0px !important;
+    border-bottom: none !important;
+}
+::ng-deep .p-datatable-scrollable-body {
+    overflow-x: hidden !important;
+}
+
+::ng-deep .p-datatable-scrollable-body::-webkit-scrollbar {
+    width: 10px !important;
+    height: 40px !important;
+}
+
+::ng-deep .p-datatable-scrollable-body::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::ng-deep .p-datatable-scrollable-body::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+::ng-deep .p-datatable-scrollable-body::-webkit-scrollbar-thumb:hover {
+
+    background: #555;
+}
+
+::ng-deep .p-datatable-scrollable-body .sub-table-even {
+    background: #507746 !important;
+}
+
+::ng-deep .p-datatable-scrollable-body .sub-table-odd {
+    background: #6D773A !important;
+}
+::ng-deep .gridheader {
+    background-color: #B7A643 !important;
+    border-bottom-color: black !important;
+    color: black !important;
+    text-align: center !important;
+}
+
+::ng-deep .body-td>td {
+    border-bottom-color: black !important;
+    text-align: center !important;
+    color: rgb(241, 239, 239) !important;
+}
+
+.text-center {
+    text-align: center;
+}
+.Round-Pannel3 {
+    background-color: #213315;
+    border-radius: 51px;
+}
+:host ::ng-deep .p-datatable .p-paginator-bottom {
+    border-width:  0 0 0 0 !important;
+    background: #B7A643 !important;
+}
+::ng-deep .p-dropdown {
+    background-color: #8C894C;
+    border: 1px solid #676C3D;
+}
+::ng-deep .p-dropdown-panel {
+    background-color: #8C894C;
+  }
+  .bg-input-gary {
+    background-color: #8C894C;
+  }
+  ::ng-deep .p-dialog-content .p-dropdown.p-disabled{
+    background-color: #8C894C !important;
+    border: 1px solid #676C3D !important;
+  }
+  ::ng-deep .p-dialog-content  .p-dropdown.p-disabled .p-dropdown-label,::ng-deep .p-dropdown.p-disabled .p-dropdown-trigger-icon, ::ng-deep .p-multiselect.p-disabled .p-dropdown-label,::ng-deep .p-multiselect.p-disabled .p-dropdown-trigger-icon {
+    color: #e2e2e2 !important;
+}
+.pi {
+    font-family: 'primeicons';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-feature-settings: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    color: white;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+/* end new Style of storeGrid grid */
+.category-active{
+    background-color:#337708;
+    border: 3px solid #BEC168;
+}
+::ng-deep .outOfStock .rectangle-1{
+    background:linear-gradient(139.04deg, rgba(255, 11, 11, 0.7) 44.02%, rgba(255, 0, 0, 0.7) 76.77%) !important;
+}
+::ng-deep .ExpiredStock .rectangle-1{
+    background:linear-gradient(139.04deg, rgba(147, 32, 7, 0.7) 44.02%, rgba(255, 101, 15, 0.7) 76.77%) !important;
+}

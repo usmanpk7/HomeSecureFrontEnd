@@ -1,0 +1,93 @@
+<!-- <p-dialog header="Store Dispatch" [(visible)]="displayResponsive" style="color: #FFF; font-size:30px">
+    <div style="width:900px">
+        <form autocomplete="off" [formGroup]="createStoreReleaseDispatch" class="createform" style="padding: 20px;">
+        <div class="row">
+            <div class="col-md-3">
+                <h5 class="text-center mt-3"> Store Release</h5>
+            </div>
+            <div class="col-md-3">
+            </div>
+            <div class="col-md-3">
+            </div>
+            <div class="col-md-3">
+                <div class="input-group mb-3">
+                    <select style="width : 184px;height: 45px;color: #FFF;border-radius: 10px;background-color: #8C894C;border: 1px solid #676C3D;" id="issueRequestId" name="issueRequestId" class="form-control mdb-select md-form color-w " (change)="onChangeStoreRelease($event)" formControlName="storeReleaseId">
+                    <option value="0" [selected]="storeReleaseId==0">select store Release</option>
+                    <option [value]="v.id" *ngFor="let v of storeRelease">{{v.id}}</option>
+                </select>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-md-4">
+                <h5 class="text-center mt-3" style="text-align: left !important;">Is Released Item Sealed</h5>
+            </div>
+            <div class="col-md-2">
+            </div>
+            <div class="col-md-3">
+            </div>
+            <div class="col-md-3">
+                <div class="col-md-6">
+                    <label for="Yes" class="ml-2 mr-2 color-w" id="yes-label" >Yes</label>
+                    <input type="radio" id="Yes" value="true"  formControlName="isSealed">
+                </div>
+                <div class="col-md-6">
+                    <label for="False" class="ml-2 mr-2 color-w" id="no-label"  >False</label>
+                    <input type="radio" id="False" value="false" formControlName="isSealed">
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-md-3">
+                <h5 class="text-center mt-3" style="text-align: left !important;">Seal Number</h5>
+            </div>
+            <div class="col-md-3">
+            </div>
+            <div class="col-md-3">
+            </div>
+            <div class="col-md-3">
+                <input type="text" class="form-control color-w" id="sealNumber" formControlName="sealNumber" rows="4" f>
+                <span class="text-danger ml-3" *ngIf="isValid(createStoreReleaseDispatch.controls.sealNumber)">
+                    This field is required</span>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-md-3">
+                <h5 class="text-center mt-3" style="text-align: left !important;">Releaed To</h5>
+            </div>
+            <div class="col-md-3">
+            </div>
+            <div class="col-md-3">
+            </div>
+            <div class="col-md-3">
+                <div class="input-group mb-3">
+                    <select style="width : 184px;height: 45px;color: #FFF;border-radius: 10px;background-color: #8C894C;border: 1px solid #676C3D;" id="releasedToId" name="releasedToId" class="form-control mdb-select md-form color-w" formControlName="releasedToId">
+                    <option value="" selected >733021703279-5</option>
+                </select>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <br>
+        <div class="row">
+            <div class="col-md-3">
+            </div>
+            <div class="col-md-3">
+            </div>
+            <div class="col-md-3">
+            </div>
+            <div class="col-md-3">
+                <div>
+                    <button type="button" class="btn dangers" (click)="close()">Cancel</button>
+                    <button type="submit" class="btn primary1" (click)="submit()" [disabled]="createStoreReleaseDispatch.invalid">Submit</button>
+                </div>
+            </div>
+        </div>
+        </form>
+    </div>
+</p-dialog>
+
+ -->

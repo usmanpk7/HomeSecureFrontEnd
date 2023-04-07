@@ -1,0 +1,424 @@
+::ng-deep .p-tabview-title {
+    line-height: 1;
+    font-family: 'Inter' !important;
+    font-weight: 700 !important;
+    font-size: 15px !important;
+    align-items: center !important;
+    color: #6966ff !important;
+    cursor: pointer;
+}
+
+::ng-deep .p-tabview .p-tabview-nav li .p-tabview-nav-link {
+    background: #f0eefc !important;
+    border-radius: 5px !important;
+}
+
+::ng-deep .p-tabview .p-tabview-nav li.p-highlight .p-tabview-nav-link {
+    background: #ffffff;
+    border-color: #0078d4 !important;
+    border: 1px solid #0078d4 !important;
+    color: #0078d4 !important;
+}
+
+::ng-deep ul.p-tabview-nav li:first-child span {
+    background-image: url(/assets/svgfortabs/how_to_vote.svg) !important;
+    background: no-repeat;
+    padding-left: 22px;
+    background-size: 12px;
+}
+::ng-deep ul.p-tabview-nav li:nth-child(2) span {
+    background-image: url(/assets/svgfortabs/how_to_vote.svg) !important;
+    background: no-repeat;
+    padding-left: 22px;
+    background-size: 12px;
+}
+::ng-deep ul.p-tabview-nav li:nth-child(3) span {
+    background-image: url(/assets/svgfortabs/local_pharmacy.svg) !important;
+    background: no-repeat;
+    padding-left: 22px;
+    background-size: 12px;
+}
+::ng-deep ul.p-tabview-nav li:nth-child(4) span {
+    background-image: url(/assets/svgfortabs/local_pharmacy.svg) !important;
+    background: no-repeat;
+    padding-left: 22px;
+    background-size: 12px;
+}
+::ng-deep ul.p-tabview-nav li:nth-child(5) span {
+    background-image: url(/assets/svgfortabs/woman.svg) !important;
+    background: no-repeat;
+    padding-left: 22px;
+    background-size: 9px;
+}
+::ng-deep ul.p-tabview-nav li:nth-child(6) span {
+    background-image: url(/assets/svgfortabs/woman.svg) !important;
+    background: no-repeat;
+    padding-left: 22px;
+    background-size: 9px;
+}
+::ng-deep ul.p-tabview-nav li:nth-child(7) span {
+    background-image: url(/assets/svgfortabs/video_call.svg) !important;
+    background: no-repeat;
+    padding-left: 22px;
+    background-size: 15px;
+}
+::ng-deep ul.p-tabview-nav li:nth-child(8) span {
+    background-image: url(/assets/svgfortabs/multiline_chart.svg) !important;
+    background: no-repeat;
+    padding-left: 22px;
+    background-size: 15px;
+}
+.text-custom-dark {
+    font-size: 11px;
+    font-weight: 500;
+    color: #000000;
+}
+
+#GIS:checked + .dropdown {
+    background: #ff6c88 !important;
+    border-radius: 5px !important;
+}
+#GIS:checked + .dropdown .election-category-title {
+    color: #ffffff !important;
+}
+#GIS:checked + .dropdown .election-category-title .fas {
+    color: #ffffff !important;
+}
+
+#Location:checked + .dropdown {
+  background: #ff6c88 !important;
+  border-radius: 5px !important;
+}
+#Location:checked + .dropdown span {
+  color: #ffffff !important;
+}
+#Activities:checked + .dropdown {
+  background: #ff6c88 !important;
+  border-radius: 5px !important;
+}
+#Activities:checked + .dropdown span {
+  color: #ffffff !important;
+}
+
+#MAP:checked + .dropdown {
+    background: #ff6c88 !important;
+    border-radius: 5px !important;
+}
+#MAP:checked + .dropdown .election-category-title {
+    color: #ffffff !important;
+}
+#MAP:checked + .dropdown .election-category-title .fas {
+    color: #ffffff !important;
+}
+#Detail:checked + .dropdown {
+  background: #ff6c88 !important;
+  border-radius: 5px !important;
+}
+#Detail:checked + .dropdown .election-category-title {
+  color: #ffffff !important;
+}
+#Detail:checked + .dropdown .election-category-title .fas {
+  color: #ffffff !important;
+}
+
+.dropdown .election-category-title {
+    line-height: 1 !important;
+    font-family: 'Inter' !important;
+    font-weight: 700 !important;
+    font-size: 0.7rem !important;
+    align-items: center !important;
+    color: #ff6c88 !important;
+    cursor: pointer;
+}
+.dropdown {
+    border-bottom: 3px solid #ff6c88 !important;
+}
+
+.visually-hidden {
+    position: absolute;
+    left: -100vw;
+}
+
+.text-custom-danger {
+    color: #ff6c88 !important;
+}
+
+.text-custom-primary {
+    color: #6966ff !important;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+}
+.switch-input {
+    display: none;
+}
+.switch-label {
+    display: block;
+    width: 32px;
+    height: 16px;
+    text-indent: -150%;
+    clip: rect(0 0 0 0);
+    color: transparent;
+    user-select: none;
+}
+.switch-label::before,
+.switch-label::after {
+    content: '';
+    display: block;
+    position: absolute;
+    cursor: pointer;
+}
+.switch-label::before {
+    width: 100%;
+    height: 100%;
+    background-color: #dedede;
+    border-radius: 9999em;
+    -webkit-transition: background-color 0.25s ease;
+    transition: background-color 0.25s ease;
+}
+.switch-label::after {
+    top: 0;
+    left: 0;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: #fff;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.45);
+    -webkit-transition: left 0.25s ease;
+    transition: left 0.25s ease;
+}
+.switch-input:checked + .switch-label::before {
+    background-color: #6751ed;
+}
+.switch-input:checked + .switch-label::after {
+    left: 16px;
+}
+
+.dropdown-multiple {
+    border: 2px solid #ff5575 !important;
+    border-radius: 5px !important;
+    background-color: #ffd8df;
+    text-align: center !important;
+}
+.dropdown-menu > li > a {
+    display: block;
+    padding: 3px 5px !important;
+    clear: both;
+    font-weight: 600 !important;
+    border: 1px solid #ff6c88 !important;
+    margin: 0.4rem !important;
+    line-height: 1.42857143;
+    color: #ff6c88 !important;
+    white-space: nowrap;
+}
+.dd-custom {
+    color: #ff5575 !important;
+}
+
+.dropdown-submenu {
+    position: relative;
+}
+.dropdown-menu.show {
+    display: block;
+    background: #f8f8f8 !important;
+}
+.dropdown-submenu > .dropdown-menu.show {
+    display: block;
+    background: #f8f8f8 !important;
+}
+
+.dropdown-submenu > .dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-top: -6px;
+    margin-left: -1px;
+    -webkit-border-radius: 0 6px 6px 6px;
+    -moz-border-radius: 0 6px 6px;
+    border-radius: 0 6px 6px 6px;
+}
+
+.dropdown-submenu:hover > .dropdown-menu {
+    display: block;
+    background: #f8f8f8 !important;
+    max-height: 20rem !important;
+    overflow-y: auto;
+}
+
+.dropdown-submenu > a:after {
+    display: block;
+    content: ' ';
+    float: right;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
+    border-width: 5px 0 5px 5px;
+    border-left-color: #ff6c88;
+    margin-top: 5px;
+    margin-right: 0px;
+}
+
+.dropdown-submenu:hover > a:after {
+    border-left-color: #fff;
+}
+
+.dropdown-submenu.pull-left {
+    float: none;
+}
+
+.dropdown-submenu.pull-left > .dropdown-menu {
+    left: -100%;
+    margin-left: 10px;
+    -webkit-border-radius: 6px 0 6px 6px;
+    -moz-border-radius: 6px 0 6px 6px;
+    border-radius: 6px 0 6px 6px;
+}
+
+.card-with-scrol{
+  height: 40rem !important;
+  border: 0 !important;
+  overflow-y: auto;
+}
+
+.custom-agent-card{
+    width: 100%;
+    cursor: pointer;
+    background-color: #FFFFFF;
+    border-radius: 2rem;
+    border: 1px solid #FF6C88;
+    }
+    .custom-agent-card:hover{
+      background-color: #F0EEFC;
+      }
+.custom-img-icon{
+  position: absolute;
+    top: 0rem;
+    left: 2.9rem;
+}
+
+.bg-activities-card1{
+    Background:#E2E1FF
+}
+
+.bg-activities-card2{
+    Background:#F0EEFC
+}
+.bg-activities-card3{
+    background: #E2E1FF;
+}
+.bg-activities-card4{
+    background: #F8F8F8;
+}
+
+
+
+.text-custom-activities{
+    color: #392F55
+}
+
+.text-custom-activities1{
+    color: #3E384A
+}
+.custom-border-primary{
+    border-bottom: 2px solid #6751ED;
+}
+.mt-custom {
+    margin-top: 0.2rem
+}
+
+.checkbox_id:before {
+    content: "1";
+    font-size: 0.3rem;
+    font-weight: bold;
+    color: #6966FF;
+    position: absolute;
+    padding: 0.1rem;
+    padding-top: 0rem;
+    padding-bottom: 0rem;
+    top: 4px;
+    left: 0;
+    border: 1px solid #6966FF;
+    background-color: #f8f8f8;
+}
+
+#workingActivity_id2:before{
+    content: "2" !important;
+}
+#workingActivity_id3:before{
+    content: "3" !important;
+}
+#workingActivity_id4:before{
+    content: "4" !important;
+}
+#workingActivity_id5:before{
+    content: "5" !important;
+}
+#workingActivity_id6:before{
+    content: "6" !important;
+}
+
+.checkbox_id:checked:after {
+    content: "";
+    display: block;
+    width: 2px;
+    height: 4px;
+    border: solid #6966FF;
+    border-width: 0 1px 1px 0;
+    transform: rotate(45deg);
+    position: absolute;
+    top: 5px;
+    left: 3px;
+    background: #f8f8f8;
+    background-color: #f8f8f8;
+}
+.checkbox-label{
+    margin-bottom: -0.5rem !important;
+    margin-left: 1.9rem !important;
+    margin-top: 2px;
+}
+
+.esri-view {
+    padding: 0;
+    margin: 0;
+    height: 400px; /*pixels here, as an example instead of percentage*/
+    width: 100%;
+}
+
+.map-div {
+    width: 100%;
+    height: calc(80vh)
+  }
+
+  .gm-style .gm-style-iw-d {
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+}
+
+.virtual-scroll-viewport {
+    height: 40rem !important;
+ }
+
+ .text-custom-grey{
+    color:#828282 !important
+  }
+
+  .bg-result{
+    background: #CBF8DA !important;
+    border: 1px solid #00892e !important;
+  }
+  .bg-result:hover{
+    background: #a6fac2 !important;
+  }
+  .bg-noresult{
+    background: #FFE9E9;
+  }
+  .bg-noresult:hover{
+    background: #f8c0cb;
+  }
+
+  .bg-custom-mappopup{background: #F0EEFC; }
+  .bg-custom-mappopup2{background: #E2E1FF;}
+  .bg-custom-mappopup3{background: #F8F8F8;}
+

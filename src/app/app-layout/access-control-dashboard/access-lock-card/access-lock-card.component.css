@@ -1,0 +1,111 @@
+.innerCard{
+    background: #213315;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(209, 255, 193, 0.1);
+}
+.innerCard p{
+    margin: 0;
+    color: white;
+    font-size: 12px;
+}
+.hr{
+    border: 1px solid rgba(255, 255, 255, 0.07);
+}
+::ng-deep .p-inputswitch .p-inputswitch-slider:before{
+    background: #4F8B3B;
+}
+::ng-deep .p-inputswitch .p-inputswitch-slider{
+    background: #405838;
+}
+::ng-deep .innerCard .p-inputswitch.p-inputswitch-checked .p-inputswitch-slider:before {
+    background: #BC423A;;
+}
+::ng-deep .p-checkbox .p-checkbox-box {
+    background: #638b49;
+}
+::ng-deep .innerCard .p-inputswitch.p-inputswitch-checked .p-inputswitch-slider {
+    background:  rgba(188, 66, 58, 0.35) !important;
+}
+::ng-deep .innerCard .p-inputswitch.p-inputswitch-checked .p-inputswitch-slider {
+    border-color: rgba(188, 66, 58, 0.35) !important;
+}
+.GPO.active {
+    color: #3c8b14;
+}
+.GPO{
+    color: rgba(188, 66, 58, 0.35) ;
+}
+.innerCard2 {
+    background: #213315;
+}
+.innerCard2 .innerCard3 { 
+background: #466034;
+display: flex;
+justify-content: center;
+}
+.innerCard2 .innerCard3 .lockimg
+{
+    width: 76%;
+    padding: 13px;
+}
+.innerCard2 .innerCard3 .lockdiv{
+    background: #31422b;
+    text-align: center;
+    border-radius: 50%;
+    border: 1px solid #9b8b1d;
+}
+.colr-mat{
+    color: #a19e9e;
+}
+.innerCard2 .btn {
+    border: 2px solid #3e8d3e !important;
+    background: #455e35 !important;
+    color: #9cc79c;
+}
+.innerCard2 .btn>i{
+    color:#293c1c;
+}
+ .text-right{
+    text-align: end;
+}
+
+  .f-10{
+    font-size: 10px;
+}
+ .f-11{
+    font-size: 12px;
+}
+::ng-deep .confirmModal{
+    width: 33vw !important;
+}
+::ng-deep .confirmModal input{
+    background: #9b9f55 !important;
+    color:white !important;
+}
+:ng-deep .confirmModal .modal-body{
+    padding: 7px !important;
+}
+:ng-deep .confirmModal.head {
+   text-align: center !important;
+}
+:ng-deep .confirmModal .head h3{
+    color:white !important;
+}
+::ng-deep .confirmModal .modal-body{
+    background: linear-gradient(180deg, rgb(147 163 53 / 66%) -24.04%, rgb(231 211 95 / 48%) 79.61%);
+    border: 2px solid rgba(33, 51, 21, 0.56);
+    box-shadow: 2px 2px 5px rgb(0 0 0 / 25%);
+    border-radius: 18px;
+    color: white;
+}
+::ng-deep .confirmModal .modal-content{
+    border-radius: 18px !important;
+}
+.ac-input{
+height: 45px;
+border: 1px solid #676c3d;
+background: #918d4e;
+box-sizing: border-box;
+border-radius: 10px;
+color:#ffffff;
+}

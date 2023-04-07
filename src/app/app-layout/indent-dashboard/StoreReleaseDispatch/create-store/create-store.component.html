@@ -1,0 +1,130 @@
+<!-- <p-dialog header="STORE RELEASE" [(visible)]="displayResponsive" style="color: #FFF; font-size:30px">
+    <div style="width:900px">
+        <form autocomplete="off" [formGroup]="createStoreReleaseDispatch" class="createform" style="padding: 20px;">
+            <div class="row">
+            <div class="col-md-3">
+                <h5 class="text-center mt-3"> Issue Request ID</h5>
+            </div>
+            <div class="col-md-3">
+            </div>
+            <div class="col-md-3">
+            </div>
+            <div class="col-md-3">
+                <div class="input-group mb-3">
+                    <select style="width : 184px;height: 45px;color: #FFF;border-radius: 10px;background-color: #8C894C;border: 1px solid #676C3D;" id="issueRequestId" name="issueRequestId" class="form-control mdb-select md-form color-w " (change)="onChangeIssueRequest($event)" formControlName="issueRequestId">
+                    <option value="0" [selected]="issueRequestId==0">select request</option>
+                    <option [value]="v.id" *ngFor="let v of issueRequest">{{v.id}}</option>
+                </select>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-md-3">
+                <h5 class="text-center mt-3" style="text-align: left !important;">Confirmed Quantity</h5>
+            </div>
+            <div class="col-md-3">
+            </div>
+            <div class="col-md-3">
+            </div>
+            <div class="col-md-3">
+                <div class="col-md-6">
+                    <label for="Yes" class="ml-2 mr-2 color-w" id="yes-label" >Yes</label>
+                    <input type="radio" id="Yes" value="true" formControlName="confirmedQty" >
+                </div>
+                <div class="col-md-6">
+                    <label for="False" class="ml-2 mr-2 color-w" id="no-label" >False</label>
+                    <input type="radio" id="False" value="false" formControlName="confirmedQty">
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-md-3">
+                <h5 class="text-center mt-3" style="text-align: left !important;">Quantity</h5>
+            </div>
+            <div class="col-md-3">
+            </div>
+            <div class="col-md-3">
+            </div>
+            <div class="col-md-3">
+                <input type="number" class="form-control color-w" id="qtyNumberConfirmed" formControlName="qtyNumberConfirmed" rows="4">
+                <span class="text-danger ml-3" *ngIf="submitted && createStoreReleaseDispatch.value.confirmedQty ==='true'  && isValid(createStoreReleaseDispatch.controls.qtyNumberConfirmed)" >
+                    This field is required</span>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-md-3">
+                <h5 class="text-center mt-3" style="text-align: left !important;">Confirmed Weight</h5>
+            </div>
+            <div class="col-md-3">
+            </div>
+            <div class="col-md-3">
+            </div>
+            <div class="col-md-3">
+                <div class="col-md-6">
+                    <label for="Yes" class="ml-2 mr-2 color-w" id="yes-label" >Yes</label>
+                    <input type="radio" id="Yes" value="true" formControlName="confirmedQtyWeight" >
+                </div>
+                <div class="col-md-6">
+                    <label for="False" class="ml-2 mr-2 color-w" id="no-label" >False</label>
+                    <input type="radio" id="False" value="false" formControlName="confirmedQtyWeight">
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-md-3">
+                <h5 class="text-center mt-3">Weight</h5>
+            </div>
+            <div class="col-md-3">
+            </div>
+            <div class="col-md-3">
+            </div>
+            <div class="col-md-3">
+                <input type="number" class="form-control color-w" id="qtyWeightConfirmed" formControlName="qtyWeightConfirmed" rows="4">
+                <span class="text-danger ml-3" *ngIf="submitted && createStoreReleaseDispatch.value.confirmedQtyWeight ==='true'  && isValid(createStoreReleaseDispatch.controls.qtyWeightConfirmed)" >
+                    This field is required</span>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-md-3">
+                <h5 class="text-center mt-3" style="text-align: left !important;">Organization Unit</h5>
+            </div>
+            <div class="col-md-3">
+            </div>
+            <div class="col-md-3">
+            </div>
+            <div class="col-md-3">
+                <div class="input-group mb-3">
+                    <select style="width : 184px;height: 45px;color: #FFF;border-radius: 10px;background-color: #8C894C;border: 1px solid #676C3D;" id="organizationUnitId" name="organizationUnitId" class="form-control mdb-select md-form color-b" (change)="onChange($event)" formControlName="organizationUnitId">
+                    <option value="0" [selected]="organizationUnitId==0">select organization</option>
+                    <option [value]="v.id" *ngFor="let v of organizationUnits">{{v.displayName}}</option>
+                </select>
+                </div>
+            </div>
+        </div>
+        <hr>
+
+        <br>
+        <div class="row">
+            <div class="col-md-3">
+            </div>
+            <div class="col-md-3">
+            </div>
+            <div class="col-md-3">
+            </div>
+            <div class="col-md-3">
+                <div>
+                    <button type="button" class="btn dangers" (click)="close()">Cancel</button>
+                    <button type="submit" class="btn primary1"  [disabled]="issubmitted" (click)="submit()">{{btnText}}</button>
+                </div>
+            </div>
+        </div>
+        </form>
+    </div>
+</p-dialog>
+
+ -->

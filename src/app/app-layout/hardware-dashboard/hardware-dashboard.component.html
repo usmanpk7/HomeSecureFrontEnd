@@ -1,0 +1,62 @@
+<!-- <div class="col-md-12 p-0 mainSection mt-10 mb-10">
+    <div class="col-md-12 pt-5" style="padding: 0 0 25px 6px; margin-top: 10px; text-align: center;">
+        <app-eqis-text-card [text]="'Assigned Devices'" [count]="deviceAnalytics.totalDeviceActive"
+            [icon]="'fa-bars'" [percentage]="''">
+        </app-eqis-text-card>
+        <app-eqis-text-card [text]="'Antenna Warehouse'" [count]="deviceAnalytics.totalAnteenaWarehouse"
+            [icon]="'fa-calculator'" [percentage]="''">
+        </app-eqis-text-card>
+        <app-eqis-text-card [text]="'DeActivated Devices'" [count]="deviceAnalytics.totalDeviceDeActivated" [icon]="'fa-user-times'"
+            [percentage]="''">
+        </app-eqis-text-card>
+        <app-eqis-text-card [text]="'Antenna Devices'" class="outOfStock" [count]="deviceAnalytics.totalDeviceAnteenaActivated" [icon]="'fa-user'"
+            [percentage]="''">
+        </app-eqis-text-card>
+        <app-eqis-text-card [text]="'Antenna DeActivated'" class="ExpiredStock" [count]="deviceAnalytics.totalDeviceAnteenaDeActivated" [icon]="'fa-user'"
+            [percentage]="''">
+        </app-eqis-text-card>
+
+    </div>
+</div>
+
+
+<div class="col-md-12 mainSection pt-5 pb-5">
+    <section class="pb-5">
+        <div class="col-md-12 Round-Pannel3">
+            <div class="col-md-12 mt-7 mb-4">
+                <div class="col-md-6 Search-Panel">
+                    <i class="fa fa-search col-md-1 pt-3"></i>
+                    <input type="text" class="form-control col-md-11 " (input)="searchDevices($event.target.value)"
+                        placeholder="Search" style="border:0px;background: transparent; color: #eef0f8;">
+                </div>
+
+                <div class="col-md-6"></div>
+            </div>
+            <div class="col-md-12">
+                <button type="button" [ngClass]="{'category-active': categoryTab === 1}"  (click)="onTopTabChange($event)" id="tab1" class="btn">Device</button>
+                <button type="button" [ngClass]="{'category-active': categoryTab === 3}" (click)="onTopTabChange($event)" id="tab3" class="btn">ANTENNA Warehouse</button>
+            </div>
+
+            <app-device #device  (footerOutputAction)="footerEvent($event)" *ngIf="categoryTab===1"></app-device>
+            <app-antenna #device (footerOutputAction)="footerEvent($event)" *ngIf="categoryTab===2"></app-antenna>
+            <app-antenna-warehouse #device (footerOutputAction)="footerEvent($event)" *ngIf="categoryTab===3"></app-antenna-warehouse>
+
+        </div>
+
+    </section>
+</div>
+
+<div class="row pb-3" style="justify-content: center;">
+    <div class="col-md-10 footer-btnPanel">
+        <div class="col-md-12 p-4" style="display: flex;" *ngIf="footerActionButton">
+            <button *ngFor="let item of footerActionButton" type="button" class="btn btn2"
+                (click)="onFooterActionButton(item.type)">
+                <i class="{{item.icon}}"></i>
+                {{item.title}}
+            </button>
+        </div>
+    </div>
+    <app-create-device-form #createDevice></app-create-device-form>
+    <app-create-modal-form #createModalForm></app-create-modal-form>
+    <app-create-antenna-form #CreateAntennaModal></app-create-antenna-form>
+    <app-create-antenna-warehouse-form #createwarehousemodal></app-create-antenna-warehouse-form> -->

@@ -1,0 +1,1928 @@
+<!-- <div *ngIf="isLoading" [appLoading]="isLoading"></div>
+<p-table
+    #dataTable
+    id="datatable"
+    dataKey="id"
+    *ngIf="viewType == 1"
+    [value]="candidateRes"
+    [scrollable]="true"
+    scrollHeight="400px"
+    [(rows)]="row"
+    (onPage)="paginate($event)"
+    [first]="first"
+    [rowsPerPageOptions]="[5, 10, 15, 20]"
+    [paginator]="true"
+    [lazy]="false"
+    rowExpandMode="single"
+    [globalFilterFields]="[
+    'RFCode',
+    'CandidateName',
+    'Category'
+  ]"
+>
+    <ng-template pTemplate="header" style="text-align: center">
+        <tr>
+            <th class="gridheader" colspan="3">Tools</th>
+            <th class="gridheader" pSortableColumn="intentNo">
+                RF Code
+                <p-sortIcon field="intentNo"></p-sortIcon>
+            </th>
+            <th class="gridheader" pSortableColumn="controlNumber">
+                Candidate Name
+                <p-sortIcon field="controlNumber"></p-sortIcon>
+            </th>
+            <th class="gridheader" pSortableColumn="controlNumber">
+                Category
+                <p-sortIcon field="controlNumber"></p-sortIcon>
+            </th>
+            <th class="gridheader" pSortableColumn="voucherToType">
+                Interview Location
+                <p-sortIcon field="voucherToType"></p-sortIcon>
+            </th>
+            <th class="gridheader" pSortableColumn="AKADA">
+                Status
+                <p-sortIcon field="AKADA"></p-sortIcon>
+            </th>
+            <th class="gridheader" pSortableColumn="reasonForIndent">
+                Gender
+                <p-sortIcon field="reasonForIndent"></p-sortIcon>
+            </th>
+            <th class="gridheader" colspan="3">
+                Created By
+                <table>
+                    <tr>
+                        <th pSortableColumn="">Name</th>
+                        <th pSortableColumn="">Role</th>
+                        <th pSortableColumn="">Date/Time</th>
+                    </tr>
+                </table>
+            </th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" style="color: white" let-item let-expanded="expanded" let-rowIndex="rowIndex">
+        <tr
+            (click)="onExpandRow(item)"
+            class="body-td"
+            [pRowToggler]="item"
+            [ngClass]="{
+                'sub-table-even': rowIndex % 2 == 1,
+                'sub-table-odd': rowIndex % 2 == 0
+            }"
+            role="button"
+            aria-expanded="false"
+            aria-controls="collapseExample"
+        >
+            <td colspan="3" style="padding-left: 16px; border-left: 0px">
+                <div class="row">
+                    <div class="col-md-6 rt-border p-0" style="text-align: center">
+                        <div class="col-md-12 p-0">
+                            <p class="m-0">Item</p>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="col-md-12 p-2">
+                                <button class="btn btn-sm btn-primary bg-grey-btn">view</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 p-0" style="text-align: center">
+                        <b><p style="color: #213315; font-weight: 700">Download</p></b>
+                        <div class="row">
+                            <div class="col-md-6 rt-border pr-0">
+                                <a
+                                    (click)="
+                                        getDownloadFile(
+                                            item.id,
+                                            item.candidateCategoryId,
+                                            item.organizationUnitId,
+                                            item.encryptionKeyId,
+                                            item.interviewDate,
+                                            item.authenticateCandidate,
+                                            item.candidateArrived,
+                                            item.arrivalLocationViolation,
+                                            item.interviewed,
+                                            item.candidateExit,
+                                            item.printStatus,
+                                            item.writeStatus,
+                                            item.candidateWeight,
+                                            item.candidateGenotype,
+                                            item.candidateBloodGroup,
+                                            item.uniqueIdCode,
+                                            item.medicalConfirmationById,
+                                            item.medicalStatus,
+                                            item.refCode,
+                                            item.interviewbyId,
+                                            item.gender
+                                        )
+                                    "
+                                    rel="noopener noreferrer"
+                                >
+                                    <img src="../../../assets/images/widget/excel-1.svg" style="padding: 0px" />
+                                </a>
+                            </div>
+                            <div class="col-md-6 pl-0">
+                                <a>
+                                    <img src="../../../assets/images/widget/pdf-1.svg" style="padding: 0px" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </td>
+            <td style="border-left: 2px #213315 solid; word-break: break-all">{{ item.RFCode }}</td>
+            <td style="border-left: 2px #213315 solid; word-break: break-all">
+                {{ item.CandidateName }}
+                
+            </td>
+            <td style="border-left: 2px #213315 solid; word-break: break-all">
+                {{ item.Category }}
+            </td>
+            <td style="border-left: 2px #213315 solid; word-break: break-all">
+                {{ item.InterviewLocation }}
+            </td>
+            <td style="border-left: 2px #213315 solid; word-break: break-all">
+                {{ item.candidateArrived }}
+            </td>
+            <td style="border-left: 2px #213315 solid; word-break: break-all">
+                {{ item.gender }}
+            </td>
+            <td style="font-size: 9px; border-left: 2px #213315 solid; font-weight: 700" colspan="3">
+                <table>
+                    <tbody>
+                        <tr style="border-bottom: 2px solid #213315">
+                            <td style="text-align: center; padding: 2px" colspan="2">
+                                <img
+                                    [src]="item.photo"
+                                    style="width: 20px; height: 20px; border-radius: 11px; margin-right: 6px"
+                                />
+                                {{ item.createdByName }}
+                            </td>
+                            <td style="border-left: 2px #213315 solid; text-align: center; padding: 2px">
+                                {{ item.role }}
+                            </td>
+                            <td style="border-left: 2px #213315 solid; text-align: center; padding: 2px">
+                                {{ item.creationTime | date }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="4" style="text-align: center; padding: 2px">
+                                <img src="../../../assets/images/widget/check_star.svg" style="height: 20px" />
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="rowexpansion" let-item>
+        <tr style="background-color: #213315">
+            <td colspan="12">
+                <div dataKey="id" style="color: #eef0f8">
+                    <div class="row green-grid">
+                        <div class="col-md-12 p-2" style="background: #213315">
+                            <p-table
+                                #dataTable3
+                                dataKey="id"
+                                *ngIf="viewType == 1"
+                                [value]="candidateDTO1"
+                                rowExpandMode="single"
+                            >
+                                <ng-template
+                                    pTemplate="body"
+                                    let-variation
+                                    style="text-align: center; background-color: #213315 !important"
+                                    let-expanded="expanded"
+                                    let-rowIndex="rowIndex"
+                                >
+                                    <div class="row-expad">
+                                        <div class="col-md-12">
+                                            <div class="row">
+                                                <div class="col-md-4"></div>
+                                                <div class="col-md-4 text-center">
+                                                    <h1 class="row-h">NA-RC388383/93933</h1>
+                                                    <p class="row-d">BA109</p>
+                                                </div>
+                                                <div class="col-md-4 d-flex align-items-start row-menu">
+                                                    <a class="ml-auto btn-row">Print WRISTBAND</a>
+                                                    <a>Print</a>
+                                                    <a>
+                                                        <img src="../../.../../../../../assets/download.png" alt="" />
+                                                        Download</a
+                                                    >
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-md-2">
+                                                    <img width="140px" src="{{ variation.photo }}" alt="" />
+                                                </div>
+                                                <div class="col-md-10">
+                                                    <table class="">
+                                                        <tr style="line-height: 1; text-align: center">
+                                                            <th
+                                                                colspan="4"
+                                                                class="title"
+                                                                style="border-right: 1px solid white"
+                                                            >
+                                                                First Name
+                                                            </th>
+                                                            <th
+                                                                colspan="4"
+                                                                class="title"
+                                                                style="border-right: 1px solid white"
+                                                            >
+                                                                Middle Name
+                                                            </th>
+                                                            <th colspan="4" class="title" scope="border-bottom">
+                                                                Last Name
+                                                            </th>
+                                                        </tr>
+                                                        <tr
+                                                            style="
+                                                                line-height: 2;
+                                                                border-bottom: 1px solid;
+                                                                text-align: center;
+                                                            "
+                                                        >
+                                                            <td
+                                                                colspan="4"
+                                                                class="title-d"
+                                                                style="border-right: 1px solid white"
+                                                            >
+                                                                {{
+                                                                    decryptItem(
+                                                                        variation.candidateFirstName,
+                                                                        variation.encryptionKeyId
+                                                                    )
+                                                                }}
+                                                            </td>
+                                                            <td
+                                                                colspan="4"
+                                                                class="title-d"
+                                                                style="border-right: 1px solid white"
+                                                            >
+                                                                {{
+                                                                    decryptItem(
+                                                                        variation.candidateMiddleName,
+                                                                        variation.encryptionKeyId
+                                                                    )
+                                                                }}
+                                                            </td>
+                                                            <td colspan="4" class="title-d">
+                                                                {{
+                                                                    decryptItem(
+                                                                        variation.candidateLastName,
+                                                                        variation.encryptionKeyId
+                                                                    )
+                                                                }}
+                                                            </td>
+                                                        </tr>
+                                                        <tr style="line-height: 7">
+                                                            <td colspan="3">
+                                                                <div class="col-md-3 p-0">
+                                                                    <img
+                                                                        src="../../../assets/svgImages/waterdrop.svg"
+                                                                        style="width: 33px"
+                                                                    />
+                                                                </div>
+                                                                <div class="col-md-8 p-0">
+                                                                    <p
+                                                                        class="list-t"
+                                                                        style="
+                                                                            margin: 0px;
+                                                                            line-height: 1;
+                                                                            padding: 20px 0 0 0;
+                                                                        "
+                                                                    >
+                                                                        Boold Group
+                                                                    </p>
+                                                                    <p
+                                                                        style="
+                                                                            padding: 0px;
+                                                                            margin: 0px;
+                                                                            line-height: 2;
+                                                                        "
+                                                                    >
+                                                                        {{
+                                                                            decryptItem(
+                                                                                variation.candidateBloodGroup,
+                                                                                variation.encryptionKeyId
+                                                                            )
+                                                                        }}
+                                                                    </p>
+                                                                </div>
+                                                            </td>
+                                                            <td colspan="3">
+                                                                <div class="col-md-3 p-0">
+                                                                    <img
+                                                                        src="../../../assets/svgImages/bloodtube.svg"
+                                                                        style="width: 33px"
+                                                                    />
+                                                                </div>
+                                                                <div class="col-md-8 p-0">
+                                                                    <p
+                                                                        class="list-t"
+                                                                        style="
+                                                                            margin: 0px;
+                                                                            line-height: 1;
+                                                                            padding: 20px 0 0 0;
+                                                                        "
+                                                                    >
+                                                                        Genotype
+                                                                    </p>
+                                                                    <p
+                                                                        style="
+                                                                            padding: 0px;
+                                                                            margin: 0px;
+                                                                            line-height: 2;
+                                                                        "
+                                                                    >
+                                                                        {{
+                                                                            decryptItem(
+                                                                                variation.candidateGenotype,
+                                                                                variation.encryptionKeyId
+                                                                            )
+                                                                        }}
+                                                                    </p>
+                                                                </div>
+                                                            </td>
+                                                            <td colspan="3">
+                                                                <div class="col-md-3 p-0">
+                                                                    <img
+                                                                        src="../../../assets/svgImages/weight.svg"
+                                                                        style="width: 33px"
+                                                                    />
+                                                                </div>
+                                                                <div class="col-md-8 p-0">
+                                                                    <p
+                                                                        class="list-t"
+                                                                        style="
+                                                                            margin: 0px;
+                                                                            line-height: 1;
+                                                                            padding: 20px 0 0 0;
+                                                                        "
+                                                                    >
+                                                                        Weight
+                                                                    </p>
+                                                                    <p
+                                                                        style="
+                                                                            padding: 0px;
+                                                                            margin: 0px;
+                                                                            line-height: 2;
+                                                                        "
+                                                                    >
+                                                                        {{
+                                                                            decryptItem(
+                                                                                variation.candidateWeight,
+                                                                                variation.encryptionKeyId
+                                                                            )
+                                                                        }}
+                                                                    </p>
+                                                                </div>
+                                                            </td>
+                                                            <td colspan="3">
+                                                                <div class="col-md-3 p-0">
+                                                                    <img
+                                                                        src="../../../assets/svgImages/height.svg"
+                                                                        style="width: 33px"
+                                                                    />
+                                                                </div>
+                                                                <div class="col-md-8 p-0">
+                                                                    <p
+                                                                        class="list-t"
+                                                                        style="
+                                                                            margin: 0px;
+                                                                            line-height: 1;
+                                                                            padding: 20px 0 0 0;
+                                                                        "
+                                                                    >
+                                                                        Height
+                                                                    </p>
+                                                                    <p
+                                                                        style="
+                                                                            padding: 0px;
+                                                                            margin: 0px;
+                                                                            line-height: 2;
+                                                                        "
+                                                                    >
+                                                                        {{
+                                                                            decryptItem(
+                                                                                variation.candidateHeight,
+                                                                                variation.encryptionKeyId
+                                                                            )
+                                                                        }}
+                                                                    </p>
+                                                                </div>
+                                                            </td>
+                                                            <td colspan="3">
+                                                                <div class="col-md-3 p-0">
+                                                                    <img
+                                                                        src="../../../assets/svgImages/clander.png"
+                                                                        style="width: 33px"
+                                                                    />
+                                                                </div>
+                                                                <div class="col-md-8 p-0">
+                                                                    <p
+                                                                        class="list-t"
+                                                                        style="
+                                                                            margin: 0px;
+                                                                            line-height: 1;
+                                                                            padding: 20px 0 0 0;
+                                                                        "
+                                                                    >
+                                                                        Date of Birth
+                                                                    </p>
+                                                                    <p
+                                                                        style="
+                                                                            padding: 0px;
+                                                                            margin: 0px;
+                                                                            line-height: 2;
+                                                                        "
+                                                                    >
+                                                                        {{
+                                                                            decryptItem(
+                                                                                variation.candidateDob,
+                                                                                variation.encryptionKeyId
+                                                                            )
+                                                                        }}
+                                                                    </p>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td colspan="3"></td>
+                                                            <td colspan="3"></td>
+                                                            <td colspan="3"></td>
+                                                            <td colspan="3"></td>
+                                                            <td colspan="3">
+                                                                <p>
+                                                                    <span class="m-class">M</span>
+                                                                    <span class="age-class"> 37yrs</span>
+                                                                </p>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-md-4" style="margin-top: 20px">
+                                                    <div class="menu">
+                                                        <ul class="d-flex p-0" id="tabs">
+                                                            <li
+                                                                [isActive]="tab == 1 ? 'true' : ''"
+                                                                id="tab1"
+                                                                (click)="onTabChange($event)"
+                                                            >
+                                                                <a
+                                                                    (click)="onClick(1)"
+                                                                    [ngClass]="{ active1: tab1 === 'tab1' }"
+                                                                    >QRC</a
+                                                                >
+                                                            </li>
+                                                            <li
+                                                                [isActive]="tab == 2 ? 'true' : ''"
+                                                                id="tab2"
+                                                                (click)="onTabChange($event)"
+                                                            >
+                                                                <a
+                                                                    (click)="onClick(2)"
+                                                                    [ngClass]="{ active1: tab1 === 'tab2' }"
+                                                                    >BARCODE</a
+                                                                >
+                                                            </li>
+                                                            <li
+                                                                [isActive]="tab == 3 ? 'true' : ''"
+                                                                id="tab3"
+                                                                (click)="onTabChange($event)"
+                                                            >
+                                                                <a
+                                                                    (click)="onClick(3)"
+                                                                    [ngClass]="{ active1: tab1 === 'tab3' }"
+                                                                    >RFID</a
+                                                                >
+                                                            </li>
+                                                            <li
+                                                                [isActive]="tab == 4 ? 'true' : ''"
+                                                                id="tab4"
+                                                                (click)="onTabChange($event)"
+                                                            >
+                                                                <a
+                                                                    (click)="onClick(4)"
+                                                                    [ngClass]="{ active1: tab1 === 'tab4' }"
+                                                                    >NFC</a
+                                                                >
+                                                            </li>
+                                                            <li
+                                                                [isActive]="tab == 5 ? 'true' : ''"
+                                                                id="tab5"
+                                                                (click)="onTabChange($event)"
+                                                            >
+                                                                <a
+                                                                    (click)="onClick(5)"
+                                                                    [ngClass]="{ active1: tab1 === 'tab5' }"
+                                                                    >PRINT</a
+                                                                >
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="barcode" *ngIf="tab === 1">
+                                                        <img
+                                                            style="width: 230px; background-color: #fff; padding: 1px"
+                                                            src="../../../assets/svgImages/barcode.svg"
+                                                        />
+                                                    </div>
+
+                                                    <div class="barcode" *ngIf="tab === 2">
+                                                        <img
+                                                            style="width: 230px; background-color: #e8c40b"
+                                                            src="../../../assets/svgImages/barcode.svg"
+                                                        />
+                                                    </div>
+
+                                                    <div class="barcode" *ngIf="tab === 3">
+                                                        <img
+                                                            style="width: 230px; background-color: #507746"
+                                                            src="../../../assets/svgImages/barcode.svg"
+                                                        />
+                                                    </div>
+
+                                                    <div class="barcode" *ngIf="tab === 4">
+                                                        <img
+                                                            style="width: 230px; background-color: #213315"
+                                                            src="../../../assets/svgImages/barcode.svg"
+                                                        />
+                                                    </div>
+
+                                                    <div class="barcode" *ngIf="tab === 5">
+                                                        <img
+                                                            style="width: 230px; background-color: #324213"
+                                                            src="../../../assets/svgImages/barcode.svg"
+                                                        />
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-8 p-0">
+                                                    <div
+                                                        class="statush"
+                                                        style="
+                                                            text-align: center;
+                                                            text-decoration: underline;
+                                                            text-decoration-color: #fff;
+                                                        "
+                                                    >
+                                                        status
+                                                    </div>
+                                                    <div class="menu-btn d-flex mb-6">
+                                                        <a class="btn-menu">Arrived</a>
+                                                        <a class="btn-menu">Authenticated</a>
+                                                        <a class="btn-menu">Interviewed</a>
+                                                        <a class="btn-menu">Medical</a>
+                                                        <a class="btn-menu">Exited</a>
+                                                    </div>
+
+                                                    <div class="col-md-6 p-0">
+                                                        <div class="col-md-2 p-0">
+                                                            <img
+                                                                src="../../.../../../../../assets/svgImages/Map Marker (Traced).svg"
+                                                                alt=""
+                                                            />
+                                                        </div>
+                                                        <div class="col-md-10">
+                                                            <p>
+                                                                <span style="color: #e8c40b">Interview State:</span>
+                                                                &nbsp; <span>{{ variation.interviewLocation }}</span>
+                                                            </p>
+                                                            <p>
+                                                                <span style="color: #e8c40b">Interview Status:</span
+                                                                >&nbsp; <span>{{ variation.interviewed }}</span>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="row">
+                                                            <div class="col-md-2 p-0">
+                                                                <img
+                                                                    src="../../.../../../../../assets/images/widget/person.svg"
+                                                                    alt=""
+                                                                />
+                                                            </div>
+                                                            <div class="col-md-10">
+                                                                <p>
+                                                                    <span style="color: #e8c40b"
+                                                                        >Record Created By:</span
+                                                                    >&nbsp;<span>{{
+                                                                        decryptItem(
+                                                                            variation.candidateDob,
+                                                                            variation.encryptionKeyId
+                                                                        )
+                                                                    }}</span>
+                                                                </p>
+                                                                <p>
+                                                                    <span style="color: #e8c40b">Roles:</span>&nbsp;
+                                                                    <span>{{
+                                                                        decryptItem(
+                                                                            variation.candidateDob,
+                                                                            variation.encryptionKeyId
+                                                                        )
+                                                                    }}</span>
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-md-2 p-0">
+                                                                <img
+                                                                    src="../../.../../../../../assets/images/widget/person.svg"
+                                                                    alt=""
+                                                                />
+                                                            </div>
+                                                            <div class="col-md-10">
+                                                                <p>
+                                                                    <span style="color: #e8c40b"
+                                                                        >Store Modified On:</span
+                                                                    >&nbsp;
+                                                                    <span>{{
+                                                                        decryptItem(
+                                                                            variation.candidateDob,
+                                                                            variation.encryptionKeyId
+                                                                        )
+                                                                    }}</span>
+                                                                </p>
+                                                                <p>
+                                                                    <span style="color: #e8c40b"
+                                                                        >Store Modified By:</span
+                                                                    >&nbsp;
+                                                                    <span>{{
+                                                                        decryptItem(
+                                                                            variation.candidateDob,
+                                                                            variation.encryptionKeyId
+                                                                        )
+                                                                    }}</span>
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <h1 style="margin-left: 40px; color: #e8c40b">
+                                                        Candidate Activities
+                                                    </h1>
+                                                    <div
+                                                        class="card"
+                                                        style="
+                                                            height: 370px;
+                                                            padding: 20px;
+                                                            background: #909962;
+                                                            border-radius: 24px;
+                                                        "
+                                                    >
+                                                        <div class="" style="overflow-x: hidden">
+                                                            <div class="row">
+                                                                <div class="col-md-10 p-0">
+                                                                    <ul class="timeline">
+                                                                        <li>
+                                                                            <div class="row">
+                                                                                <div class="md-col-2">
+                                                                                    <img
+                                                                                        src="../../.../../../../../assets/svgImages/profileimg.svg"
+                                                                                        alt=""
+                                                                                    />
+                                                                                </div>
+                                                                                <div class="col-md-10">
+                                                                                    <h2 style="font-size: 20px">
+                                                                                        Candidate Shordlisted
+                                                                                    </h2>
+                                                                                    <p
+                                                                                        style="
+                                                                                            margin: 0;
+                                                                                            color: #e8c40b;
+                                                                                        "
+                                                                                    >
+                                                                                        Record Created By:
+                                                                                        <span>{{
+                                                                                            decryptItem(
+                                                                                                variation.candidateDob,
+                                                                                                variation.encryptionKeyId
+                                                                                            )
+                                                                                        }}</span>
+                                                                                    </p>
+                                                                                    <p style="color: #e8c40b">
+                                                                                        Role:
+                                                                                        <span>{{
+                                                                                            decryptItem(
+                                                                                                variation.candidateDob,
+                                                                                                variation.encryptionKeyId
+                                                                                            )
+                                                                                        }}</span>
+                                                                                    </p>
+                                                                                    <p
+                                                                                        style="
+                                                                                            margin: 0;
+                                                                                            color: #c4c4c4;
+                                                                                        "
+                                                                                    >
+                                                                                        {{
+                                                                                            decryptItem(
+                                                                                                variation.candidateDob,
+                                                                                                variation.encryptionKeyId
+                                                                                            )
+                                                                                        }}
+                                                                                    </p>
+                                                                                    <p
+                                                                                        style="
+                                                                                            margin: 0;
+                                                                                            color: #c4c4c4;
+                                                                                        "
+                                                                                    >
+                                                                                        TIME:
+                                                                                        {{
+                                                                                            decryptItem(
+                                                                                                variation.candidateDob,
+                                                                                                variation.encryptionKeyId
+                                                                                            )
+                                                                                        }}
+                                                                                    </p>
+                                                                                </div>
+                                                                            </div>
+                                                                        </li>
+                                                                        <li>
+                                                                            <div class="row">
+                                                                                <div class="md-col-2">
+                                                                                    <img
+                                                                                        src="../../.../../../../../assets/svgImages/profileimg.svg"
+                                                                                        alt=""
+                                                                                    />
+                                                                                </div>
+                                                                                <div class="col-md-10">
+                                                                                    <h2 style="font-size: 20px">
+                                                                                        Candidate Shordlisted
+                                                                                    </h2>
+                                                                                    <p
+                                                                                        style="
+                                                                                            margin: 0;
+                                                                                            color: #e8c40b;
+                                                                                        "
+                                                                                    >
+                                                                                        Record Created By:
+                                                                                        <span>{{
+                                                                                            decryptItem(
+                                                                                                variation.candidateDob,
+                                                                                                variation.encryptionKeyId
+                                                                                            )
+                                                                                        }}</span>
+                                                                                    </p>
+                                                                                    <p style="color: #e8c40b">
+                                                                                        Role:
+                                                                                        <span>{{
+                                                                                            decryptItem(
+                                                                                                variation.candidateDob,
+                                                                                                variation.encryptionKeyId
+                                                                                            )
+                                                                                        }}</span>
+                                                                                    </p>
+                                                                                    <p
+                                                                                        style="
+                                                                                            margin: 0;
+                                                                                            color: #c4c4c4;
+                                                                                        "
+                                                                                    >
+                                                                                        {{
+                                                                                            decryptItem(
+                                                                                                variation.candidateDob,
+                                                                                                variation.encryptionKeyId
+                                                                                            )
+                                                                                        }}
+                                                                                    </p>
+                                                                                    <p
+                                                                                        style="
+                                                                                            margin: 0;
+                                                                                            color: #c4c4c4;
+                                                                                        "
+                                                                                    >
+                                                                                        TIME:
+                                                                                        {{
+                                                                                            decryptItem(
+                                                                                                variation.candidateDob,
+                                                                                                variation.encryptionKeyId
+                                                                                            )
+                                                                                        }}
+                                                                                    </p>
+                                                                                </div>
+                                                                            </div>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <h1 style="margin-left: 280px; color: #e8c40b">Statistics</h1>
+                                                    <div
+                                                        class="statistics"
+                                                        style="
+                                                            width: 332.32px;
+                                                            height: 370px;
+                                                            padding: 20px;
+                                                            margin-left: auto;
+                                                            background: #909962;
+                                                            border-radius: 7.82609px;
+                                                        "
+                                                    >
+
+                                                        <div style="display: block">
+
+
+                                                            <p-chart
+                                                                type="doughnut"
+                                                                [data]="data"
+                                                                [options]="chartOptions"
+                                                                width="350"
+                                                                height="350"
+                                                            ></p-chart>
+                                                            <div *ngIf="true" [appLoading]="Loading"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                </ng-template>
+
+                            </p-table>
+                        </div>
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </ng-template>
+</p-table>
+<p-table
+    #dataTable2
+    dataKey="id"
+    class="cardView-grid"
+    *ngIf="viewType == 2"
+    [value]="candidateDTO"
+    [scrollable]="true"
+    scrollHeight="400px"
+    [(rows)]="row"
+    (onPage)="paginate($event)"
+    [first]="first"
+    [rowsPerPageOptions]="[5, 10, 15, 20]"
+    [paginator]="true"
+    [lazy]="false"
+    rowExpandMode="single"
+>
+    <ng-template pTemplate="header" style="text-align: center">
+        <tr>
+            <th class="gridheader" colspan="3">Tools</th>
+            <th class="gridheader" pSortableColumn="intentNo">
+                RF Code
+                <p-sortIcon field="intentNo"></p-sortIcon>
+            </th>
+            <th class="gridheader" pSortableColumn="controlNumber">
+                Candidate Name
+                <p-sortIcon field="controlNumber"></p-sortIcon>
+            </th>
+            <th class="gridheader" pSortableColumn="controlNumber">
+                Category
+                <p-sortIcon field="controlNumber"></p-sortIcon>
+            </th>
+            <th class="gridheader" pSortableColumn="voucherToType">
+                Interview Location
+                <p-sortIcon field="voucherToType"></p-sortIcon>
+            </th>
+            <th class="gridheader" pSortableColumn="AKADA">
+                Status
+                <p-sortIcon field="AKADA"></p-sortIcon>
+            </th>
+            <th class="gridheader" pSortableColumn="reasonForIndent">
+                Gender
+                <p-sortIcon field="reasonForIndent"></p-sortIcon>
+            </th>
+            <th class="gridheader" colspan="3">
+                Created By
+                <table>
+                    <tr>
+                        <th pSortableColumn="">Name</th>
+                        <th pSortableColumn="">Role</th>
+                        <th pSortableColumn="">Date/Time</th>
+                    </tr>
+                </table>
+            </th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" style="color: white" let-expanded="expanded" let-rowIndex="rowIndex">
+        <tr class="body-td cardTr">
+            <div class="row p-4" style="justify-content: center" *ngIf="candidateDTO">
+                <div class="col-md-6" style="padding: 0px 0px 0px 10px">
+                    <div class="col-md-12 p-0" style="background-color: #213315; border-radius: 20px">
+                        <div class="col-md-12 p-4" style="background-color: #507746; border-radius: 20px 20px 0px 0px">
+                            <div class="col-md-4 d-flex p-0">
+                                <div class="priority_circle-left">
+                                    <p style="font-size: 19px"></p>
+                                </div>
+                                <img src="../../.../../../../../assets/Vector (2).png" alt="" />
+                            </div>
+                            <div class="col-md-6" style="text-align: center">
+                                <h5 style="font-size: 12px">
+                                    <b style="color: #e8c40b; margin: 0px">NA-RC388383/93933</b>
+                                </h5>
+                                <p style="margin: 0px; color: #fff">{{ candidateDTO[rowIndex].refCode }}</p>
+                            </div>
+                            <div class="col-md-2" style="text-align: end">
+                                <div class="priority_circle">
+                                    <p style="font-size: 19px">{{ getGender(candidateDTO[rowIndex].gender) }}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" style="padding-bottom: 13px; height: 59px">
+                            <div class="col-md-4" style="padding-top: 5px; text-align: center">
+                                <img class="profilePhoto" src="{{ candidateDTO[rowIndex].photo }}" />
+                            </div>
+                            <div
+                                class="col-md-2 p-0"
+                                style="
+                                    padding-top: 5px;
+                                    display: flex;
+                                    border-right: #fff solid 1px;
+                                    border-bottom: #fff 1px solid;
+                                "
+                            >
+                                <div class="col-md-12">
+                                    <h5 style="font-size: 9px"><b style="color: #e8c40b">First Name</b></h5>
+                                    <p style="margin: 0px; color: #fff">
+                                        {{
+                                            decryptItem(
+                                                candidateDTO[rowIndex].candidateFirstName,
+                                                candidateDTO[rowIndex].encryptionKeyId
+                                            )
+                                        }}
+                                    </p>
+                                </div>
+                            </div>
+                            <div
+                                class="col-md-3 p-0"
+                                style="
+                                    padding-top: 5px;
+                                    display: flex;
+                                    border-right: #fff solid 1px;
+                                    border-bottom: #fff 1px solid;
+                                "
+                            >
+                                <div class="col-md-9">
+                                    <h5 style="font-size: 9px"><b style="color: #e8c40b">Middle Name</b></h5>
+                                    <p style="margin: 0px; color: #fff">
+                                        {{
+                                            decryptItem(
+                                                candidateDTO[rowIndex].candidateMiddleName,
+                                                candidateDTO[rowIndex].encryptionKeyId
+                                            )
+                                        }}
+                                    </p>
+                                </div>
+                            </div>
+                            <div
+                                class="col-md-2 p-0"
+                                style="padding-top: 7px; display: flex; border-bottom: #fff 1px solid"
+                            >
+                                <div class="col-md-12">
+                                    <h5 style="font-size: 9px"><b style="color: #e8c40b">Last Name</b></h5>
+                                    <p style="margin: 0px; color: #fff">
+                                        {{
+                                            decryptItem(
+                                                candidateDTO[rowIndex].candidateLastName,
+                                                candidateDTO[rowIndex].encryptionKeyId
+                                            )
+                                        }}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row pl-1" style="padding-bottom: 13px">
+                            <div class="col-md-7" style="padding: 0 0px 0px 26px">
+                                <div class="col-md-5" style="padding: 5px 0; display: flex">
+                                    <div class="col- md-2 p-0">
+                                        <img src="../../../assets/images/widget/person.svg" style="width: 20px" />
+                                    </div>
+                                    <div class="col-md-8" style="padding: 0px 0px 0px 7px">
+                                        <h5 style="font-size: 11px; margin: 0">
+                                            <b
+                                                style="
+                                                    color: #e8c40b;
+                                                    font-family: 'Roboto';
+                                                    font-style: normal;
+                                                    font-weight: 700;
+                                                    font-size: 12px;
+                                                    line-height: 14px;
+                                                    letter-spacing: -0.01em;
+                                                "
+                                                class=""
+                                                >Date of birth</b
+                                            >
+                                        </h5>
+                                        <p style="padding-top: 2px; color: #e7e7e7">
+                                            {{
+                                                decryptItem(
+                                                    candidateDTO[rowIndex].candidateDob,
+                                                    candidateDTO[rowIndex].encryptionKeyId
+                                                )
+                                            }}
+                                        </p>
+                                    </div>
+                                </div>
+                                <div
+                                    class="col-md-7"
+                                    style="border-right: #fff 1px solid"
+                                    style="padding: 5px 0; display: flex"
+                                >
+                                    <div class="col-md-2 p-0">
+                                        <img src="../../../assets/images/widget/person.svg" style="width: 20px" />
+                                    </div>
+                                    <div class="col-md-10 p-0">
+                                        <h5 style="font-size: 11px; color: #e7e7e7">
+                                            <b style="color: #e8c40b">Interview State:</b>
+                                            {{ getInterviewLocation(candidateDTO[rowIndex].interviewLocation) }}
+                                        </h5>
+                                        <h5 style="font-size: 11px; color: #e7e7e7">
+                                            <b style="color: #e8c40b">Interview Status:</b> shortlisted
+                                        </h5>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <p style="margin: 0px"><b class="status">Status</b></p>
+                                        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                                            <li class="nav-item">
+                                                <a
+                                                    class="btn btn-sm btn-primary statusBtn nav-link"
+                                                    style="padding: 0"
+                                                    (click)="activateTab($event)"
+                                                    id="arrived-{{ rowIndex }}"
+                                                    data-toggle="pill"
+                                                    data-target="#arrived-{{ rowIndex }}"
+                                                    role="tab"
+                                                    aria-controls="pills-home"
+                                                    aria-selected="true"
+                                                    >Arrived</a
+                                                >
+                                            </li>
+                                            <li class="nav-item">
+                                                <a
+                                                    class="btn btn-sm btn-primary statusBtn"
+                                                    id="authenticate-{{ rowIndex }}"
+                                                    (click)="activateTab($event)"
+                                                    data-toggle="pill"
+                                                    data-target="#authenticate-{{ rowIndex }}"
+                                                    role="tab"
+                                                    aria-controls="pills-home"
+                                                    aria-selected="true"
+                                                    >Authenticate</a
+                                                >
+                                            </li>
+                                            <li class="nav-item">
+                                                <a
+                                                    class="btn btn-sm btn-primary statusBtn"
+                                                    id="interviewed-{{ rowIndex }}"
+                                                    (click)="activateTab($event)"
+                                                    data-toggle="pill"
+                                                    data-target="#interviewed-{{ rowIndex }}"
+                                                    role="tab"
+                                                    aria-controls="pills-home"
+                                                    aria-selected="true"
+                                                    >Interviewed</a
+                                                >
+                                            </li>
+                                            <li class="nav-item">
+                                                <a
+                                                    class="btn btn-sm btn-primary statusBtn"
+                                                    id="medical-{{ rowIndex }}"
+                                                    (click)="activateTab($event)"
+                                                    data-toggle="pill"
+                                                    data-target="#medical-{{ rowIndex }}"
+                                                    role="tab"
+                                                    aria-controls="pills-home"
+                                                    aria-selected="true"
+                                                    >Medical</a
+                                                >
+                                            </li>
+                                            <li class="nav-item">
+                                                <a
+                                                    class="btn btn-sm btn-primary statusBtn"
+                                                    id="exited-{{ rowIndex }}"
+                                                    (click)="activateTab($event)"
+                                                    data-toggle="pill"
+                                                    data-target="#exited-{{ rowIndex }}"
+                                                    role="tab"
+                                                    aria-controls="pills-home"
+                                                    aria-selected="true"
+                                                    >Exited</a
+                                                >
+                                            </li>
+                                        </ul>
+                                        <div class="tab-content" id="pills-tabContent">
+                                            <div
+                                                class="tab-pane show active"
+                                                id="arrived-{{ rowIndex }}"
+                                                role="tabpanel"
+                                                aria-labelledby="pills-home-tab"
+                                            >
+                                                <div class="col-md-12 pt-2">
+                                                    <div class="col-md-12">
+                                                        <h5 style="font-size: 11px; color: #e7e7e7">
+                                                            <b>Updated By:</b>
+                                                            admin
+                                                        </h5>
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        <h5 style="font-size: 11px; color: #e7e7e7">
+                                                            <b>Updated Date:</b>
+                                                            12/212/312
+                                                        </h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div
+                                                class="tab-pane"
+                                                id="authenticate-{{ rowIndex }}"
+                                                role="tabpanel"
+                                                aria-labelledby="pills-profile-tab"
+                                            >
+                                                <div class="col-md-12 pt-2">
+                                                    <div class="col-md-12">
+                                                        <h5 style="font-size: 11px; color: #e7e7e7">
+                                                            <b>Updated By:</b>
+                                                            admin2
+                                                        </h5>
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        <h5 style="font-size: 11px; color: #e7e7e7">
+                                                            <b>Updated Date:</b>
+                                                            12/212/312
+                                                        </h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div
+                                                class="tab-pane"
+                                                id="interviewed-{{ rowIndex }}"
+                                                role="tabpanel"
+                                                aria-labelledby="pills-contact-tab"
+                                            >
+                                                <div class="col-md-12 pt-2">
+                                                    <div class="col-md-12">
+                                                        <h5 style="font-size: 11px; color: #e7e7e7">
+                                                            <b>Updated By:</b>
+                                                            admin
+                                                        </h5>
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        <h5 style="font-size: 11px; color: #e7e7e7">
+                                                            <b>Updated Date:</b>
+                                                            12/212/312
+                                                        </h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div
+                                                class="tab-pane"
+                                                id="medical-{{ rowIndex }}"
+                                                role="tabpanel"
+                                                aria-labelledby="pills-contact-tab"
+                                            >
+                                                <div class="col-md-12 pt-2">
+                                                    <div class="col-md-12">
+                                                        <h5 style="font-size: 11px; color: #e7e7e7">
+                                                            <b>Updated By:</b>
+                                                            admin
+                                                        </h5>
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        <h5 style="font-size: 11px; color: #e7e7e7">
+                                                            <b>Updated Date:</b>
+                                                            12/212/312
+                                                        </h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div
+                                                class="tab-pane"
+                                                id="exited-{{ rowIndex }}"
+                                                role="tabpanel"
+                                                aria-labelledby="pills-contact-tab"
+                                            >
+                                                <div class="col-md-12 pt-2">
+                                                    <div class="col-md-12">
+                                                        <h5 style="font-size: 11px; color: #e7e7e7">
+                                                            <b>Updated By:</b>
+                                                            admin
+                                                        </h5>
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        <h5 style="font-size: 11px; color: #e7e7e7">
+                                                            <b>Updated Date:</b>
+                                                            12/212/312
+                                                        </h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-1" style="padding: 0; max-width: 2px">
+                                <hr />
+                            </div>
+
+                            <div class="col-md-4" style="padding: 0 7px">
+                                <div class="col-md-10" style="padding-top: 5px; display: flex">
+                                    <div class="row">
+                                        <div class="col-md-6 p-0">
+                                            <div class="col-md-4 md-2 p-0">
+                                                <img
+                                                    src="../../../assets/svgImages/waterdrop.svg"
+                                                    style="width: 20px"
+                                                />
+                                            </div>
+                                            <div class="col-md-8 p-0">
+                                                <h5 style="font-size: 11px; color: #e7e7e7">
+                                                    <b style="color: #e8c40b">Blood Group</b>
+                                                </h5>
+                                                <p style="padding-top: 2px; color: #e7e7e7">
+                                                    {{
+                                                        decryptItem(
+                                                            candidateDTO[rowIndex].candidateBloodGroup,
+                                                            candidateDTO[rowIndex].encryptionKeyId
+                                                        )
+                                                    }}
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 p-0">
+                                            <div class="col-md-4 md-2 p-0">
+                                                <img
+                                                    src="../../../assets/svgImages/bloodtube.svg"
+                                                    style="width: 20px"
+                                                />
+                                            </div>
+                                            <div class="col-md-8 p-0">
+                                                <h5 style="font-size: 11px; color: #e7e7e7">
+                                                    <b style="color: #e8c40b">GenoType</b>
+                                                </h5>
+                                                <p style="padding-top: 2px; color: #e7e7e7">
+                                                    {{
+                                                        decryptItem(
+                                                            candidateDTO[rowIndex].candidateGenotype,
+                                                            candidateDTO[rowIndex].encryptionKeyId
+                                                        )
+                                                    }}
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 p-0">
+                                            <div class="col-md-4 md-2 p-0">
+                                                <img src="../../../assets/svgImages/height.svg" style="width: 20px" />
+                                            </div>
+                                            <div class="col-md-8 p-0">
+                                                <h5 style="font-size: 11px; color: #e7e7e7">
+                                                    <b style="color: #e8c40b">Height</b>
+                                                </h5>
+                                                <p style="padding-top: 2px; color: #e7e7e7">
+                                                    {{
+                                                        decryptItem(
+                                                            candidateDTO[rowIndex].candidateHeight,
+                                                            candidateDTO[rowIndex].encryptionKeyId
+                                                        )
+                                                    }}
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 p-0">
+                                            <div class="col-md-4 md-2 p-0">
+                                                <img src="../../../assets/svgImages/weight.svg" style="width: 20px" />
+                                            </div>
+                                            <div class="col-md-8 p-0">
+                                                <h5 style="font-size: 11px; color: #e7e7e7">
+                                                    <b style="color: #e8c40b">Weight</b>
+                                                </h5>
+                                                <p style="padding-top: 2px; color: #e7e7e7">
+                                                    {{
+                                                        decryptItem(
+                                                            candidateDTO[rowIndex].candidateWeight,
+                                                            candidateDTO[rowIndex].encryptionKeyId
+                                                        )
+                                                    }}
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12 pt-2 card_menu" style="padding: 0">
+                                    <ul class="d-flex" style="padding: 0">
+                                        <li [isActive]="tab == 1 ? 'true' : ''" id="tab1" (click)="onTabChange($event)">
+                                            <a
+                                                class=""
+                                                style="cursor: pointer"
+                                                (click)="onClick1(1)"
+                                                [ngClass]="{ active1: tab2 === 'tab1' }"
+                                                >QRC</a
+                                            >
+                                        </li>
+                                        <li [isActive]="tab == 2 ? 'true' : ''" id="tab2" (click)="onTabChange($event)">
+                                            <a
+                                                class=""
+                                                style="cursor: pointer"
+                                                (click)="onClick1(2)"
+                                                [ngClass]="{ active1: tab2 === 'tab2' }"
+                                                >BarCode</a
+                                            >
+                                        </li>
+                                        <li [isActive]="tab == 3 ? 'true' : ''" id="tab3" (click)="onTabChange($event)">
+                                            <a
+                                                class=""
+                                                style="cursor: pointer"
+                                                (click)="onClick1(3)"
+                                                [ngClass]="{ active1: tab2 === 'tab3' }"
+                                                >RFID</a
+                                            >
+                                        </li>
+                                        <li [isActive]="tab == 4 ? 'true' : ''" id="tab4" (click)="onTabChange($event)">
+                                            <a
+                                                class=""
+                                                style="cursor: pointer"
+                                                (click)="onClick1(4)"
+                                                [ngClass]="{ active1: tab2 === 'tab4' }"
+                                                >NFC</a
+                                            >
+                                        </li>
+                                        <li [isActive]="tab == 5 ? 'true' : ''" id="tab5" (click)="onTabChange($event)">
+                                            <a
+                                                class=""
+                                                style="cursor: pointer"
+                                                (click)="onClick1(5)"
+                                                [ngClass]="{ active1: tab2 === 'tab5' }"
+                                                >Print</a
+                                            >
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-12 p-0">
+                                    <div class="barcode" *ngIf="tab === 1">
+                                        <img
+                                            style="width: 180px; background-color: #fff; padding: 1px"
+                                            src="../../../assets/svgImages/barcode.svg"
+                                        />
+                                    </div>
+
+                                    <div class="barcode" *ngIf="tab === 2">
+                                        <img
+                                            style="width: 180px; background-color: #e8c40b"
+                                            src="../../../assets/svgImages/barcode.svg"
+                                        />
+                                    </div>
+
+                                    <div class="barcode" *ngIf="tab === 3">
+                                        <img
+                                            style="width: 180px; background-color: #507746"
+                                            src="../../../assets/svgImages/barcode.svg"
+                                        />
+                                    </div>
+
+                                    <div class="barcode" *ngIf="tab === 4">
+                                        <img
+                                            style="width: 180px; background-color: #213315"
+                                            src="../../../assets/svgImages/barcode.svg"
+                                        />
+                                    </div>
+
+                                    <div class="barcode" *ngIf="tab === 5">
+                                        <img
+                                            style="width: 180px; background-color: #324213"
+                                            src="../../../assets/svgImages/barcode.svg"
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row pl-5"></div>
+                    </div>
+                </div>
+                <div class="col-md-6" style="padding: 0px 0px 0px 10px">
+                    <div class="col-md-12 p-0" style="background-color: #213315; border-radius: 20px">
+                        <div class="col-md-12 p-4" style="background-color: #507746; border-radius: 20px 20px 0px 0px">
+                            <div class="col-md-4 d-flex p-0">
+                                <div class="priority_circle-left">
+                                    <p style="font-size: 19px"></p>
+                                </div>
+                                <img src="../../.../../../../../assets/Vector (2).png" alt="" />
+                            </div>
+                            <div class="col-md-6" style="text-align: center">
+                                <h5 style="font-size: 12px">
+                                    <b style="color: #e8c40b; margin: 0px">NA-RC388383/93933</b>
+                                </h5>
+                                <p style="margin: 0px; color: #fff">{{ candidateDTO[rowIndex].refCode }}</p>
+                            </div>
+                            <div class="col-md-2" style="text-align: end">
+                                <div class="priority_circle">
+                                    <p style="font-size: 19px">{{ getGender(candidateDTO[rowIndex].gender) }}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" style="padding-bottom: 13px; height: 59px">
+                            <div class="col-md-4" style="padding-top: 5px; text-align: center">
+                                <img class="profilePhoto" src="{{ candidateDTO[rowIndex].photo }}" />
+                            </div>
+                            <div
+                                class="col-md-2 p-0"
+                                style="
+                                    padding-top: 5px;
+                                    display: flex;
+                                    border-right: #fff solid 1px;
+                                    border-bottom: #fff 1px solid;
+                                "
+                            >
+                                <div class="col-md-12">
+                                    <h5 style="font-size: 9px"><b style="color: #e8c40b">First Name</b></h5>
+                                    <p style="margin: 0px; color: #fff">
+                                        {{
+                                            decryptItem(
+                                                candidateDTO[rowIndex].candidateFirstName,
+                                                candidateDTO[rowIndex].encryptionKeyId
+                                            )
+                                        }}
+                                    </p>
+                                </div>
+                            </div>
+                            <div
+                                class="col-md-3 p-0"
+                                style="
+                                    padding-top: 5px;
+                                    display: flex;
+                                    border-right: #fff solid 1px;
+                                    border-bottom: #fff 1px solid;
+                                "
+                            >
+                                <div class="col-md-9">
+                                    <h5 style="font-size: 9px"><b style="color: #e8c40b">Middle Name</b></h5>
+                                    <p style="margin: 0px; color: #fff">
+                                        {{
+                                            decryptItem(
+                                                candidateDTO[rowIndex].candidateMiddleName,
+                                                candidateDTO[rowIndex].encryptionKeyId
+                                            )
+                                        }}
+                                    </p>
+                                </div>
+                            </div>
+                            <div
+                                class="col-md-2 p-0"
+                                style="padding-top: 7px; display: flex; border-bottom: #fff 1px solid"
+                            >
+                                <div class="col-md-12">
+                                    <h5 style="font-size: 9px"><b style="color: #e8c40b">Last Name</b></h5>
+                                    <p style="margin: 0px; color: #fff">
+                                        {{
+                                            decryptItem(
+                                                candidateDTO[rowIndex].candidateLastName,
+                                                candidateDTO[rowIndex].encryptionKeyId
+                                            )
+                                        }}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row pl-1" style="padding-bottom: 13px">
+                            <div class="col-md-7" style="padding: 0 0px 0px 26px">
+                                <div class="col-md-5" style="padding: 5px 0; display: flex">
+                                    <div class="col- md-2 p-0">
+                                        <img src="../../../assets/images/widget/person.svg" style="width: 20px" />
+                                    </div>
+                                    <div class="col-md-8" style="padding: 0px 0px 0px 7px">
+                                        <h5 style="font-size: 11px; margin: 0">
+                                            <b
+                                                style="
+                                                    color: #e8c40b;
+                                                    font-family: 'Roboto';
+                                                    font-style: normal;
+                                                    font-weight: 700;
+                                                    font-size: 12px;
+                                                    line-height: 14px;
+                                                    letter-spacing: -0.01em;
+                                                "
+                                                class=""
+                                                >Date of birth</b
+                                            >
+                                        </h5>
+                                        <p style="padding-top: 2px; color: #e7e7e7">
+                                            {{
+                                                decryptItem(
+                                                    candidateDTO[rowIndex].candidateDob,
+                                                    candidateDTO[rowIndex].encryptionKeyId
+                                                )
+                                            }}
+                                        </p>
+                                    </div>
+                                </div>
+                                <div
+                                    class="col-md-7"
+                                    style="border-right: #fff 1px solid"
+                                    style="padding: 5px 0; display: flex"
+                                >
+                                    <div class="col-md-2 p-0">
+                                        <img src="../../../assets/images/widget/person.svg" style="width: 20px" />
+                                    </div>
+                                    <div class="col-md-10 p-0">
+                                        <h5 style="font-size: 11px; color: #e7e7e7">
+                                            <b style="color: #e8c40b">Interview State:</b>
+                                            {{ getInterviewLocation(candidateDTO[rowIndex].interviewLocation) }}
+                                        </h5>
+                                        <h5 style="font-size: 11px; color: #e7e7e7">
+                                            <b style="color: #e8c40b">Interview Status:</b> shortlisted
+                                        </h5>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <p style="margin: 0px"><b class="status">Status</b></p>
+                                        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                                            <li class="nav-item">
+                                                <a
+                                                    class="btn btn-sm btn-primary statusBtn nav-link"
+                                                    style="padding: 0"
+                                                    (click)="activateTab($event)"
+                                                    id="arrived-{{ rowIndex }}"
+                                                    data-toggle="pill"
+                                                    data-target="#arrived-{{ rowIndex }}"
+                                                    role="tab"
+                                                    aria-controls="pills-home"
+                                                    aria-selected="true"
+                                                    >Arrived</a
+                                                >
+                                            </li>
+                                            <li class="nav-item">
+                                                <a
+                                                    class="btn btn-sm btn-primary statusBtn"
+                                                    id="authenticate-{{ rowIndex }}"
+                                                    (click)="activateTab($event)"
+                                                    data-toggle="pill"
+                                                    data-target="#authenticate-{{ rowIndex }}"
+                                                    role="tab"
+                                                    aria-controls="pills-home"
+                                                    aria-selected="true"
+                                                    >Authenticate</a
+                                                >
+                                            </li>
+                                            <li class="nav-item">
+                                                <a
+                                                    class="btn btn-sm btn-primary statusBtn"
+                                                    id="interviewed-{{ rowIndex }}"
+                                                    (click)="activateTab($event)"
+                                                    data-toggle="pill"
+                                                    data-target="#interviewed-{{ rowIndex }}"
+                                                    role="tab"
+                                                    aria-controls="pills-home"
+                                                    aria-selected="true"
+                                                    >Interviewed</a
+                                                >
+                                            </li>
+                                            <li class="nav-item">
+                                                <a
+                                                    class="btn btn-sm btn-primary statusBtn"
+                                                    id="medical-{{ rowIndex }}"
+                                                    (click)="activateTab($event)"
+                                                    data-toggle="pill"
+                                                    data-target="#medical-{{ rowIndex }}"
+                                                    role="tab"
+                                                    aria-controls="pills-home"
+                                                    aria-selected="true"
+                                                    >Medical</a
+                                                >
+                                            </li>
+                                            <li class="nav-item">
+                                                <a
+                                                    class="btn btn-sm btn-primary statusBtn"
+                                                    id="exited-{{ rowIndex }}"
+                                                    (click)="activateTab($event)"
+                                                    data-toggle="pill"
+                                                    data-target="#exited-{{ rowIndex }}"
+                                                    role="tab"
+                                                    aria-controls="pills-home"
+                                                    aria-selected="true"
+                                                    >Exited</a
+                                                >
+                                            </li>
+                                        </ul>
+                                        <div class="tab-content" id="pills-tabContent">
+                                            <div
+                                                class="tab-pane show active"
+                                                id="arrived-{{ rowIndex }}"
+                                                role="tabpanel"
+                                                aria-labelledby="pills-home-tab"
+                                            >
+                                                <div class="col-md-12 pt-2">
+                                                    <div class="col-md-12">
+                                                        <h5 style="font-size: 11px; color: #e7e7e7">
+                                                            <b>Updated By:</b>
+                                                            admin
+                                                        </h5>
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        <h5 style="font-size: 11px; color: #e7e7e7">
+                                                            <b>Updated Date:</b>
+                                                            12/212/312
+                                                        </h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div
+                                                class="tab-pane"
+                                                id="authenticate-{{ rowIndex }}"
+                                                role="tabpanel"
+                                                aria-labelledby="pills-profile-tab"
+                                            >
+                                                <div class="col-md-12 pt-2">
+                                                    <div class="col-md-12">
+                                                        <h5 style="font-size: 11px; color: #e7e7e7">
+                                                            <b>Updated By:</b>
+                                                            admin2
+                                                        </h5>
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        <h5 style="font-size: 11px; color: #e7e7e7">
+                                                            <b>Updated Date:</b>
+                                                            12/212/312
+                                                        </h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div
+                                                class="tab-pane"
+                                                id="interviewed-{{ rowIndex }}"
+                                                role="tabpanel"
+                                                aria-labelledby="pills-contact-tab"
+                                            >
+                                                <div class="col-md-12 pt-2">
+                                                    <div class="col-md-12">
+                                                        <h5 style="font-size: 11px; color: #e7e7e7">
+                                                            <b>Updated By:</b>
+                                                            admin
+                                                        </h5>
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        <h5 style="font-size: 11px; color: #e7e7e7">
+                                                            <b>Updated Date:</b>
+                                                            12/212/312
+                                                        </h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div
+                                                class="tab-pane"
+                                                id="medical-{{ rowIndex }}"
+                                                role="tabpanel"
+                                                aria-labelledby="pills-contact-tab"
+                                            >
+                                                <div class="col-md-12 pt-2">
+                                                    <div class="col-md-12">
+                                                        <h5 style="font-size: 11px; color: #e7e7e7">
+                                                            <b>Updated By:</b>
+                                                            admin
+                                                        </h5>
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        <h5 style="font-size: 11px; color: #e7e7e7">
+                                                            <b>Updated Date:</b>
+                                                            12/212/312
+                                                        </h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div
+                                                class="tab-pane"
+                                                id="exited-{{ rowIndex }}"
+                                                role="tabpanel"
+                                                aria-labelledby="pills-contact-tab"
+                                            >
+                                                <div class="col-md-12 pt-2">
+                                                    <div class="col-md-12">
+                                                        <h5 style="font-size: 11px; color: #e7e7e7">
+                                                            <b>Updated By:</b>
+                                                            admin
+                                                        </h5>
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        <h5 style="font-size: 11px; color: #e7e7e7">
+                                                            <b>Updated Date:</b>
+                                                            12/212/312
+                                                        </h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-1" style="padding: 0; max-width: 2px">
+                                <hr />
+                            </div>
+
+                            <div class="col-md-4" style="padding: 0 7px">
+                                <div class="col-md-10" style="padding-top: 5px; display: flex">
+                                    <div class="row">
+                                        <div class="col-md-6 p-0">
+                                            <div class="col-md-4 md-2 p-0">
+                                                <img
+                                                    src="../../../assets/svgImages/waterdrop.svg"
+                                                    style="width: 20px"
+                                                />
+                                            </div>
+                                            <div class="col-md-8 p-0">
+                                                <h5 style="font-size: 11px; color: #e7e7e7">
+                                                    <b style="color: #e8c40b">Blood Group</b>
+                                                </h5>
+                                                <p style="padding-top: 2px; color: #e7e7e7">
+                                                    {{
+                                                        decryptItem(
+                                                            candidateDTO[rowIndex].candidateBloodGroup,
+                                                            candidateDTO[rowIndex].encryptionKeyId
+                                                        )
+                                                    }}
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 p-0">
+                                            <div class="col-md-4 md-2 p-0">
+                                                <img
+                                                    src="../../../assets/svgImages/bloodtube.svg"
+                                                    style="width: 20px"
+                                                />
+                                            </div>
+                                            <div class="col-md-8 p-0">
+                                                <h5 style="font-size: 11px; color: #e7e7e7">
+                                                    <b style="color: #e8c40b">GenoType</b>
+                                                </h5>
+                                                <p style="padding-top: 2px; color: #e7e7e7">
+                                                    {{
+                                                        decryptItem(
+                                                            candidateDTO[rowIndex].candidateGenotype,
+                                                            candidateDTO[rowIndex].encryptionKeyId
+                                                        )
+                                                    }}
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 p-0">
+                                            <div class="col-md-4 md-2 p-0">
+                                                <img src="../../../assets/svgImages/height.svg" style="width: 20px" />
+                                            </div>
+                                            <div class="col-md-8 p-0">
+                                                <h5 style="font-size: 11px; color: #e7e7e7">
+                                                    <b style="color: #e8c40b">Height</b>
+                                                </h5>
+                                                <p style="padding-top: 2px; color: #e7e7e7">
+                                                    {{
+                                                        decryptItem(
+                                                            candidateDTO[rowIndex].candidateHeight,
+                                                            candidateDTO[rowIndex].encryptionKeyId
+                                                        )
+                                                    }}
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 p-0">
+                                            <div class="col-md-4 md-2 p-0">
+                                                <img src="../../../assets/svgImages/weight.svg" style="width: 20px" />
+                                            </div>
+                                            <div class="col-md-8 p-0">
+                                                <h5 style="font-size: 11px; color: #e7e7e7">
+                                                    <b style="color: #e8c40b">Weight</b>
+                                                </h5>
+                                                <p style="padding-top: 2px; color: #e7e7e7">
+                                                    {{
+                                                        decryptItem(
+                                                            candidateDTO[rowIndex].candidateWeight,
+                                                            candidateDTO[rowIndex].encryptionKeyId
+                                                        )
+                                                    }}
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12 pt-2 card_menu" style="padding: 0">
+                                    <ul class="d-flex" style="padding: 0">
+                                        <li [isActive]="tab == 1 ? 'true' : ''" id="tab1" (click)="onTabChange($event)">
+                                            <a
+                                                class=""
+                                                style="cursor: pointer"
+                                                (click)="onClick1(1)"
+                                                [ngClass]="{ active1: tab2 === 'tab1' }"
+                                                >QRC</a
+                                            >
+                                        </li>
+                                        <li [isActive]="tab == 2 ? 'true' : ''" id="tab2" (click)="onTabChange($event)">
+                                            <a
+                                                class=""
+                                                style="cursor: pointer"
+                                                (click)="onClick1(2)"
+                                                [ngClass]="{ active1: tab2 === 'tab2' }"
+                                                >BarCode</a
+                                            >
+                                        </li>
+                                        <li [isActive]="tab == 3 ? 'true' : ''" id="tab3" (click)="onTabChange($event)">
+                                            <a
+                                                class=""
+                                                style="cursor: pointer"
+                                                (click)="onClick1(3)"
+                                                [ngClass]="{ active1: tab2 === 'tab3' }"
+                                                >RFID</a
+                                            >
+                                        </li>
+                                        <li [isActive]="tab == 4 ? 'true' : ''" id="tab4" (click)="onTabChange($event)">
+                                            <a
+                                                class=""
+                                                style="cursor: pointer"
+                                                (click)="onClick1(4)"
+                                                [ngClass]="{ active1: tab2 === 'tab4' }"
+                                                >NFC</a
+                                            >
+                                        </li>
+                                        <li [isActive]="tab == 5 ? 'true' : ''" id="tab5" (click)="onTabChange($event)">
+                                            <a
+                                                class=""
+                                                style="cursor: pointer"
+                                                (click)="onClick1(5)"
+                                                [ngClass]="{ active1: tab2 === 'tab5' }"
+                                                >Print</a
+                                            >
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-12 p-0">
+                                    <div class="barcode" *ngIf="tab === 1">
+                                        <img
+                                            style="width: 180px; background-color: #fff; padding: 1px"
+                                            src="../../../assets/svgImages/barcode.svg"
+                                        />
+                                    </div>
+
+                                    <div class="barcode" *ngIf="tab === 2">
+                                        <img
+                                            style="width: 180px; background-color: #e8c40b"
+                                            src="../../../assets/svgImages/barcode.svg"
+                                        />
+                                    </div>
+
+                                    <div class="barcode" *ngIf="tab === 3">
+                                        <img
+                                            style="width: 180px; background-color: #507746"
+                                            src="../../../assets/svgImages/barcode.svg"
+                                        />
+                                    </div>
+
+                                    <div class="barcode" *ngIf="tab === 4">
+                                        <img
+                                            style="width: 180px; background-color: #213315"
+                                            src="../../../assets/svgImages/barcode.svg"
+                                        />
+                                    </div>
+
+                                    <div class="barcode" *ngIf="tab === 5">
+                                        <img
+                                            style="width: 180px; background-color: #324213"
+                                            src="../../../assets/svgImages/barcode.svg"
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row pl-5"></div>
+                    </div>
+                </div>
+            </div>
+        </tr>
+    </ng-template>
+</p-table>
+<div class="col-md-12 pt-4 pb-4" style="text-align: center">
+    <div>
+        <svg width="787" height="23" viewBox="0 0 787 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="21.0514" y="7" width="746.516" height="9" fill="#585E34" />
+            <rect x="21.0514" y="7" width="218.611" height="9" fill="#B7A643" />
+            <path
+                d="M21.0514 1.54983V21.4502C21.0514 22.8282 18.3626 23.5182 16.79 22.5439L0.731102 12.5937C-0.243701 11.9897 -0.243701 11.0103 0.731102 10.4063L16.79 0.456149C18.3626 -0.518283 21.0514 0.171862 21.0514 1.54983Z"
+                fill="#B7A643"
+            />
+            <path
+                d="M765.949 1.54983V21.4502C765.949 22.8282 768.637 23.5182 770.21 22.5439L786.269 12.5937C787.244 11.9897 787.244 11.0103 786.269 10.4063L770.21 0.456149C768.637 -0.518283 765.949 0.171862 765.949 1.54983Z"
+                fill="#585E34"
+            />
+        </svg>
+    </div>
+</div> -->

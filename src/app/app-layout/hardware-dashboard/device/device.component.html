@@ -1,0 +1,35 @@
+<div class="col-md-12 pt-5">
+    <eqis-dropdown [isActive]="tab==1?'true':''" id="tab1" class="equis-btn2" [title]="'Device'"
+        (click)="onTabChange($event)"></eqis-dropdown>
+    <eqis-dropdown class="equis-btn2" id="tab2" [title]="'Device Model'" (click)="onTabChange($event)"
+        [isActive]="tab==2?'true':''"></eqis-dropdown>
+    <eqis-dropdown [isActive]="tab==3?'true':''" class="equis-btn2" [title]="'Device Antenna'"
+        (click)="onTabChange($event)" id="tab3"></eqis-dropdown>
+
+    <!-- <p-dropdown  class="dropdown" placeholder="Column" [style]="{ width: '100%' }" styleClass="form-control" ></p-dropdown> -->
+
+</div>
+
+
+<div class="col-md-12" *ngIf="tab===1">
+    <!-- <div *ngIf="isLoading" [appLoading]="isLoading">
+    </div> -->
+    <app-device-list #search></app-device-list>
+</div>
+
+
+<div class="col-md-12" style="margin-top: -2px; color: #cdcdcd;" *ngIf="tab===2">
+    <app-device-model #search></app-device-model>
+</div> <!-- 3nd card -->
+<div class="col-md-12" style="margin-top: -2px; color: #cdcdcd;" *ngIf="tab===3">
+    <app-device-antenna #search></app-device-antenna>
+</div>
+<div class="col-md-12" style="margin-top: -2px; color: #cdcdcd;" *ngIf="tab===4">
+    <b>coming soon</b>
+  </div>
+<div class="col-md-12 p-10" style="margin-top: -2px; color: #cdcdcd;" *ngIf="tab===5">
+    <b>coming soon</b>
+</div>
+<div class="col-md-12 p-10" style="margin-top: -2px; color: #cdcdcd;" *ngIf="tab===6">
+    <b>coming soon</b>
+</div>

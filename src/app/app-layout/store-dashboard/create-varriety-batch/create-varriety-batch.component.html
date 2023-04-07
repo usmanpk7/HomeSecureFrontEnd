@@ -1,0 +1,260 @@
+<!--
+<p-dialog header="Create Variety Batch" [(visible)]="displayResponsive">
+    <div style="width: 700px">
+        <div class="app-modal-body">
+            <form autocomplete="off" [formGroup]="createVarrietyBatchForm" (ngSubmit)="submit(createVarrietyBatchForm.value)" class="createform">
+                <div class="popup">
+                    <div class="container-fluid">
+
+                        <div class="row">
+                            <div class="col-md-3">
+                                <p class="mt-3" style="color: black; font-weight: bold">STORE DETAILS</p>
+
+                                <div class="form-group">
+                                    <label class="form-label">Store Name</label>
+                                    <p-dropdown
+                                        [options]="storeName"
+
+                                        formControlName="storeId"
+                                        class="dropdown"
+                                        name="storeId"
+                                        optionLabel="name"
+                                        styleClass="form-control"
+                                        [style]="{ width: '100%' }"
+                                        optionValue="code"
+                                    >
+
+                                </p-dropdown>
+                                </div>
+
+                                <div class="form-group" class="imgbg">
+                                    <div style="overflow: auto; display: flex; margin-left: 22px" *ngIf="this.imageList[0]">
+                                        <div class="col-md-2 text-center p-0 pt-2 ml-2" (click)="getCode(this.imageList[0].index)">
+                                            <img [src]="this.imageList[0].image" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <p class="mt-3" style="color: black; font-weight: bold">VARRIETY ATTRIBUTES</p>
+
+                                <div class="form-group">
+                                <label class="form-label">varrarity</label>
+                                <p-dropdown
+                                    [options]="vData"
+                                    formControlName="VId"
+                                    class="dropdown"
+                                    name="VId"
+                                    optionLabel="name"
+                                    styleClass="form-control"
+                                    [style]="{ width: '100%' }"
+                                    optionValue="code"
+                                ></p-dropdown>
+                            </div>
+
+                            <div class="form-group">
+                                <div>
+                                    <label class="form-label">Quantity</label>
+                                    <input type="text" style="background: #787735; color: #fff;" formControlName="itemQuantity" name="itemQuantity" id="itemQuantity" class="form-control" />
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <a style="width: 156px;
+                                height: 33.7px;
+
+                                background: linear-gradient(180deg, #B7A643 0%, #8A8F35 100%);
+                                border: 2px solid #566931;
+                                color: white;
+                                box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.25);
+                                border-radius: 9px;"
+                                    (click)="Image.click()"
+                                    class="btn rounded-pill mt-3"
+                                    >Upload Attachment</a
+                                ><br />
+                                <input type="file" #Image (change)="handleFileInput($event.target.files)" hidden />
+
+                            </div>
+
+                            <div class="from-group">
+                                <input style="width: 170px;
+                                height: 125px;
+                                background: #3C5934;
+                                border-radius: 10px;
+                                color: white"
+                                value="{{size}}" readonly />
+                            </div>
+
+                            <hr class="hrdesign">
+
+                            </div>
+
+
+
+                            <div class="col-md-1 mt-9">
+                                <hr class="hrv" />
+                            </div>
+
+                            <div class="col-md-8">
+                                <p class="mt-3" style="color: black; font-weight: bold; margin-left: 20px">
+                                    STORE SETTINGS
+                                </p>
+
+                                <div class="col-sm-6">
+                                    <label class="form-label">SN Prefix</label>
+                                    <input type="text" formControlName="snCodePrefix" style="background: #787735; color: #fff;" class="form-control" />
+                                    <span class="text-danger ml-3" *ngIf="isValid(createVarrietyBatchForm.controls.snCodePrefix)">
+                                        This field is required</span>
+                                </div>
+                                <div class="col-sm-6">
+                                    <label class="form-label">SN Code</label>
+                                    <input type="text" formControlName="vsn" id="vsn" style="background: #787735; color: #fff;" class="form-control" />
+                                    <span class="text-danger ml-3" *ngIf="isValid(createVarrietyBatchForm.controls.vsn)">
+                                        This field is required</span>
+                                </div>
+
+                                <div class="col-md-12">
+
+
+                                    <div class="form-group">
+                                        <label class="form-label">ASSIGNED STOREHOUSE</label>
+                                        <p-dropdown
+                                        [options]="wareHouseList"
+                                        formControlName="storehouse"
+                                        class="dropdown"
+                                        name="storehouse"
+                                        optionLabel="name"
+                                        styleClass="form-control"
+                                        [style]="{ width: '100%' }"
+                                        optionValue="code"
+                                    ></p-dropdown>
+                                    </div>
+
+
+
+                                    <div class="form-group">
+                                        <label class="form-label">MANUFACTURER</label>
+                                        <p-dropdown
+                                        [options]="manufacturerList"
+                                        formControlName="manufacturerName"
+                                        class="dropdown"
+                                        name="manufacturerName"
+                                        optionLabel="name"
+                                        styleClass="form-control"
+                                        [style]="{ width: '100%' }"
+                                        optionValue="name"
+                                    ></p-dropdown>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <label class="form-label mt-2">IsExpire</label>
+                                                <div class="col-md-12">
+                                                    <input type="checkbox" formControlName="isExpire" name="IsExpire" class="switch_1" />
+                                                </div>
+                                                </div>
+                                            <div class="col-md-8">
+                                                <label class="form-label">IsExpire</label>
+                                                <input type="date" style="background: #787735;
+                                                color: white;" formControlName="expiryDate" name="ExpiryDate" class="form-control" />
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <hr class="settinghr">
+
+
+                                    <hr>
+
+                                    <div class="row mt-5">
+                                        <div class="col-sm-4">
+                                            <label style="width: 139px;
+                                            height: 23px;
+
+                                            font-family: 'Roboto';
+                                            font-style: normal;
+                                            font-weight: 400;
+                                            font-size: 16px;
+                                            line-height: 19px;
+                                            letter-spacing: -0.01em;
+
+                                            color: #FFFFFF;">IsApproved</label>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="switch_box box_1">
+                                                <input type="checkbox" formControlName="isApprove" name="isApprove" class="switch_1" />
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row mt-5">
+                                        <div class="col-sm-4">
+                                            <label style="width: 139px;
+                                            height: 23px;
+
+                                            font-family: 'Roboto';
+                                            font-style: normal;
+                                            font-weight: 400;
+                                            font-size: 16px;
+                                            line-height: 19px;
+                                            letter-spacing: -0.01em;
+
+                                            color: #FFFFFF;">Type Reffrence</label>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="switch_box box_1">
+                                                <input type="checkbox" formControlName="typeReff" name="typeReff" class="switch_1" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row mt-5">
+
+
+
+                                <div class="col-md-8">
+
+                                    <label class="form-label">STORE DESCRIPTION</label>
+                                        <textarea style="width: 588.7px;
+                                        height: 204.28px;
+                                        color: #FFFFFF;
+                                        background: rgba(86, 105, 49, 0.25);
+                                        border: 1px solid rgba(197, 224, 180, 0.33);
+                                        border-radius: 10px;"
+                                        formControlName="vDetail"
+                                        name="vDetail"
+                                        ></textarea>
+
+                                </div>
+                                <div class="col-md-4">
+                                </div>
+                            </div>
+
+
+
+                        </div>
+
+                        <div class="col-md-3 float-right text-center mt-5 mb-5">
+                            <button
+                                type="submit"
+                                class="btn rounded-pill"
+                                style="
+                                    background: linear-gradient(180deg, #b7a643 0%, #8a8f35 100%);
+                                    border: 2px solid #566931;
+                                    box-sizing: border-box;
+                                    border-radius: 30px;
+                                    color: #ffffff;
+                                "
+                                [disabled]="createVarrietyBatchForm.invalid"
+                            >
+                                Submit
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</p-dialog> -->

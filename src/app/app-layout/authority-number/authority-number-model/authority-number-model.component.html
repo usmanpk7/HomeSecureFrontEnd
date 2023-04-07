@@ -1,0 +1,104 @@
+<!-- <style>
+    .spinner-img {
+  height: 20vh;
+  width: 20vh;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  color: red;
+}
+</style>
+<p-dialog header="Create Request Authority" [(visible)]="displayResponsive" [style]="{width: '20vw'}">
+   <form autocomplete="off" [formGroup]="AuthorityForm"  (ngSubmit)="submit()" class="createform" style="padding: 20px;">
+        <div *ngIf="loading"  style="position: relative;z-index: 50000;opacity: 2;">
+            <img class="spinner-img" src="../assets/loader.gif">
+          </div>
+        <div class="row">
+           <div class="col-md-12">
+               <h3 class="text-center mt-3" style="color: white;">Authority Number</h3>
+           </div>
+     </div>
+     <div class="row">
+        <div class="col-md-12">
+            <p class="text-center mt-3" style="color: black;font-weight: bold;" >Select Intent Number</p>
+            <div class="input-group mb-3">
+                <select style="width : 184px;height: 45px;color: #FFF;border-radius: 10px;background-color: #8C894C;border: 1px solid #676C3D;" id="issueRequestId" formControlName="intentRequestFormId" readonly="true" name="intentRequestFormId" [ngClass]="{ 'is-invalid': submitted && validators.intentRequestFormId.errors}" class="form-control mdb-select md-form color-w " >
+                    <option  [value]="intent.id" *ngFor="let intent of intentnumberlist" >{{intent.intentName}}</option>
+                </select>
+            </div>
+            <div *ngIf="submitted && validators.intentRequestFormId.errors" class="invalid-feedback">
+                <div *ngIf="validators.intentRequestFormId.errors.required ">Field is required</div>
+            </div>
+        </div>
+
+     </div>
+     <div class="row">
+        <div class="col-md-12">
+            <p class="text-center mt-3" style="color: black;font-weight: bold;" >Select Authority Number</p>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" style="background-color: #8C894C;border: 1px solid #676C3D;" formControlName="authorityNumber" name="authorityNumber" placeholder="Authority Number" [ngClass]="{ 'is-invalid': submitted && validators.authorityNumber.errors}" required>
+            </div>
+             <div *ngIf="submitted && validators.authorityNumber.errors" class="invalid-feedback">
+                <div *ngIf="validators.authorityNumber.errors.required ">Field is required</div>
+            </div>
+        </div>
+     </div>
+     <div class="row">
+        <div class="col-md-12">
+            <p class="text-center mt-3" style="color: black;font-weight: bold;" >Issue Control Number</p>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control"  style="background-color: #8C894C;border: 1px solid #676C3D;"formControlName="issueControlName" placeholder="Issue Control" name="issueControlName" [ngClass]="{ 'is-invalid': submitted && validators.issueControlName.errors}">
+           </div>
+           <div *ngIf="submitted && validators.issueControlName.errors" class="invalid-feedback">
+            <div *ngIf="validators.issueControlName.errors.required ">Field is required</div>
+        </div>
+        </div>
+     </div>
+     <div class="row">
+        <div class="col-md-12">
+            <p class="text-center mt-3" style="color: black;font-weight: bold;" >Authority For Issue </p>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" style="background-color: #8C894C;border: 1px solid #676C3D;" formControlName="authorityForIssue" placeholder="Authority For issue" name="authorityForIssue" [ngClass]="{ 'is-invalid': submitted && validators.authorityForIssue.errors}">
+            </div>
+            <div *ngIf="submitted && validators.authorityForIssue.errors" class="invalid-feedback">
+                <div *ngIf="validators.authorityForIssue.errors.required ">Field is required</div>
+            </div>
+        </div>
+     </div>
+     <div  class="row">
+         <div class="col-md-12">
+            <div class="form-group">
+                <a (click)="Image.click()" class="btn rounded-pill mt-3" style="background: linear-gradient(180deg, #B7A643 0%, #8A8F35 100%); color: white;" >Upload Attachment</a>
+                <div  placeholder="Authority For issue" name="hardCopyAttachment"
+                [ngClass]="{ 'is-invalid': submitted && validators.hardCopyAttachment.errors}"></div><br>
+                <input type="file" #Image (change)="handleFileInput($event.target.files)" hidden>
+                <label for="exampleFormControlTextarea1" class="form-label"  style="color: black ; font-weight: bold;">File Name</label>
+                <label for="exampleFormControlTextarea1" class="form-label" style="float: right;color: black;font-weight: bold;">Size</label>
+                 <div  class="fileInfoBox">
+                   <div style="padding: 10px;">
+                    <span>{{filename}}</span>
+                    <span style="float: right;">{{size}}</span>
+                   </div>
+                 </div>
+                <div *ngIf="submitted && validators.hardCopyAttachment.errors" class="invalid-feedback">
+                <div *ngIf="validators.hardCopyAttachment.errors.required ">Field is required</div>
+            </div>
+            </div>
+
+         </div>
+     </div>
+       <div class="row">
+           <div class="col-md-3">
+
+           </div>
+        <div class="col-md-3 " style="float: right;">
+            <button type="submit" class="btn rounded-pill" style="background: linear-gradient(180deg, #B7A643 0%, #8A8F35 100%);color: white;"
+                  >Submit</button>
+
+        </div>
+       </div>
+   </form>
+</p-dialog> -->

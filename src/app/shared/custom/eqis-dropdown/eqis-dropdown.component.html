@@ -1,0 +1,10 @@
+<button type="button" (click)="toggleDropdownList()" class="btn nav-btn {{isActive?'active':''}}" >
+    <i class="fa {{icon}}"></i>
+    {{title}}
+    <i class="fa fa-caret-down" *ngIf="data && data.length>0"></i>
+</button>
+<ul class="eqis-dropdown-list" *ngIf="showDropdownList">
+    <li *ngFor="let item of data" (click)="itemClick(item)" style="cursor: pointer;">
+        <span id="{{item.value}}">{{item.text}}</span>
+    </li>
+</ul>

@@ -1,0 +1,71 @@
+<!-- <div appBsModal #createOrEditModal="bs-modal" class="modal fade" tabindex="-1" role="dialog"
+     aria-labelledby="createOrEditModal" aria-hidden="true" [config]="{backdrop: 'static', keyboard: !saving}">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <form *ngIf="active" #manufacturerForm="ngForm" novalidate (ngSubmit)="save()">
+                <div class="modal-header">
+                    <h4 class="modal-title">
+                        <span *ngIf="manufacturer.id">{{"EditManufacturer" | localize}}: {{manufacturer.name}}</span>
+                        <span *ngIf="!manufacturer.id">{{"CreateManufacturer" | localize}}</span>
+                    </h4>
+                    <button type="button" class="close" (click)="close()" [attr.aria-label]="l('Close')"
+                            [disabled]="saving">
+                        <i aria-hidden="true" class="ki ki-close"></i>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <tabset>
+                        <tab class="pt-5" heading="{{'ManufacturerInformation' | localize}}">
+                            <div class="form-group">
+                                <label for="Name">{{"Name" | localize}} *</label>
+                                <input id="Name" #nameInput="ngModel" class="form-control" type="text" name="Name"
+                                       [(ngModel)]="manufacturer.name" required maxlength="64">
+                                <validation-messages [formCtrl]="nameInput"></validation-messages>
+                            </div>
+                            <div class="form-group">
+                                <label for="Address">{{"Address" | localize}} *</label>
+                                <input class="form-control" [(ngModel)]="manufacturer.address" name="Address" id="Address" #placesRef="ngx-places" ngx-google-places-autocomplete (onAddressChange)="handleAddressChange($event)" required />
+                            </div>
+                            <div class="form-group">
+                                <label for="EmailAddress">{{"EmailAddress" | localize}} *</label>
+                                <input id="EmailAddress" #emailAddressInput="ngModel" type="email" name="EmailAddress"
+                                       class="form-control" [(ngModel)]="manufacturer.email" required maxlength="256"
+                                       email/>
+                                <validation-messages [formCtrl]="emailAddressInput"></validation-messages>
+                            </div>
+                            <div class="form-group">
+                                <label for="PhoneNumber">{{"PhoneNumber" | localize}}</label><br>
+                                <ngx-intl-tel-input
+                                    [enableAutoCountrySelect]="true"
+                                    [enablePlaceholder]="true"
+                                    [searchCountryFlag]="true"
+                                    [phoneValidation]="true"
+                                    [separateDialCode]="true"
+                                    [numberFormat]="phoneNumberFormat.National"
+                                    id="PhoneNumber"
+                                    name="PhoneNumber"
+                                    [(ngModel)]="manufacturer.phoneNumber"
+                                >
+                                </ngx-intl-tel-input>
+                            </div>
+                            <div class="checkbox-list">
+                                <label for="EditManufacturer_IsActive" class="checkbox">
+                                    <input id="EditManufacturer_IsActive" type="checkbox" name="IsActive" [(ngModel)]="manufacturer.isActive">
+                                    <span></span>
+                                    {{"Active" | localize}}
+                                </label>
+                            </div>
+                        </tab>
+                    </tabset>
+                </div>
+                <div class="modal-footer">
+                    <button [disabled]="saving" type="button" class="btn btn-light-primary font-weight-bold"
+                            (click)="close()">{{"Cancel" | localize}}</button>
+                    <button type="submit" class="btn btn-primary font-weight-bold" [disabled]="!manufacturerForm.form.valid"
+                            [buttonBusy]="saving" [busyText]="l('SavingWithThreeDot')"><i class="fa fa-save"></i>
+                        <span>{{"Save" | localize}}</span></button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div> -->

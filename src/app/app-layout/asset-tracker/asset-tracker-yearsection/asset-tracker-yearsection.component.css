@@ -1,0 +1,301 @@
+
+.header{
+    display: flex;
+    color: #FF6C88;
+    border-bottom: 3px solid #FF6C88;
+    justify-content: center;
+   align-items: center;
+   width: 100%;
+   
+  }
+  .heading{
+    display: flex;
+    margin-top: 30px;   
+    text-transform: uppercase;
+    font-size: 17px;
+    font-weight: 500;
+}
+ .icon-after-headings{
+  width: 18px;
+  height: 18px; 
+  margin-top: 25px;
+  margin-left: .5rem;
+  align-self: center;
+}
+
+.dashboard{
+    display: flex;
+    flex-direction: row;
+    margin-top: 3rem;
+    gap: 3px;
+}
+.dashboard button{
+    width: 135px;
+    height: 65px;
+    position: relative;
+}
+.down-arrow{
+   background-color: rgb(111, 111, 206); 
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    padding: 2px;
+    border:1px solid rgb(111, 111, 206);
+    align-self: center;
+  }
+.btn-bur{
+    font-weight: 700;
+    background-color: #F5E6B0;
+    border: 1px solid #F5E6B0;
+    border-radius: .6rem;
+    font-size: 12px;
+    padding-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    padding-right: 50px;
+
+}
+.btn-sh{
+    font-weight: 700;
+    background-color: #bcbae7;
+    border: 1px solid #bcbae7;
+    border-radius: .6rem;
+    font-size: 12px;
+    padding: 1rem;
+    display:flex;
+    justify-content: center;
+    align-items: end;
+    padding-right: 50px;
+
+}
+.btn-ar{
+    
+    background-color: rgb(240, 198, 115);
+    border: 1px solid rgb(241, 201, 126);
+    border-radius: .6rem;
+    font-size: 12px;
+    display:flex;
+    justify-content: start;
+    align-items: end;
+    text-align: start;
+    font-weight: 700;
+    padding: 2px;
+}
+.armed_robbery{
+    position: absolute;
+    top: 25%;
+    right: 5%;
+    height: 20px;
+    width: 20px;
+}
+.btn-th{
+    font-weight: 700;
+    background-color: #B9F3FF;
+    border: 1px solid #B9F3FF;
+    border-radius: .6rem;
+    font-size: 12px;
+    padding: 1rem;
+    display:flex;
+    justify-content: center;
+    align-items: end;
+    padding-right: 50px;
+
+}
+.btn-ot{
+    font-weight: 700;
+    background-color: rgb(221, 142, 154);
+    border: 1px solid rgb(196, 151, 158);
+    border-radius: .6rem;
+    font-size: 12px;
+    padding: 1rem;
+    display:flex;
+    justify-content: center;
+    align-items: end;
+    padding-right: 50px;
+    position: absolute;
+}
+.text{
+    
+    font-size: 14px;
+    display: flex;
+    align-items: start;
+    position: relative;
+    top: -13%;
+    left: 2%;
+}
+.text-129{
+    font-size: 14px;
+    display: flex;
+    align-items: start;
+    margin-bottom: 30px;
+    padding-right: 20px;
+    position: relative;
+    top: 9%;
+    left: 2%;
+}
+
+.btns{
+    display: flex;
+    justify-content: start;
+    margin-left: 1rem;
+    gap: 1rem;
+    margin-bottom: 30px;
+    color: white;
+}
+.b1{
+    width: 70px;
+    height: 30px;
+    background-color: #FF89A0;
+    border: 1px solid #FF89A0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    border-radius: 5px;
+}
+.b2{
+    border-radius: 5px;
+    width: 70px;
+    height: 30px;
+    background-color: lightgrey;
+    border: 1px solid lightgrey;   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+}
+.parent {
+    display: flex;
+    /* flex-direction: column; */
+    display: block;
+    border: 2px solid #FAFAFAFA;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    margin-top: 2rem;
+    padding: 1rem;
+    margin-left: .1rem;
+  }
+.child{
+    display: flex;
+    margin-bottom: 4rem;
+    gap:15px;
+    margin-left: 1rem;
+    margin-top: 3rem;
+    align-items: center;
+}
+.year-btn{
+    background-color:#FF89A0; 
+    font-size: 15px;
+    width: 130px;
+    height: 40px;
+    text-align: center;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family:  monospace;
+    border-radius: 10px;
+}
+.crime{
+    color: #FF6C88;
+    border-bottom: 2px solid #FF6C88;
+    width: 150px;
+    height: 36px;
+    font-size: 15px;
+    padding-bottom: 10px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.region{
+    color: #FF6C88;
+    border-bottom: 2px solid #FF6C88;
+    width: 120px;
+    height: 36px;
+    font-size: 15px;
+    padding-bottom: 10px;
+    font-weight: 500;
+    text-align: center;
+}
+
+/* Media Queries */
+
+@media(max-width:720px) {
+    
+    .parent{
+        width: 220%;
+        display: block;
+    }
+    .year-btn{
+        font-size: 3rem;
+        width: 18rem;
+        height: 5rem;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 5px;
+    }
+    
+    .crime{
+        width: 18rem;
+        height: 3rem;
+        font-size: 2.5rem;
+        padding-bottom: 4rem;
+    }
+    
+    .region{
+     
+        color: rgb(245, 59, 59);
+        border-bottom: 2px solid rgb(245, 59, 59);
+        width: 18rem;
+        height: 3rem;
+        font-size: 2.5rem;
+        padding-bottom: 4rem;
+    }
+
+    .btns{
+        display: flex;
+        justify-content: start;
+        margin-left: 1rem;
+        gap: 4rem;
+        margin-bottom: 2rem;
+    }
+    .b1{
+        width: 13rem;
+        height: 4rem;
+        background-color: rgb(235, 85, 85);
+        border: 1px solid rgb(235, 85, 85);
+        font-size: 2rem;
+        font-weight: 700;
+    }
+    .b2{
+        width: 13rem;
+        height: 4rem;
+        background-color: lightgrey;
+        border: 1px solid lightgrey;   
+       font-weight: 700;
+       font-size: 2rem;
+    }
+    .heading{
+        margin-top: 1.2rem;
+        font-size: 3rem;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+
+    .dashboard button{
+        width:16rem;
+        height: 6rem;
+        padding: 1rem;
+    }
+    .btn-ar,.btn-bur,.btn-ot,.btn-th,.btn-sh{
+        font-size: 1.7rem;
+        font-weight: 600;
+    }
+    .icon-after-headings{
+        width: 2.6rem;
+        height: 2.6rem;
+      }
+}

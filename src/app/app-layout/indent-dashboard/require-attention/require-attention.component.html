@@ -1,0 +1,42 @@
+<!-- <div class="asset-monitoring-grid">
+    <div class="attention">
+        <h2 class="crit_req">Required Attention
+            <label class="red_circle">{{requiredCount}}</label>
+        </h2>
+    </div>
+    <div class="row" style="margin-top: 20px;display: block;text-align: center;">
+        <a href="javascript:void(0)"><img src="../../../../assets/images/back_.png" id="back_request" (click)="back()" style="height: 30px;width: 36px;"></a>
+        <b id="select_attension" style="width: auto;">{{tableHeading}}</b>
+        <a href="javascript:void(0)"><img src="../../../../assets/images/next_.png" id="next_request" (click)="next()" style="height: 30px;width: 36px;"></a>
+      </div>
+    <hr style="background:#FFF;">
+    <div class="asset-monitoring-grid-table">
+        <div *ngIf="isLoading" [appLoading]="isLoading">
+        </div>
+        <table *ngIf="!isLoading" class="table">
+            <thead>
+                <tr style="font-size: 15px;color: #3C5934;border: 0px transparent;/* margin-top: 35px; */">
+                    <th style="text-decoration: underline;text-underline-offset: 5px;" *ngFor="let th of tablethead">
+                        {{th}}
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of getAttentionList" style="font-size: 10px;border: 0px transparent;color: white;">
+                    <td *ngFor="let td of tabletd">
+                        {{item[listname][td]}}
+                    </td>
+                    <td>
+                        <form autocomplete="off" [formGroup]="actionForm" >
+                            <div class="col-md-12 p-0 action-btn" *ngIf="CheckApproval(item)===0">
+                                <p-dropdown [options]="actions" formControlName="action" (onChange)="actionEvent(item[listname].id,$event.value)" name="action"  optionLabel="name" styleClass="form-control actiondropdown" optionValue="id"></p-dropdown>
+                            </div>
+                            <button href="" class="approve_btn" [disabled]="true" *ngIf="CheckApproval(item)===1">Approved</button>
+                            <button href="" class="approve_btn" [disabled]="true" *ngIf="CheckApproval(item)===2">Rejected</button>
+                        </form>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div> -->

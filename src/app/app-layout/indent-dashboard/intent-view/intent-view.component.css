@@ -1,0 +1,139 @@
+
+.bg-grey-br{
+    background-color: #425a3a;
+    border: 1px solid #FFFBFB;
+}
+.f-w{
+    color: white;
+}
+.slider-item{
+   background-color:  #B7A643;
+   border-radius: 13px;
+}
+.slider-item p{
+    color: white;
+    margin: 0;
+}
+.text-center{
+    text-align: center;
+}
+/* grid */
+
+
+.rquest-item-grid tbody {
+    height: 272px;
+    background: #536E4D;
+    border-radius: 10px !important;
+}
+
+.rquest-item-grid td {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 13px;
+    line-height: 14px;
+    color: #FFFFFF;
+    background: #536E4D;
+    border: 0;
+}
+.rquest-item-grid th {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 14px;
+    color: #E8C40B;
+    z-index: 1;
+    background:#425a3a;
+    border: 0;
+}
+.bg-yellow{
+    background: #E49E0C !important;
+}
+.p-divider-vertical.p-divider-center{
+    margin: 0 !important;
+}
+.gradient-y{
+    background: linear-gradient(180deg, rgba(88, 94, 52, 0.66) 13.87%, rgba(183, 166, 67, 0.4752) 117.52%);
+    border-radius: 6px;
+}
+.f-s8{
+    font-size: 0.8vw;
+}
+.f-s9{
+    font-size: 0.9vw;
+}
+.reason-intent{
+    background: #5A9366;
+    text-align: center;
+    border-radius: 8px;
+}
+.reason-intent span{
+    color: black;
+    font-family: Noto sans-serif;
+    font-size: 39px;
+    font-weight: 600;
+}
+.reply{
+color: #BCFF43;
+font-size: 15px;
+}
+.priority_circle {
+    width: 25px;
+    margin-right: 10px;
+    height: 25px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    color: white;
+    border: 1px solid #FFA600;
+}
+.priority_circle.active {
+    background-color: #FFA600;
+
+}
+.voucherType .active .hr{
+    background: #7ffe74;
+    height: 1px;
+    margin: 1px;
+    display: block;
+}
+.voucherType .active p{
+    color: #7ffe74;
+}
+.voucherType .hr{
+    display: none;
+}
+.voucherType p{
+    font-size: 0.8vw;
+}
+.plus-round-btn{
+    width: 36px;
+    border-radius: 63px;
+    background: #B7A643;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.4), -5px 0px 10px rgba(0, 0, 0, 0.4);
+}
+.comment-textarea textarea,.parent-comment textarea{
+    width: 100%;
+    background: linear-gradient(180deg, rgba(88, 94, 52, 0.66) 13.87%, rgba(183, 166, 67, 0.4752) 117.52%);
+    border-radius: 6px;
+    color:white;
+}
+.comment-textarea a,.parent-comment a{
+    background: #B7A643;
+    border-radius: 7px;
+}
+.parent-comment textarea{
+    padding:17px;
+}
+.remarks textarea{
+    width: 100%;
+    background: #1E5C24;
+    border-radius: 6px;
+    padding: 17px;
+    color:white;
+}
+.remarks a{
+    background: #1E5C24;
+    border-radius: 7px;
+}

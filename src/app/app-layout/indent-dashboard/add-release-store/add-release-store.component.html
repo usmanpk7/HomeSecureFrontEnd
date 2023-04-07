@@ -1,0 +1,93 @@
+<!-- <p-dialog header="STORE RELEASE" [(visible)]="displayResponsive" style="color: #FFF; font-size:30px">
+    <div style="width:900px">
+        <form autocomplete="off" [formGroup]="createStoreReleaseDispatch" class="createform" style="padding: 20px;">
+        <div class="row">
+            <div class="col-md-4">
+                <h5 class="text-center mt-3" style="text-align: left !important;">confirmedQty</h5>
+            </div>
+            <div class="col-md-2">
+            </div>
+            <div class="col-md-3">
+            </div>
+            <div class="col-md-3">
+                <div class="col-md-6">
+                    <label for="Yes" class="ml-2 mr-2 color-w" id="yes-label" >Yes</label>
+                    <input type="radio" id="Yes" value="true"  formControlName="confirmedQty">
+                </div>
+                <div class="col-md-6">
+                    <label for="False" class="ml-2 mr-2 color-w" id="no-label"  >False</label>
+                    <input type="radio" id="False" value="false" formControlName="confirmedQty">
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-md-4">
+                <h5 class="text-center mt-3" style="text-align: left !important;">confirmedQtyWeight</h5>
+            </div>
+            <div class="col-md-2">
+            </div>
+            <div class="col-md-3">
+            </div>
+            <div class="col-md-3">
+                <div class="col-md-6">
+                    <label for="Yes" class="ml-2 mr-2 color-w" id="yes-label" >Yes</label>
+                    <input type="radio" id="Yes" value="true"  formControlName="confirmedQtyWeight">
+                </div>
+                <div class="col-md-6">
+                    <label for="False" class="ml-2 mr-2 color-w" id="no-label"  >False</label>
+                    <input type="radio" id="False" value="false" formControlName="confirmedQtyWeight">
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-md-3">
+                <h5 class="text-center mt-3" style="text-align: left !important;">qtyNumberConfirmed</h5>
+            </div>
+            <div class="col-md-3">
+            </div>
+            <div class="col-md-3">
+            </div>
+            <div class="col-md-3">
+                <input type="text" class="form-control color-w" id="qtyNumberConfirmed" formControlName="qtyNumberConfirmed" rows="4" f>
+                <span class="text-danger ml-3" *ngIf="submitted && createStoreReleaseDispatch.value.qtyNumberConfirmed ==='true'  && isValid(createStoreReleaseDispatch.controls.qtyNumberConfirmed)" >
+                    This field is required</span>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-md-3">
+                <h5 class="text-center mt-3" style="text-align: left !important;">qtyWeightConfirmed</h5>
+            </div>
+            <div class="col-md-3">
+            </div>
+            <div class="col-md-3">
+            </div>
+            <div class="col-md-3">
+                <input type="text" class="form-control color-w" id="qtyWeightConfirmed" formControlName="qtyWeightConfirmed" rows="4" f>
+                <span class="text-danger ml-3" *ngIf="submitted && createStoreReleaseDispatch.value.qtyWeightConfirmed ==='true'  && isValid(createStoreReleaseDispatch.controls.qtyWeightConfirmed)" >
+                    This field is required</span>
+            </div>
+        </div>
+        <hr>
+        <br>
+        <div class="row">
+            <div class="col-md-3">
+            </div>
+            <div class="col-md-3">
+            </div>
+            <div class="col-md-3">
+            </div>
+            <div class="col-md-3">
+                <div>
+                    <button type="button" class="btn dangers" (click)="close()">Cancel</button>
+                    <button type="submit" class="btn primary1"  [disabled]="issubmitted" (click)="submit()">{{btnText}}</button>
+                </div>
+            </div>
+        </div>
+        </form>
+    </div>
+</p-dialog>
+
+ -->

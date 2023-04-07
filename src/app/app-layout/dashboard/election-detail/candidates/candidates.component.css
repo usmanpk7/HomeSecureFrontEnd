@@ -1,0 +1,204 @@
+::ng-deep .p-tabview-title {
+    line-height: 1;
+    font-family: 'Inter' !important;
+    font-weight: 700 !important;
+    font-size: 15px !important;
+    align-items: center !important;
+    color: #6966FF !important;
+    cursor: pointer;
+}
+
+::ng-deep .p-tabview .p-tabview-nav li .p-tabview-nav-link {
+    background: #F0EEFC !important;
+    border-radius: 5px !important;
+}
+
+::ng-deep .p-tabview .p-tabview-nav li.p-highlight .p-tabview-nav-link {
+    background: #ffffff;
+    border-color: #0078d4 !important;
+    border: 1px solid #0078d4 !important;
+    color: #0078d4 !important; 
+}
+
+::ng-deep ul.p-tabview-nav li:first-child span {
+    background-image: url(/assets/svgfortabs/how_to_vote.svg) !important;
+    background: no-repeat;
+    padding-left: 22px;
+    background-size: 12px;
+  }
+  ::ng-deep ul.p-tabview-nav li:nth-child(2) span {
+    background-image: url(/assets/svgfortabs/how_to_vote.svg) !important;
+    background: no-repeat;
+    padding-left: 22px;
+    background-size: 12px;
+  }
+  ::ng-deep ul.p-tabview-nav li:nth-child(3) span {
+    background-image: url(/assets/svgfortabs/local_pharmacy.svg) !important;
+    background: no-repeat;
+    padding-left: 22px;
+    background-size: 12px;
+  }
+  ::ng-deep ul.p-tabview-nav li:nth-child(4) span {
+    background-image: url(/assets/svgfortabs/local_pharmacy.svg) !important;
+    background: no-repeat;
+    padding-left: 22px;
+    background-size: 12px;
+  }
+  ::ng-deep ul.p-tabview-nav li:nth-child(5) span {
+    background-image: url(/assets/svgfortabs/woman.svg) !important;
+    background: no-repeat;
+    padding-left: 22px;
+    background-size: 9px;
+  }
+  ::ng-deep ul.p-tabview-nav li:nth-child(6) span {
+    background-image: url(/assets/svgfortabs/woman.svg) !important;
+    background: no-repeat;
+    padding-left: 22px;
+    background-size: 9px;
+  }
+  ::ng-deep ul.p-tabview-nav li:nth-child(7) span {
+    background-image: url(/assets/svgfortabs/video_call.svg) !important;
+    background: no-repeat;
+    padding-left: 22px;
+    background-size: 15px;
+  }
+  ::ng-deep ul.p-tabview-nav li:nth-child(8) span {
+    background-image: url(/assets/svgfortabs/multiline_chart.svg) !important;
+    background: no-repeat;
+    padding-left: 22px;
+    background-size: 15px;
+  }
+  .text-custom-dark{
+    font-size: 11px; 
+    font-weight: 500;
+    color: #000000;
+  }
+
+  #GIS5:checked + .dropdown {
+    background: #FF6C88 !important;
+    border-radius: 5px !important;
+}
+#GIS5:checked + .dropdown .election-category-title {
+    color: #FFFFFF !important;
+}
+#GIS5:checked + .dropdown .election-category-title .fas {
+  color: #FFFFFF !important;
+}
+
+#MAP5:checked + .dropdown {
+    background: #FF6C88 !important;
+    border-radius: 5px !important;
+}
+#MAP5:checked + .dropdown .election-category-title {
+    color: #FFFFFF !important;
+}
+#MAP5:checked + .dropdown .election-category-title .fas {
+  color: #FFFFFF !important;
+}
+
+.dropdown .election-category-title {
+    line-height: 1 !important;
+    font-family: 'Inter' !important;
+    font-weight: 700 !important;
+    font-size: 0.7rem !important;
+    align-items: center !important;
+    color: #FF6C88 !important;
+    cursor: pointer;
+}
+.dropdown {
+    border-bottom: 3px solid #FF6C88 !important;
+}
+
+.dropdown2 .election-category-title2 {
+  line-height: 1 !important;
+  font-family: 'Inter' !important;
+  font-weight: 700 !important;
+  font-size: 0.7rem !important;
+  align-items: center !important;
+  color: #FF5575 !important;
+  cursor: pointer;
+}
+.dropdown2 {
+  border: 3px solid #FF5575 !important;
+  background-color: #FFD8DF;
+  border-radius: 5px !important;
+}
+
+#CandidateFilters:checked + .dropdown2 {
+  background: #FF6C88 !important;
+  border-radius: 5px !important;
+  border-bottom: 3px solid #FF5575 !important;
+}
+#CandidateFilters:checked + .dropdown2 .election-category-title2 {
+  color: #FFFFFF !important;
+}
+#CandidateFilters:checked + .dropdown2 .election-category-title2 .fas {
+  color: #FFFFFF !important;
+}
+
+.visually-hidden {
+    position: absolute;
+    left: -100vw;   
+}
+
+.text-custom-danger {
+    color: #FF6C88 !important;
+}
+
+.text-custom-primary {
+    color: #6966FF !important;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+  }
+  .switch-input {
+    display: none;
+  }
+  .switch-label {
+    display: block;
+    width: 48px;
+    height: 24px;
+    text-indent: -150%;
+    clip: rect(0 0 0 0);
+    color: transparent;
+    user-select: none;
+  }
+  .switch-label::before,
+  .switch-label::after {
+    content: "";
+    display: block;
+    position: absolute;
+    cursor: pointer;
+  }
+  .switch-label::before {
+    width: 100%;
+    height: 100%;
+    background-color: #dedede;
+    border-radius: 9999em;
+    -webkit-transition: background-color 0.25s ease;
+    transition: background-color 0.25s ease;
+  }
+  .switch-label::after {
+    top: 0;
+    left: 0;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: #fff;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.45);
+    -webkit-transition: left 0.25s ease;
+    transition: left 0.25s ease;
+  }
+  .switch-input:checked + .switch-label::before {
+    background-color: #6751ED;
+  }
+  .switch-input:checked + .switch-label::after {
+    left: 24px;
+  }
+
+  .map-div {
+    width: 100%; 
+    height: calc(80vh)
+  }

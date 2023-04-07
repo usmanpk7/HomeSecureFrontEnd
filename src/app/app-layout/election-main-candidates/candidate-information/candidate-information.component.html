@@ -1,0 +1,238 @@
+<div class="row">
+    <div class="col-md-3">
+        <div class="card bg-custom">
+            <div class="card-body p-3">
+                <div class="row">
+                    <div class="col-md-6 pl-5 pt-3">
+                        <h5 class="text-custom-top-parties-dark">Ranking
+                        </h5>
+                    </div>
+                    <div class="col-md-6 pl-0 mb-3">
+                        <div class="dropdown-multiple">
+                            <a id="dLabel" role="button" data-toggle="dropdown" class="btn btn-sm" data-target="#" href="#">
+                                <span class="dd-custom font-bold">Filters <span class="text-custom-dangerlight">(Lagos)</span> </span><i class="fas fa-ellipsis-v dd-custom ml-3"></i>
+                            </a>
+                            <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+                                <li class="dropdown-submenu">
+                                    <a href="javascript:void(0)">Country</a>
+                                    <ul class="dropdown-menu">
+                                        <li *ngFor="let item of tableCountryResult">
+                                            <a tabindex="-1" href="javascript:void(0)">
+                                                {{item}}
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown-submenu">
+                                    <a href="javascript:void(0)">State</a>
+                                    <ul class="dropdown-menu">
+                                        <li *ngFor="let item of tableStatePostResult">
+                                            <a tabindex="-1" href="javascript:void(0)">
+                                                {{item}}
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown-submenu">
+                                    <a href="javascript:void(0)">Local Council</a>
+                                    <ul class="dropdown-menu">
+                                        <li *ngFor="let item of tableLocalCouncilResult">
+                                            <a tabindex="-1" href="javascript:void(0)">
+                                                {{item}}
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown-submenu">
+                                    <a href="javascript:void(0)">Wards</a>
+                                    <ul class="dropdown-menu">
+                                        <li *ngFor="let item of tableWardResult">
+                                            <a tabindex="-1" href="javascript:void(0)">
+                                                {{item}}
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown-submenu">
+                                    <a href="javascript:void(0)">Polling Unit</a>
+                                    <ul class="dropdown-menu">
+                                        <li *ngFor="let item of tablePostResult">
+                                            <a tabindex="-1" href="javascript:void(0)">
+                                                {{item}}
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-12 ml-2 mb-5 bb1-primary"></div>
+                    <div class="col-md-10">
+                        <h6 class="fs-09 mt-3">Scrol to View More</h6>
+                    </div>
+                    <div class="col-md-1">
+                        <i class="fa fa-arrow-up text-custom-primary"></i>
+                        <i class="fa fa-arrow-down text-custom-primary"></i>
+                    </div>
+                    <div class="col-md-12 mt-3 mb-3">
+                        <div class="btn-group" role="group" aria-label="Basic example">
+                            <button type="button" class="btn btn-primary ml-2">Tag 1</button>
+                            <button type="button" class="btn btn-primary ml-2">Tag 2</button>
+                            <button type="button" class="btn btn-primary ml-2">Tag 3</button>
+                          </div>
+                    </div>
+                    <div class="col-md-12 mb-3">
+                        <div class="card card-scrolling">
+                            <div *ngFor="let item of candidateDataArray" class="row p-3 bg-custom2 mb-3">
+                                <div class="col-md-12 mb-3">
+                                    <button class="btn btn-sm btn-block btn-primary">{{item.rankingStatusString}}</button>
+                                </div>
+                                <div class="col-md-6 text-center">
+                                    <p class="text-primary mb-1">Latest Count</p>
+                                </div>
+                                <div class="col-md-6 text-center">
+                                    <img class="navbar-img br-50" width="20" src="{{item.partyPhoto}}">
+                                    <p class="text-dark mb-1"><b>{{item.totalElectionCandidateVote}}</b></p>
+                                </div>
+                                <div class="col-md-12 ml-4">
+                                    <p class="text-primary mb-1">{{item.candidateName}} <img width="15" class="navbar-img" src="{{item.candidatePhoto}}"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div *ngFor="let item of candidateDataArray" class="col-md-3">
+        <div class="card bg-custom">
+            <div class="card-body p-3">
+                <div class="row">
+                    <div class="col-md-12 mb-2">
+                        <button class="btn btn-sm btn-block text-white bg-custom-danger">{{item.rankingStatusString}}</button>
+                    </div>
+                    <div class="col-md-12 text-center">
+                        <img class="navbar-img br-50" height="150" width="170" src="{{item.candidatePhoto}}">
+                    </div>
+                    <div class="col-md-12">
+                        <div class="card bg-custom2">
+                            <div class="card-body p-2">
+                                <div class="row ">
+                                    <div class="col-md-12">
+                                        <p class="text-dark mb-1">{{item.candidateName}} <img width="20" class="navbar-img" src="{{item.partyPhoto}}"></p>
+                                        <p class="text-primary mb-1">Candidate Total Vote <span class="text-dark"><b>{{item.totalElectionCandidateVote}}</b></span></p>
+                                    </div>
+                                    <div class="col-md-10">
+                                        <input type="range" value="{{item.totalVotePercentage}}" min="0" max="100" class="slider" id="customRange1">
+                                    </div>
+                                    <div class="col-md-2 pl-0 text-right">
+                                        <h6 class="text-dark fs-08">
+                                            {{item.totalVote}}
+                                        </h6>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <h6 class="text-custom-primary fs-08">
+                                            <b>Win Stattistics</b>
+                                        </h6>
+                                    </div>
+                                    <div class="col-md-7">
+                                        <h6 class="text-dark fs-06">Top Vote Region
+                                            <span class="float-right text-custom-primary">{{candidateDataArray[0]?.largestRegionName}}</span>
+                                        </h6>
+                                        <h6 class="text-dark fs-06">Lowest Vote Region
+                                            <span class="float-right text-custom-primary">{{candidateDataArray[0]?.smallestRegionName}}</span>
+                                        </h6>
+                                        <h6 class="text-dark fs-06">Other Information
+                                            <span class="float-right text-custom-primary">BENIN CITY</span>
+                                        </h6>
+                                        <h6 class="text-dark fs-06">Other Information
+                                            <span class="float-right text-custom-primary">BENIN CITY</span>
+                                        </h6>
+                                    </div>
+                                    <div class="col-md-5">
+                                        <h6 class="text-custom-primary fs-06">State:
+                                            <span class="float-right text-dark">{{item.totalElectionStateLink}}</span>
+                                        </h6>
+                                        <h6 class="text-custom-primary fs-06">Local Council:
+                                            <span class="float-right text-dark">{{item.totalElectionLocalCouncilLink}}</span>
+                                        </h6>
+                                        <h6 class="text-custom-primary fs-06">Ward:
+                                            <span class="float-right text-dark">{{item.totalElectionWardLink}}</span>
+                                        </h6>
+                                        <h6 class="text-custom-primary fs-06">Polling Unit:
+                                            <span class="float-right text-dark">{{item.totalElectionPollingUnitLink}}</span>
+                                        </h6>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <a routerLink="/home/dashboard"><i class="fas fa-external-link-alt ml-3 text-custom-danger"></i>Back</a>
+                    <div class="col-md-12">
+                        <div class="dropdown" style="cursor: pointer;">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Select Election Territory <span class="fa fa-arrow-down"> </span>
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <span class="dropdown-item" (click)="GetStateVOte('country')">Country</span>
+                                <span class="dropdown-item" (click)="GetStateVOte('state')">State</span>
+                                <span class="dropdown-item" (click)="GetStateVOte('localcouncil')">Local Council</span>
+                                <span class="dropdown-item" (click)="GetStateVOte('ward')">Ward</span>
+                                <span class="dropdown-item" (click)="GetStateVOte('Pollingunit')">Polling Unit</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-5 pr-0 mb-3 mt-4">
+                        <button  [ngClass]="IsPollingUnit ? 'btn btn-primary btn-sm btn-block' : 'btn btn-secondary btn-sm btn-block'"  (click)="toggleIsPollingUnit()">Result By  Polling Unit</button>
+                    </div>
+                    <div class="col-md-7 mt-4">
+                        <button [ngClass]="IsPollingUnit ? 'btn btn-secondary btn-sm btn-block' : 'btn btn-primary btn-sm btn-block'"  (click)="toggleIsPollingUnit()">Result By Region</button>
+                    </div>
+                    <div class="col-md-12 mb-3">
+                        <div class="card card-scrolling2 bg-custom">
+                            <div *ngFor="let obj of tableStatePostResult" class="row mt-3">
+                                     <ng-container *ngIf="!IsPollingUnit">
+                                <div class="col-md-2 pr-0">
+                                    <h6 class="text-dark fs-07">
+                                        <b>{{obj.electionRegion}}</b>
+                                    </h6>
+                                </div>
+                                <div class="col-md-8">
+                                    <input type="range" [value]="obj.totalElectionCandidateVotePercentage" min="0" max="100" class="slider" id="customRange1">
+                                </div>
+                                <div class="col-md-2 pl-0 text-right">
+                                    <h6 class="text-dark fs-07">
+                                        <b>{{obj.totalValidVote}}</b>
+                                    </h6>
+                                </div>
+                            </ng-container>
+                                 </div>
+
+                            <div *ngFor="let obj of tablePostResult" class="row mt-3">
+                                      <ng-container *ngIf="IsPollingUnit">
+                                <div class="col-md-2 pr-0">
+                                    <h6 class="text-dark fs-07">
+                                        <b>{{obj.electionPollingUnitName}}</b>
+                                    </h6>
+                                </div>
+                                <div class="col-md-8">
+                                    <input type="range" [value]="obj.totalElectionCandidateVotePercentage" min="0" max="100" class="slider" id="customRange1">
+                                </div>
+                                <div class="col-md-2 pl-0 text-right">
+                                    <h6 class="text-dark fs-07">
+                                        <b>{{obj.totalPollingUnitVote}}</b>
+                                    </h6>
+                                </div>
+                            </ng-container>
+                                 </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

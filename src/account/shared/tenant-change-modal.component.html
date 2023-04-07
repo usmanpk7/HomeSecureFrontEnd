@@ -1,0 +1,105 @@
+<style>
+    .spinner-img {
+        height: 20vh;
+        width: 20vh;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+
+    }
+</style>
+
+<div appBsModal #tenantChangeModal="bs-modal" (onShown)="onShown()" class="modal fade" tabindex="-1" role="dialog"
+    aria-labelledby="tenantChangeModal" aria-hidden="true" [config]="{backdrop: 'static'}">
+
+    <div class="modal-dialog" style="padding-top: 16%;">
+        <div class="modal-content">
+
+            <form *ngIf="active" #changeTenantForm="ngForm" novalidate (ngSubmit)="save()"
+                class="form form-label-right">
+
+                <div class="modal-header" style="background: #FAFAFF;">
+                    <button (mouseover)="changeStyleIn($event)" (mouseout)="changeStyleOut($event)"
+                        style="background: #ffffff;border-bottom-color: #FF6C88;width:450px" [disabled]="saving"
+                        type="button" class="btn btn-light-primary font-weight-bold" (click)="close()">
+                        <span style="color:#FF6C88;font-size:bolder"> {{"SWITCH TO OTHER TENANT" | localize}} </span>
+                    </button>
+                </div>
+
+                <div class="modal-body" style="background: #FAFAFF;">
+                    <div class="form-group row text-left mb-0">
+                        <span style="color: #6751ED;font-weight: bolder;font-family: Inter;"
+                            class="col-4 col-form-label">{{"CURRENT TENANT" | localize}}</span>
+                        <div class="col offset-5">
+                            <span class="switch switch-icon">
+                                <label>
+                                    <input checked="checked" name="SwitchToTenant" type="checkbox"
+                                        [(ngModel)]="isSwitchToTenant" (change)="switchToTenant($event)"
+                                        value="{{isSwitchToTenant ? ' true' : 'false'}}">
+                                    <span> </span>
+                                </label>
+                            </span>
+                        </div>
+                    </div>
+                    <span style="color:#7966FF;font-size:12px">{{tenancyName}}</span>
+                    <div *ngIf="loading" style="position: relative;z-index: 50000;opacity: 2;">
+                        <img class="spinner-img" src="../assets/loader.gif">
+                    </div>
+                    <div class="form-group mb-0 mt-5">
+                        <span style="color: 6751ED;font-weight: bolder;font-family: Inter;">{{"TENANCY NAME" |
+                            localize}}</span>
+                        <label class="col-10">
+                            <!-- <input #passwordInput="ngModel" [(ngModel)]="loginService.authenticateModel.password" style="margin-top: 5px; font-size: 14px !important;line-height: 20px;"
+                            class="input-form-control form-control form-control h-auto  px-6 rounded-lg font-size-h6 logininputStyle" type="password"
+                            autocomplete="new-password" placeholder="{{'Input Field' | localize}} " name="password" required
+                            maxlength="32" /> -->
+
+                            <input style="border-color: #7966FF;margin-left:-12px" #tenancyNameInput="ngModel"
+                                type="text" id="tenancyNameInput" name="tenancyNameInput"
+                                class="input-form-control form-control form-control h-auto  px-6 rounded-lg font-size-h6 logininputStyle mt-3"
+                                [ngClass]="{'edited':tenancyName}" [(ngModel)]="tenancyName"
+                                [disabled]="!isSwitchToTenant" required
+                                placeholder="{{isSwitchToTenant ? ('EnterTenancyName' | localize) : ''}}"
+                                maxlength="64">
+
+                            <span *ngIf="isSwitchToTenant && !tenancyNameInput.pristine && !tenancyName"
+                                class="form-text text-danger text-left">
+                                {{"TenancyNameRequired" | localize}}
+                            </span>
+                        </label>
+                        <button
+                            style=" background-color: #E2E1FF;border-color:#6751ED;color:#6751ED;padding:3px;font-family: Inter"
+                            type="button" class="col-2 btn">
+                            {{"BUTTON" | localize}} <span class="fa fa-map-marker "></span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="modal-footer" style="background: #FAFAFF;">
+                    <div class="row col-12">
+                        <div class="col-6">
+                            <button style="background-color: #FF6C88;color:#F0EEFC;border: none;width: 181px" [disabled]="saving" type="button" class="btn btn-primary font-weight-bold"
+                                (click)="close()">
+                                {{"Cancel" | localize}}
+                            </button>
+                        </div>
+                        <div class="col-6">
+                            <button (click)="save()" style="background-color: #8574F1;color:#F0EEFC;" type="button"
+                                class="btn eqis-login-btn font-weight-bold save-button"
+                                [disabled]="!changeTenantForm.form.valid" [buttonBusy]="saving"
+                                [busyText]="l('ProcessingWithThreeDot')">
+                                <i class="fa fa-arrow-circle-right"></i>
+                                <span>SWITCH TO OTHER MODULE</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+</div>

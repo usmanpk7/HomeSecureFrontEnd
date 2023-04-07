@@ -1,0 +1,33 @@
+<div class="col-md-12 pt-5">
+    <eqis-dropdown
+        [isActive]="tab == 1 ? 'true' : ''"
+        id="tab1"
+        class="equis-btn2"
+        [title]="'Warehouse-List'"
+        (click)="onTabChange($event)"
+    ></eqis-dropdown>
+    <eqis-dropdown
+        [isActive]="tab == 2 ? 'true' : ''"
+        id="tab2"
+        class="equis-btn2"
+        [title]="'Rack-List'"
+        (click)="onTabChange($event)"
+    ></eqis-dropdown>
+    <eqis-dropdown
+        [isActive]="tab == 3 ? 'true' : ''"
+        id="tab3"
+        class="equis-btn2"
+        [title]="'RackCompartment-List'"
+        (click)="onTabChange($event)"
+    ></eqis-dropdown>
+</div>
+
+<div class="col-md-12" *ngIf="tab === 1">
+    <app-warehouse-list #search></app-warehouse-list>
+</div>
+<div class="col-md-12" *ngIf="tab === 2">
+    <app-rack-list #search></app-rack-list>
+</div>
+<div class="col-md-12" *ngIf="tab === 3">
+    <app-rack-compartment-list #search></app-rack-compartment-list>
+</div>

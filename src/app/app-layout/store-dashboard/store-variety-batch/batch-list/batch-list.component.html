@@ -1,0 +1,388 @@
+<!-- <div *ngIf="isLoading" [appLoading]="isLoading">
+</div>
+<p-table #dataTable dataKey="id" [value]="BatchListDto" [scrollable]="true" scrollHeight="400px"
+    [(rows)]="row" (onPage)="paginate($event)" [first]="first" [rowsPerPageOptions]="[5,10,15,20]"
+    [paginator]="true" [lazy]="false" rowExpandMode="single" [globalFilterFields]="['itemName','itemTypes','itemCategory']">
+      <ng-template pTemplate="header" style="text-align: center;">
+
+        <tr>
+            <th class="gridheader" colspan="3">Tools</th>
+            <th class="gridheader" pSortableColumn="intentNo">
+                SnCode
+                <p-sortIcon field="intentNo"></p-sortIcon>
+            </th>
+            <th class="gridheader" pSortableColumn="controlNumber">
+                Store Name
+                <p-sortIcon field="controlNumber"></p-sortIcon>
+            </th>
+            <th class="gridheader" pSortableColumn="voucherToType">Store Type
+                <p-sortIcon field="voucherToType"></p-sortIcon>
+            </th>
+            <th class="gridheader" pSortableColumn="AKADA">
+                Store Category
+                <p-sortIcon field="AKADA"></p-sortIcon>
+            </th>
+            <th class="gridheader" pSortableColumn="reasonForIndent">
+                Depot
+                <p-sortIcon field="reasonForIndent"></p-sortIcon>
+            </th>
+            <th class="gridheader" pSortableColumn="reasonForIndent">
+                Quantity
+                <p-sortIcon field="reasonForIndent"></p-sortIcon>
+            </th>
+            <th class="gridheader" colspan="3">Created By
+                <table>
+                    <tr>
+                        <th  pSortableColumn="">Name
+                        </th>
+                        <th pSortableColumn="">Role
+                        </th>
+                        <th pSortableColumn="">Date/Time
+                        </th>
+                    </tr>
+                </table>
+            </th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" style="color: white;" let-item let-expanded="expanded"
+            let-rowIndex="rowIndex">
+            <tr class="body-td" [pRowToggler]="item" [ngClass]="{
+         'sub-table-even': rowIndex % 2 == 1,
+         'sub-table-odd': rowIndex % 2 == 0}" (click)="onExpandRow(item)" role="button" aria-expanded="false"
+            aria-controls="collapseExample">
+            <td   colspan="3" style="padding-left: 16px; border-left: 0px;">
+                <div class="row">
+            <div class="col-md-6 rt-border p-0" style="text-align: center;">
+                <div class="col-md-12 p-0">
+            <p class="m-0">Variety Item</p>
+            </div>
+           <div class="col-md-12">
+            <div class="col-md-12 p-2">
+                <button
+                class="btn btn-sm btn-primary bg-grey-btn">view</button>
+        </div>
+           </div>
+        </div>
+        <div class="col-md-6 p-0" style="text-align: center;">
+              <b><p style="color: #213315;font-weight: 700;">Download</p></b>
+       <div class="row">
+        <div class="col-md-6 rt-border pr-0">
+            <img src="../../../assets/images/widget/excel-1.svg"
+            style="padding: 0px;">
+        </div>
+        <div class="col-md-6 pl-0">
+            <img src="../../../assets/images/widget/pdf-1.svg"
+            style="padding: 0px;">
+            </div>
+       </div>
+    </div>
+    </div>
+              </td>
+            <td style="border-left: 2px #213315 solid; word-break: break-all;">{{item.snCodeNo}}</td>
+            <td style="border-left: 2px #213315 solid; word-break: break-all;"> {{item.itemName}}</td>
+            <td style="border-left: 2px #213315 solid; word-break: break-all;">{{item.itemTypes}}</td>
+            <td style="border-left: 2px #213315 solid; word-break: break-all;">{{item.itemCategory}}</td>
+            <td style="border-left: 2px #213315 solid; word-break: break-all;">
+
+            </td>
+            <td style="border-left: 2px #213315 solid; word-break: break-all;">
+                {{item.itemQuantity}}
+                </td>
+            <td style="font-size: 9px;border-left: 2px #213315 solid;font-weight: 700;" colspan="3">
+                <table>
+                    <tbody>
+                        <tr style="border-bottom: 2px solid #213315;">
+                            <td style="text-align: center;padding: 2px;" colspan="2">
+                                <img [src]="profilePicture"
+                                    style=" width: 20px;height: 20px;border-radius: 11px; margin-right: 6px;">{{ userName}}
+                            </td>
+                            <td style="border-left: 2px #213315 solid;text-align: center;padding: 2px;">
+                                {{item.userRole}}
+                            </td>
+                            <td style="border-left: 2px #213315 solid;text-align: center;padding: 2px;">
+                                {{item.creationTime | date}}</td>
+                        </tr>
+                        <tr>
+
+                            <td colspan="4" style="text-align: center;padding: 2px;">
+                                <img src="../../../assets/images/widget/check_star.svg"
+                                style="height: 20px;">
+                            </td>
+
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="rowexpansion" let-item>
+        <tr style="background-color:transparent;">
+            <td colspan="12">
+                <div dataKey="id"  style="color: #eef0f8;">
+                    <div class="row p-2">
+                        <div class="col-md-8"></div>
+                    <div class="col-md-2 p-0" style="text-align: end;">
+                        <p class="m-4">Select View Type</p>
+                    </div>
+                    <div class="col-md-2" style="text-align: end;">
+                        <a (click)="ViewChange($event)" id="card"
+                         [ngClass]="{'view-active': viewType == 2}" class="btn" style="color: white;">Card</a>
+                        <a (click)="ViewChange($event)" class="btn "  [ngClass]="{'view-active': viewType == 1}" id="table" style="color: white;"> Table</a>
+                    </div>
+                </div>
+                   <div class="row yellow-grid">
+                       <div class="col-md-12 p-2 "  style="background:#8e8636;">
+                    <p-table #dataTable3 dataKey="id" *ngIf="viewType==1" [value]="item.variationItem"
+                    rowExpandMode="single">
+                <ng-template pTemplate="header" style="text-align: center;">
+                  <tr>
+                    <th class="gridheader2">Image</th>
+                      <th class="gridheader2">SN/Code</th>
+                      <th class="gridheader2">Store V.Name</th>
+                      <th class="gridheader2">Stores V.No</th>
+                      <th class="gridheader2">Stores Position Status</th>
+                      <th class="gridheader2">Depot</th>
+                      <th class="gridheader2">Store House</th>
+
+                      <th class="gridheader2" colspan="4">Identity Tool</th>
+                  </tr>
+                </ng-template>
+                  <ng-template pTemplate="body" style="color: white;" let-variation let-expanded="expanded" let-rowIndex="rowIndex">
+                      <tr class="body-td" [pRowToggler]="variation" role="button" aria-expanded="false"
+                          aria-controls="collapseExample"  [ngClass]="{
+                            'sub-table2-even': rowIndex % 2 == 1,
+                            'sub-table2-odd': rowIndex % 2 == 0}" >
+                            <td    style="padding-left: 4px; border-left: 0px;">
+                                <img src="{{variation.varriationBatch.item.itemImage}}" width="100%"/>
+                              </td>
+                          <td class="border-green" style="text-align: center;">
+                            {{decryptItem(variation.snCode)}}
+                          </td>
+                          <td class="border-green" style="text-align: center;">{{decryptItem(variation.varriationBatch.item.itemName)}}-{{item.snCodeNo}}-{{rowIndex}}</td>
+                          <td class="border-green" style="text-align: center;">{{item.snCodeNo}}-{{rowIndex}}</td>
+                          <td  class="border-green" style="text-align: center;">In-Stock
+                          </td>
+                          <td class="border-green" style="text-align: center;">{{getwarehouse(item.wareHouseId)}}
+                        </td>
+                        <td class="border-green" style="text-align: center;">{{variation.varriationBatch.assignedWareHouseUnit}}
+                        </td>
+
+                        <td style="font-size: 9px;border-left: 2px #213315 solid;font-weight: 700;" colspan="4">
+                            <div class="row">
+                                <div class="col-md-2" style="font-size: 9px;border-right: 2px #213315 solid;font-weight: 700;">
+                                <span> QRC</span>
+                                </div>
+
+                               <div class="col-md-10">
+                                {{decryptItem(item.qrc)}}
+                                <button
+                                class="btn btn-sm btn-primary tool-cr">Read</button>
+                                <button
+                                class="btn btn-sm btn-primary tool-cr">Write</button>
+                                <button
+                                class="btn btn-sm btn-primary tool-cr" (click)="opendailogForQRCode(variation.varriationBatch.item.qrc)" >View</button>
+                                <button
+                                class="btn btn-sm btn-primary tool-cr">Print</button>
+                               </div>
+                               <hr class="hr mr-2" style="width: 92%; background: #213315; margin: 8px;">
+                            </div>
+                            <div class="row">
+                                <div class="col-md-2" style="font-size: 9px;border-right: 2px #213315 solid;font-weight: 700;">
+                                <span> NFC</span>
+                                </div>
+
+                               <div class="col-md-10">
+                                {{decryptItem(item.nfc)}}
+                                <button
+                                class="btn btn-sm btn-primary tool-cr">Read</button>
+                                <button
+                                class="btn btn-sm btn-primary tool-cr">Write</button>
+                                <button
+                                class="btn btn-sm btn-primary tool-cr" (click)="opendailogForQRCode(variation.varriationBatch.item.nfc)" >View</button>
+                                <button
+                                class="btn btn-sm btn-primary tool-cr">Print</button>
+                               </div>
+                               <hr class="hr mr-2" style="width: 92%; background: #213315; margin: 8px;">
+                            </div>
+                            <div class="row">
+                                <div class="col-md-2" style="font-size: 9px;border-right: 2px #213315 solid;font-weight: 700;">
+                                <span> RFID</span>
+                                </div>
+
+                               <div class="col-md-10">
+                                <button
+                                class="btn btn-sm btn-primary tool-cr">Read</button>
+                                <button
+                                class="btn btn-sm btn-primary tool-cr">Write</button>
+                                <button
+                                class="btn btn-sm btn-primary tool-cr" (click)="opendailogForQRCode(variation.varriationBatch.item.rfid)" >View</button>
+                                <button
+                                class="btn btn-sm btn-primary tool-cr">Print</button>
+                               </div>
+                               <hr class="hr mr-2" style="width: 92%; background: #213315; margin: 8px;">
+                            </div>
+                            <div class="row">
+                                <div class="col-md-2" style="font-size: 9px;border-right: 2px #213315 solid;font-weight: 700;">
+                                <span> BarCode</span>
+                                </div>
+
+                               <div class="col-md-10">
+
+                                <button
+                                class="btn btn-sm btn-primary tool-cr">Read</button>
+                                <button
+                                class="btn btn-sm btn-primary tool-cr">Write</button>
+                                <button
+                                class="btn btn-sm btn-primary tool-cr"  (click)="opendailogForQRCode(variation.varriationBatch.item.barcode)" >View</button>
+                                <button
+                                class="btn btn-sm btn-primary tool-cr">Print</button>
+                               </div>
+                            </div>
+                        </td>
+                      </tr>
+                      </ng-template>
+                   </p-table>
+                   <div class="row p-4" *ngIf="viewType==2" style="justify-content: center;">
+
+                       <div class="col-md-5 p-2 mr-5 mb-3" *ngFor="let itemchild of item.variationItem ;let i = index"  style="background-color: #213315; border-radius: 20px;">
+                         <div class="col-md-12 p-2" style="background-color: #507746;border-radius: 19px;">
+                         <div class="col-md-6" >
+                            <h5 style="font-size: 12px;"><b style="color:#E8C40B ; margin: 0px;">Store V.Name:</b></h5>
+                            <p style="margin: 0px;"> {{decryptItem(itemchild.varriationBatch.item.itemName)}}</p>
+                         </div>
+                         <div class="col-md-6" style="text-align: end;">
+                            <h5 style="font-size: 12px;"><b style="color:#E8C40B ; margin: 0px;">Store Status:</b></h5>
+                            <p class="m-0"> In-Status</p>
+                         </div>
+                         </div>
+                         <div class="row pl-1" style="padding-bottom: 13px;">
+
+                            <div class="col-md-3"
+                                style="padding-top: 5px;display: flex;">
+                                <div class="col-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         md-2 p-0">
+                                    <img src="../../../assets/images/widget/person.svg" style="width: 20px;">
+                                </div>
+                                    <div class="col-md-8" >
+                                    <h5 style="font-size: 11px;"><b style="color:#E8C40B ;">Store V No:</b>
+                                    </h5>
+
+                                </div>
+                                <div class="priority_circle col-md-2" >
+                                    <p style="padding-top: 2px;">{{itemchild.varriationBatchId}}</p>
+                                </div>
+                            </div>
+                            <div class="col-md-3"
+                                style="padding-top: 5px;display: flex;">
+                                <div class="col-md-2 p-0">
+                                    <img src="../../../assets/images/widget/person.svg" style="width: 20px;">
+                                </div>
+                                    <div class="col-md-10" >
+                                    <h5 style="font-size: 11px;"><b style="color:#E8C40B ;">Depot:</b>
+                                    Warehouse</h5>
+                                    <h5 style="font-size: 11px;"><b style="color:#E8C40B ;">Store House:</b>
+                                        {{itemchild.varriationBatch.assignedWareHouseUnit}}</h5>
+                                </div>
+                            </div>
+                            <div class="col-md-3"
+                            style="padding-top: 5px;display: flex;">
+                            <div class="col-md-2 p-0">
+                                <img src="../../../assets/images/widget/person.svg" style="width: 20px;">
+                            </div>
+                                <div class="col-md-10" >
+                                <h5 style="font-size: 11px;"><b style="color:#E8C40B ;">Last Check Date:</b>
+                               {{itemchild.lastModificationTime | date}} </h5>
+
+                            </div>
+                        </div>
+                            <div class="col-md-3"
+                            style="padding-top: 5px; text-align: center;">
+                            <img src="{{itemchild.varriationBatch.item.itemImage}}" style="height: 80px;margin-right: 40px !important;width: 76px;" width="30%">
+
+                        </div>
+                        <hr class="hr mr-2" style="width: 92%; background: #e7e7e7; margin: 8px;">
+                        </div>
+                        <div class="row pl-1">
+                            <div class="col-md-7"
+                            style="height: 143px;padding-top: 5px;border-right: solid 1px;">
+                            <b style="font-size: 10px;">Total Store Varriation Batch : {{item.variationItem.length}} </b><br>
+                            <table>
+                                <tr >
+                                    <th colspan="4" style="color:#E8C40B;">Store V.Identity</th>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                </tr>
+                            </table>
+                            <table class="inner-table">
+                                <tbody>
+                                    <tr >
+                                        <td  style="word-break: break-all;" colspan="2">
+                                           <img src="../../../assets/images/widget/smallboot.svg" width="29px">
+                                            QRC
+                                        </td>
+                                        <td colspan="4">
+                                            <button
+                                            class="btn btn-sm btn-primary tool-cr">Read</button>
+                                            <button
+                                            class="btn btn-sm btn-primary tool-cr">Write</button>
+                                            <button
+                                            class="btn btn-sm btn-primary tool-cr">View</button>
+                                            <button
+                                            class="btn btn-sm btn-primary tool-cr">Print</button>
+                                        </td>
+
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="col-md-12 p-0" style="text-align: center;">
+                            <h5 style="font-size: 15px;"><b style="color:#E8C40B ;">Store Movement:</b></h5>
+                            </div>
+                            <div class="col-md-12 p-0">
+                                <h5 style="font-size: 11px;"><b style="color:white ;">Transferred Movement:</b></h5>
+                                <h5 style="font-size: 11px;"><b style="color:white ;">Transferred By:</b></h5>
+                            </div>
+                            <div class="col-md-12 p-0">
+                                <h5 style="font-size: 11px;"><b style="color:white ;">Issued To:</b></h5>
+                                <h5 style="font-size: 11px;"><b style="color:white ;">Issued By:</b></h5>
+                            </div>
+                        </div>
+                        </div>
+                       </div>
+                   </div>
+                </div>
+                   </div>
+                </div>
+            </td>
+        </tr>
+    </ng-template>
+</p-table>
+<div class="col-md-12 pt-4 pb-4" style="text-align: center;">
+    <div>
+        <svg width="787" height="23" viewBox="0 0 787 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="21.0514" y="7" width="746.516" height="9" fill="#585E34" />
+            <rect x="21.0514" y="7" width="218.611" height="9" fill="#B7A643" />
+            <path
+                d="M21.0514 1.54983V21.4502C21.0514 22.8282 18.3626 23.5182 16.79 22.5439L0.731102 12.5937C-0.243701 11.9897 -0.243701 11.0103 0.731102 10.4063L16.79 0.456149C18.3626 -0.518283 21.0514 0.171862 21.0514 1.54983Z"
+                fill="#B7A643" />
+            <path
+                d="M765.949 1.54983V21.4502C765.949 22.8282 768.637 23.5182 770.21 22.5439L786.269 12.5937C787.244 11.9897 787.244 11.0103 786.269 10.4063L770.21 0.456149C768.637 -0.518283 765.949 0.171862 765.949 1.54983Z"
+                fill="#585E34" />
+        </svg>
+    </div>
+</div>
+<app-qrmodel #modalCreate></app-qrmodel>
+<app-dailog #dynamicModal [hideHeader]="true" [dialogClass]="'dynamicModal'" [hideFooter]="true" [style]="{width: '20vw'}">
+<form autocomplete="off"  class="dynamicForm" style="padding: 20px;">
+    <div class="row">
+    <div class="col-md-12">
+        <input type="text" class="form-control color-w" id="Text" [value]="dynamicValue" rows="4" >
+    </div>
+    <div class="col-md-12 pt-3" style="text-align: center;">
+        <button type="button" class="btn btn-danger" >Close</button>
+
+    </div>
+</div>
+</form>
+</app-dailog> -->

@@ -1,0 +1,455 @@
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<div class="row mt-3 ">
+    <div class="col-md-3 pl-0 col-md-3 pl-0 pr-0">
+        <div class="">
+            <div class="row text-center pt-3">
+                <!-- <div class="col-md-4">
+                    <h4 class="text-custom-top-parties-dark">{{dataStateChartDD.length}}</h4>
+                </div> -->
+                <div class="col-md-12">
+                    <div class="dropdown" style="cursor: pointer;">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Select Election Territory <span class="fa fa-arrow-down"> </span>
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <span class="dropdown-item" (click)="GetStateVOte('country')">Country</span>
+                            <span class="dropdown-item" (click)="GetStateVOte('state')">State</span>
+                            <span class="dropdown-item" (click)="GetStateVOte('localcouncil')">Local Council</span>
+                            <span class="dropdown-item" (click)="GetStateVOte('ward')">Ward</span>
+                            <span class="dropdown-item" (click)="GetStateVOte('Pollingunit')">Polling Unit</span>
+                        </div>
+                    </div>
+                    <!-- <h4 class="text-custom-top-parties-dark">Total States</h4> -->
+                </div>
+                <div class="col-md-12">
+                    <!-- <h6 class="text-custom-top-parties-light">Out of 10 Total Parties</h6> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-9 pl-0 mt-4 pr-0">
+        <div *ngIf="Table" class="col-md-3">
+            <!-- <form> -->
+            <input (keyup)="searchInTerritoryTable($event)" type="search" placeholder="Search By Name ...">
+            <!-- <button type="submit">Search</button> -->
+            <!-- </form> -->
+        </div>
+        <!-- <div class="col-md-3 pl-0"> -->
+        <!-- <div *ngIf="Table" class="dropdown p-2 pb-4 analytics-sortbyparties-dropdown">
+                <a class="fs-07" href="#" role="button" class="dropdownMenuLink2" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    <span class="text-custom-danger mr-3 text-uppercase"><b>Sort By </b>
+                    </span>
+                    <img src="/assets/Dashboard/Vector.png" width="15">
+                </a>
+                <div style="max-height: 250px;overflow-y: scroll;" class="dropdown-menu"
+                    aria-labelledby="dropdownMenuLink2">
+                    <div *ngIf="state">
+                        <a style="cursor: pointer;" *ngFor="let item of tableStatePostResult3" class="dropdown-item">
+                            <span class="text-custom-danger text-uppercase"
+                                (click)="SortTerritoryTable(item,'state')">{{item}}</span>
+                        </a>
+                    </div>
+                    <div *ngIf="pollingunit">
+                        <a style="cursor: pointer;" *ngFor="let item of tablePostResult3" class="dropdown-item">
+                            <span class="text-custom-danger text-uppercase"
+                                (click)="SortTerritoryTable(item,'Pollingunit')">{{item}}</span>
+                        </a>
+                    </div>
+                    <div *ngIf="country">
+                        <a style="cursor: pointer;" *ngFor="let item of tableCountryResult3" class="dropdown-item">
+                            <span class="text-custom-danger text-uppercase"
+                                (click)="SortTerritoryTable(item,'country')">{{item}}</span>
+                        </a>
+                    </div>
+                    <div *ngIf="ward">
+                        <a style="cursor: pointer;" *ngFor="let item of tableWardResult3" class="dropdown-item">
+                            <span class="text-custom-danger text-uppercase"
+                                (click)="SortTerritoryTable(item,'ward')">{{item}}</span>
+                        </a>
+                    </div>
+                    <div *ngIf="localcouncil">
+                        <a style="cursor: pointer;" *ngFor="let item of tableLocalCouncilResult3" class="dropdown-item">
+                            <span class="text-custom-danger text-uppercase"
+                                (click)="SortTerritoryTable(item,'localcouncil')">{{item}}</span>
+                        </a>
+                    </div>
+                </div>
+            </div> -->
+
+        <div class="offset-1 col-md-3 pl-0 pr-0">
+            <div class="dropdown2 pb-2 pt-2 text-center">
+                <a class="" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">
+                    <span class="election-category-title2">
+                        <i class="fas fa-pie-chart text-custom-danger mr-3"></i>
+                        <b>View:Chart </b>
+                        <i class="fas fa-ellipsis-v text-custom-danger ml-3"></i>
+                    </span>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <a class="dropdown-item dropdown2" (click)="AnalyticsToTable()" href="javascript:void(0)">
+                        <span class="election-category-title2 text-custom-danger">
+                            <i class="fa fa-table text-custom-danger mr-3"></i>
+                            <b>Table</b>
+                        </span>
+                    </a>
+                    <a class="dropdown-item dropdown2" (click)="TableToAnalytics()" href="javascript:void(0)">
+                        <span class="election-category-title2 text-custom-danger">
+                            <i class="fa fa-pie-chart text-custom-danger mr-3"></i>
+                            <b>Chart</b>
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-1">
+            <span (click)="RefreshTable()" style="cursor:pointer" class="btn btn-circle"><i
+                    class="fa fa-refresh fa-2x"></i></span>
+        </div>
+        <div class="col-md-1">
+            <a href="javascript:void" class="btn btn-circle"><i class="fa fa-print fa-2x"></i></a>
+        </div>
+        <div class="col-md-1">
+            <a href="javascript:void" class="btn btn-circle"><i class="fa fa-download fa-2x"></i></a>
+        </div>
+    </div>
+    <div class="col-md-12">
+        <div style="margin-top: 5px;" class="col-md-4 pl-0">
+            <div *ngIf="Table" class="">
+                <p-dropdown *ngIf="pollingunit" [options]="tablePostResult3"
+                    (onChange)="SortTerritoryTable($event,'Pollingunit')" placeholder="Select Polling Unit"
+                    [virtualScroll]="true" [virtualScrollItemSize]="10" optionLabel="label" [filter]="true"
+                    [filterBy]="'label'" [showClear]="true" [style]="{'width':'100%'}"></p-dropdown>
+                <p-dropdown *ngIf="state" [options]="tableStatePostResult3"
+                    (onChange)="SortTerritoryTable($event,'state')" placeholder="Select State" [virtualScroll]="true"
+                    [virtualScrollItemSize]="10" optionLabel="label" [filter]="true" [filterBy]="'label'"
+                    [showClear]="true" [style]="{'width':'100%'}"></p-dropdown>
+                <p-dropdown *ngIf="country" [options]="tableCountryResult3"
+                    (onChange)="SortTerritoryTable($event,'country')" placeholder="Select Country"
+                    [virtualScroll]="true" [virtualScrollItemSize]="10" optionLabel="label" [filter]="true"
+                    [filterBy]="'label'" [showClear]="true" [style]="{'width':'100%'}"></p-dropdown>
+                <p-dropdown *ngIf="ward" [options]="tableWardResult3" (onChange)="SortTerritoryTable($event,'ward')"
+                    placeholder="Select Ward" [virtualScroll]="true" [virtualScrollItemSize]="10" optionLabel="label"
+                    [filter]="true" [filterBy]="'label'" [showClear]="true" [style]="{'width':'100%'}"></p-dropdown>
+                <p-dropdown *ngIf="localcouncil" [options]="tableLocalCouncilResult3"
+                    (onChange)="SortTerritoryTable($event,'localcouncil')" placeholder="Select Local  Council"
+                    [virtualScroll]="true" [virtualScrollItemSize]="10" optionLabel="label" [filter]="true"
+                    [filterBy]="'label'" [showClear]="true" [style]="{'width':'100%'}"></p-dropdown>
+                <!-- <a class="fs-07" href="#" role="button" class="dropdownMenuLink2" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    <span class="text-custom-danger mr-3 text-uppercase"><b>Sort By </b>
+                    </span>
+                    <img src="/assets/Dashboard/Vector.png" width="15">
+                </a>
+                <div style="max-height: 250px;overflow-y: scroll;"  class="dropdown-menu"
+                    aria-labelledby="dropdownMenuLink2">
+                    <div *ngIf="state">
+                        <a style="cursor: pointer;" *ngFor="let item of tableStatePostResult3" class="dropdown-item">
+                            <span class="text-custom-danger text-uppercase" (click)="SortTerritoryTable(item,'state')">{{item}}</span>
+                        </a>
+                    </div>
+                    <div *ngIf="pollingunit">
+                        <a style="cursor: pointer;" *ngFor="let item of tablePostResult3" class="dropdown-item">
+                            <span class="text-custom-danger text-uppercase" (click)="SortTerritoryTable(item,'Pollingunit')">{{item}}</span>
+                        </a>
+                    </div>
+                    <div *ngIf="country">
+                        <a style="cursor: pointer;" *ngFor="let item of tableCountryResult3" class="dropdown-item">
+                            <span class="text-custom-danger text-uppercase" (click)="SortTerritoryTable(item,'country')">{{item}}</span>
+                        </a>
+                    </div>
+                    <div *ngIf="ward">
+                        <a style="cursor: pointer;" *ngFor="let item of tableWardResult3" class="dropdown-item">
+                            <span class="text-custom-danger text-uppercase" (click)="SortTerritoryTable(item,'ward')">{{item}}</span>
+                        </a>
+                    </div>
+                    <div *ngIf="localcouncil">
+                        <a style="cursor: pointer;" *ngFor="let item of tableLocalCouncilResult3" class="dropdown-item">
+                            <span class="text-custom-danger text-uppercase" (click)="SortTerritoryTable(item,'localcouncil')">{{item}}</span>
+                        </a>
+                    </div>
+                </div>-->
+            </div>
+        </div>
+    </div>
+    <div class="row" [hidden]="!Analytics">
+        <div class="col-md-3 pl-0 col-md-3 pl-0 pr-0">
+            <div class="card bg-custome-activity">
+                <div class="row text-center pt-3">
+                    <div class="col-md-12 mb-4">
+                        <h5 class="text-custom-top-parties-dark">Activity Timeline
+                            <i class="text-custom-top-parties-dark" class="fas fa-ellipsis-v ml-3"></i>
+                        </h5>
+                    </div>
+                    <div class="col-md-9 ml-10 mb-5 bb1-primary"></div>
+                    <div class="col-md-12 mb-5">
+                        <h6 class="text-custom-primary">Vote comparison</h6>
+                        <p-chart type="doughnut" [data]="dataVAPTurnout" [options]="optionsdataVAPTurnout"
+                            [style]="{'width': '40%'}"></p-chart>
+                    </div>
+                    <div class="col-md-12 mb-5">
+                        <h6 class="text-custom-primary">VAP By {{chartValue}}</h6>
+                        <p-chart type="pie" [data]="dataVAPGender" [options]="optionsdataVAPGender"
+                            [style]="{'width': '40%'}"></p-chart>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-9 pl-0 mt-4 pr-0">
+            <div class="row pl-7">
+                <div class="col-md-6 p-2 bg-custom-analytics br-15">
+                    <h6 class="text-custom-primary mb-0">VOTER RATIO <span class="text-custom-primary ml-15">last
+                            day</span>
+                    </h6>
+                </div>
+                <div class="col-md-3">
+                    <a href="javascript:void" class="btn btn-block btn-outline-success br-20">low activity</a>
+                </div>
+                <div class="col-md-3">
+                    <a href="javascript:void" class="btn btn-block btn-outline-danger br-20">High activity</a>
+                </div>
+                <div class="col-md-12 pl-0 mt-5">
+                    <p-chart type="bar" [data]="data" [options]="basicOptions"></p-chart>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div *ngIf="state" id="statetable" class="row" style="width:100%" [hidden]="!Table">
+        <div class="col-md-12">
+            <h5 style="text-align: center">Election Territory Result Data : State</h5>
+            <cdk-virtual-scroll-viewport itemSize="20" class="virtual-scroll-viewport">
+                <table class="table table-sm table-active">
+                    <thead>
+                        <tr>
+                            <!-- <th align="center" class="text-custom-primary">Election Post Name</th>
+                        <th align="center" class="text-custom-primary">Total Vote</th> -->
+                            <th align="center" class="text-custom-primary">CANDIDATE Picture</th>
+                            <th align="center" class="text-custom-primary">CANDIDATE Name</th>
+                            <th align="center" class="text-custom-primary">Election Region</th>
+                            <th align="center" class="text-custom-primary">Total Polling Unit with Result</th>
+                            <th align="center" class="text-custom-primary">Total Polling Unit Without Result  </th>
+                            <th align="center" class="text-custom-primary">Total Valid Vote</th>
+                            <th align="center" class="text-custom-primary">Valid Vote Percentage</th>
+                            <th align="center" class="text-custom-primary">Total Canceled Vote</th>
+                            <th align="center" class="text-custom-primary">Cancelled Vote Percentage </th>
+                            <th align="center" class="text-custom-primary">Candidate Vote</th>
+                            <th align="center" class="text-custom-primary">Candidate Vote Percentage</th>
+                            <th align="center" class="text-custom-primary">CANDIDATE Rank</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *cdkVirtualFor="let item of tableStatePostResult">
+                            <td align="center"><img src="{{item.candidatePhoto}}" style="height: 50px;width: 50px;">
+                            </td>
+                            <td align="center">{{item.candidateName}}</td>
+                            <td align="center">{{item.electionRegion}}</td>
+                            <td align="center">{{item.totalPollingUnitWithResult}}</td>
+                            <td align="center">{{item.totalPollingUnitWithOutResult}}</td>
+                            <td align="center">{{item.totalValidVote}}</td>
+                            <td align="center">{{item.totalValidVotePercentagePollingUnit}} %</td>
+                            <td align="center">{{item.totalCancelled}}</td>
+                            <td align="center">{{item.totalCancelVotePercentagePollingUnit}} %</td>
+                            <td align="center">{{item.totalElectionCandidateVote}}</td>
+                            <td align="center">{{item.totalElectionCandidateVotePercentage}} %</td>
+                            <td align="center">{{item.rankingStatus}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </cdk-virtual-scroll-viewport>
+        </div>
+
+    </div>
+
+    <div *ngIf="pollingunit" id="posttable" class="row" [hidden]="false" style="width:100%">
+        <div class="col-md-12" style="margin-top: 10px;">
+            <h5 style="text-align: center">Election Territory Result Data : Polling Unit</h5>
+            <!-- *cdkVirtualFor="let item of tablePostResult" -->
+            <cdk-virtual-scroll-viewport itemSize="20" class="virtual-scroll-viewport">
+                <table class="table table-sm table-active table-borderless">
+                    <thead>
+                        <tr>
+                            <th align="center" class="text-custom-primary">Polling Unit Name</th>
+                            <th align="center" class="text-custom-primary">Election Country</th>
+                            <th align="center" class="text-custom-primary">Election Name</th>
+                            <th align="center" class="text-custom-primary">Election State</th>
+                            <th align="center" class="text-custom-primary">Election Local Council</th>
+                            <th align="center" class="text-custom-primary">Election Ward</th>
+                            <th align="center" class="text-custom-primary">Total Polling Unit Vote</th>
+                            <th align="center" class="text-custom-primary">Total Polling Unit</th>
+                            <th align="center" class="text-custom-primary">Total Polling Unit with Result</th>
+                            <th align="center" class="text-custom-primary">Total Polling Unit Without Result  </th>
+                            <th align="center" class="text-custom-primary">Total Valid Vote</th>
+                            <th align="center" class="text-custom-primary">Valid Vote Percentage</th>
+                            <th align="center" class="text-custom-primary">Total Canceled Vote</th>
+                            <th align="center" class="text-custom-primary">Cancelled Vote Percentage </th>
+                            <th align="center" class="text-custom-primary">Candidate Vote</th>
+                            <th align="center" class="text-custom-primary">Candidate Vote Percentage</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *cdkVirtualFor="let item of tablePostResult">
+                            <td align="center">{{item.electionPollingUnitName}}</td>
+                            <td align="center">{{item.electionCountryName}}</td>
+                            <td align="center">{{item.partyName}}</td>
+                            <td align="center">{{item.electionStateName}}</td>
+                            <td align="center">{{item.electionLocalCouncilName}}</td>
+                            <td align="center">{{item.electionWardName}}</td>
+                            <td align="center">{{item.totalPollingUnitVote}}</td>
+                            <td align="center">{{item.totalElectionPollingUnitLink}}</td>
+                            <td align="center">{{item.totalPollingUnitWithResult}}</td>
+                            <td align="center">{{item.totalPollingUnitWithOutResult}}</td>
+                            <td align="center">{{item.totalValidVote}}</td>
+                            <td align="center">{{item.totalValidVotePercentagePollingUnit}} %</td>
+                            <td align="center">{{item.totalCancelled}}</td>
+                            <td align="center">{{item.totalCancelVotePercentagePollingUnit}} %</td>
+                            <td align="center">{{item.totalElectionCandidateVote}}</td>
+                            <td align="center">{{item.totalElectionCandidateVotePercentage}} %</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </cdk-virtual-scroll-viewport>
+        </div>
+
+    </div>
+
+    <div *ngIf="country" id="posttable"  class="row" style="width:100%" [hidden]="false">
+        <div class="col-md-12" style="margin-top: 10px;">
+            <h5 style="text-align: center">Election Territory Result Data : Country</h5>
+            <cdk-virtual-scroll-viewport itemSize="20" class="virtual-scroll-viewport">
+                <table class="table table-sm table-active">
+                    <thead>
+                        <tr>
+                            <th align="center" class="text-custom-primary">CANDIDATE Picture</th>
+                            <th align="center" class="text-custom-primary">CANDIDATE Name</th>
+                            <th align="center" class="text-custom-primary">Election Country Name</th>
+                            <th align="center" class="text-custom-primary">Total Polling Unit with Result</th>
+                            <th align="center" class="text-custom-primary">Total Polling Unit Without Result  </th>
+                            <th align="center" class="text-custom-primary">Total Valid Vote</th>
+                            <th align="center" class="text-custom-primary">Valid Vote Percentage</th>
+                            <th align="center" class="text-custom-primary">Total Canceled Vote</th>
+                            <th align="center" class="text-custom-primary">Cancelled Vote Percentage </th>
+                            <th align="center" class="text-custom-primary">Candidate Vote</th>
+                            <th align="center" class="text-custom-primary">Candidate Vote Percentage</th>
+                            <th align="center" class="text-custom-primary">CANDIDATE Rank</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *cdkVirtualFor="let item of tableCountryResult">
+                            <td align="center"><img src="{{item.candidatePhoto}}" style="height: 50px;width: 50px;">
+                            </td>
+                            <td align="center">{{item.candidateName}}</td>
+                            <td align="center">{{item.electionCountryName}}</td>
+                            <td align="center">{{item.totalPollingUnitWithResult}}</td>
+                            <td align="center">{{item.totalPollingUnitWithOutResult}}</td>
+                            <td align="center">{{item.totalValidVote}}</td>
+                            <td align="center">{{item.totalValidVotePercentagePollingUnit}} %</td>
+                            <td align="center">{{item.totalCancelled}}</td>
+                            <td align="center">{{item.totalCancelVotePercentagePollingUnit}} %</td>
+                            <td align="center">{{item.totalElectionCandidateVote}}</td>
+                            <td align="center">{{item.totalElectionCandidateVotePercentage}} %</td>
+                            <td align="center">{{item.rankingStatus}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </cdk-virtual-scroll-viewport>
+        </div>
+
+    </div>
+
+    <div *ngIf="localcouncil" id="posttable"  class="row" style="width:100%" [hidden]="false">
+        <div class="col-md-12" style="margin-top: 10px;">
+            <h5 style="text-align: center">Election Territory Result Data : Local Council</h5>
+            <cdk-virtual-scroll-viewport itemSize="20" class="virtual-scroll-viewport">
+                <table class="table table-sm table-active">
+                    <thead>
+                        <tr>
+                            <th align="center" class="text-custom-primary">CANDIDATE Picture</th>
+                            <th align="center" class="text-custom-primary">CANDIDATE Name</th>
+                            <th align="center" class="text-custom-primary">Election Local Council Name</th>
+                            <th align="center" class="text-custom-primary">Total Polling Unit with Result</th>
+                            <th align="center" class="text-custom-primary">Total Polling Unit Without Result  </th>
+                            <th align="center" class="text-custom-primary">Total Valid Vote</th>
+                            <th align="center" class="text-custom-primary">Valid Vote Percentage</th>
+                            <th align="center" class="text-custom-primary">Total Canceled Vote</th>
+                            <th align="center" class="text-custom-primary">Cancelled Vote Percentage </th>
+                            <th align="center" class="text-custom-primary">Candidate Vote</th>
+                            <th align="center" class="text-custom-primary">Candidate Vote Percentage</th>
+                            <th align="center" class="text-custom-primary">CANDIDATE Rank</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *cdkVirtualFor="let item of tableLocalCouncilResult">
+                            <td align="center"><img src="{{item.candidatePhoto}}" style="height: 50px;width: 50px;">
+                            </td>
+                            <td align="center">{{item.candidateName}}</td>
+                            <td align="center">{{item.electionLocalCouncilName}}</td>
+                            <td align="center">{{item.totalPollingUnitWithResult}}</td>
+                            <td align="center">{{item.totalPollingUnitWithOutResult}}</td>
+                            <td align="center">{{item.totalValidVote}}</td>
+                            <td align="center">{{item.totalValidVotePercentagePollingUnit}} %</td>
+                            <td align="center">{{item.totalCancelled}}</td>
+                            <td align="center">{{item.totalCancelVotePercentagePollingUnit}} %</td>
+                            <td align="center">{{item.totalElectionCandidateVote}}</td>
+                            <td align="center">{{item.totalElectionCandidateVotePercentage}} %</td>
+                            <td align="center">{{item.rankingStatus}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </cdk-virtual-scroll-viewport>
+        </div>
+
+    </div>
+
+    <div *ngIf="ward" id="posttable"  class="row" style="width:100%" [hidden]="false">
+        <div class="col-md-12" style="margin-top: 10px;">
+            <h5 style="text-align: center">Election Territory Result Data : Ward</h5>
+            <cdk-virtual-scroll-viewport itemSize="20" class="virtual-scroll-viewport">
+                <table class="table table-sm table-active">
+                    <thead>
+                        <tr>
+                            <th align="center" class="text-custom-primary">CANDIDATE Picture</th>
+                            <th align="center" class="text-custom-primary">CANDIDATE Name</th>
+                            <th align="center" class="text-custom-primary">Election Ward Name</th>
+                            <th align="center" class="text-custom-primary">Total Polling Unit with Result</th>
+                            <th align="center" class="text-custom-primary">Total Polling Unit Without Result  </th>
+                            <th align="center" class="text-custom-primary">Total Valid Vote</th>
+                            <th align="center" class="text-custom-primary">Valid Vote Percentage</th>
+                            <th align="center" class="text-custom-primary">Total Canceled Vote</th>
+                            <th align="center" class="text-custom-primary">Cancelled Vote Percentage </th>
+                            <th align="center" class="text-custom-primary">Candidate Vote</th>
+                            <th align="center" class="text-custom-primary">Candidate Vote Percentage</th>
+                            <th align="center" class="text-custom-primary">CANDIDATE Rank</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *cdkVirtualFor="let item of tableWardResult">
+                            <td align="center"><img src="{{item.candidatePhoto}}" style="height: 50px;width: 50px;">
+                            </td>
+                            <td align="center">{{item.candidateName}}</td>
+                            <td align="center">{{item.electionWardName}}</td>
+                            <td align="center">{{item.totalPollingUnitWithResult}}</td>
+                            <td align="center">{{item.totalPollingUnitWithOutResult}}</td>
+                            <td align="center">{{item.totalValidVote}}</td>
+                            <td align="center">{{item.totalValidVotePercentagePollingUnit}} %</td>
+                            <td align="center">{{item.totalCancelled}}</td>
+                            <td align="center">{{item.totalCancelVotePercentagePollingUnit}} %</td>
+                            <td align="center">{{item.totalElectionCandidateVote}}</td>
+                            <td align="center">{{item.totalElectionCandidateVotePercentage}} %</td>
+                            <td align="center">{{item.rankingStatus}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </cdk-virtual-scroll-viewport>
+        </div>
+
+    </div>
+
+
+
+</div>

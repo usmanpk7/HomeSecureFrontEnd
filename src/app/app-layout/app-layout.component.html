@@ -1,0 +1,49 @@
+
+<div class="">
+    <!-- <div class="row" style="margin-top: -23px;">
+        <div class="col-md-6">
+        </div>
+        <div class="col-md-6 p-3">
+            <div class="row" style="justify-content: end;">
+
+                <div class="col-md-1">
+                    <i class="fa fa-calendar nav-imgs" aria-hidden="true"></i>
+                </div>
+                <div class="col-md-1">
+                    <i class="fa fa-cog nav-imgs" (click)="changeMySettings()" aria-hidden="true"></i>
+                </div>
+                <div class="col-md-1">
+                    <i class="fa fa-comment nav-imgs" aria-hidden="true"></i>
+                </div>
+                <div class="col-md-1" style="text-align: center;">
+                    <app-custom-header-notification></app-custom-header-notification>
+
+                </div>
+                <div style="margin-right: 25px;">
+                    <app-header-user-menu></app-header-user-menu>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <div class="row">
+        <!-- <div class="col-md-2">
+            <app-sidenav></app-sidenav>
+        </div> -->
+        <div class="col-md-12">
+            <app-main></app-main>
+        </div>
+    </div>
+</div>
+<kt-scroll-top></kt-scroll-top>
+<mySettingsModal #mySettingsModal (modalSave)="onMySettingsModalSaved()"></mySettingsModal>
+<linkedAccountsModal *ngIf="!installationMode" #linkedAccountsModal (modalClose)="getRecentlyLinkedUsers()"></linkedAccountsModal>
+<userDelegationsModal #userDelegationsModal></userDelegationsModal>
+<changePasswordModal #changePasswordModal></changePasswordModal>
+<changeProfilePictureModal #changeProfilePictureModal (modalSave)="onMyProfileImageSettingsModalSaved()"></changeProfilePictureModal>
+<notificationSettingsModal #notificationSettingsModal></notificationSettingsModal>
+
+<!-- <commonLookupModal #userLookupModal (itemSelected)="chatBarComponent.addFriendSelected($event)"></commonLookupModal> -->
+<!-- <chat-bar #chatBarComponent *ngIf="!installationMode" [userLookupModal]="userLookupModal"></chat-bar> -->
+<theme-selection-panel #themeSelectionPanelComponent *ngIf="!installationMode && isQuickThemeSelectEnabled"></theme-selection-panel>
+<session-timeout #sessionTimeout *ngIf="IsSessionTimeOutEnabled"></session-timeout>

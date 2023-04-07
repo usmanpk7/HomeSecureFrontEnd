@@ -1,0 +1,216 @@
+<!-- <div class="col-md-12 p-0 mainSection p-0 mt-10 mb-10 ">
+    <div class="col-md-12">
+        <div class="col-md-12 pl-10 pr-12">
+            <div class="row inner2 m-3" style="font-size: 10px !important; color: white">
+                <div class="col-md-2" style="/* text-align: center; */ position: relative">
+                    <img
+                        src="../../../assets/svgImages/Rectangle 46rect1.svg"
+                        style="height: 70%; margin-top: 12px; position: absolute"
+                    />
+                    <img
+                        src="../../../assets/svgImages/Vectorredthumb.svg"
+                        style="margin-top: 19px; height: 16px; position: absolute; margin-left: 31px"
+                    />
+                    <label
+                        style="
+                            /* text-align: center; */
+                            color: white;
+                            position: absolute;
+                            margin-left: 59px;
+                            margin-top: 20px;
+                            font-size: 11px;
+                        "
+                        >Submition</label
+                    >
+                </div>
+                <div class="col-md-2" style="margin-left: 25px; /* text-align: center; */ position: relative">
+                    <img
+                        src="../../../assets/svgImages/Rectangle 47rec2.svg"
+                        style="height: 70%; margin-top: 12px; position: absolute"
+                    />
+                    <img
+                        src="../../../assets/svgImages/Vectorbluethumb.svg"
+                        style="margin-top: 19px; height: 16px; position: absolute; margin-left: 24px"
+                    />
+                    <label
+                        style="
+                            /* text-align: center; */
+                            color: white;
+                            position: absolute;
+                            margin-left: 46px;
+                            margin-top: 20px;
+                            font-size: 11px;
+                        "
+                        >Authorization</label
+                    >
+                </div>
+
+                <div class="col-md-2" style="margin-left: 25px; /* text-align: center; */ position: relative">
+                    <img
+                        src="../../../assets/svgImages/Rectangle 48rec3.svg"
+                        style="height: 70%; margin-top: 12px; position: absolute"
+                    />
+                    <img
+                        src="../../../assets/svgImages/Vectorissued.svg"
+                        style="margin-top: 21px; height: 16px; position: absolute; margin-left: 27px"
+                    />
+                    <label
+                        style="
+                            /* text-align: center; */
+                            color: white;
+                            position: absolute;
+                            margin-left: 57px;
+                            margin-top: 20px;
+                            font-size: 11px;
+                        "
+                        >Issued</label
+                    >
+                </div>
+
+                <div class="col-md-2" style="margin-left: 25px; /* text-align: center; */ position: relative">
+                    <img
+                        src="../../../assets/svgImages/Rectangle 49rec4.svg"
+                        style="height: 70%; margin-top: 12px; position: absolute"
+                    />
+                    <img
+                        src="../../../assets/svgImages/Vectorrelsesad.svg"
+                        style="margin-top: 21px; height: 16px; position: absolute; margin-left: 27px"
+                    />
+                    <label
+                        style="
+                            /* text-align: center; */
+                            color: white;
+                            position: absolute;
+                            margin-left: 57px;
+                            margin-top: 20px;
+                            font-size: 11px;
+                        "
+                        >Released</label
+                    >
+                </div>
+                <div class="col-md-2" style="margin-left: 18px; /* text-align: center; */ position: relative">
+                    <img
+                        src="../../../assets/svgImages/Rectangle 50rec5.svg"
+                        style="height: 70%; margin-top: 12px; position: absolute"
+                    />
+                    <img
+                        src="../../../assets/svgImages/Vectordilivered.svg"
+                        style="margin-top: 21px; height: 16px; position: absolute; margin-left: 27px"
+                    />
+                    <label
+                        style="
+                            /* text-align: center; */
+                            color: white;
+                            position: absolute;
+                            margin-left: 57px;
+                            margin-top: 20px;
+                            font-size: 11px;
+                        "
+                        >Delivered</label
+                    >
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12 pt-5" style="padding: 0 0 25px 6px; margin-top: 10px; text-align: center">
+        <app-eqis-text-card
+            [text]="'Total  Candidates'"
+            [count]="candidateAnalyticsResult.totalCandidates"
+            [icon]="'fa-bars'"
+            [percentage]="''"
+        >
+        </app-eqis-text-card>
+        <app-eqis-text-card
+            [text]="'Shortlisted'"
+            [count]="candidateAnalyticsResult.totalShortlisted"
+            [icon]="'fa-calculator'"
+            [percentage]="''"
+        >
+        </app-eqis-text-card>
+        <app-eqis-text-card
+            [text]="'Arrived'"
+            [count]="candidateAnalyticsResult.totalArrived"
+            [icon]="'fa-user-times'"
+            [percentage]="''"
+        >
+        </app-eqis-text-card>
+        <app-eqis-text-card
+            [text]="'Violated Or Failed '"
+            class="outOfStock"
+            [count]="candidateAnalyticsResult.totalViolated"
+            [icon]="'fa-user'"
+            [percentage]="''"
+        >
+        </app-eqis-text-card>
+        <app-eqis-text-card
+            [text]="'Exited'"
+            class="ExpiredStock"
+            [count]="candidateAnalyticsResult.totalCandidateExited"
+            [icon]="'fa-user'"
+            [percentage]="''"
+        >
+        </app-eqis-text-card>
+        <div *ngIf="true" [appLoading]="Loading"></div>
+    </div>
+</div>
+<div class="col-md-12 ">
+    <div class="row p-2">
+        <div class="col-md-8"></div>
+    <div class="col-md-2 p-0" style="text-align: end; color: #fff;">
+        <p class="m-4">Select View Type</p>
+    </div>
+    <div class="col-md-2" style="text-align: end;">
+        <a (click)="ViewChange($event)" id="card"
+         [ngClass]="{'view-active': viewType == 2}" class="btn view-btn"  style="color: white;">Card</a>
+        <a (click)="ViewChange($event)" class="btn view-btn "  [ngClass]="{'view-active': viewType == 1}" id="table" style="color: white;"> Table</a>
+    </div>
+</div>
+</div>
+<div class="col-md-12 mainSection pt-5 pb-5">
+    <section class="pb-5">
+        <div class="col-md-12 Round-Pannel3">
+            <div class="col-md-12 mt-7 mb-4">
+                <div class="col-md-6 Search-Panel">
+                    <i class="fa fa-search col-md-1 pt-3"></i>
+                    <input
+                        type="text"
+                        class="form-control col-md-11"
+                        (input)="searchData($event.target.value)"
+                        placeholder="Search"
+                        style="border: 0px; background: transparent; color: #eef0f8"
+                    />
+                </div>
+                <div class="col-md-6"></div>
+            </div>
+            <div class="col-md-12">
+                <a
+                    type="button"
+                    [ngClass]="{ 'category-active': categoryTab === 1 }"
+                    (click)="onTabChange($event)"
+                    id="tab1"
+                    class="btn"
+                    >Candidate</a
+                >
+            </div>
+            <app-candidate #candidate (footerOutputAction)="footerEvent($event)" *ngIf="categoryTab === 1"></app-candidate>
+        </div>
+    </section>
+</div>
+
+<div class="row pb-3" style="justify-content: center">
+    <div class="col-md-10 footer-btnPanel">
+        <div class="col-md-12 p-4" style="display: flex" *ngIf="footerActionButton">
+            <button
+                *ngFor="let item of footerActionButton"
+                type="button"
+                class="btn btn2"
+                (click)="OnFooterAction(item.type)"
+            >
+                <i class="{{ item.icon }}"></i>
+                {{ item.title }}
+            </button>
+        </div>
+    </div>
+</div>
+<app-create-store-form #createStore></app-create-store-form>
+ -->

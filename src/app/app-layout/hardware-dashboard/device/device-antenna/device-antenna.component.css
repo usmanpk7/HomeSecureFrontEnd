@@ -1,0 +1,17 @@
+::ng-deep .storegrid .p-inputswitch .p-inputswitch-slider:before{
+    background: #4F8B3B;
+}
+::ng-deep .storegrid .p-inputswitch .p-inputswitch-slider{
+    background: #405838;
+    border: 1px solid #605e5c;
+}
+::ng-deep .storegrid .p-inputswitch.p-inputswitch-checked .p-inputswitch-slider:before {
+    background: #689d56;;
+}
+::ng-deep .p-checkbox .p-checkbox-box {
+    background: #405838;
+}
+::ng-deep .storegrid .p-inputswitch.p-inputswitch-checked .p-inputswitch-slider {
+    background: #405838 !important;
+    border-color: #405838 !important;
+}

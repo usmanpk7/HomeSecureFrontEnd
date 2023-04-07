@@ -1,0 +1,199 @@
+::ng-deep .accessApproval .rectangle-1{
+    background: linear-gradient(139.04deg, 
+    rgba(60, 165, 75, 0.329) 44.02%, rgba(36, 155, 35, 0.168) 76.77%) !important;
+}
+.mainSection {
+    background: #425a3a;
+    border-radius: 30px;
+}
+.map-responsive{
+    overflow:hidden;
+    padding-bottom:50%;
+    position:relative;
+    height:0;
+background: linear-gradient(359.66deg, rgba(33, 51, 21, 0.9) -11.74%, rgba(183, 166, 67, 0.82) 111.45%);
+backdrop-filter: blur(4px);
+/* Note: backdrop-filter has minimal browser support */
+
+border-radius: 10px;
+}
+.map-responsive agm-map{
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    position:absolute;
+}
+
+
+/* grids */
+.Round-Pannel3 .btn {
+    border: 3px solid #BEC168;
+    box-sizing:
+        border-box;
+    font-size: 12px;
+    color: white;
+    border-radius: 30px;
+    margin-top: 13px;
+}
+
+.Round-Pannel3 .btn2,
+.footer-btnPanel .btn2 {
+    background: #C5E0B4 !important;
+    border: 3px solid #BEC168 !important;
+    box-sizing: border-box !important;
+    border-radius: 30px !important;
+    width: 94% !important;
+    font-family: Roboto !important;
+    font-style: normal !important;
+    font-weight: 500 !important;
+    font-size: 18px !important;
+    line-height: 21px !important;
+    letter-spacing: -0.01em !important;
+    color: #376419 !important;
+}
+
+.Search-Panel {
+    border: 2px solid #376419;
+    box-sizing: border-box;
+    border-radius: 23px;
+    background:
+        rgba(55, 100, 25, 0.35);
+}
+
+.Search-Text {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 27px;
+    letter-spacing: -0.01em;
+    color: rgba(255, 255, 255, 0.95);
+    margin-left: 51px;
+    margin-top: -25px;
+}
+.Round-Pannel3 .btn2>button>i,
+.footer-btnPanel .btn2 i {
+    color: #376419;
+}
+
+.Round-Pannel3 .table svg {
+    width: 49px
+}
+::ng-deep .Round-Pannel3 .equis-btn2 button {
+    border-radius: 4px !important;
+    height: 100%;
+    background: #C5E0B4 !important;
+    border: 3px solid #BEC168 !important;
+    box-sizing: border-box !important;
+    font-family: Roboto !important;
+    font-style: normal !important;
+    font-weight: 500 !important;
+    font-size: 13px !important;
+    line-height: 21px !important;
+    letter-spacing: -0.01em !important;
+    color: #376419 !important;
+    margin-left: 0px;
+    margin-right: 10px;
+    margin-bottom: 8px;
+    padding-left: 10px;
+    padding-right: 15px;
+}
+
+::ng-deep .Round-Pannel3 .equis-btn2 button.active {
+    background-color: #b7a643 !important;
+    padding-bottom: 18px !important;
+    margin-bottom: 0px !important;
+    border-bottom: none !important;
+}
+::ng-deep .p-datatable-scrollable-body {
+    overflow-x: hidden !important;
+}
+
+::ng-deep .p-datatable-scrollable-body::-webkit-scrollbar {
+    width: 10px !important;
+    height: 40px !important;
+}
+
+::ng-deep .p-datatable-scrollable-body::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::ng-deep .p-datatable-scrollable-body::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+::ng-deep .p-datatable-scrollable-body::-webkit-scrollbar-thumb:hover {
+
+    background: #555;
+}
+
+::ng-deep .p-datatable-scrollable-body .sub-table-even {
+    background: #507746 !important;
+}
+
+::ng-deep .p-datatable-scrollable-body .sub-table-odd {
+    background: #6D773A !important;
+}
+::ng-deep .gridheader {
+    background-color: #B7A643 !important;
+    border-bottom-color: black !important;
+    color: black !important;
+    text-align: center !important;
+}
+
+::ng-deep .body-td>td {
+    border-bottom-color: black !important;
+    text-align: center !important;
+    color: rgb(241, 239, 239) !important;
+}
+
+.text-center {
+    text-align: center;
+}
+.Round-Pannel3 {
+    background-color: #213315;
+    border-radius: 51px;
+}
+:host ::ng-deep .p-datatable .p-paginator-bottom {
+    border-width:  0 0 0 0 !important;
+    background: #B7A643 !important;
+}
+
+:ng-deep .text-right{
+    text-align: end;
+}
+
+:ng-deep  .f-10{
+    font-size: 10px;
+}
+:ng-deep  .f-11{
+    font-size: 12px;
+}
+.map p {
+    color: #5490f4;
+    font-weight: 500;
+}
+.map .item {
+    color: #101011;
+}
+
+/* Remove the X, close button */
+::ng-deep .gm-ui-hover-effect {
+    display: none !important;
+}
+
+::ng-deep .gm-style-iw-c {
+    max-width: 412px !important;
+    max-height: 240px !important;
+    background-color: #AAAAAA;
+    text-align: center;
+    color: white;
+}
+
+/* remove overflow scroll */
+::ng-deep .gm-style {
+    overflow: none !important;
+    padding: auto;
+}

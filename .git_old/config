@@ -1,0 +1,48 @@
+[core]
+	repositoryformatversion = 0
+	filemode = false
+	bare = false
+	logallrefupdates = true
+	symlinks = false
+	ignorecase = true
+[remote "origin"]
+	url = https://github.com/MArslanRiaz96/HomeSecureFrontend
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[branch "main"]
+	remote = origin
+	merge = refs/heads/main
+[branch "idev"]
+	remote = origin
+	merge = refs/heads/idev
+[branch "logintask_11_5_2022"]
+	remote = origin
+	merge = refs/heads/logintask_11_5_2022
+[branch "tenantpagetask_11_8_2022"]
+	remote = origin
+	merge = refs/heads/tenantpagetask_11_8_2022
+[branch "dashboard_11_13_22"]
+	remote = origin
+	merge = refs/heads/dashboard_11_13_22
+[branch "25_11_2022_ElectionDashboardFilter"]
+	remote = origin
+	merge = refs/heads/25_11_2022_ElectionDashboardFilter
+[branch "29_11_2022_ElectionDashboard"]
+	remote = origin
+	merge = refs/heads/29_11_2022_ElectionDashboard
+[branch "30-11-2022_Dashboard"]
+	remote = origin
+	merge = refs/heads/30-11-2022_Dashboard
+[branch "12_8_2022_chart"]
+	remote = origin
+	merge = refs/heads/12_8_2022_chart
+[branch "december2022_faizan"]
+	remote = origin
+	merge = refs/heads/december2022_faizan
+[branch "january2023_faizan"]
+	remote = origin
+	merge = refs/heads/january2023_faizan
+[branch "february2023_faizan"]
+	remote = origin
+	merge = refs/heads/february2023_faizan
+[lfs]
+	repositoryformatversion = 0

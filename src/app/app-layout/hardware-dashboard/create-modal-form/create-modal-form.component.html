@@ -1,0 +1,132 @@
+<!-- <style>
+    .spinner-img {
+        height: 20vh;
+        width: 20vh;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        color: red;
+    }
+</style>
+<p-dialog header="Create Model" [(visible)]="displayResponsive">
+    <form autocomplete="off" [formGroup]="createDeviceModalForm" class="createform" style="padding: 20px">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="input-wrapper">
+                    <input
+                        style="
+                            height: 45px;
+                            border: 1px solid #676c3d;
+                            background: #918d4e;
+                            box-sizing: border-box;
+                            border-radius: 10px;
+                            color:#ffffff;
+                        "
+                        class="form-control"
+                        type="text"
+                        tabindex="1"
+                        formControlName="deviceModalName"
+                        name="deviceModalName"
+                        [ngClass]="{ 'is-invalid': submitted && f.deviceModalName.errors }"
+                        />
+                    <label class="control-label">Device Model</label>
+
+                    <div *ngIf="submitted && f.deviceModalName.errors" class="invalid-feedback">
+                        <div *ngIf="f.deviceModalName.errors.required">Device Model is required</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-md-12">
+                <div class="input-wrapper">
+                    <input
+                        style="
+                            height: 45px;
+                            border: 1px solid #676c3d;
+                            background: #918d4e;
+                            box-sizing: border-box;
+                            border-radius: 10px;
+                            color:#ffffff;
+                        "
+                        class="form-control"
+                        name="firstname"
+                        type="text"
+                        tabindex="1"
+                        formControlName="deviceModelNumber"
+                        name="deviceModelNumber"
+                        required
+                    />
+                    <label class="control-label">Device ModelNumber</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-sm-4">
+                <div class="mt-4">
+                    <label class="title">IsActive</label>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="mt-4">
+                    <div class="switch_box box_1">
+                        <p-inputSwitch onLabel="Y" offLabel="N" (onChange)="handleChange($event)" formControlName="isActive" name="isActive" ></p-inputSwitch>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-md-12">
+                <div class="input-wrapper">
+                    <textarea
+                        style="
+                            height: 85px;
+                            border: 1px solid #676c3d;
+                            background: #918d4e;
+                            box-sizing: border-box;
+                            border-radius: 10px;
+                            color:#ffffff;
+                        "
+                        class="form-control"
+                        name="firstname"
+                        type="text"
+                        tabindex="1"
+                        formControlName="deviceDescription"
+                        name="deviceDescription"
+                        required
+                    ></textarea>
+                    <label class="control-label">Device Description</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-9"></div>
+            <div class="col-md-3 mt-5" style="float: right">
+                <button
+                    type="submit"
+                    class="btn rounded-pill"
+                    style="
+                        width: 88px;
+                        height: 45px;
+
+                        background: #787735;
+                        border: 1px solid #9db186;
+                        box-sizing: border-box;
+                        border-radius: 10px;
+                        color: #ffffff;
+                    "
+                    (click)="submit()"
+                >
+                    Submit
+                </button>
+            </div>
+        </div>
+    </form>
+</p-dialog> -->

@@ -1,0 +1,22 @@
+<div class="card_indend" [ngStyle]="cardColor" *ngIf="nodes">
+    <p-tree [value]="nodes" scrollHeight="100px">
+        <ng-template let-node pTemplate="default">
+            <div class="row">
+                <div class="col-md-2 p-0">
+                    <img style="width: 70%;" src="../../../assets/images/widget/Ellipse_654.svg">
+                </div>
+                <div class="col-md-4 pl-0 pl-1">
+                    <b style="color: white;">  {{node.label}}</b>
+                </div>
+                <div class="col-md-6" style="text-align:end ;color: white;left: 58px;">
+                    22 
+                </div>
+            </div>
+        </ng-template>
+        <ng-template let-node pTemplate="default1">
+            <img src="../../../assets/images/widget/Ellipse_654.svg" style="width: 10%;">   &nbsp;
+             <b style="color: white; font-size: 11px;">  {{node.label}}</b> &nbsp; &nbsp;
+              <span style="color: white; font-size: 11px;">22</span>
+        </ng-template>
+    </p-tree>
+</div>

@@ -1,0 +1,127 @@
+::ng-deep .p-radiobutton {
+    vertical-align:none !important;
+   }
+ ::ng-deep .p-dialog .p-dialog-header {
+     background: linear-gradient(359.66deg, rgba(33, 51, 21, 0.9) -11.74%, rgba(183, 166, 67, 0.82) 111.45%);
+ }
+::ng-deep .p-dialog .p-dialog-header .p-dialog-title {
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: #E7E7E7;
+
+}
+::ng-deep .p-datatable .p-datatable-thead > tr > th {
+    text-align: left;
+    padding: 0.75rem 0.75rem;
+    border: 0px !important;
+    border-width: 0 0 1px 0;
+    font-weight: 600;
+    color: #323130;
+    background: #ffffff;
+    transition: box-shadow 0.2s;
+}
+::ng-deep  .p-datatable .p-datatable-tbody > tr > td {
+    text-align: left;
+    border:0px ;
+    border-width: 0 0 1px 0;
+    padding: 0.75rem 0.75rem;
+}
+::ng-deep .pi {
+    font-family: 'primeicons';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-feature-settings: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    color: white;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+::ng-deep .p-carousel .p-carousel-content .p-carousel-prev, .p-carousel .p-carousel-content .p-carousel-next {
+    /* width: 2rem; */
+    height: 2rem;
+    color: #605e5c;
+    border: 0 none;
+    background: transparent;
+    border-radius: 2px;
+    transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
+    margin: 0.5rem;
+}
+::ng-deep .p-carousel .p-carousel-indicators {
+    padding: 1rem;
+    display: none;
+}
+.primary{
+    background: #787735;
+    border: 1px solid #9DB186;
+    box-sizing: border-box;
+    border-radius: 10px;
+    color: #FFF;
+    }
+    .p-radiobutton {
+        display: inline-flex;
+        vertical-align: inherit !important;
+        align-items: center;
+    }
+    .row1 {
+        margin-top: 20px;
+        border-radius: 8px;
+        background-color: #7C7C35;
+      }
+      .form-control {
+        color: white !important;
+       background-clip: padding-box !important;
+        border: 1px solid #B7A643 !important;
+        border-radius: 0.42rem !important;
+    }
+    .p-table,thead,tr,th
+    {
+     background-color: #5D653A !important;
+     color: white !important;
+
+    }
+    .p-table,tbody,tr,td{
+        background-color: #6A7140 !important;
+        color: white !important;
+     }
+
+     .container-fluid .row1 {
+        margin-top: 20px;
+        border-radius: 8px;
+        background-color: #7C7C35;
+      }
+      .product-item .product-item-content {
+
+        border-radius: 0px;
+        margin: 0.3rem;
+        text-align: center;
+        padding: 0px;
+   }
+
+    .product-item .product-image {
+        width: 50%;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+   }
+  ::ng-deep .p-carousel-item {
+    flex: 0 0 25.333333% !important;
+    width: 105px !important;
+}
+::ng-deep .p-dropdown {
+    background-color: #8C894C;
+    border: 1px solid #676C3D;
+}
+::ng-deep .p-dropdown-panel {
+    background-color: #8C894C;
+  }
+  .bg-input-gary {
+    background-color: #8C894C;
+  }
+  ::ng-deep .p-dialog-content .p-dropdown.p-disabled{
+    background-color: #8C894C !important;
+    border: 1px solid #676C3D !important;
+  }
+  ::ng-deep .p-dialog-content  .p-dropdown.p-disabled .p-dropdown-label,::ng-deep .p-dropdown.p-disabled .p-dropdown-trigger-icon, ::ng-deep .p-multiselect.p-disabled .p-dropdown-label,::ng-deep .p-multiselect.p-disabled .p-dropdown-trigger-icon {
+    color: #e2e2e2 !important;
+}

@@ -1,0 +1,298 @@
+.bg-custom {
+    background-color: #FAFAFF;
+}
+
+.bg-custom2{
+    background-color: #F0EEFC; 
+}
+
+.card-scrolling{
+    height: 40rem !important;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.card-scrolling2{
+    height: 30rem !important;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.dropdown-multiple {
+    border: 2px solid #ff5575 !important;
+    border-radius: 5px !important;
+    background-color: #ffd8df;
+    text-align: center !important;
+  }
+  .dropdown-menu > li > a {
+  display: block;
+  padding: 1px 5px !important;
+  clear: both;
+  background: #f8f8f8;
+  font-weight: 600 !important;
+  border: 1px solid #ff6c88 !important;
+  margin: 0.5rem 0rem !important;
+  line-height: 1.42857143;
+  color: #ff6c88 !important;
+  white-space: nowrap;
+  }
+  
+  
+  .dropdown-submenu .dropdown-menu > li > a {
+  border: none !important;
+  }
+  .dd-custom {
+    color: #ff5575 !important;
+  }
+  
+  .dropdown-submenu {
+    position: relative;
+  }
+  .dropdown-menu.show {
+    display: block;
+    background: #ffedf0 !important;
+    width: 100% !important;
+    box-shadow: none;
+  }
+  .dropdown-submenu > .dropdown-menu.show {
+    display: block;
+    background: #f8f8f8 !important;
+  }
+  
+  .dropdown-submenu > .dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-top: -6px;
+    margin-left: -1px;
+    -webkit-border-radius: 0 6px 6px 6px;
+    -moz-border-radius: 0 6px 6px;
+    border-radius: 0 6px 6px 6px;
+  }
+  
+  .dropdown-submenu:hover > .dropdown-menu {
+    display: block;
+    background: #f8f8f8 !important;
+  }
+  
+  .dropdown-submenu > a:after {
+    display: block;
+    content: ' ';
+    float: right;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
+    border-width: 5px 0 5px 5px;
+    border-left-color: #ff6c88;
+    margin-top: 5px;
+    margin-right: 0px;
+  }
+  
+  .dropdown-submenu:hover > a:after {
+    border-left-color: #fff;
+  }
+  
+  .dropdown-submenu.pull-left {
+    float: none;
+  }
+  
+  .dropdown-submenu.pull-left > .dropdown-menu {
+    left: -100%;
+    margin-left: 10px;
+    -webkit-border-radius: 6px 0 6px 6px;
+    -moz-border-radius: 6px 0 6px 6px;
+    border-radius: 6px 0 6px 6px;
+  }
+
+  .slider {
+    -webkit-appearance: none;
+    background-color: #ddd;
+    height: 10px;
+    overflow: hidden;
+    width: 100%;
+  }
+  
+  .slider::-webkit-slider-runnable-track {
+    -webkit-appearance: none;
+    height: 10px;
+  }
+  
+  .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    background: #ABABC1;
+    box-shadow: -210px 0 0 200px #ABABC1;
+    border-radius: 50%;
+    cursor: pointer;
+    height: 10px;
+    width: 15px;
+    border: 0;
+  }
+  
+  .slider::-moz-range-thumb {
+    background: #ABABC1;
+    border-radius: 50%;
+    box-shadow: -1010px 0 0 1000px #ABABC1;
+    cursor: pointer;
+    height: 10px;
+    width: 15px;
+    border: 0;
+  }
+  
+  .slider::-moz-range-track {
+    background-color: #ddd;
+  }
+  .slider::-moz-range-progress {
+    background-color: #ABABC1;
+    height: 20px
+  }
+  .slider::-ms-fill-upper {
+    background-color: #ddd;
+  }
+  .slider::-ms-fill-lower {
+    background-color: #ABABC1;
+  }
+
+  .slider2 {
+    -webkit-appearance: none;
+    background-color: #ddd;
+    height: 10px;
+    overflow: hidden;
+    width: 100%;
+  }
+  
+  .slider2::-webkit-slider-runnable-track {
+    -webkit-appearance: none;
+    height: 10px;
+  }
+  
+  .slider2::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    background: #634EDD;
+    box-shadow: -210px 0 0 200px #634EDD;
+    border-radius: 50%;
+    cursor: pointer;
+    height: 10px;
+    width: 15px;
+    border: 0;
+  }
+  
+  .slider2::-moz-range-thumb {
+    background: #634EDD;
+    border-radius: 50%;
+    box-shadow: -1010px 0 0 1000px #634EDD;
+    cursor: pointer;
+    height: 10px;
+    width: 15px;
+    border: 0;
+  }
+  
+  .slider2::-moz-range-track {
+    background-color: #ddd;
+  }
+  .slider2::-moz-range-progress {
+    background-color: #634EDD;
+    height: 20px
+  }
+  .slider2::-ms-fill-upper {
+    background-color: #ddd;
+  }
+  .slider2::-ms-fill-lower {
+    background-color: #634EDD;
+  }
+
+  .slider3 {
+    -webkit-appearance: none;
+    background-color: #ddd;
+    height: 10px;
+    overflow: hidden;
+    width: 100%;
+  }
+  
+  .slider3::-webkit-slider-runnable-track {
+    -webkit-appearance: none;
+    height: 10px;
+  }
+  
+  .slider3::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    background: #7C509F;
+    box-shadow: -210px 0 0 200px #7C509F;
+    border-radius: 50%;
+    cursor: pointer;
+    height: 10px;
+    width: 15px;
+    border: 0;
+  }
+  
+  .slider3::-moz-range-thumb {
+    background: #7C509F;
+    border-radius: 50%;
+    box-shadow: -1010px 0 0 1000px #7C509F;
+    cursor: pointer;
+    height: 10px;
+    width: 15px;
+    border: 0;
+  }
+  
+  .slider3::-moz-range-track {
+    background-color: #ddd;
+  }
+  .slider3::-moz-range-progress {
+    background-color: #7C509F;
+    height: 20px
+  }
+  .slider3::-ms-fill-upper {
+    background-color: #ddd;
+  }
+  .slider3::-ms-fill-lower {
+    background-color: #7C509F;
+  }
+
+  .slider4 {
+    -webkit-appearance: none;
+    background-color: #ddd;
+    height: 10px;
+    overflow: hidden;
+    width: 100%;
+  }
+  
+  .slider4::-webkit-slider-runnable-track {
+    -webkit-appearance: none;
+    height: 10px;
+  }
+  
+  .slider4::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    background: #9E90EC;
+    box-shadow: -210px 0 0 200px #9E90EC;
+    border-radius: 50%;
+    cursor: pointer;
+    height: 10px;
+    width: 15px;
+    border: 0;
+  }
+  
+  .slider4::-moz-range-thumb {
+    background: #9E90EC;
+    border-radius: 50%;
+    box-shadow: -1010px 0 0 1000px #9E90EC;
+    cursor: pointer;
+    height: 10px;
+    width: 15px;
+    border: 0;
+  }
+  
+  .slider4::-moz-range-track {
+    background-color: #ddd;
+  }
+  .slider4::-moz-range-progress {
+    background-color: #9E90EC;
+    height: 20px
+  }
+  .slider4::-ms-fill-upper {
+    background-color: #ddd;
+  }
+  .slider4::-ms-fill-lower {
+    background-color: #9E90EC;
+  }
+
+  

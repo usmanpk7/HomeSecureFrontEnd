@@ -1,0 +1,784 @@
+<!-- <div *ngIf="isLoading" [appLoading]="isLoading">
+</div>
+<p-table #dataTable dataKey="id" [value]="indentRequestForm" [scrollable]="true" scrollHeight="400px" [(rows)]="row"
+    (onPage)="paginate($event)" [first]="first" [rowsPerPageOptions]="[5,10,15,20]" [paginator]="true" [lazy]="false"
+    rowExpandMode="single" [globalFilterFields]="['intentNo', 'controlNumber']">
+
+    <ng-template pTemplate="header" style="text-align: center;">
+
+        <tr>
+            <th class="gridheader" colspan="3">Tools</th>
+            <th class="gridheader" pSortableColumn="intentNo">
+                Intent No
+                <p-sortIcon field="intentNo"></p-sortIcon>
+            </th>
+            <th class="gridheader" pSortableColumn="controlNumber">
+                Control No
+                <p-sortIcon field="controlNumber"></p-sortIcon>
+            </th>
+            <th class="gridheader" pSortableColumn="voucherToType">Voucher Type
+                <p-sortIcon field="voucherToType"></p-sortIcon>
+            </th>
+            <th class="gridheader" pSortableColumn="AKADA">
+                Voucher To
+                <p-sortIcon field="AKADA"></p-sortIcon>
+            </th>
+            <th class="gridheader" pSortableColumn="reasonForIndent">
+                Intent Reason
+                <p-sortIcon field="reasonForIndent"></p-sortIcon>
+            </th>
+            <th class="gridheader" colspan="3">Approval
+                <table>
+                    <tr>
+                        <th pSortableColumn="">Name
+                        </th>
+                        <th pSortableColumn="">Status
+                        </th>
+                        <th pSortableColumn="">Date/Time
+                        </th>
+                    </tr>
+                </table>
+            </th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" style="color: white;" let-item let-expanded="expanded" let-rowIndex="rowIndex">
+        <tr class="body-td" [pRowToggler]="item" [ngClass]="{
+'sub-table-even': rowIndex % 2 == 1,
+'sub-table-odd': rowIndex % 2 == 0}" (click)="onExpandRow(item)" role="button" aria-expanded="false"
+            aria-controls="collapseExample">
+            <td colspan="3" style="padding-left: 16px;">
+                <div class="row">
+                    <img src="../../../assets/images/widget/submision_gray.svg"
+                    style="width: 68px;padding: 0px;">
+
+                    <img *ngIf="item.requestAuthorityForm.length==0" src="../../../assets/images/widget/autho_gray.svg"
+                    style="width: 78px;padding: 0px;">
+                    <img *ngIf="item.requestAuthorityForm.length>0" src="../../../assets/images/widget/authorization_gray.svg"
+                    style="width: 78px;padding: 0px;">
+                    <img *ngIf="!checkIssueRequest(item)" src="../../../assets/images/widget/issue_gray.svg"
+                                        style="width: 68px;padding: 0px;">
+                                        <img *ngIf="checkIssueRequest(item)" src="../../../assets/images/widget/issue_green.svg"
+                                        style="width: 68px;padding: 0px;">
+                                    <img *ngIf="!checkIssueProvision(item)" src="../../../assets/images/widget/relis_gray.svg"
+                                        style="width: 68px;padding: 0px;">
+                                        <img *ngIf="checkIssueProvision(item)" src="../../../assets/images/widget/released-green.svg"
+                                        style="width: 68px;padding: 0px;">
+                    <img src="../../../assets/images/widget/deliver.svg" style="width: 68px;padding: 0px;">
+                </div>
+                <div class="row">
+                    <img src="../../../assets/images/widget/s1.svg" style="width: 26px;padding: 2px;">
+                    <img src="../../../assets/images/widget/s10.svg"
+                        style="width: 8.2px;padding: 0px;padding-left: 3px;padding-right: 3px;">
+                    <img src="../../../assets/images/widget/s2.svg" style="width: 26px;padding: 2px;">
+                    <img src="../../../assets/images/widget/s10.svg"
+                        style="width: 8.2px;padding: 0px;padding-left: 3px;padding-right: 3px;">
+                    <img src="../../../assets/images/widget/s3.svg" style="width: 26px;padding: 2px;">
+                    <img src="../../../assets/images/widget/s10.svg"
+                        style="width: 8.2px;padding: 0px;padding-left: 3px;padding-right: 3px;">
+                    <div type="button" class="position-relative" style="width: auto;">
+                        <img src="../../../assets/images/widget/s4.svg" style="width: 26px;padding: 2px;">
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                            style="margin-left: -14px;height: 16px; width: 16px;font-size: 8px;margin-top: 5px;">
+                            9+
+                        </span>
+                    </div>
+                    <img src="../../../assets/images/widget/s10.svg"
+                        style="width: 8.2px;padding: 0px;padding-left: 3px;padding-right: 3px;">
+                    <img src="../../../assets/images/widget/s5.svg" style="width: 26px;padding: 2px;">
+                    <img src="../../../assets/images/widget/s10.svg"
+                        style="width: 8.2px;padding: 0px;padding-left: 3px;padding-right: 3px;">
+                    <img src="../../../assets/images/widget/s6.svg" style="width: 26px;padding: 2px;">
+                    <img src="../../../assets/images/widget/s10.svg"
+                        style="width: 8.2px;padding: 0px;padding-left: 3px;padding-right: 3px;">
+                    <img src="../../../assets/images/widget/s7.svg" style="width: 26px;padding: 2px;">
+                    <img src="../../../assets/images/widget/s10.svg"
+                        style="width: 8.2px;padding: 0px;padding-left: 3px;padding-right: 3px;">
+                    <div type="button" class="position-relative" style="width: auto;">
+                        <img src="../../../assets/images/widget/s8.svg" style="width: 26px;padding: 2px;">
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                            style="margin-left: -14px;height: 16px; width: 16px;font-size: 8px;margin-top: 5px;">
+                            9+
+                        </span>
+                    </div>
+                    <img src="../../../assets/images/widget/s10.svg"
+                        style="width: 8.2px;padding: 0px;padding-left: 3px;padding-right: 3px;">
+                    <div type="button" class="position-relative" style="width: auto;">
+                        <img src="../../../assets/images/widget/s9.svg" style="width: 26px;padding: 2px;">
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                            style="margin-left: -14px;height: 16px; width: 16px;font-size: 8px;margin-top: 5px;">
+                            9+
+                        </span>
+                    </div>
+                </div>
+            </td>
+            <td style="border-left: 2px #213315 solid;">{{item.intentNo}}</td>
+            <td style="border-left: 2px #213315 solid;"> {{item.controlNumber}}</td>
+            <td style="border-left: 2px #213315 solid;">{{getVoucherType(item.voucherToType)}}</td>
+            <td style="border-left: 2px #213315 solid;">AKADA</td>
+            <td style="font-size: 30px;border-left: 2px #213315 solid;font-weight: 700;">
+                {{getInantReason(item.reasonForIndent)}}</td>
+            <td style="font-size: 9px;border-left: 2px #213315 solid;font-weight: 700;" colspan="3">
+                <table>
+                    <tbody>
+                        <tr style="border-bottom: 2px solid #213315;">
+                            <td style="text-align: center;padding: 2px;">
+                                <img [src]="profilePicture"
+                                    style=" width: 20px;height: 20px;border-radius: 11px;">{{getUserName(item.creatorUserId)}}
+                            </td>
+                            <td style="border-left: 2px #213315 solid;text-align: center;padding: 2px;">
+                                <img src="../../../assets/images/widget/check_star.svg" style="height: 20px;">
+                            </td>
+                            <td style="border-left: 2px #213315 solid;text-align: center;padding: 2px;">
+                                {{item.creationTime | date}}</td>
+                        </tr>
+                        <tr *ngFor="let approve of intentUserApproval(item.requestAuthorityForm)">
+                            <td style="text-align: center;padding: 2px;">
+                                {{approve.approvalName}}
+                            </td>
+                            <td style="border-left: 2px #213315 solid;text-align: center;padding: 2px;">
+                                <img src="../../../assets/images/widget/single_star.svg" style="height: 20px;">
+                            </td>
+                            <td style="border-left: 2px #213315 solid;text-align: center;padding: 2px;">
+                                {{approve.approvalDate}}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="rowexpansion" let-item>
+        <tr style="background-color: #213315;">
+            <td colspan="11">
+                <div dataKey="id" style="color: #eef0f8;">
+                    <div class="row" style="padding-bottom: 13px;">
+                        <div class="col-md-3"
+                            style="padding-top: 5px;border-right: solid 1px;border-bottom: 1px solid;">
+                            <img src="../../../assets/images/widget/1card.svg">
+                            <label> <b style="color:#E8C40B ;">Intent Number:</b> {{item.intentNo}}
+                            </label>
+                            <div class="row pl-3">
+                                <label style="width: auto;"><b>Periorty:</b></label>
+                                <div class="priority_circle" [ngClass]="{'active':item.priority===1}">
+                                    <p style="padding-top: 2px;">1</p>
+                                </div>
+                                <div class="priority_circle" [ngClass]="{'active':item.priority===2}">
+                                    <p style="padding-top: 2px;">2</p>
+                                </div>
+                                <div class="priority_circle" [ngClass]="{'active':item.priority===3}">
+                                    <p style="padding-top: 2px;">3</p>
+                                </div>
+                                <div class="priority_circle" [ngClass]="{'active':item.priority===4}">
+                                    <p style="padding-top: 2px;">4</p>
+                                </div>
+                                <div class="priority_circle" [ngClass]="{'active':item.priority===5}">
+                                    <p style="padding-top: 2px;">5</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3"
+                            style="padding-top: 5px;display: flex;border-right: solid 1px;border-bottom: 1px solid;">
+                            <div class="col-md-3">
+                                <img src="../../../assets/images/widget/person.svg">
+                            </div>
+                            <div class="col-md-9" *ngIf="user">
+                                <h5 style="font-size: 9px;"><b style="color:#E8C40B ;">Submitted By:</b>
+                                    {{getuserName()}}</h5>
+                                <h5 style="font-size: 9px;"><b style="color:#E8C40B ;">Roles :</b>
+                                    {{getUserRole()}}</h5>
+                            </div>
+                        </div>
+                        <div class="col-md-4" style="padding-top: 7px;display: flex;border-bottom: 1px solid;">
+                            <div class="col-md-3">
+                                <img src="../../../assets/images/widget/1date.svg">
+                            </div>
+                            <div class="col-md-9">
+                                <h5 style="font-size: 9px;"><b style="color:#E8C40B ;">Store Required
+                                        On:</b> {{item.dateStoresRequired|date}}
+                                </h5>
+                                <h5 style="font-size: 9px;"><b style="color:#E8C40B ;">Submitted On:
+                                    </b>{{item.creationTime|date:['MMM d, y, h:mm:ss a']}}</h5>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div id="demo" class="carousel slide" data-bs-ride="carousel"
+                                style="border-left: solid 1px;">
+
+                                <div class="carousel-inner">
+                                    <b style="color: white;font-size: 10px;margin-left: 5px;">Approvals</b>
+                                    <div class="carousel-item active">
+                                        <div class="row"
+                                            style="padding: 0px !;display: block;text-align: center;padding-top: 12px;margin: 0px;">
+                                            <img src="../../../assets/images/widget/36416approve.svg"
+                                                style="padding: 0px;height: 41px;width: 39px;margin-left: 23px;"><br>
+                                            <div class="row" style="
+    text-align: center;
+    padding: 0px;
+    display: contents;">
+                                                <img src="../../../assets/images/widget/36414face.svg"
+                                                    style="padding: 0px;height: 35px;width: 35px;">
+                                                <b>ALia
+                                                    Khan</b>
+                                                <br>
+                                                <b style="font-size: 7px !important;text-align: center; width: 100%;">
+                                                    03 july , 2019 - 11:12:00
+                                                </b>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <div class="row"
+                                            style="padding: 0px !;/* padding: 0px; */display: block;text-align: center;padding-top: 12px;margin: 0px;">
+                                            <img src="../../../assets/images/widget/36416approve.svg"
+                                                style="padding: 0px;height: 41px;width: 39px;margin-left: 23px;"><br>
+                                            <div class="row" style="
+    text-align: center;
+    padding: 0px;
+    display: contents;
+">
+                                                <img src="../../../assets/images/widget/36414face.svg"
+                                                    style="padding: 0px;height: 35px;width: 35px;">
+                                                <b>ALia
+                                                    Khan1</b>
+                                                <br>
+                                                <b style="font-size: 7px !important;text-align: center; width: 100%;">
+                                                    03 july , 2019 - 11:12:00
+                                                </b>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <button class="carousel-control-prev" type="button" data-bs-target="#demo"
+                                    data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon"></span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#demo"
+                                    data-bs-slide="next">
+                                    <span class="carousel-control-next-icon"></span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" style="margin-top: 5px;">
+                        <div class="col-md-4" style="height: 193px;padding-top: 5px;border-right: solid 1px;">
+                            <b style="font-size: 10px;">Store Request : {{intentItems.length}}</b><br>
+                            <table>
+                                <tr style="color:#E8C40B;">
+                                    <th>Store Name</th>
+                                    <th>Category</th>
+                                    <th>QTY/ Weight</th>
+                                </tr>
+                            </table>
+                            <table class="inner-table">
+                                <tbody>
+                                    <tr *ngFor="let intentitem of intentItems">
+                                        <td style="word-break: break-all;"><img
+                                                src="{{intentitem.item.itemImage}}" style="max-width:30% ;"> {{decryptItemName(intentitem.item)}}
+                                        </td>
+                                        <td>Footware</td>
+                                        <td>{{intentitem.qtyNumberRequired}} / {{intentitem.qtyWeightRequired}}
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="col-md-8" style="padding-top: 5px;">
+                            <div class="row" style="text-align: center;display: block;">
+                                <img src="../../../assets/images/widget/Vectorfile.svg"
+                                    style="padding: 0px;height: 20px;width: 37px;">
+                                <label style="font-size: 10px;padding: 0px;width: fit-content;">30
+                                    Files</label>
+                                <img src="../../../assets/images/widget/Vectordownload.svg"
+                                    style="height: 20px;width: 39px;padding: 0px;">
+                                <label style="padding: 0px;font-size: 10px;width: fit-content;">20 Files
+                                    Uploaded</label>
+                                <img src="../../../assets/images/widget/export.svg"
+                                    style="padding: 0px;height: 20px;width: 39px;">
+                                <label style="padding: 0px;font-size: 10px;width: fit-content;">Download
+                                    Files</label>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <b style="font-size: 11px;color: #E8C40B;">Reason For Request</b>
+                                        <div class="comment1">
+                                        <p >{{intentReasonText}}
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="col-md-3"><a  class="pointer" (click)="showdynamicModal(item.id,'1')"><i class="fa fa-plus-circle pr-2" style="color:#E8C40B ;"></i></a>
+                                    <b
+                                       style="font-size: 11px;color: #E8C40B;">Remarks </b>
+                                       <span class="round-number">{{remarkCount}}</span>
+                                   <div class="comment1">
+                                       <p >{{remarksText}}
+                                   </p>
+                               </div>
+                           </div>
+                           <div class="col-md-3">
+                                   <b style="font-size: 11px;color: #E8C40B;">
+                                       <a class="pointer" (click)="showdynamicModal(item.id,'3')"><i class="fa fa-plus-circle pr-2" style="color:#E8C40B ;"></i></a>Notes </b>
+                                       <span class="round-number">{{noteCount}}</span>
+                                   <div class="comment1">
+                                       <p >{{noteText}}
+                                   </p>
+                               </div>
+                           </div>
+                           <div class="col-md-3">
+                                   <b style="font-size: 11px;color: #E8C40B;"><a class="pointer"  (click)="showdynamicModal(item.id,'2')"><i class="fa fa-plus-circle pr-2" style="color:#E8C40B ;"></i></a> Comments </b>
+                                   <span class="round-number">{{commentCount}}</span>
+                                   <div class="comment1" *ngIf="comment">
+                                       <b style="color: black;">{{comment.createdBy}}</b><br>
+                                       <b style="color: black;font-weight: 100;" *ngIf="comment.createdDate">{{comment.creationTime.toString()|date:['MMM d, y, h:mm:ss a']}}</b>
+                                       <p style="margin: 0px;overflow-wrap: break-word;                                       ">{{comment.noteDescription}}
+                                   </p>
+                                   <img src="../../../assets/images/widget/profile2.svg">
+                                   <img src="../../../assets/images/widget/36414face.svg"
+                                       style=" height: 16px;width: 16px;margin-left: -10px;">
+                                   <img src="../../../assets/images/widget/profile2.svg"
+                                       style=" height: 16px;width: 16px;margin-left: -10px;">
+                                   <img src="../../../assets/images/widget/36414face.svg"
+                                       style=" height: 16px;width: 16px;margin-left: -10px;">
+
+                               </div>
+                           </div>
+                       </div>
+                       <div class="row" style="text-align: center;display: block;">
+                           <button [routerLink]="['/home/intent-view']"
+                               [queryParams]="{ id: item.id }"
+                               class="btn btn-primary bg-yellow">View</button>
+                       </div>
+
+                        </div>
+                    </div>
+                    <div class=" row authorizationHeader p-2">
+                        <div class="col-md-6 pt-2" style="text-align: start;">
+                            <h6>Authorization Form</h6>
+                        </div>
+                        <div class="col-md-6" style="text-align: end;">
+                            <button type="button" class="btn btn-sm btn-authorize" (click)="AddAuthorizationForm(item.id)">
+                                Add Authorization Form
+                            </button>
+                        </div>
+                    </div>
+                <div class="row">
+                    <p-table #dataTable2 dataKey="id" [value]="item.requestAuthorityForm"
+                      rowExpandMode="single">
+                  <ng-template pTemplate="header" style="text-align: center;">
+                    <tr>
+                        <th class="gridheader" colspan="2">Tools</th>
+                        <th class="gridheader">Control Name</th>
+                        <th class="gridheader">Authority Issue</th>
+                        <th class="gridheader">Authority Number</th>
+                    </tr>
+                  </ng-template>
+                    <ng-template pTemplate="body" style="color: white;" let-authorization let-expanded="expanded" let-rowIndex="rowIndex">
+                        <tr class="authbody-tr" [pRowToggler]="authorization"(click)="onauthorizationExpandRow(authorization)" role="button" aria-expanded="false"
+                            aria-controls="collapseExample">
+                            <td colspan="2" style="padding-left: 16px; border-left: 0px;">
+                                <div class="row">
+                                    <img src="../../../assets/images/widget/submit_gray.svg"
+                                        style="width: 68px;padding: 0px;">
+                                        <img  src="../../../assets/images/widget/authorization_gray.svg"
+                                        style="width: 78px;padding: 0px;">
+                                        <img *ngIf="authorization.issueRequest.length === 0" src="../../../assets/images/widget/issue_gray.svg"
+                                        style="width: 68px;padding: 0px;">
+                                        <img *ngIf="authorization.issueRequest.length > 0" src="../../../assets/images/widget/issue_green.svg"
+                                        style="width: 68px;padding: 0px;">
+                                    <img src="../../../assets/images/widget/deliver.svg"
+                                        style="width: 68px;padding: 0px;">
+                                </div>
+                                <div class="row">
+                                    <img src="../../../assets/images/widget/s1.svg"
+                                        style="width: 26px;padding: 2px;">
+                                    <img src="../../../assets/images/widget/s10.svg"
+                                        style="width: 8.2px;padding: 0px;padding-left: 3px;padding-right: 3px;">
+                                    <img src="../../../assets/images/widget/s2.svg"
+                                        style="width: 26px;padding: 2px;">
+                                    <img src="../../../assets/images/widget/s10.svg"
+                                        style="width: 8.2px;padding: 0px;padding-left: 3px;padding-right: 3px;">
+                                    <img src="../../../assets/images/widget/s3.svg"
+                                        style="width: 26px;padding: 2px;">
+                                    <img src="../../../assets/images/widget/s10.svg"
+                                        style="width: 8.2px;padding: 0px;padding-left: 3px;padding-right: 3px;">
+                                    <div type="button" class="position-relative" style="width: auto;">
+                                        <img src="../../../assets/images/widget/s4.svg"
+                                            style="width: 26px;padding: 2px;">
+                                        <span
+                                            class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                                            style="margin-left: -14px;height: 16px; width: 16px;font-size: 8px;margin-top: 5px;">
+                                            9+
+                                        </span>
+                                    </div>
+                                    <img src="../../../assets/images/widget/s10.svg"
+                                        style="width: 8.2px;padding: 0px;padding-left: 3px;padding-right: 3px;">
+                                    <img src="../../../assets/images/widget/s5.svg"
+                                        style="width: 26px;padding: 2px;">
+                                    <img src="../../../assets/images/widget/s10.svg"
+                                        style="width: 8.2px;padding: 0px;padding-left: 3px;padding-right: 3px;">
+                                    <img src="../../../assets/images/widget/s6.svg"
+                                        style="width: 26px;padding: 2px;">
+                                    <img src="../../../assets/images/widget/s10.svg"
+                                        style="width: 8.2px;padding: 0px;padding-left: 3px;padding-right: 3px;">
+                                    <img src="../../../assets/images/widget/s7.svg"
+                                        style="width: 26px;padding: 2px;">
+                                    <img src="../../../assets/images/widget/s10.svg"
+                                        style="width: 8.2px;padding: 0px;padding-left: 3px;padding-right: 3px;">
+                                    <div type="button" class="position-relative" style="width: auto;">
+                                        <img src="../../../assets/images/widget/s8.svg"
+                                            style="width: 26px;padding: 2px;">
+                                        <span
+                                            class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                                            style="margin-left: -14px;height: 16px; width: 16px;font-size: 8px;margin-top: 5px;">
+                                            9+
+                                        </span>
+                                    </div>
+                                    <img src="../../../assets/images/widget/s10.svg"
+                                        style="width: 8.2px;padding: 0px;padding-left: 3px;padding-right: 3px;">
+                                    <div type="button" class="position-relative" style="width: auto;">
+                                        <img src="../../../assets/images/widget/s9.svg"
+                                            style="width: 26px;padding: 2px;">
+                                        <span
+                                            class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                                            style="margin-left: -14px;height: 16px; width: 16px;font-size: 8px;margin-top: 5px;">
+                                            9+
+                                        </span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td style="text-align: center;">{{authorization.issueControlName}}</td>
+                            <td style="text-align: center;">{{authorization.authorityForIssue}}</td>
+                            <td style="text-align: center;">{{authorization.authorityNumber}}
+                            </td>
+                        </tr>
+                        </ng-template>
+            <ng-template pTemplate="rowexpansion" let-issueOrder>
+                <tr style="background-color: #213315;">
+                    <td colspan="5" class="p-0">
+                    <div class=" row authorizationHeader p-2">
+                        <div class="col-md-6 pt-2" style="text-align: start;">
+                            <h6 class="text-w">Issue Request Form</h6>
+                        </div>
+                        <div class="col-md-6" style="text-align: end;">
+                            <button type="button" class="btn btn-sm btn-authorize" (click)="AddIssueRequest(issueOrder)">
+                                Add Issue Request
+                            </button>
+                        </div>
+                    </div>
+                 <div class="col-md-12 p-0">
+                <p-table #dataTable3 dataKey="id" [value]="issueRequestList"
+                            rowExpandMode="single">
+                <ng-template pTemplate="header" style="text-align: center;">
+                <tr>
+                    <th class="gridheader" colspan="2">Tools</th>
+                    <th class="gridheader">Category Part type</th>
+                    <th class="gridheader">Organization Unit</th>
+                    <th class="gridheader">WareHouse</th>
+                    <th class="gridheader" colspan="2">Issue Provision</th>
+                </tr>
+                </ng-template>
+                <ng-template pTemplate="body" style="color: white;" let-issueRequest  let-rowIndex="rowIndex">
+                    <tr class="issuebody-tr"  aria-expanded="false"
+                        aria-controls="collapseExample">
+
+                        <td colspan="2" style="padding-left: 16px; border-left: 0px;">
+                            <div class="row">
+                                <img src="../../../assets/images/widget/submit_gray.svg"
+                                    style="width: 68px;padding: 0px;">
+                                <img src="../../../assets/images/widget/autho_gray.svg"
+                                    style="width: 78px;padding: 0px;">
+                                    <img src="../../../assets/images/widget/issue_green.svg"
+                                    style="width: 68px;padding: 0px;">
+                                <img src="../../../assets/images/widget/relis_gray.svg"
+                                    style="width: 68px;padding: 0px;">
+                                <img src="../../../assets/images/widget/deliver.svg"
+                                    style="width: 68px;padding: 0px;">
+                            </div>
+                            <div class="row">
+                                <img src="../../../assets/images/widget/s1.svg"
+                                    style="width: 26px;padding: 2px;">
+                                <img src="../../../assets/images/widget/s10.svg"
+                                    style="width: 8.2px;padding: 0px;padding-left: 3px;padding-right: 3px;">
+                                <img src="../../../assets/images/widget/s2.svg"
+                                    style="width: 26px;padding: 2px;">
+                                <img src="../../../assets/images/widget/s10.svg"
+                                    style="width: 8.2px;padding: 0px;padding-left: 3px;padding-right: 3px;">
+                                <img src="../../../assets/images/widget/s3.svg"
+                                    style="width: 26px;padding: 2px;">
+                                <img src="../../../assets/images/widget/s10.svg"
+                                    style="width: 8.2px;padding: 0px;padding-left: 3px;padding-right: 3px;">
+                                <div type="button" class="position-relative" style="width: auto;">
+                                    <img src="../../../assets/images/widget/s4.svg"
+                                        style="width: 26px;padding: 2px;">
+                                    <span
+                                        class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                                        style="margin-left: -14px;height: 16px; width: 16px;font-size: 8px;margin-top: 5px;">
+                                        9+
+                                    </span>
+                                </div>
+                                <img src="../../../assets/images/widget/s10.svg"
+                                    style="width: 8.2px;padding: 0px;padding-left: 3px;padding-right: 3px;">
+                                <img src="../../../assets/images/widget/s5.svg"
+                                    style="width: 26px;padding: 2px;">
+                                <img src="../../../assets/images/widget/s10.svg"
+                                    style="width: 8.2px;padding: 0px;padding-left: 3px;padding-right: 3px;">
+                                <img src="../../../assets/images/widget/s6.svg"
+                                    style="width: 26px;padding: 2px;">
+                                <img src="../../../assets/images/widget/s10.svg"
+                                    style="width: 8.2px;padding: 0px;padding-left: 3px;padding-right: 3px;">
+                                <img src="../../../assets/images/widget/s7.svg"
+                                    style="width: 26px;padding: 2px;">
+                                <img src="../../../assets/images/widget/s10.svg"
+                                    style="width: 8.2px;padding: 0px;padding-left: 3px;padding-right: 3px;">
+                                <div type="button" class="position-relative" style="width: auto;">
+                                    <img src="../../../assets/images/widget/s8.svg"
+                                        style="width: 26px;padding: 2px;">
+                                    <span
+                                        class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                                        style="margin-left: -14px;height: 16px; width: 16px;font-size: 8px;margin-top: 5px;">
+                                        9+
+                                    </span>
+                                </div>
+                                <img src="../../../assets/images/widget/s10.svg"
+                                    style="width: 8.2px;padding: 0px;padding-left: 3px;padding-right: 3px;">
+                                <div type="button" class="position-relative" style="width: auto;">
+                                    <img src="../../../assets/images/widget/s9.svg"
+                                        style="width: 26px;padding: 2px;">
+                                    <span
+                                        class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                                        style="margin-left: -14px;height: 16px; width: 16px;font-size: 8px;margin-top: 5px;">
+                                        9+
+                                    </span>
+                                </div>
+                            </div>
+                        </td>
+                        <td style="text-align: center;">{{getCategoryPartNo(issueRequest.categoryPartNo)}}</td>
+                        <td style="text-align: center;">{{getOrganization(issueRequest.organizationUnitId)}}</td>
+                        <td style="text-align: center;">{{getwarehouse(issueRequest.warehouseId)}}
+                        </td>
+                        <td style="text-align: center;" colspan="2">
+                            <button type="button" class="btn btn-sm btn-authorize" (click)="AddIssueProvision(item.id,issueRequest.categoryPartNo,issueRequest.id,issueRequest.warehouseId)">
+                                Add Issue Provision
+                            </button>
+                        </td>
+                    <tr class="issueOrderItem">
+                        <td class="pt-0" colspan="7">
+                            <div class=" row authorizationHeader p-2">
+                                <div class="col-md-12" style="text-align: center;">
+                                    <h6 class="text-w m-0">Issue Provision</h6>
+                                </div>
+                            </div>
+                            <div class="row">
+                        <p-table #dataTable4 dataKey="id" [value]="issueRequest.issueProvision"
+                                rowExpandMode="single">
+                      <ng-template pTemplate="header" style="text-align: center;">
+                      <tr>
+                        <th class="gridheader" colspan="2">Item</th>
+                        <th class="gridheader">Warehouse</th>
+                        <th class="gridheader">Issue Depot</th>
+                        <th class="gridheader">Quantity Issued</th>
+                        <th class="gridheader">Quantity Followed</th>
+                    </tr>
+                    </ng-template>
+                    <ng-template pTemplate="body" style="color: white;" let-issueProvision  let-rowIndex="rowIndex">
+                        <tr class="issueOrderItem-tr"  aria-expanded="false"
+                            aria-controls="collapseExample">
+                            <td  class="gridheader" colspan="2" style="padding-left: 16px; border-left: 0px;">
+                                {{ getItem(issueProvision.requestedItemId)}}
+                            </td>
+                            <td class="gridheader"  style="text-align: center;"> {{getwarehouse(issueProvision.warehouseId)}}</td>
+                            <td  class="gridheader" style="text-align: center;">{{issueProvision.issueDepotId}}</td>
+                            <td  class="gridheader" style="text-align: center;">{{issueProvision.qtyIssued}}
+                            </td>
+                            <td  class="gridheader" style="text-align: center;">{{issueProvision.qtyFollowed}}
+                            </td>
+
+                        </tr>
+                        </ng-template>
+                    </p-table>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr class="issueOrderItem">
+                        <td class="pt-0" colspan="7">
+                            <div class=" row authorizationHeader p-2">
+                                <div class="col-md-6 pt-2" style="text-align: start;">
+                                    <h6 class="text-w m-0">Store Release</h6>
+                                </div>
+                                <div class="col-md-6" style="text-align: end;">
+                                    <button type="button" class="btn btn-sm btn-authorize" (click)="addReleaseStore(issueOrder)">
+                                        Add Store Release
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="row">
+                        
+                                <p-table #dataTable3 dataKey="id" [value]="issueRequestList"
+                            rowExpandMode="single">
+                <ng-template pTemplate="header" style="text-align: center;">
+                <tr>
+                    <th class="gridheader" colspan="2">Tools</th>
+                    <th class="gridheader">Category Part type</th>
+                    <th class="gridheader">Organization Unit</th>
+                    <th class="gridheader">WareHouse</th>
+                    <th class="gridheader">Issue Provision</th>
+                    <th class="gridheader">Store Release</th>
+                </tr>
+                </ng-template>
+                <ng-template pTemplate="body" style="color: white;" let-issueRequest  let-rowIndex="rowIndex">
+                    <tr class="issuebody-tr"  aria-expanded="false"
+                        aria-controls="collapseExample">
+
+                        <td colspan="2" style="padding-left: 16px; border-left: 0px;">
+                            <div class="row">
+                                <img src="../../../assets/images/widget/submit_gray.svg"
+                                    style="width: 68px;padding: 0px;">
+                                <img src="../../../assets/images/widget/autho_gray.svg"
+                                    style="width: 78px;padding: 0px;">
+                                    <img src="../../../assets/images/widget/issue_gray.svg"
+                                    style="width: 68px;padding: 0px;">
+                                <img src="../../../assets/images/widget/released-green.svg"
+                                    style="width: 68px;padding: 0px;">
+                                <img src="../../../assets/images/widget/deliver.svg"
+                                    style="width: 68px;padding: 0px;">
+                            </div>
+                            <div class="row">
+                                <img src="../../../assets/images/widget/s1.svg"
+                                    style="width: 26px;padding: 2px;">
+                                <img src="../../../assets/images/widget/s10.svg"
+                                    style="width: 8.2px;padding: 0px;padding-left: 3px;padding-right: 3px;">
+                                <img src="../../../assets/images/widget/s2.svg"
+                                    style="width: 26px;padding: 2px;">
+                                <img src="../../../assets/images/widget/s10.svg"
+                                    style="width: 8.2px;padding: 0px;padding-left: 3px;padding-right: 3px;">
+                                <img src="../../../assets/images/widget/s3.svg"
+                                    style="width: 26px;padding: 2px;">
+                                <img src="../../../assets/images/widget/s10.svg"
+                                    style="width: 8.2px;padding: 0px;padding-left: 3px;padding-right: 3px;">
+                                <div type="button" class="position-relative" style="width: auto;">
+                                    <img src="../../../assets/images/widget/s4.svg"
+                                        style="width: 26px;padding: 2px;">
+                                    <span
+                                        class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                                        style="margin-left: -14px;height: 16px; width: 16px;font-size: 8px;margin-top: 5px;">
+                                        9+
+                                    </span>
+                                </div>
+                                <img src="../../../assets/images/widget/s10.svg"
+                                    style="width: 8.2px;padding: 0px;padding-left: 3px;padding-right: 3px;">
+                                <img src="../../../assets/images/widget/s5.svg"
+                                    style="width: 26px;padding: 2px;">
+                                <img src="../../../assets/images/widget/s10.svg"
+                                    style="width: 8.2px;padding: 0px;padding-left: 3px;padding-right: 3px;">
+                                <img src="../../../assets/images/widget/s6.svg"
+                                    style="width: 26px;padding: 2px;">
+                                <img src="../../../assets/images/widget/s10.svg"
+                                    style="width: 8.2px;padding: 0px;padding-left: 3px;padding-right: 3px;">
+                                <img src="../../../assets/images/widget/s7.svg"
+                                    style="width: 26px;padding: 2px;">
+                                <img src="../../../assets/images/widget/s10.svg"
+                                    style="width: 8.2px;padding: 0px;padding-left: 3px;padding-right: 3px;">
+                                <div type="button" class="position-relative" style="width: auto;">
+                                    <img src="../../../assets/images/widget/s8.svg"
+                                        style="width: 26px;padding: 2px;">
+                                    <span
+                                        class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                                        style="margin-left: -14px;height: 16px; width: 16px;font-size: 8px;margin-top: 5px;">
+                                        9+
+                                    </span>
+                                </div>
+                                <img src="../../../assets/images/widget/s10.svg"
+                                    style="width: 8.2px;padding: 0px;padding-left: 3px;padding-right: 3px;">
+                                <div type="button" class="position-relative" style="width: auto;">
+                                    <img src="../../../assets/images/widget/s9.svg"
+                                        style="width: 26px;padding: 2px;">
+                                    <span
+                                        class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                                        style="margin-left: -14px;height: 16px; width: 16px;font-size: 8px;margin-top: 5px;">
+                                        9+
+                                    </span>
+                                </div>
+                            </div>
+                        </td>
+                        <td style="text-align: center;">{{getCategoryPartNo(issueRequest.categoryPartNo)}}</td>
+                        <td style="text-align: center;">{{getOrganization(issueRequest.organizationUnitId)}}</td>
+                        <td style="text-align: center;">{{getwarehouse(issueRequest.warehouseId)}}
+                        </td>
+                        
+                        <td style="text-align: center;">
+                            <button type="button" class="btn btn-sm btn-authorize" (click)="AddStoreRelease(issueRequest)">
+                                Add Issue Provision
+                            </button>
+                        </td>
+                        <td style="text-align: center;">
+                            <button type="button" class="btn btn-sm btn-authorize" (click)="AddStoreRelease(issueRequest)">
+                                Add Store Release
+                            </button>
+                        </td>
+                    </tr>
+
+
+                    </ng-template>
+                </p-table>
+
+                            </div>
+                        </td>
+                    </tr>
+
+
+                    </ng-template>
+                </p-table>
+               </div>
+                 </td>
+                  </tr>
+            </ng-template>
+        </p-table>
+     </div>
+                </div>
+            </td>
+        </tr>
+    </ng-template>
+</p-table>
+<div class="col-md-12 pt-4 pb-4" style="text-align: center;">
+    <div>
+        <svg width="787" height="23" viewBox="0 0 787 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="21.0514" y="7" width="746.516" height="9" fill="#585E34" />
+            <rect x="21.0514" y="7" width="218.611" height="9" fill="#B7A643" />
+            <path
+                d="M21.0514 1.54983V21.4502C21.0514 22.8282 18.3626 23.5182 16.79 22.5439L0.731102 12.5937C-0.243701 11.9897 -0.243701 11.0103 0.731102 10.4063L16.79 0.456149C18.3626 -0.518283 21.0514 0.171862 21.0514 1.54983Z"
+                fill="#B7A643" />
+            <path
+                d="M765.949 1.54983V21.4502C765.949 22.8282 768.637 23.5182 770.21 22.5439L786.269 12.5937C787.244 11.9897 787.244 11.0103 786.269 10.4063L770.21 0.456149C768.637 -0.518283 765.949 0.171862 765.949 1.54983Z"
+                fill="#585E34" />
+        </svg>
+    </div>
+</div>
+
+<app-authority-number-model #authorityNumber (gridload)="getAllIndent('')"></app-authority-number-model>
+<app-create-issue-request #issueRequest (gridload)="getAllIndent('')"></app-create-issue-request>
+<app-IssueProvisios #issueProvision (gridload)="getAllIndent('')"></app-IssueProvisios>
+<app-create-store #createStoreRelease (gridload)="getAllIndent('')"></app-create-store>
+<app-add-release-store #addStoreRelease></app-add-release-store>
+<app-dailog #dynamicModal4 [hideHeader]="true" [dialogClass]="'dynamicModal'" [hideFooter]="true" [style]="{width: '20vw'}">
+    <div class="col-md-12 head pt-3" style="text-align: center;">
+    <h3 style="color: white;">{{dynamicModalHeader}}</h3>
+</div>
+<form autocomplete="off" [formGroup]="dynamicForm" class="dynamicForm" style="padding: 20px;">
+    <div class="row">
+    <div class="col-md-12">
+        <input type="text" class="form-control color-w" id="Text" formControlName="Text" rows="4" >
+        <span class="text-danger ml-3" *ngIf="isValid(dynamicForm.controls.Text)">
+            This field is required</span>
+    </div>
+    <div class="col-md-12 pt-3" style="text-align: center;">
+        <button type="button" class="btn btn-primary" (click)="submitdynamicmodal()"
+        [disabled]="dynamicForm.invalid" *ngIf="!IsSubmit">Submit</button>
+        <button type="button" class="btn btn-primary"  *ngIf="IsSubmit"
+        >Submitting...</button>
+        <button type="button" class="btn btn-danger" (click)="closedynamicmodal()">Cancel</button>
+
+    </div>
+</div>
+</form>
+</app-dailog> -->

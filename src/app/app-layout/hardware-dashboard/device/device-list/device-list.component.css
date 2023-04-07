@@ -1,0 +1,64 @@
+.comment1 {
+    background: #C5E0B4;
+    border-radius: 11px;
+    font-size: 10px;
+    padding: 7px;
+}
+
+.comment1>p {
+    color: #111;
+}
+::ng-deep .gpoConfig .p-checkbox .p-checkbox-box {
+    border: 1px solid #605e5c;
+    background: #ffffff;
+    width: 17px;
+    height: 17px;
+    color: #323130;
+}
+::ng-deep .gpoConfig .p-checkbox-label{
+    line-height: 0;
+    margin: 0;
+    font-size: 10px;
+}
+::ng-deep .gpoConfig .p-inputswitch .p-inputswitch-slider:before{
+    background: #4F8B3B;
+}
+::ng-deep .gpoConfig .p-inputswitch .p-inputswitch-slider{
+    background: #405838;
+}
+::ng-deep .gpoConfig .p-inputswitch.p-inputswitch-checked .p-inputswitch-slider:before {
+    background: #4F8B3B;
+}
+::ng-deep .gpoConfig .p-checkbox .p-checkbox-box {
+    background: #638b49;
+}
+::ng-deep .gpoConfig .p-checkbox .p-checkbox-box.p-highlight {
+    border-color: #12B28C !important;
+    background: #12B28C;
+}
+::ng-deep .gpoConfig input{
+    margin-left: 11px;
+    background: rgba(182, 182, 182, 0.12);
+    width: 50px;
+    border: 1px solid #858b53;
+    box-sizing: border-box;
+    border-radius: 7px;
+}
+
+::ng-deep .storegrid .p-inputswitch .p-inputswitch-slider:before{
+    background: #4F8B3B;
+}
+::ng-deep .storegrid .p-inputswitch .p-inputswitch-slider{
+    background: #405838;
+    border: 1px solid #605e5c;
+}
+::ng-deep .storegrid .p-inputswitch.p-inputswitch-checked .p-inputswitch-slider:before {
+    background: #689d56;;
+}
+::ng-deep .p-checkbox .p-checkbox-box {
+    background: #405838;
+}
+::ng-deep .storegrid .p-inputswitch.p-inputswitch-checked .p-inputswitch-slider {
+    background: #405838 !important;
+    border-color: #405838 !important;
+}

@@ -1,0 +1,686 @@
+<div class="card border-0">
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-12 pb-20">
+                <div class="col1 mb-4">
+                    <div class="dropdown pb-4 pt-4 text-center">
+                        <a
+                            class=""
+                            href="#"
+                            role="button"
+                            id="dropdownMenuLink"
+                            data-toggle="dropdown"
+                            aria-haspopup="true"
+                            aria-expanded="false"
+                        >
+                            <span class="election-category-title">Election Position</span>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <a
+                                *ngFor="let obj of electionPostResult; index as i"
+                                class="dropdown-item"
+                                href="javascript:void(0)"
+                            >
+                                <input
+                                    (change)="ElectionPositionFilterResult(obj, $event)"
+                                    type="radio"
+                                    name="checkbox"
+                                    id="checkbox_id_position_{{i}}"
+                                    class="presidentshipElectionPosition_id"
+                                    style="width: 10px"
+                                    value="value"
+                                />
+                                <label
+                                    for="checkbox_id_position_{{i}}"
+                                    style="
+                                        margin-bottom: -0.5rem !important;
+                                        margin-left: 1.3rem !important;
+                                        margin-top: 2px;
+                                    "
+                                >
+                                    <span class="text-uppercase" style="color: #ff89a0">{{ obj.officeName }}</span>
+                                </label>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col2">
+                    <div class="dropdown pb-4 pt-4 text-center">
+                        <a
+                            class=""
+                            href="#"
+                            role="button"
+                            id="dropdownMenuLink"
+                            data-toggle="dropdown"
+                            aria-haspopup="true"
+                            aria-expanded="false"
+                        >
+                            <span class="election-category-title">Country</span>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <a
+                                *ngFor="let obj of electionCountryResult; index as i"
+                                class="dropdown-item"
+                                href="javascript:void(0)"
+                            >
+                                <input
+                                    (change)="ElectionCountriesResult(obj, $event)"
+                                    type="radio"
+                                    name="checkbox"
+                                    id="checkbox_id_country_{{i}}"
+                                    class="presidentshipElectionPosition_id"
+                                    style="width: 10px"
+                                    value="value"
+                                />
+                                <label
+                                    for="checkbox_id_country_{{i}}"
+                                    style="
+                                        margin-bottom: -0.5rem !important;
+                                        margin-left: 1.3rem !important;
+                                        margin-top: 2px;
+                                    "
+                                >
+                                    <span class="text-uppercase" style="color: #ff89a0">{{ obj.electionCountryName }}</span>
+                                </label>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col3">
+                    <div class="dropdown pb-4 pt-4 text-center">
+                        <a
+                            class=""
+                            href="#"
+                            role="button"
+                            id="dropdownMenuLink"
+                            data-toggle="dropdown"
+                            aria-haspopup="true"
+                            aria-expanded="false"
+                        >
+                            <span class="election-category-title">State</span>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <a
+                                *ngFor="let obj of electionStateResult; index as i"
+                                class="dropdown-item"
+                                href="javascript:void(0)"
+                            >
+                                <input
+                                    (change)="ElectionStateResult(obj, $event)"
+                                    type="radio"
+                                    name="checkbox"
+                                    id="checkbox_id_state_{{i}}"
+                                    class="presidentshipElectionPosition_id"
+                                    style="width: 10px"
+                                    value="value"
+                                />
+                                <label
+                                    for="checkbox_id_state_{{i}}"
+                                    style="
+                                        margin-bottom: -0.5rem !important;
+                                        margin-left: 1.3rem !important;
+                                        margin-top: 2px;
+                                    "
+                                >
+                                    <span class="text-uppercase" style="color: #ff89a0">{{ obj.electionStateName }}</span>
+                                </label>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col4">
+                    <div class="dropdown pb-4 pt-4 text-center">
+                        <a
+                            class=""
+                            href="#"
+                            role="button"
+                            id="dropdownMenuLink"
+                            data-toggle="dropdown"
+                            aria-haspopup="true"
+                            aria-expanded="false"
+                        >
+                            <span class="election-category-title">Senatorial District</span>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <a
+                                *ngFor="let obj of electionSenatorialDistrictResult; index as i"
+                                class="dropdown-item"
+                                href="javascript:void(0)"
+                            >
+                                <input
+                                    (change)="ElectionSenatorialDistrictResult(obj, $event)"
+                                    type="radio"
+                                    name="checkbox"
+                                    id="checkbox_id_sd_{{i}}"
+                                    class="presidentshipElectionPosition_id"
+                                    style="width: 10px"
+                                    value="value"
+                                />
+                                <label
+                                    for="checkbox_id_sd_{{i}}"
+                                    style="
+                                        margin-bottom: -0.5rem !important;
+                                        margin-left: 1.3rem !important;
+                                        margin-top: 2px;
+                                    "
+                                >
+                                    <span class="text-uppercase" style="color: #ff89a0">{{
+                                        obj.electionSenatorialDistrictName
+                                    }}</span>
+                                </label>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col5">
+                    <div class="dropdown pb-4 pt-4 text-center">
+                        <a
+                            class=""
+                            href="#"
+                            role="button"
+                            id="dropdownMenuLink"
+                            data-toggle="dropdown"
+                            aria-haspopup="true"
+                            aria-expanded="false"
+                        >
+                            <span class="election-category-title">Federal Representative</span>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <a
+                                *ngFor="let obj of electionFederalRepresentativeResult; index as i"
+                                class="dropdown-item"
+                                href="javascript:void(0)"
+                            >
+                                <input
+                                    (change)="ElectionFederalRepresentativeResult(obj, $event)"
+                                    type="radio"
+                                    name="checkbox"
+                                    id="checkbox_id_fr_{{i}}"
+                                    class="presidentshipElectionPosition_id"
+                                    style="width: 10px"
+                                    value="value"
+                                />
+                                <label
+                                    for="checkbox_id_fr_{{i}}"
+                                    style="
+                                        margin-bottom: -0.5rem !important;
+                                        margin-left: 1.3rem !important;
+                                        margin-top: 2px;
+                                    "
+                                >
+                                    <span class="text-uppercase" style="color: #ff89a0">{{
+                                        obj.electionFederalRepresentativeProvinceNames
+                                    }}</span>
+                                </label>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col6">
+                    <div class="dropdown pb-4 pt-4 text-center">
+                        <a
+                            class=""
+                            href="#"
+                            role="button"
+                            id="dropdownMenuLink"
+                            data-toggle="dropdown"
+                            aria-haspopup="true"
+                            aria-expanded="false"
+                        >
+                            <span class="election-category-title">State Representative</span>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <a
+                                *ngFor="let obj of electionAssemblyAreaResult; index as i"
+                                class="dropdown-item"
+                                href="javascript:void(0)"
+                            >
+                                <input
+                                    (change)="ElectionStateRepresentativeResult(obj, $event)"
+                                    type="radio"
+                                    name="checkbox"
+                                    id="checkbox_id_sr_{{i}}"
+                                    class="presidentshipElectionPosition_id"
+                                    style="width: 10px"
+                                    value="value"
+                                />
+                                <label
+                                    for="checkbox_id_sr_{{i}}"
+                                    style="
+                                        margin-bottom: -0.5rem !important;
+                                        margin-left: 1.3rem !important;
+                                        margin-top: 2px;
+                                    "
+                                >
+                                    <span class="text-uppercase" style="color: #ff89a0">{{
+                                        obj.electionWardGroupId
+                                    }}</span>
+                                </label>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col7">
+                    <div class="dropdown pb-4 pt-4 text-center">
+                        <a
+                            class=""
+                            href="#"
+                            role="button"
+                            id="dropdownMenuLink"
+                            data-toggle="dropdown"
+                            aria-haspopup="true"
+                            aria-expanded="false"
+                        >
+                            <span class="election-category-title">Local Council</span>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <a
+                                *ngFor="let obj of electionLocalCouncilResult; index as i"
+                                class="dropdown-item"
+                                href="javascript:void(0)"
+                            >
+                                <input
+                                    (change)="ElectionStateRepresentativeResult(obj, $event)"
+                                    type="radio"
+                                    name="checkbox"
+                                    id="checkbox_id_sr_{{i}}"
+                                    class="presidentshipElectionPosition_id"
+                                    style="width: 10px"
+                                    value="value"
+                                />
+                                <label
+                                    for="checkbox_id_sr_{{i}}"
+                                    style="
+                                        margin-bottom: -0.5rem !important;
+                                        margin-left: 1.3rem !important;
+                                        margin-top: 2px;
+                                    "
+                                >
+                                    <span class="text-uppercase" style="color: #ff89a0">{{
+                                        obj.electionLocalCouncilName
+                                    }}</span>
+                                </label>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col8">
+                    <div class="dropdown pb-4 pt-4 text-center">
+                        <a
+                            class=""
+                            href="#"
+                            role="button"
+                            id="dropdownMenuLink"
+                            data-toggle="dropdown"
+                            aria-haspopup="true"
+                            aria-expanded="false"
+                        >
+                            <span class="election-category-title">Wards</span>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink" style="max-height: 250px;overflow: scroll;">
+                            <a
+                                *ngFor="let obj of electionWardsResult; index as i"
+                                class="dropdown-item"
+                                href="javascript:void(0)"
+                            >
+                                <input
+                                    (change)="ElectionWardsFilterResult(obj, $event)"
+                                    type="radio"
+                                    name="wardsradio"
+                                    class="checkbox_id_ward"
+                                    id="checkbox_id_ward_{{i}}"
+                                    style="width: 10px"
+                                    value="value"
+                                />
+                                <label
+                                    for="checkbox_id_ward_{{i}}"
+                                    style="
+                                        margin-bottom: -0.5rem !important;
+                                        margin-left: 1.3rem !important;
+                                        margin-top: 2px;
+                                    "
+                                >
+                                    <span class="text-uppercase" style="color: #ff89a0"
+                                        >{{ obj.electionWardName }}
+                                    </span>
+                                </label>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col9">
+                    <div class="dropdown pb-4 pt-4 text-center">
+                        <a
+                            class=""
+                            href="#"
+                            role="button"
+                            id="dropdownMenuLink"
+                            data-toggle="dropdown"
+                            aria-haspopup="true"
+                            aria-expanded="false"
+                        >
+                            <span class="election-category-title">Units</span>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink" style="max-height: 250px;overflow: scroll;">
+                            <a
+                                *ngFor="let obj of electionUnitsResult; index as i"
+                                class="dropdown-item"
+                                href="javascript:void(0)"
+                            >
+                                <input
+                                    (change)="ElectionUnitFilterResult(obj, $event)"
+                                    type="radio"
+                                    name="wardsradio"
+                                    class="checkbox_id_units"
+                                    id="checkbox_id_units_{{i}}"
+                                    style="width: 10px"
+                                    value="value"
+                                />
+                                <label
+                                    for="checkbox_id_units_{{i}}"
+                                    style="
+                                        margin-bottom: -0.5rem !important;
+                                        margin-left: 1.3rem !important;
+                                        margin-top: 2px;
+                                    "
+                                >
+                                    <span class="text-uppercase" style="color: #ff89a0"
+                                        >{{ obj.electionPollingUnitName }}
+                                    </span>
+                                </label>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 mt-6">
+                <div class="card">
+                    <div class="card-body">
+                        <span
+                            *ngFor="let item of filterList"
+                            class="badge bg-red mr-3 mb-2"
+                            style="background: #ff89a0"
+                            >{{ item.value }}</span
+                        >
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-md-12 mt-5 text-right">
+                <button
+                    type="button"
+                    (click)="Submit()"
+                    style="background-color: #ff89a0"
+                    class="btn btn-default text-white"
+                >
+                    Apply
+                </button>
+                <button type="button" class="btn btn-default" (click)="Reset()">Reset</button>
+            </div>
+            <div class="col-md-12 mt-6">
+                <div class="text-center dropdown" style="border-bottom: 3px solid #ff89a0">
+                    <span class="welcome-message"
+                        >Polling Unit Activity in year 2023
+                        </span>
+                        <i class="fas fa-external-link-alt text-custom-danger"></i
+                            >
+                </div>
+            </div>
+            <div class="col-md-11" >
+                <div style="display: block;">
+                    <canvas  baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions"
+                      [legend]="barChartLegend" [chartType]="barChartType" (chartHover)="chartHovered($event)"
+                      (chartClick)="chartClicked($event)"></canvas>
+                  </div>
+            </div>
+            <div class="col-md-1 pt-14 pl-0 pr-0">
+                <h3 class="text-dark"><b>{{politicalParties[0]?.totalPartyVote}}</b></h3>
+            </div>
+            <div class="col-md-12 mt-3">
+                <div class="row-fluid">
+                    <div *ngFor="let item of politicalParties" class="col-md-4 mb-4">
+                        <div class="row">
+                            <div class="col-md-2">
+                                <img class="br-50" width="35" src="{{item.partyPhoto}}">
+                            </div>
+                            <div class="col-md-10">
+                                <div class="card bg-custom-danger p-1">
+                                    <h4 class="text-white mb-0"><b>{{item.partyPrefix}}-{{item.candidateVote}}</b></h4>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 mt-4">
+                <div class="row">
+                    <div class="col-md-2 pr-0">
+                        <div class="card p-3 bg-custom-card">
+                            <div class="row">
+                                <div class="col-md-9 pl-2 pr-0 mt-3">
+                                    <h6 style="font-size: 1.1rem !important" class="text-custom-danger">
+                                        {{ electionReportSummaryAnalyticsResult?.electionResultDetails?.totalValidVote }} Votes
+                                    </h6>
+                                </div>
+                                <div class="col-md-3 text-right mt-3">
+                                    <i class="fa fa-chart-area text-custom-danger"></i>
+                                </div>
+                                <div class="col-md-9 pl-2 pr-2">
+                                    <h6 class="text-custom-primary fs-09">
+                                        {{ electionReportSummaryAnalyticsResult?.electionCountryBreakDownforResult?.totalElectionPollingUnitLink }} Poling Units
+                                    </h6>
+                                </div>
+                                <div class="col-md-3 pl-0 pr-1">
+                                    <input type="checkbox" id="toggle5" class="visually-hidden" />
+                                    <div class="custom-badge p-1">
+                                        <label for="toggle5" class="mb-0"
+                                            ><span class="election-category-title">2.6 </span>
+                                            <!-- <img src="https://static.thenounproject.com/png/414720-200.png" width="15"/> -->
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 pr-0">
+                        <div class="card p-3 bg-custom-card">
+                            <div class="row mt-4">
+                                <div class="col-md-8 pr-0 pl-2">
+                                    <h5 class="text-custom-primary">
+                                        {{ electionReportSummaryAnalyticsResult?.electionResultDetails?.totalElectionIncident }}
+                                    </h5>
+                                </div>
+                                <div class="col-md-4 text-right">
+                                    <svg
+                                        width="19"
+                                        height="18"
+                                        viewBox="0 0 19 18"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <path
+                                            d="M0.5 17.5V4.5L4.5 7.5L9.5 0.5L14.5 4.5H18.5V17.5H0.5ZM5.5 14.5L9.5 9L16.5 14.45V6.5H13.8L9.9 3.375L4.95 10.325L2.5 8.5V12.1L5.5 14.5Z"
+                                            fill="#FF2D55"
+                                        />
+                                    </svg>
+                                </div>
+                                <div class="col-md-12 text-center pl-2 pr-2">
+                                    <h6 class="text-custom-primary" style="font-size: 0.8rem !important">
+                                        Incident Polling Unit
+                                    </h6>
+                                </div>
+                                <!-- <div class="col-md-12 text-center pl-2 pr-2">
+                                    <h6 class="text-white fs-07 range-label" >
+                                        <b>{{ Percentage(electionReportSummaryAnalyticsResult?.electionResultDetails?.totalElectionIncident, politicalParties[0]?.totalPartyVote) }} %</b>
+                                    </h6>
+                                    <h6 class="text-dark fs-07 range-label2">
+                                        <b>{{ electionReportSummaryAnalyticsResult?.electionResultDetails?.totalElectionIncident }}</b>
+                                    </h6>
+                                    <input type="range" value="{{ Percentage(electionReportSummaryAnalyticsResult?.electionResultDetails?.totalElectionIncident, politicalParties[0]?.totalPartyVote) }}" min="0" max="100" class="slider" id="customRange1">
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 pr-0">
+                        <div class="card p-3 bg-custom-card">
+                            <div class="row mt-4">
+                                <div class="col-md-8 pr-0 pl-2">
+                                    <h5 class="text-custom-primary">
+                                        {{ electionReportSummaryAnalyticsResult?.electionResultDetails?.totalPollingUnitWithOutResult }}
+                                    </h5>
+                                </div>
+                                <div class="col-md-4 text-right">
+                                    <svg
+                                        width="14"
+                                        height="17"
+                                        viewBox="0 0 14 17"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <path
+                                            d="M3.99991 14.722H10.2221V12.3887C10.2221 11.5332 9.9175 10.8007 9.30824 10.1915C8.69898 9.58223 7.96657 9.2776 7.11102 9.2776C6.25546 9.2776 5.52305 9.58223 4.91379 10.1915C4.30453 10.8007 3.99991 11.5332 3.99991 12.3887V14.722ZM7.11102 7.72205C7.96657 7.72205 8.69898 7.41742 9.30824 6.80816C9.9175 6.1989 10.2221 5.46649 10.2221 4.61093V2.2776H3.99991V4.61093C3.99991 5.46649 4.30453 6.1989 4.91379 6.80816C5.52305 7.41742 6.25546 7.72205 7.11102 7.72205ZM0.888794 16.2776V14.722H2.44435V12.3887C2.44435 11.598 2.6292 10.8557 2.9989 10.1619C3.36809 9.46868 3.88324 8.91464 4.54435 8.49982C3.88324 8.08501 3.36809 7.53071 2.9989 6.83694C2.6292 6.14368 2.44435 5.40168 2.44435 4.61093V2.2776H0.888794V0.722046H13.3332V2.2776H11.7777V4.61093C11.7777 5.40168 11.5931 6.14368 11.2239 6.83694C10.8542 7.53071 10.3388 8.08501 9.67768 8.49982C10.3388 8.91464 10.8542 9.46868 11.2239 10.1619C11.5931 10.8557 11.7777 11.598 11.7777 12.3887V14.722H13.3332V16.2776H0.888794Z"
+                                            fill="#AF52DE"
+                                        />
+                                    </svg>
+                                </div>
+                                <div class="col-md-12 text-center pl-2 pr-2">
+                                    <h6 class="text-custom-primary" style="font-size: 0.8rem !important">
+                                        Polling Unit Pending
+                                    </h6>
+                                </div>
+                                <div class="col-md-12 text-center pl-2 pr-2">
+                                    <h6 class="text-white fs-07 range-label" >
+                                        <b>{{ Percentage(electionReportSummaryAnalyticsResult?.electionResultDetails?.totalPollingUnitWithOutResult, electionReportSummaryAnalyticsResult?.electionCountryBreakDownforResult?.totalElectionPollingUnitLink) }} %</b>
+                                    </h6>
+                                    <h6 class="text-dark fs-07 range-label2">
+                                        <b>{{ electionReportSummaryAnalyticsResult?.electionResultDetails?.totalPollingUnitWithOutResult }}</b>
+                                    </h6>
+                                    <input type="range" value="{{ Percentage(electionReportSummaryAnalyticsResult?.electionResultDetails?.totalPollingUnitWithOutResult, politicalParties[0]?.totalPartyVote) }}" min="0" max="100" class="slider" id="customRange1">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 pr-0">
+                        <div class="card p-3 bg-custom-card">
+                            <div class="row mt-4">
+                                <div class="col-md-8 pr-0 pl-2">
+                                    <h5 class="text-custom-primary">
+                                        {{ electionReportSummaryAnalyticsResult?.electionResultDetails?.totalPollingUnitWithResult }}
+                                    </h5>
+                                </div>
+                                <div class="col-md-4 text-right">
+                                    <svg
+                                        width="21"
+                                        height="21"
+                                        viewBox="0 0 21 21"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <path
+                                            d="M9.09988 15.0999L16.1499 8.04988L14.7499 6.64988L9.09988 12.2999L6.24988 9.44988L4.84988 10.8499L9.09988 15.0999ZM10.4999 20.4999C9.11654 20.4999 7.81655 20.2372 6.59988 19.7119C5.38321 19.1872 4.32488 18.4749 3.42488 17.5749C2.52488 16.6749 1.81254 15.6165 1.28788 14.3999C0.762545 13.1832 0.499878 11.8832 0.499878 10.4999C0.499878 9.11654 0.762545 7.81655 1.28788 6.59988C1.81254 5.38321 2.52488 4.32488 3.42488 3.42488C4.32488 2.52488 5.38321 1.81221 6.59988 1.28688C7.81655 0.762211 9.11654 0.499878 10.4999 0.499878C11.8832 0.499878 13.1832 0.762211 14.3999 1.28688C15.6165 1.81221 16.6749 2.52488 17.5749 3.42488C18.4749 4.32488 19.1872 5.38321 19.7119 6.59988C20.2372 7.81655 20.4999 9.11654 20.4999 10.4999C20.4999 11.8832 20.2372 13.1832 19.7119 14.3999C19.1872 15.6165 18.4749 16.6749 17.5749 17.5749C16.6749 18.4749 15.6165 19.1872 14.3999 19.7119C13.1832 20.2372 11.8832 20.4999 10.4999 20.4999ZM10.4999 18.4999C12.7332 18.4999 14.6249 17.7249 16.1749 16.1749C17.7249 14.6249 18.4999 12.7332 18.4999 10.4999C18.4999 8.26654 17.7249 6.37488 16.1749 4.82488C14.6249 3.27488 12.7332 2.49988 10.4999 2.49988C8.26654 2.49988 6.37488 3.27488 4.82488 4.82488C3.27488 6.37488 2.49988 8.26654 2.49988 10.4999C2.49988 12.7332 3.27488 14.6249 4.82488 16.1749C6.37488 17.7249 8.26654 18.4999 10.4999 18.4999Z"
+                                            fill="#34C759"
+                                        />
+                                    </svg>
+                                </div>
+                                <div class="col-md-12 text-center pl-2 pr-2">
+                                    <h6 class="text-custom-primary" style="font-size: 0.8rem !important">
+                                        Polling with Result
+                                    </h6>
+                                </div>
+                                <div class="col-md-12 text-center pl-2 pr-2">
+                                    <h6 class="text-white fs-07 range-label" >
+                                        <b>{{ Percentage(electionReportSummaryAnalyticsResult?.electionResultDetails?.totalPollingUnitWithResult, electionReportSummaryAnalyticsResult?.electionCountryBreakDownforResult?.totalElectionPollingUnitLink) }} %</b>
+                                    </h6>
+                                    <h6 class="text-dark fs-07 range-label2">
+                                        <b>{{ electionReportSummaryAnalyticsResult?.electionResultDetails?.totalPollingUnitWithResult }}</b>
+                                    </h6>
+                                    <input type="range" value="{{ Percentage(electionReportSummaryAnalyticsResult?.electionResultDetails?.totalPollingUnitWithResult, politicalParties[0]?.totalPartyVote) }}" min="0" max="100" class="slider" id="customRange1">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 pr-0">
+                        <div class="card p-3 bg-custom-card">
+                            <div class="row mt-4">
+                                <div class="col-md-8 pr-0 pl-2">
+                                    <h5 class="text-custom-primary">{{ electionReportSummaryAnalyticsResult?.electionResultDetails?.totalPollingUnitWithOutResult }}</h5>
+                                </div>
+                                <div class="col-md-4 text-right">
+                                    <svg
+                                        width="17"
+                                        height="21"
+                                        viewBox="0 0 17 21"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <path
+                                            d="M8.50012 9.49988C9.60012 9.49988 10.5418 9.10821 11.3251 8.32488C12.1085 7.54154 12.5001 6.59988 12.5001 5.49988V2.49988H4.50012V5.49988C4.50012 6.59988 4.89179 7.54154 5.67512 8.32488C6.45846 9.10821 7.40012 9.49988 8.50012 9.49988ZM0.500122 20.4999V18.4999H2.50012V15.4999C2.50012 14.4832 2.73779 13.5289 3.21312 12.6369C3.68779 11.7455 4.35012 11.0332 5.20012 10.4999C4.35012 9.96654 3.68779 9.25388 3.21312 8.36188C2.73779 7.47055 2.50012 6.51654 2.50012 5.49988V2.49988H0.500122V0.499878H16.5001V2.49988H14.5001V5.49988C14.5001 6.51654 14.2628 7.47055 13.7881 8.36188C13.3128 9.25388 12.6501 9.96654 11.8001 10.4999C12.6501 11.0332 13.3128 11.7455 13.7881 12.6369C14.2628 13.5289 14.5001 14.4832 14.5001 15.4999V18.4999H16.5001V20.4999H0.500122Z"
+                                            fill="#5AC8FA"
+                                        />
+                                    </svg>
+                                </div>
+                                <div class="col-md-12 text-center pl-2 pr-2">
+                                    <h6 class="text-custom-primary" style="font-size: 0.8rem !important">
+                                        Poling without Result
+                                    </h6>
+                                </div>
+                                <div class="col-md-12 text-center pl-2 pr-2">
+                                    <h6 class="text-white fs-07 range-label" >
+                                        <b>{{ Percentage(electionReportSummaryAnalyticsResult?.electionResultDetails?.totalPollingUnitWithOutResult, electionReportSummaryAnalyticsResult?.electionCountryBreakDownforResult?.totalElectionPollingUnitLink) }} %</b>
+                                    </h6>
+                                    <h6 class="text-dark fs-07 range-label2">
+                                        <b>{{ electionReportSummaryAnalyticsResult?.electionResultDetails?.totalPollingUnitWithOutResult }}</b>
+                                    </h6>
+                                    <input type="range" value="{{ Percentage(electionReportSummaryAnalyticsResult?.electionResultDetails?.totalPollingUnitWithOutResult, politicalParties[0]?.totalPartyVote) }}" min="0" max="100" class="slider" id="customRange1">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 pr-0">
+                        <div class="card p-3 bg-custom-card">
+                            <div class="row mt-4">
+                                <div class="col-md-8 pr-0 pl-2">
+                                    <h5 class="text-custom-primary">
+                                        {{ electionReportSummaryAnalyticsResult?.electionCountryBreakDownforResult?.totalElectionPollingUnitLink }}
+                                    </h5>
+                                </div>
+                                <div class="col-md-4 text-right">
+                                    <svg
+                                        width="20"
+                                        height="22"
+                                        viewBox="0 0 20 22"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <path
+                                            d="M14.5 21.5001C13.1167 21.5001 11.9377 21.0128 10.963 20.0381C9.98767 19.0628 9.5 17.8835 9.5 16.5001C9.5 15.1168 9.98767 13.9375 10.963 12.9621C11.9377 11.9875 13.1167 11.5001 14.5 11.5001C15.8833 11.5001 17.0627 11.9875 18.038 12.9621C19.0127 13.9375 19.5 15.1168 19.5 16.5001C19.5 17.8835 19.0127 19.0628 18.038 20.0381C17.0627 21.0128 15.8833 21.5001 14.5 21.5001ZM16.175 18.8751L16.875 18.1751L15 16.3001V13.5001H14V16.7001L16.175 18.8751ZM2.5 20.5001C1.95 20.5001 1.479 20.3045 1.087 19.9131C0.695667 19.5211 0.5 19.0501 0.5 18.5001V4.50012C0.5 3.95012 0.695667 3.47912 1.087 3.08712C1.479 2.69579 1.95 2.50012 2.5 2.50012H6.675C6.85833 1.91679 7.21667 1.43746 7.75 1.06212C8.28333 0.687455 8.86667 0.500122 9.5 0.500122C10.1667 0.500122 10.7627 0.687455 11.288 1.06212C11.8127 1.43746 12.1667 1.91679 12.35 2.50012H16.5C17.05 2.50012 17.521 2.69579 17.913 3.08712C18.3043 3.47912 18.5 3.95012 18.5 4.50012V10.7501C18.2 10.5335 17.8833 10.3501 17.55 10.2001C17.2167 10.0501 16.8667 9.91679 16.5 9.80012V4.50012H14.5V7.50012H4.5V4.50012H2.5V18.5001H7.8C7.91667 18.8668 8.05 19.2168 8.2 19.5501C8.35 19.8835 8.53333 20.2001 8.75 20.5001H2.5ZM9.5 4.50012C9.78333 4.50012 10.021 4.40412 10.213 4.21212C10.4043 4.02079 10.5 3.78346 10.5 3.50012C10.5 3.21679 10.4043 2.97912 10.213 2.78712C10.021 2.59579 9.78333 2.50012 9.5 2.50012C9.21667 2.50012 8.97933 2.59579 8.788 2.78712C8.596 2.97912 8.5 3.21679 8.5 3.50012C8.5 3.78346 8.596 4.02079 8.788 4.21212C8.97933 4.40412 9.21667 4.50012 9.5 4.50012Z"
+                                            fill="#FABA5A"
+                                        />
+                                    </svg>
+                                </div>
+                                <div class="col-md-12 text-center pl-2 pr-2">
+                                    <h6 class="text-custom-primary" style="font-size: 0.8rem !important">
+                                        Polling Unit Counting
+                                    </h6>
+                                </div>
+                                <!-- <div class="col-md-12 text-center pl-2 pr-2">
+                                    <h6 class="text-white fs-07 range-label" >
+                                        <b>{{ Percentage(electionReportSummaryAnalyticsResult?.electionCountryBreakDownforResult?.totalElectionPollingUnitLink, politicalParties[0]?.totalPartyVote) }} %</b>
+                                    </h6>
+                                    <h6 class="text-dark fs-07 range-label2">
+                                        {{ electionReportSummaryAnalyticsResult?.electionCountryBreakDownforResult?.totalElectionPollingUnitLink }}
+                                    </h6>
+                                    <input type="range" value="{{ Percentage(electionReportSummaryAnalyticsResult?.electionCountryBreakDownforResult?.totalElectionPollingUnitLink, politicalParties[0]?.totalPartyVote) }}" min="0" max="100" class="slider" id="customRange1">
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

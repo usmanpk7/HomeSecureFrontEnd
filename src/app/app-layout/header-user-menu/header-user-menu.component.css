@@ -1,0 +1,50 @@
+.text-dark-50 {
+    color: red !important;
+}
+.px-2 {
+    padding-left: 0.5rem !important;
+}
+px-2 {
+    padding-right: 0.5rem !important;
+}
+.d-flex {
+
+    display: inline-flex !important;
+}
+
+.btn.btn-clean:hover:not(.btn-text):not(:disabled):not(.disabled), .btn.btn-clean:focus:not(.btn-text), .btn.btn-clean.focus:not(.btn-text) {
+    /* color: #3699FF; */
+    background-color: transparent;
+    border-color: transparent;
+}
+
+.text-dark-75 {
+    color: white !important;
+}
+.navi .navi-item .navi-link .navi-text {
+    color: white;
+}
+.btn.btn-light-primary {
+    color: #FFFFFF;
+    background-color: #B7A643;
+    border-color: transparent;
+}
+.btn.btn-light-primary:hover:not(.btn-text):not(:disabled):not(.disabled), .btn.btn-light-primary:focus:not(.btn-text), .btn.btn-light-primary.focus:not(.btn-text) {
+    color: #FFFFFF;
+    background-color: #B7A643;
+    border-color: transparent;
+}
+.nav-imgs{
+    color: white;
+    font-size: 27px;
+}
+a.text-hover-primary:hover, .text-hover-primary:hover {
+    color: rgb(246, 248, 250) !important;
+    transition: color 0.15s ease 0s, background-color 0.15s ease 0s, border-color 0.15s ease 0s, box-shadow 0.15s ease 0s, -webkit-box-shadow 0.15s ease 0s;
+}
+.symbol.symbol-40 .symbol-label {
+    width: 40px;
+    height: 40px;
+    background-color: #B7A643;
+}
+

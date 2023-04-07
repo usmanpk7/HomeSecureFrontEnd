@@ -1,0 +1,110 @@
+<div class="incident">
+    <p-tabView>
+        <p-tabPanel header="INCIDENT LOCATION">
+            <div class="row mt-3">
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col mr-5">
+                            <div class="card bg-custom-location-card1 p-4">
+                                <div class="row text-center">
+                                    <div class="col-md-12">
+                                        <h6 class="text-custom-location-card1 font-bold">SOS</h6>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <img src="/assets/IncidentDashboard/sos.png" width="60">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col mr-5">
+                            <div class="card bg-custom-location-card2 p-4">
+                                <div class="row text-center">
+                                    <div class="col-md-12">
+                                        <h6 class="text-custom-location-card2 font-bold">Fire</h6>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <img src="/assets/IncidentDashboard/fire.png" width="60">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col mr-5">
+                            <div class="card bg-custom-location-card1 p-4">
+                                <div class="row text-center">
+                                    <div class="col-md-12">
+                                        <h6 class="text-custom-location-card1 font-bold">Armed Robbery</h6>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <img src="/assets/IncidentDashboard/armed.png" width="60">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col mr-5">
+                            <div class="card bg-custom-location-card3 p-4">
+                                <div class="row text-center">
+                                    <div class="col-md-12">
+                                        <h6 class="text-custom-location-card3 font-bold">Accident</h6>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <img src="/assets/IncidentDashboard/accident.png" width="60">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card bg-custom-location-card1 p-4">
+                                <div class="row text-center">
+                                    <div class="col-md-12">
+                                        <h6 class="text-custom-location-card1 font-bold">Hurricane</h6>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <img src="/assets/IncidentDashboard/hurricane.png" width="60">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-md-2">
+                    <input type="checkbox" id="GIS3" [(ngModel)]="GISMAP" (change)="MapTypeGoogleToGIS()" class="visually-hidden">
+                    <div class="dropdown pb-2 pt-4 text-center">
+                        <label for="GIS3">
+                             <span class="election-category-title"><b>GIS</b>  
+                                <i class="fas fa-external-link-alt text-custom-danger ml-3"></i>
+                             </span>
+                        </label>   
+                    </div>                 
+                </div>
+                <div class="col-md-2">
+                    <input type="checkbox" id="MAP3" [(ngModel)]="GOOGLEMAP" (change)="MapTypeGISToGoogle()" class="visually-hidden">
+                    <div class="dropdown pb-2 pt-4 text-center">
+                        <label for="MAP3">
+                             <span class="election-category-title"><b>GOOGLE MAP </b> 
+                                <i class="fas fa-external-link-alt text-custom-danger ml-3"></i>
+                             </span>
+                        </label>   
+                    </div>                 
+                </div>
+                <div class="col-md-8 text-right">
+                    <button class="btn btn-sm btn-outline-primary"> </button>
+                </div>
+            </div>
+            <div class="row" [hidden]="!GOOGLEMAP">
+                <div id="incidentlocationmap" class="map-div"></div>
+            </div>
+            <app-esri-map [hidden]="!GISMAP"
+            [center]="mapCenter"
+            [basemap]="basemapType"
+            [zoom]="mapZoomLevel"
+            (mapLoadedEvent)="mapLoadedEvent($event)"
+            >
+            </app-esri-map>
+        </p-tabPanel>
+        <p-tabPanel header="INCIDENT NEWS"> </p-tabPanel>
+        <p-tabPanel header="CUMUNITY INCIDENT"> </p-tabPanel>
+        <p-tabPanel header="RESPONDER CREW"> </p-tabPanel>
+    </p-tabView>
+</div>

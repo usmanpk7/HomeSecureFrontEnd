@@ -1,0 +1,87 @@
+<!-- owl slider -->
+<!-- font awesome cdn -->
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous">
+    </script>
+
+<!-- owl slider -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+    integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+    integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <nav class="navbar-custom">
+        <div class="row pt-6">
+            <div class="col-2 pl-6 pr-0 text-left">
+                <img width="50" src="../../../assets/electro pro web.png">
+                <img width="100" src="../../../assets/NavBarLogo2.png">
+            </div>
+            <div class="col-10 mt-4 pl-0 ">
+                <div class="collapse navbar-collapse row pl-0" >
+                    <div class="row">
+                      <div class="col pl-0 pr-0" >
+                        <img width="11" src="../../../assets/Home2.png" class="navbarText">
+                        <span class="navbar-textCustom navbarText"> Home</span>
+                    </div>
+                      <div class="col pl-0">
+                        <img width="11" src="../../../assets/service_tenant.png" class="navbarText">
+                        <span class="navbar-textCustom navbarText"> Services</span>
+                        <img width="11" src="../../../assets/settingArrowDown_navbar.png">
+                    </div>
+                      <div class="col pr-0" >
+                        <img width="11" src="../../../assets/User_navbar.png" class="navbarText">
+                        <span class="navbar-textCustom navbarText"> User</span>
+                    </div>
+                      <div class="col pl-0" >
+                        <img width="11" src="../../../assets/Mailing_navbar.png" class="navbarText">
+                        <span class="navbar-textCustom navbarText"> Mailing</span>
+                    </div>
+                      <div class="col" >
+                        <img width="11" src="../../../assets/Billing_navbar.png" class="navbarText">
+                        <span class="navbar-textCustom navbarText"> Billing</span>
+                        <img width="11" src="../../../assets/settingArrowDown_navbar.png">
+                    </div>
+                      <div class="col pr-0" >
+                        <img width="11" src="../../../assets/Home_Navbar.png" class="navbarText">
+                        <span class="navbar-textCustom navbarText"> Tools</span>
+                    </div>
+                      <div class="col" >
+                        <img width="11" src="../../../assets/setting_navbar.png">
+                        <span class="navbar-textCustom navbarText"> Settings</span>
+                        <img width="11" src="../../../assets/settingArrowDown_navbar.png">
+                    </div>
+                      <div class="col">
+                        <img width="11" src="../../../assets/Help_navbar.png">
+                        <span class="navbar-textCustom navbarText"> Help</span>
+                    </div>
+                      <div class="col pl-0 pr-0">
+                        <div class="navbar-textCustom navbarText navbar-notification">
+                        <img width="11" class="navbar-notification-img" src="../../../assets/alert_navbar.png">
+                        </div>
+                    </div>
+                      <div class="col">
+                        <div class="dropdown show">
+                            <a class="" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <div class="navbar-textCustom navbarText navbar-user">
+                                    <img width="11" class="navbar-user-img" [src]="profilePicture">
+                                    <span class="navbar-user-span">{{userName}}</span>&nbsp;&nbsp;&nbsp;<img width="11" style="margin-top: 10px;" src="../../../assets/settingArrowDown_navbar.png">
+                                </div>
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                              <span class="dropdown-item"  style="cursor: pointer;" (click)="logout()">LOGOUT</span>
+                            </div>
+                          </div>
+                    </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+      </nav>
+
+
+
+

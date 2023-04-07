@@ -1,0 +1,91 @@
+<div class="row">
+    <div class="col-md-6 pl-0">
+        <span class="text-custom-dark">Select the color to view the Party Candidates Location</span>
+    </div>
+    <div class="col-md-6 text-right">
+        <span class="text-custom-dark">Scroll Horizontlly to view more Parties <i class="fa fa-caret-right text-primary"></i></span>
+    </div>
+</div>
+<div class="row mt-4">
+    <div class="col-md-2 pl-0">
+        <input type="checkbox" id="CandidateFilters" class="visually-hidden">
+        <div class="dropdown2 pb-2 pt-4 text-center">
+            <label for="CandidateFilters">
+                 <span class="election-category-title2"><b>Filters </b> 
+                    <i class="fas fa-ellipsis-v text-custom-danger ml-3"></i>
+                 </span>
+            </label>   
+        </div> 
+    </div>
+    <div class="col-md-10 pl-0">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 15.5556C0 6.96446 6.96446 0 15.5556 0H16.4445C25.0355 0 32 6.96446 32 15.5556C32 24.1466 25.0355 31.1111 16.4445 31.1111H15.5555C6.96446 31.1111 0 24.1466 0 15.5556Z" fill="#D71B85"/>
+        </svg>
+        <span class="text-custom-dark mr-4 mt-1 ml-2">Domestic Party</span> 
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="32" height="31.1111" rx="15.5556" fill="#E8C64A"/>
+        </svg>
+        <span class="text-custom-dark mr-4 mt-1 ml-2">Librel Party</span>   
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="32" height="31.1111" rx="15.5556" fill="#6966FF"/>
+        </svg>
+        <span class="text-custom-dark mr-4 mt-1 ml-2">Public Party</span>   
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="32" height="31.1111" rx="15.5556" fill="#A6281C"/>
+        </svg>
+        <span class="text-custom-dark mr-4 mt-1 ml-2">Labour Party</span>  
+    </div>
+</div>
+<div class="row mt-4">
+    <div class="col-md-2">
+        <input type="checkbox" id="GIS5" [(ngModel)]="GISMAP" (change)="MapTypeGoogleToGIS()" class="visually-hidden">
+        <div class="dropdown pb-2 pt-4 text-center">
+            <label for="GIS5">
+                 <span class="election-category-title"><b>GIS</b>  
+                    <i class="fas fa-external-link-alt text-custom-danger ml-3"></i>
+                 </span>
+            </label>   
+        </div>                 
+    </div>
+    <div class="col-md-2">
+        <input type="checkbox" id="MAP5" [(ngModel)]="GOOGLEMAP" (change)="MapTypeGISToGoogle()" class="visually-hidden">
+        <div class="dropdown pb-2 pt-4 text-center">
+            <label for="MAP5">
+                 <span class="election-category-title"><b>GOOGLE MAP </b> 
+                    <i class="fas fa-external-link-alt text-custom-danger ml-3"></i>
+                 </span>
+            </label>   
+        </div>                 
+    </div>
+    <div class="col-md-4 text-right mt-4">
+        <h5 class="text-custom-primary">Satellite</h5>                
+    </div>
+    <div class="col-md-1 mt-4 pl-0">
+        <div class="switch">
+            <input id="switch-9" type="checkbox" class="switch-input" />
+            <label for="switch-9" class="switch-label">Switch</label>
+        </div>
+    </div>
+    <div class="col-md-2 text-right mt-4">
+        <h5 class="text-custom-primary">Map</h5>  
+    </div>
+    <div class="col-md-1 mt-4 pl-0">
+        <div class="switch">
+            <input id="switch-10" type="checkbox" class="switch-input" />
+            <label for="switch-10" class="switch-label">Switch</label>
+        </div>
+    </div>
+</div>
+<div class="row" [hidden]="!GOOGLEMAP">
+    <div id="map5" class="map-div"></div>
+</div>
+
+<app-esri-map [hidden]="!GISMAP"
+[center]="mapCenter"
+[basemap]="basemapType"
+[zoom]="mapZoomLevel"
+(mapLoadedEvent)="mapLoadedEvent($event)"
+>
+</app-esri-map>
+
+

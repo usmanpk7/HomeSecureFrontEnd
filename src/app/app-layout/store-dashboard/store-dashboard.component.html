@@ -1,0 +1,134 @@
+<!-- <div class="col-md-12 p-0 mainSection mt-10 mb-10">
+    <div class="col-md-12">
+        <div class="col-md-12 pl-10 pr-12">
+               </div>
+    </div>
+    <div class="col-md-12 pt-5" style="padding: 0 0 25px 6px; margin-top: 10px; text-align: center">
+        <app-eqis-text-card
+            [text]="'Total Stores'"
+            [count]="intentAnalyticsResult.totalItems"
+            [icon]="'fa-bars'"
+            [percentage]="''"
+        >
+        </app-eqis-text-card>
+    <app-eqis-text-card
+        [text]="'Low Stores'"
+        [count]="intentAnalyticsResult.totalItemsReturned"
+        [icon]="'fa-user-times'"
+        [percentage]="''"
+        class="lowStore"
+    >
+    </app-eqis-text-card>
+        <app-eqis-text-card
+        [text]="'Critical Low Stores'"
+        [count]="intentAnalyticsResult.totallowlevelCriticalItems"
+        [icon]="'fa-calculator'"
+        [percentage]="''"
+        class="criticalStore"
+    > </app-eqis-text-card>
+        <app-eqis-text-card
+            [text]="'Out Of Stock'"
+            class="outOfStock"
+            [count]="intentAnalyticsResult.totalOutOFStockItems"
+            [icon]="'fa-user'"
+            [percentage]="''"
+        >
+        </app-eqis-text-card>
+        <app-eqis-text-card
+            [text]="'Expired Stock'"
+            class="ExpiredStock"
+            [count]="intentAnalyticsResult.totalExpiredStockItems"
+            [icon]="'fa-user'"
+            [percentage]="''"
+        >
+        </app-eqis-text-card>
+        <div *ngIf="true" [appLoading]="Loading"></div>
+    </div>
+    <div class="col-md-12 pt-5"  style="padding: 30px;">
+       <div class="list-group list-group-horizontal text-nowrap overflow-auto" *ngIf="itemAnalytics">
+        <app-eqis-text-card-detail [text]="'Total Stores'" [nodes]="itemAnalytics.criticalLowStores" [cardColor]="{background: 'rgba(80, 119, 70, 0.64)',
+            border: '2px solid rgba(33, 51, 21, 0.56)'}"
+            [icon]="'fa-bars'" [percentage]="''">
+        </app-eqis-text-card-detail>
+        <app-eqis-text-card-detail [text]="'Total Stores'" [nodes]="itemAnalytics.lowStores"  [cardColor]=""
+            [icon]="'fa-bars'" [percentage]="''">
+        </app-eqis-text-card-detail>
+        <app-eqis-text-card-detail [text]="'Total Stores'" [nodes]="itemAnalytics.outOfStock"  [cardColor]="{background: 'linear-gradient(180deg, rgba(255, 11, 11, 0.41) 0%, rgba(255, 0, 0, 0.41) 100%)',
+        border: '2px solid rgba(33, 51, 21, 0.56)'}"
+            [icon]="'fa-bars'" [percentage]="''">
+        </app-eqis-text-card-detail>
+        <app-eqis-text-card-detail [text]="'Total Stores'" [nodes]="itemAnalytics.expiredStock" [cardColor]="{background: 'linear-gradient(180deg, rgba(109, 119, 58, 0.91) 0%, rgba(88, 123, 79, 0.91) 100%)',
+        border: '2px solid rgba(33, 51, 21, 0.56)'}"
+            [icon]="'fa-bars'" [percentage]="''">
+        </app-eqis-text-card-detail>
+    </div>
+    </div>
+</div>
+<div class="col-md-12 mainSection pt-5 pb-5">
+    <section class="pb-5">
+        <div class="col-md-12 Round-Pannel3">
+            <div class="col-md-12 mt-7 mb-4">
+                <div class="col-md-6 Search-Panel">
+                    <i class="fa fa-search col-md-1 pt-3"></i>
+                    <input
+                        type="text"
+                        class="form-control col-md-11"
+                        (input)="searchFilter($event.target.value)"
+                        placeholder="Search"
+                        style="border: 0px; background: transparent; color: #eef0f8"
+                    />
+                </div>
+                <div class="col-md-6"></div>
+            </div>
+            <div class="col-md-12">
+                <a
+                    type="button"
+                    [ngClass]="{ 'category-active': categoryTab === 1 }"
+                    (click)="onTabChange($event)"
+                    id="tab1"
+                    class="btn"
+                    >Stores</a
+                >
+                <a
+                    type="button"
+                    [ngClass]="{ 'category-active': categoryTab === 2 }"
+                (click)="onTabChange($event)"
+                    id="tab2"
+                    class="btn"
+                    >Variety Batch</a
+                >
+            </div>
+            <app-store #store (footerOutputAction)="footerEvent($event)" *ngIf="categoryTab === 1"></app-store>
+            <app-store-variety-batch
+                #store
+                (footerOutputAction)="footerEvent($event)"
+                *ngIf="categoryTab === 2"
+            ></app-store-variety-batch>
+            <app-warehouse (footerOutputAction)="footerEvent($event)" *ngIf="categoryTab === 3"></app-warehouse>
+        </div>
+    </section>
+</div>
+
+<div class="row pb-3" style="justify-content: center">
+    <div class="col-md-10 footer-btnPanel">
+        <div class="col-md-12 p-4" style="display: flex" *ngIf="footerActionButton">
+            <button
+                *ngFor="let item of footerActionButton"
+                type="button"
+                class="btn btn2"
+                (click)="OnFooterAction(item.type)"
+            >
+                <i class="{{ item.icon }}"></i>
+                {{ item.title }}
+            </button>
+        </div>
+    </div>
+    <app-create-store-form #createStore></app-create-store-form>
+    <app-add-store-category #createStoreCategory></app-add-store-category>
+    <app-add-store-type #createStoreType></app-add-store-type>
+    <app-create-supplier #createStoreSupplier></app-create-supplier>
+    <app-create-manufacturer-form #createStoreManufacturer></app-create-manufacturer-form>
+    <app-create-varriety-batch #createVarrietyBatch></app-create-varriety-batch>
+    <app-create-varriety-category #createVarietyCategory></app-create-varriety-category>
+    <app-create-varriety #createVariety></app-create-varriety>
+</div> -->

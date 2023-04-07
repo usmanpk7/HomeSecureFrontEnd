@@ -1,0 +1,133 @@
+<!-- <style>
+    .spinner-img {
+        height: 20vh;
+        width: 20vh;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        color: red;
+    }
+</style>
+<p-dialog header="Add Varriety Category" [(visible)]="displayResponsive">
+    <form autocomplete="off" [formGroup]="createVCategoryForm" class="createform" style="padding: 20px">
+        <div class="row">
+            <div class="col-md-12" data-bind="css : { 'has-error' : errorFirstName }">
+                <div class="input-wrapper">
+                    <input
+                        style="
+                            height: 45px;
+                            border: 1px solid #676c3d;
+                            background: #918d4e;
+                            box-sizing: border-box;
+                            border-radius: 10px;
+                        "
+                        class="form-control"
+                        type="text"
+                        tabindex="1"
+                        formControlName="vcategoryName"
+                        name="vcategoryName"
+                        [ngClass]="{ 'is-invalid': submitted && f.vcategoryName.errors }"
+                    />
+                    <label class="control-label">Category Name</label>
+                    <div *ngIf="submitted && f.vcategoryName.errors" class="invalid-feedback">
+                        <div *ngIf="f.vcategoryName.errors.required">Category Name is required</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <a
+                        (click)="Image.click()"
+                        class="btn rounded-pill mt-3"
+                        style="
+                            width: 158px;
+                            height: 45px;
+                            background: #787735;
+                            border: 1px solid #9db186;
+                            box-sizing: border-box;
+                            color: white;
+                            border-radius: 10px;
+                        "
+                        >Upload Attachment</a
+                    ><br />
+                    <input type="file" #Image (change)="handleFileInput($event.target.files)" hidden />
+                </div>
+                <div class="col-md-6">
+                    <div class="form-grop">
+                        <div
+                            style="
+                                text-align: center;
+                                /* margin-top: 208px; */
+                                height: 104.21px;
+                                border: 1px solid #676c3d;
+                                box-sizing: border-box;
+                                border-radius: 10px;
+                            "
+                        >
+                            <div class="product_circle" style="margin-top: 10px; display: inline-table">
+                                <img
+                                    style="width: 58px; height: 60px; margin-top: 11px; margin-left: 5px"
+                                    [src]="fileUpload"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 mt-5" data-bind="css : { 'has-error' : errorFirstName }">
+                <div class="input-wrapper">
+                    <input
+                        style="
+                            height: 45px;
+                            width: 208px;
+                            border: 1px solid #676c3d;
+                            background: #918d4e;
+                            box-sizing: border-box;
+                            border-radius: 10px;
+                        "
+                        class="form-control"
+                        type="text"
+                        value="{{ size }}"
+                        tabindex="1"
+                        readonly
+                        required
+                    />
+                    <label class="control-label">File Size</label>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-9"></div>
+            <div class="col-md-3 mt-5" style="float: right">
+                <button
+                    type="submit"
+                    class="btn rounded-pill"
+                    style="
+                        width: 88px;
+                        height: 45px;
+
+                        background: #787735;
+                        border: 1px solid #9db186;
+                        box-sizing: border-box;
+                        border-radius: 10px;
+                        color: #ffffff;
+                    "
+                    (click)="submit()"
+                >
+                    Submit
+                </button>
+            </div>
+        </div>
+    </form>
+</p-dialog> -->

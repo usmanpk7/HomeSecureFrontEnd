@@ -1,0 +1,68 @@
+<!-- <style>
+    ::-webkit-scrollbar {
+        width: 10px;
+        height: 40px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: #888;
+        border-radius: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+
+        background: #555;
+    }
+</style>
+
+
+
+<div class="asset-monitoring-grid">
+   <div class="row">
+            <div class="col-md-6">
+                <p>{{gridTitle}}</p>
+            </div>
+            <div class="col-md-6">
+              <select id="real_time_change" class="select_btn2" style="width: 103px;margin: 11px;float: right;">
+                <option value="0">All</option>
+                <option value="1">Latest One</option>
+              </select>
+            </div>
+          </div>
+    <div class="asset-monitoring-grid-table">
+            <p-table *ngIf="data"  #dataTable dataKey="id" [value]="data" [scrollable]="true" scrollHeight="367px"
+                    [(rows)]="row"  [filterDelay]="0"
+                     [first]="first" [rowsPerPageOptions]="[5,10,15,20]"
+                      [lazy]="false"  >
+            <ng-template pTemplate="header">
+                <tr>
+                    <th *ngFor="let column of columns">{{column.name}}</th>
+                </tr>
+            </ng-template>
+
+            <ng-template pTemplate="body"  let-item >
+
+                <tr class="body-td">
+                    <td>{{item.deviceName}}</td>
+                    <td>{{item.varityItemName}}</td>
+                    <td>{{item.warehouseName}}</td>
+                    <td>{{item.activityDateTime}}</td>
+                    <td>{{item.activityStatusType}}</td>
+                </tr>
+            </ng-template>
+             </p-table>
+            <div style="text-align: center;margin-top: 50px;font-size: medium;" *ngIf="!data">
+                <strong style="color: red;">No realtime inventory data, Please make sure you are connected to the internet or hardware</strong>
+            </div>
+            <div *ngIf="true" [appLoading]="true" style="margin-top: 50%;">
+            </div>
+    </div>
+
+
+
+
+</div> -->

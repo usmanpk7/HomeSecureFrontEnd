@@ -1,0 +1,8 @@
+.profile-card strong {
+    color: white;
+}
+.profile-card {
+    background: #425a3a;
+    padding: 20px;
+    border-radius: 27px;
+}

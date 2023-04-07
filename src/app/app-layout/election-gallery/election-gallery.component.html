@@ -1,0 +1,355 @@
+<div class="row pt-5">
+    <div class="col-md-4 welcome-message">Welcome To the Election Livefeed Jane</div>
+    <div class="col-md-3">
+        <div class="input-group">
+            <input type="search" id="form1" class="form-control" placeholder="Search Category" aria-label="Search" />
+            <span class="input-group-btn">
+                <button class="btn btn-default bg-white" type="button">
+                    <i class="fa fa-search text-custom-danger"></i>
+                </button>
+            </span>
+        </div>
+    </div>
+    <div class="col-md-2 pl-9">
+        <div class="dropdown2 p-2 pb-4 rescue-filter-dropdown">
+            <a
+                class="fs-07"
+                href="#"
+                role="button"
+                id="dropdownMenuLink"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+            >
+                <span class="text-custom-danger mr-3 text-uppercase fs-09"><b>Sort By Year </b> </span>
+                <img src="/assets/Dashboard/Vector.png" width="15" class="float-right mt-1" />
+            </a>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <a class="dropdown-item bg-custom-dropdown" href="javascript:void(0)">
+                    <span class="text-custom-danger text-uppercase"><b>Year</b></span>
+                </a>
+                <a class="dropdown-item pt-1 pb-1" href="javascript:void(0)">
+                    <input
+                        type="checkbox"
+                        name="checkbox"
+                        class="checkbox_id"
+                        id="RescueFilter"
+                        style="width: 4px"
+                        value="value"
+                    />
+                    <label for="RescueFilter" class="rescue-filter-label">
+                        <span class="text-uppercase text-custom-danger font-bold">2018 </span>
+                    </label>
+                </a>
+                <a class="dropdown-item pt-1 pb-1" href="javascript:void(0)">
+                    <input
+                        type="checkbox"
+                        name="checkbox"
+                        class="checkbox_id"
+                        id="RescueFilter"
+                        style="width: 4px"
+                        value="value"
+                    />
+                    <label for="RescueFilter" class="rescue-filter-label">
+                        <span class="text-uppercase text-custom-danger font-bold">2019 </span>
+                    </label>
+                </a>
+                <a class="dropdown-item pt-1 pb-1" href="javascript:void(0)">
+                    <input
+                        type="checkbox"
+                        name="checkbox"
+                        class="checkbox_id"
+                        id="RescueFilter"
+                        style="width: 4px"
+                        value="value"
+                    />
+                    <label for="RescueFilter" class="rescue-filter-label">
+                        <span class="text-uppercase text-custom-danger font-bold">2020 </span>
+                    </label>
+                </a>
+                <a class="dropdown-item pt-1 pb-1" href="javascript:void(0)">
+                    <input
+                        type="checkbox"
+                        name="checkbox"
+                        class="checkbox_id"
+                        id="RescueFilter"
+                        style="width: 4px"
+                        value="value"
+                    />
+                    <label for="RescueFilter" class="rescue-filter-label">
+                        <span class="text-uppercase text-custom-danger font-bold">2023 </span>
+                    </label>
+                </a>
+                <a class="dropdown-item pt-1 pb-1" href="javascript:void(0)">
+                    <input
+                        type="checkbox"
+                        name="checkbox"
+                        class="checkbox_id"
+                        id="RescueFilter"
+                        style="width: 4px"
+                        value="value"
+                    />
+                    <label for="RescueFilter" class="rescue-filter-label">
+                        <span class="text-uppercase text-custom-danger font-bold">2022 </span>
+                    </label>
+                </a>
+                <a class="dropdown-item pt-1 pb-1" href="javascript:void(0)">
+                    <button class="btn btn-block btn-sm btn-custom-apply">
+                        <span class="text-uppercase text-custom-danger font-bold">Apply </span>
+                    </button>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 pl-9">
+        <div class="dropdown show">
+            <a
+                class=""
+                href="#"
+                role="button"
+                id="dropdownMenuLink"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+            >
+                <div class="navbar-textCustom navbarText pt-1 pb-1 pl-3 pr-3 float-left">
+                    <img
+                        class="navbar-img"
+                        [src]="profilePicture"
+                    />
+                    <span class="navbar-img-span mr-5 ml-5">Switch to other tenant</span>
+                    <img src="../../../assets/Dashboard/ArrowDownDashboard.png" />
+                </div>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <span class="dropdown-item cursor" routerLink="/home/dashboard">Election Monitor</span>
+                <span class="dropdown-item cursor" routerLink="/home/dashboard">Election Reporting</span>
+                <span class="dropdown-item cursor">Emergency</span>
+                <span class="dropdown-item cursor" routerLink="/home/incident">Incident</span>
+                <span class="dropdown-item cursor">Asset Tracker</span>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="col-md-2">
+        <button class="btn btn-primary btn-block">CREATE INCIDENT</button>
+    </div> -->
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="card h-100">
+             <div class="card-body p-2">
+                <div class="col-md-12 egallery">
+                    <p-tabView>
+                        <p-tabPanel header="LIVE">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="card border-0">
+                                        <div class="card-body p-3">
+                                            <button class="btn btn-primary">Latest Updates</button>
+                                            <button class="btn btn-secondary mr-2">Polling Results</button>
+                                            <button class="btn btn-secondary mr-2">Candidates Updates</button>
+                                            <button class="btn btn-secondary mr-2">Party Events</button>
+                                            <button class="btn btn-secondary mr-2">Political News</button>
+                                            <button class="btn btn-secondary mr-2">Voter Updates</button>
+                                            <button class="btn btn-secondary mr-2">Ohter Tags</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-md-3 h-100" *ngFor="let item of electionGalleryLiveResult">
+                                    <div class="card custom-gallery-card">
+                                        <div class="card-body p-3">
+                                            <div id="videoFrameContainer">
+                                                <iframe id='fp_embed_player' [src]="item.contentLink | safe" onerror="this.location.reload();" marginwidth='0' width="100%" marginheight='0' frameborder='0' scrolling='no' allowfullscreen='allowfullscreen'></iframe>
+                                            </div>
+                                            <div class="row mt-3">
+                                                <div class="col-md-4">
+                                                    <button class="btn btn-primary btn-block">
+                                                        <span><marquee direction="left" class="" scrolldelay="600" behavior="loop">{{item.electionWardName}}</marquee></span>
+                                                    </button>
+                                                </div>
+                                                <div class="col-md-8">
+                                                    <h6 class="fs-08 mt-4"><b>{{item.electionPollingUnitName}}</b></h6>
+                                                </div>
+                                                <div class="col-md-12 mt-4">
+                                                    <h6 class="fs-07 pr-0">Uploaded By:     </h6>
+                                                </div>
+                                                <div class="col-md-12 text-center">
+                                                    <button routerLink="/home/election-gallery-detail/{{item.id}}/{{item.mediaSource}}" class="btn btn-default text-white bg-custom-danger pr-15 pl-15"> WATCH STREAM</button>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </p-tabPanel>
+                        <p-tabPanel header="VIDEO">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="card border-0">
+                                        <div class="card-body p-3">
+                                            <button class="btn btn-primary">Latest Updates</button>
+                                            <button class="btn btn-secondary mr-2">Polling Results</button>
+                                            <button class="btn btn-secondary mr-2">Candidates Updates</button>
+                                            <button class="btn btn-secondary mr-2">Party Events</button>
+                                            <button class="btn btn-secondary mr-2">Political News</button>
+                                            <button class="btn btn-secondary mr-2">Voter Updates</button>
+                                            <button class="btn btn-secondary mr-2">Ohter Tags</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-md-3 h-100" *ngFor="let item of electionGalleryVideoResult">
+                                    <div class="card custom-gallery-card">
+                                        <div class="card-body p-3">
+                                            <vg-player>
+                                                <vg-overlay-play></vg-overlay-play>
+                                                <vg-buffering></vg-buffering>
+
+                                                <vg-scrub-bar>
+                                                    <vg-scrub-bar-current-time></vg-scrub-bar-current-time>
+                                                    <vg-scrub-bar-buffering-time></vg-scrub-bar-buffering-time>
+                                                </vg-scrub-bar>
+
+                                                <vg-controls>
+                                                    <vg-play-pause></vg-play-pause>
+                                                    <vg-playback-button></vg-playback-button>
+
+                                                    <vg-time-display vgProperty="current" vgFormat="mm:ss"></vg-time-display>
+
+                                                    <vg-scrub-bar style="pointer-events: none;"></vg-scrub-bar>
+
+                                                    <vg-time-display vgProperty="left" vgFormat="mm:ss"></vg-time-display>
+                                                    <vg-time-display vgProperty="total" vgFormat="mm:ss"></vg-time-display>
+
+                                                    <vg-track-selector></vg-track-selector>
+                                                    <vg-mute></vg-mute>
+                                                    <vg-volume></vg-volume>
+
+                                                    <vg-fullscreen></vg-fullscreen>
+                                                </vg-controls>
+                                                <video [vgMedia]="media" #media id="singleVideo" preload="auto" controls>
+                                                    <source src="{{item.contentLink}}" type="video/mp4">
+                                                </video>
+                                            </vg-player>
+                                            <div class="row mt-3">
+                                                <div class="col-md-4">
+                                                    <button class="btn btn-primary btn-block">
+                                                        <span><marquee direction="left" class="" scrolldelay="600" behavior="loop">{{item.electionWardName}}</marquee></span>
+                                                    </button>
+                                                </div>
+                                                <div class="col-md-8">
+                                                    <h6 class="fs-08 mt-4"><b>{{item.electionPollingUnitName}}</b></h6>
+                                                </div>
+                                                <div class="col-md-12 mt-4">
+                                                    <h6 class="fs-07 pr-0">Uploaded By: {{item.userName}}</h6>
+                                                </div>
+                                                <div class="col-md-12 text-center">
+                                                    <button routerLink="/home/election-gallery-detail/{{item.id}}/{{item.mediaSource}}" class="btn btn-default text-white bg-custom-danger pr-15 pl-15"> WATCH VIDEO</button>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </p-tabPanel>
+                        <p-tabPanel header="IMAGES">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="card border-0">
+                                        <div class="card-body p-3">
+                                            <button class="btn btn-primary">Latest Updates</button>
+                                            <button class="btn btn-secondary mr-2">Polling Results</button>
+                                            <button class="btn btn-secondary mr-2">Candidates Updates</button>
+                                            <button class="btn btn-secondary mr-2">Party Events</button>
+                                            <button class="btn btn-secondary mr-2">Political News</button>
+                                            <button class="btn btn-secondary mr-2">Voter Updates</button>
+                                            <button class="btn btn-secondary mr-2">Ohter Tags</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-md-3" *ngFor="let item of electionGalleryImageResult">
+                                    <div class="card custom-gallery-card">
+                                        <div class="card-body p-3">
+                                            <img src="{{item.contentLink}}" class="width-100">
+                                            <div class="row mt-3">
+                                                <div class="col-md-4">
+                                                    <button class="btn btn-primary btn-block">
+                                                        <span><marquee direction="left" class="" scrolldelay="600" behavior="loop">{{item.electionWardName}}</marquee></span>
+                                                    </button>
+                                                </div>
+                                                <div class="col-md-8">
+                                                    <h6 class="fs-08 mt-4"><b>{{item.electionPollingUnitName}}</b></h6>
+                                                </div>
+                                                <div class="col-md-12 mt-4">
+                                                    <h6 class="fs-07 pr-0">Uploaded By: {{item.userName}}</h6>
+                                                </div>
+                                                <div class="col-md-12 text-center">
+                                                    <button routerLink="/home/election-gallery-detail/{{item.id}}/{{item.mediaSource}}" class="btn btn-default text-white bg-custom-danger pr-15 pl-15"> SEE DETAIL</button>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </p-tabPanel>
+                        <p-tabPanel header="NEWS">
+                            <!-- <div class="row">
+                                <div class="col-md-12">
+                                    <div class="card border-0">
+                                        <div class="card-body p-3">
+                                            <button class="btn btn-primary">Latest Updates</button>
+                                            <button class="btn btn-secondary mr-2">Polling Results</button>
+                                            <button class="btn btn-secondary mr-2">Candidates Updates</button>
+                                            <button class="btn btn-secondary mr-2">Party Events</button>
+                                            <button class="btn btn-secondary mr-2">Political News</button>
+                                            <button class="btn btn-secondary mr-2">Voter Updates</button>
+                                            <button class="btn btn-secondary mr-2">Ohter Tags</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-md-3" *ngFor="let item of electionGalleryLiveResult">
+                                    <div class="card custom-gallery-card">
+                                        <div class="card-body p-3">
+                                            <div id="videoFrameContainer">
+                                                <iframe id='fp_embed_player' [src]="item.contentLink | safe" onerror="this.location.reload();" marginwidth='0' width="100%" marginheight='0' frameborder='0' scrolling='no' allowfullscreen='allowfullscreen'></iframe>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <button class="btn btn-primary btn-block">
+                                                        <span><marquee direction="left" class="" scrolldelay="600" behavior="loop">{{item.electionWardName}}</marquee></span>
+                                                    </button>
+                                                </div>
+                                                <div class="col-md-8">
+                                                    <h6 class="fs-08 mt-4"><b>{{item.electionPollingUnitName}}</b></h6>
+                                                </div>
+                                                <div class="col-md-12 mt-4">
+                                                    <h6 class="fs-07 pr-0">Uploaded By: {{item.userName}}</h6>
+                                                </div>
+                                                <div class="col-md-12 text-center">
+                                                    <button routerLink="/home/election-gallery-detail/{{item.id}}/{{item.mediaSource}}" class="btn btn-default text-white bg-custom-danger pr-15 pl-15"> WATCH STREAM</button>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>    -->
+                        </p-tabPanel>
+                    </p-tabView>
+                </div>
+             </div>
+        </div>
+
+    </div>
+
+</div>

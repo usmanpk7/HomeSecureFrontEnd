@@ -1,0 +1,23 @@
+.bg-grey-br{
+    background-color: #425a3a;
+    border-radius: 30px;
+    height: 225px;
+}
+.bgcolor {
+    background-color: #F5F5F5 !important;
+}
+
+.col-md-11 {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 93.66667% !important;
+    flex: 0 0 93.66667% !important;
+    width: 93.66667% !important;
+    max-width: 100% !important;
+}
+
+.col-md-1 {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 6.33333% !important; 
+    flex: 0 0 6.33333% !important;
+    max-width: 6.33333% !important;
+}
