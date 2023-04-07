@@ -50,10 +50,15 @@
     width: 50%;
     height: 42px;
     background-color: #FFD8DF;
-    font-size: 14px;
+    font-size: 16px;
     border: 2px solid #FF5575;
-    font-weight: 500;
+    font-weight: 700;
     text-align: center;
+}
+.left-arrow{
+    width: 15px;
+    height: 15px;
+    margin-left: 5px;
 }
 .dots-image{
     position: absolute;
@@ -80,14 +85,14 @@
 }
 .region{
     color: #FF8DA3;
-    font-size: 15px;
+    font-size: 13px;
     font-weight: 600;
 }
 .dot-1, .dot-2,.dot-3, .dot-4, .dot-5, .dot-6, .dot-7, .dot-8, .dot-9, .dot-10,
 .dot-11, .dot-12{
     display: flex;
     align-items: center;
-    margin-right: 8px;
+    margin-right: 10px;
 }
 .pink-dot{
     display: flex;
@@ -101,19 +106,20 @@
     border-radius: 50%;
     background-color: rgb(219, 219, 89);
     height: 20px;
-    width: 20px;
+    width: 30px;
 }
 
 .blue-dot{
     display: flex;
     border-radius: 50%;
     background-color: rgb(100, 100, 187);
-    height: 14px;
-    width: 14px;
+    height: 20px;
+    width: 20px;
 }
 
-.text-bul{
-    font-size: 12px;
+.text-bul, .text-theft{
+    font-size: 11px;
+    margin-left:3px;
 }
 
 

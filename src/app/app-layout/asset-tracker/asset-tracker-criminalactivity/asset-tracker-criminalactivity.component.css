@@ -17,14 +17,16 @@
   justify-content: center;
  align-items: center;
  width: 100%;
+ margin-top: -40px;
  
 }
 .heading{
   display: flex;
   margin-top: 30px;   
   text-transform: uppercase;
-  font-size: 17px;
-  font-weight: 500;
+  font-family: 'Inter' !important;
+   font-weight: 700 !important;
+   font-size: 15px;
 }
 .icon-after-headings{
 width: 18px;
@@ -58,19 +60,18 @@ align-self: center;
     font-size: 12px;
 } 
 .main-search-box{
-    position: relative;
+    /* position: relative; */
+    width: 600px;
 }
 .view-cart{
     background-color: #ebb2bc;
-    width: 180px;
+    width: 190px;
     height: 35px;
     border: 2px solid #FF6C88;
-    margin-left: 30px;
     border-radius: 6px;
-    position: absolute;
-    top: 0.3rem;
-    z-index: 1100;
-    right: -18rem;
+}
+.custom-button-position{
+  margin-left: 50px;
 }
 .view-text{
     font-size: 15px;
@@ -127,7 +128,7 @@ align-self: center;
     height: 100px;
     border-radius: 12px;
     text-align: center;
-    margin-top: 10px;
+    margin-top: 20px;
     padding-top: 1rem;
 }
 .text{
@@ -225,14 +226,55 @@ align-self: center;
 .icons{
     display: flex;
     gap: 15px;
-    margin-left: 100px;
+    /* margin-left: 100px; */
 }
 .icons img{
     width: 25px;
     height: 25px;
 }
 
+.map-details{
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+ 
+}
 
+.theft, .shooting, .burglary, .other, .robbery{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+.rectangle-th{
+  background-color: #B4A8FE;
+  width: 10px;
+  height: 10px;
+}
+.rectangle-bur{
+  background-color: #6551e6;
+  width: 10px;
+  height: 10px;
+}
+.rectangle-rob{
+  background-color: #3418e7;
+  width: 10px;
+  height: 10px;
+}
+.rectangle-sh{
+  background-color: rgb(218, 102, 218);
+  width: 10px;
+  height: 10px;
+}
+.rectangle-ot{
+  background-color: rgb(70, 70, 238);
+  width: 10px;  
+  height: 10px;
+}
+.chart-image2{
+  width: 100%;
+  height: 50vh;
+}
 
 
 /* Media Queries */
