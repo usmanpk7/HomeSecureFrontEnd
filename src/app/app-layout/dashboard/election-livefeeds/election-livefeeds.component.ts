@@ -1,6 +1,6 @@
 import { MediaSource } from './../../../../shared/service-proxies/service-proxies';
 
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import {
     ElectionGalleryServiceProxy,
     ElectionPollingUnitServiceProxy,
@@ -9,6 +9,7 @@ import {
 } from '@shared/service-proxies/service-proxies';
 import { SharingServiceElection } from '../SharingServiceElection';
 import { Router } from '@angular/router';
+import { log } from 'console';
 
 @Component({
     selector: 'app-election-livefeeds',
@@ -21,6 +22,9 @@ export class ElectionLivefeedsComponent implements OnInit {
     electionGalleryVideoResult: any[] = [];
     electionGalleryResultData: any[] = [];
     electionPostWithGalleryResultData: any[] = [];
+    @Input() feedName:string;
+    exhibit:string;
+    interogation:string;
     constructor(
         private _electionGalleryServiceProxy: ElectionGalleryServiceProxy,
         private _electionPollingUnit: ElectionPollingUnitServiceProxy,
@@ -32,6 +36,19 @@ export class ElectionLivefeedsComponent implements OnInit {
 
     ngOnInit(): void {
         this.GetAllElectionGalleries();
+        console.log("LOG WOrking", this.feedName);
+        if(this.feedName=='exhibit'){
+            this.exhibit='Exhibit'
+        console.log("LOG Exhibit WOrking", this.feedName);
+
+        }
+        else if(this.feedName=='interogation'){
+            this.interogation='Interogation Acitivity'
+        console.log("LOG Intero WOrking", this.feedName);
+
+        }
+      
+        
     }
 
     GetAllElectionGalleries() {

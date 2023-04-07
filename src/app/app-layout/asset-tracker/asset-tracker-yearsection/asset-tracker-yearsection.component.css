@@ -138,14 +138,15 @@
 .btns{
     display: flex;
     justify-content: start;
-    margin-left: 1rem;
+    margin-left: -10px;
+    margin-top: -20px;
     gap: 1rem;
     margin-bottom: 30px;
     color: white;
 }
 .b1{
-    width: 70px;
-    height: 30px;
+    width: 55px;
+    height: 20px;
     background-color: #FF89A0;
     border: 1px solid #FF89A0;
     display: flex;
@@ -156,8 +157,8 @@
 }
 .b2{
     border-radius: 5px;
-    width: 70px;
-    height: 30px;
+    width: 55px;
+    height: 20px;
     background-color: lightgrey;
     border: 1px solid lightgrey;   
     display: flex;
@@ -180,8 +181,8 @@
     display: flex;
     margin-bottom: 4rem;
     gap:15px;
-    margin-left: 1rem;
-    margin-top: 3rem;
+    margin-left: -10px;
+    margin-top: -10px;
     align-items: center;
 }
 .year-btn{
@@ -258,9 +259,9 @@
     .btns{
         display: flex;
         justify-content: start;
-        margin-left: 1rem;
+        margin-left: -10px;
         gap: 4rem;
-        margin-bottom: 2rem;
+        margin-bottom: -10px;
     }
     .b1{
         width: 13rem;

@@ -44,9 +44,16 @@
 </div>
 
 <div class="col-md-5">
-    <app-asset-tracker-interrogation></app-asset-tracker-interrogation>
-    <app-asset-tracker-exibit></app-asset-tracker-exibit>
-    <app-assert-tracker-officers></app-assert-tracker-officers>
+    <div class="mt-4">
+    <app-election-livefeeds #livefeedComponent feedName="interogation"></app-election-livefeeds>
+
+</div>
+
+<div class="mt-4">
+<app-election-livefeeds #livefeedComponent feedName="exhibit"></app-election-livefeeds>
+</div>
+
+<app-assert-tracker-officers></app-assert-tracker-officers>
 </div>
 
 </div>

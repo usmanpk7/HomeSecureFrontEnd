@@ -87,21 +87,21 @@
 .dot-11, .dot-12{
     display: flex;
     align-items: center;
-    margin-right: 6px;
+    margin-right: 8px;
 }
 .pink-dot{
     display: flex;
     border-radius: 50%;
     background-color: brown;
-    height: 14px;
-    width: 14px;
+    height: 20px;
+    width: 20px;
 }
 .yellow-dot{
     display: flex;
     border-radius: 50%;
-    background-color: yellow;
+    background-color: rgb(219, 219, 89);
     height: 20px;
-    width: 30px;
+    width: 20px;
 }
 
 .blue-dot{
@@ -113,7 +113,7 @@
 }
 
 .text-bul{
-    font-size: 15px;
+    font-size: 12px;
 }
 
 
@@ -128,13 +128,17 @@
     text-transform: uppercase;
     color: rgb(212, 102, 102);
     border-bottom: 2px solid rgb(219, 104, 104);
-    padding-bottom: 2rem;
+    padding-bottom: 25px;
     width: 60px;
     height: 12px;
     font-size: 15px;
-   
+   display: flex;
+}
+.icon-after-gis{
+    margin-left: 20px;
 }
 .google{
+    display: flex;
     margin-bottom: .6rem;
     font-size: 15px;
     text-transform: uppercase;
@@ -142,9 +146,9 @@
     border-bottom: 2px solid rgb(219, 104, 104);
     width: 160px;
     height: 12px;
-    padding-bottom: 2rem;
+    padding-bottom: 25px;
     text-align: center;
-    margin-left: 12px;
+
 }
 .sat{
     display: flex;
