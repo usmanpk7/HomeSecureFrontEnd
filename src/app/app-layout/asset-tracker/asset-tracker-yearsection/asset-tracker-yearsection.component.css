@@ -48,6 +48,14 @@
     padding-right: 50px;
 
 }
+.burglary-image{
+    width: 22px;
+    height: 18px;
+    position: absolute;
+    top: 17%;
+    right: 15%;
+}
+
 .btn-sh{
     font-weight: 700;
     background-color: #bcbae7;
@@ -61,19 +69,23 @@
     padding-right: 50px;
 
 }
-
-.fa-gun{
-    font-size: 20px;
+.gun-image{
+    width: 20px;
+    height: 15px;
     position: absolute;
-    right: 2%;
-    top:12%;
-    color: black;
+    top: 20%;
+    right: 15%;
 }
+
+.btn-text-arm{
+    padding-right: 60px;
+}
+
 .btn-ar{
     
     background-color: rgb(240, 198, 115);
     border: 1px solid rgb(241, 201, 126);
-    border-radius: .6rem;
+    border-radius: .5rem;
     font-size: 12px;
     display:flex;
     justify-content: start;
@@ -82,12 +94,19 @@
     font-weight: 700;
     padding: 2px;
 }
-.armed_robbery{
-    position: absolute;
-    top: 25%;
-    right: 5%;
-    height: 20px;
+.armed-image{
     width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 20%;
+    right: 15%;
+}
+
+.btn-text{
+    display: flex;
+    justify-content: center;
+    padding-left: 10px;
+    align-items: center;
 }
 .btn-th{
     font-weight: 700;
@@ -100,7 +119,13 @@
     justify-content: center;
     align-items: end;
     padding-right: 50px;
-
+}
+.theft-image{
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 20%;
+    right: 15%;
 }
 .btn-ot{
     font-weight: 700;
@@ -114,6 +139,13 @@
     align-items: end;
     padding-right: 50px;
     position: absolute;
+}
+.other-image{
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 20%;
+    right: 15%;
 }
 .text{
     
@@ -131,7 +163,7 @@
     margin-bottom: 30px;
     padding-right: 20px;
     position: relative;
-    top: 9%;
+    top: 2%;
     left: 2%;
 }
 
@@ -231,10 +263,10 @@
 }
 .year-btn{
     background-color:#FF89A0; 
-    font-size: 20px;
+    font-size: 15px;
     text-transform: uppercase;
     width: 100px;
-    height: 40px;
+    height: 30px;
     text-align: center;
     color: white;
     display: flex;

@@ -135,14 +135,19 @@
     color: rgb(212, 102, 102);
     border-bottom: 2px solid rgb(219, 104, 104);
     padding-bottom: 25px;
-    width: 60px;
+    width: 80px;
     height: 12px;
     font-size: 15px;
-   display: flex;
+   position: relative;
 }
 .icon-after-gis{
-    margin-left: 20px;
+    position: absolute;
+    top: 7%;
+    left: 28px;
+    width: 15px;
+    height: 15px;
 }
+
 .google{
     display: flex;
     margin-bottom: .6rem;
@@ -154,7 +159,14 @@
     height: 12px;
     padding-bottom: 25px;
     text-align: center;
-
+position: relative;
+}
+.icon-after-google{
+    position: absolute;
+    top: 7%;
+    left: 85%;
+    width: 15px;
+    height: 15px;
 }
 .sat{
     display: flex;
