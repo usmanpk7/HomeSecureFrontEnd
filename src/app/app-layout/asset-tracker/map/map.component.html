@@ -1,25 +1,23 @@
-
-
-
-
-<div class="parent">
-    <div class="btns">
-         <button class="live">
-            <img src="../../../../assets/local_pharmacy.png" alt="local_pharmacy" class="local_pharmacy">
-           <p class="line-text">Live Arrest Feed</p> 
-        </button>
-           <button class="filter">Filters:<span class="region">Region(All), Crime(ALL)</span>
-        <img src="../../../../assets/3dots.png" alt="3dots" class="dots-image">
-        </button>
-    </div>
-
-    <div class="text">
+<div class="incident">
+    <p-tabView>
+        
+        <div class="btns">
+            <button class="live">
+               <img src="../../../../assets/local_pharmacy.png" alt="local_pharmacy" class="local_pharmacy">
+              <p class="line-text">Live Arrest Feed</p> 
+           </button>
+              <button class="filter">Filters:<span class="region">Region(All), Crime(ALL)</span>
+           <img src="../../../../assets/3dots.png" alt="3dots" class="dots-image">
+           </button>
+       </div>
+       
+       <div class="text">
         <div class="select-text">Select the colour to view particular criminial activity</div>
         <div class="scroll">Scroll Horizontally to view crime nature 
             <img src="../../../../assets/Polygon 2.png" alt="p2" class="left-arrow">
         </div>
     </div>
-
+    
     <div class="dots">
 
         <div class="dot-1">
@@ -66,28 +64,54 @@
     </div>
     </div>
 
-    <div class="child">
-        <div class="gis">
-            <div class="gis-text">Gis</div>  
-            <img src="../../../../assets/icon-after-headings.png" alt="icon-after-headings" class="icon-after-gis">
-         </div>
+            <div class="row mt-6">
+                <div class="col-md-2">
+                    <input type="checkbox" id="GIS3" [(ngModel)]="GISMAP" (change)="MapTypeGoogleToGIS()" class="visually-hidden">
+                    <div class="dropdown pb-2 pt-4 text-center d1">
+                        <label for="GIS3">
+                             <span class="election-category-title"><b>GIS</b>  
+                                <i class="fas fa-external-link-alt text-custom-danger ml-3"></i>
+                             </span>
+                        </label>   
+                    </div>                 
+                </div>
 
-        <div class="google">
-            <div class="google-text">Google map</div> 
-             <img src="../../../../assets/icon-after-headings.png" alt="icon-after-headings" class="icon-after-google">
-            </div>
-        
-        <div class="sat">
-            <div class="satellite">Satellite</div>
-            <img src="../../../../assets/switch.png" alt="swicth" class="switch-image">
+                <div class="col-md-3">
+                    <input type="checkbox" id="MAP3" [(ngModel)]="GOOGLEMAP" (change)="MapTypeGISToGoogle()" class="visually-hidden">
+                    <div class="dropdown pb-2 pt-4 text-center d2">
+                        <label for="MAP3">
+                             <span class="election-category-title"><b>GOOGLE MAP </b> 
+                                <!-- <img src="../../../../assets/icon-after-headings.png" alt="icon-after-headings" class="icon-after-google"> -->
+                                <i class="fas fa-external-link-alt text-custom-danger ml-3"></i>
+                             </span>
+                        </label>   
+                    </div>                 
+                </div>
+                
+                <div class="col-md-7 text-right buttons">
+                    <div class="sat">
+                        <div class="satellite">Satellite</div>
+                        <img src="../../../../assets/switch.png" alt="swicth" class="switch-image">
+                        
             
+                     <div class="map-part">
+                    <div class="map-text">Map</div>
+                    <img src="../../../../assets/on.png" alt="on image" class="on-image">
+                </div>
+            </div>
+                </div>
+            </div>
 
-         <div class="map-part">
-        <div class="map-text">Map</div>
-        <img src="../../../../assets/on.png" alt="on image" class="on-image">
-    </div>
-</div>
-    </div>
-
-    <img src="../../../../assets//map.png" alt="map-image" class="map-image">
+            <div class="row" [hidden]="!GOOGLEMAP">
+                <div id="incidentlocationmap" class="map-div mt-3"></div>
+            </div>
+            <app-esri-map [hidden]="!GISMAP"
+            [center]="mapCenter"
+            [basemap]="basemapType"
+            [zoom]="mapZoomLevel"
+            (mapLoadedEvent)="mapLoadedEvent($event)"
+            >
+            </app-esri-map>
+        
+    </p-tabView>
 </div>

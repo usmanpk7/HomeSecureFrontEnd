@@ -302,7 +302,7 @@
 @media(max-width:720px) {
     
     .parent{
-        width: 220%;
+        width: 520%;
         display: block;
     }
     .year-btn{

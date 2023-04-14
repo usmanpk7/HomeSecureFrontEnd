@@ -106,7 +106,7 @@
     border-radius: 50%;
     background-color: rgb(219, 219, 89);
     height: 20px;
-    width: 30px;
+    width: 20px;
 }
 
 .blue-dot{
@@ -148,29 +148,11 @@
     height: 15px;
 }
 
-.google{
-    display: flex;
-    margin-bottom: .6rem;
-    font-size: 15px;
-    text-transform: uppercase;
-    color: rgb(219, 104, 104);
-    border-bottom: 2px solid rgb(219, 104, 104);
-    width: 160px;
-    height: 12px;
-    padding-bottom: 25px;
-    text-align: center;
-position: relative;
-}
-.icon-after-google{
-    position: absolute;
-    top: 7%;
-    left: 85%;
-    width: 15px;
-    height: 15px;
-}
+
 .sat{
     display: flex;
     gap: .5rem;
+    margin-top: 20px;
 }
 .switch-image{
     width: 30px;
@@ -197,7 +179,7 @@ position: relative;
     justify-content: end;
     align-items: center;
     gap: .5rem;
-    margin-left: 60px;
+    margin-left: 20px;
 }
 .map-text{
     justify-self: end;
@@ -217,6 +199,174 @@ position: relative;
     justify-self: center;
 }
 
+
+     /* Map-css */
+
+:host ::ng-deep .incident .p-tabview-title {
+    line-height: 1 !important;
+    font-family: 'Inter' !important;
+    font-weight: 700 !important;
+    font-size: 0.9rem !important;
+    align-items: center !important;
+    color: #FF6C88 !important;
+    cursor: pointer;
+}
+
+::ng-deep .incident .p-tabview .p-tabview-panels {
+    padding: 0px !important;
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+}
+
+:host ::ng-deep .incident .p-tabview .p-tabview-nav li .p-tabview-nav-link {
+    background: #f8f8f8 !important;
+    border-bottom: 3px solid #FF6C88 !important;
+    border-radius: 0px !important;
+}
+
+:host ::ng-deep .incident .p-tabview .p-tabview-nav li.p-highlight .p-tabview-nav-link {
+    background: #FF6C88 !important;
+    border-color: #FF6C88 !important;
+    border: 1px solid #FF6C88 !important;
+    color: #ffffff !important;
+}
+
+:host ::ng-deep .incident .p-tabview .p-tabview-nav li.p-highlight .p-tabview-nav-link .p-tabview-title {
+    color: #ffffff !important;
+}
+
+:host ::ng-deep .incident ul.p-tabview-nav li:first-child span {
+    background-image: none !important;
+    background: no-repeat;
+    padding-left: 0;
+    background-size: none;
+    font-size: 0.9rem !important;
+}
+:host ::ng-deep .incident ul.p-tabview-nav li:first-child {
+    width: 25%;
+}
+:host ::ng-deep .incident ul.p-tabview-nav li:nth-child(2) {
+    width: 25%;
+}
+:host ::ng-deep .incident ul.p-tabview-nav li:nth-child(3) {
+    width: 25%;
+}
+:host ::ng-deep .incident ul.p-tabview-nav li:nth-child(4) {
+    width: 25%;
+}
+:host ::ng-deep .incident ul.p-tabview-nav li:nth-child(2) span {
+    background-image: none !important;
+    background: no-repeat;
+    padding-left: 0;
+    background-size: none;
+    font-size: 0.9rem !important;
+}
+:host ::ng-deep .incident ul.p-tabview-nav li:nth-child(3) span {
+    background-image: none !important;
+    background: no-repeat;
+    padding-left: 0;
+    background-size: none;
+    font-size: 0.9rem !important;
+}
+:host ::ng-deep .incident ul.p-tabview-nav li:nth-child(4) span {
+    background-image: none !important;
+    background: no-repeat;
+    padding-left: 0;
+    background-size: none;
+    font-size: 0.9rem !important;
+}
+
+.bg-custom-location-card1 {
+    background-color: #d5f8ff;
+}
+.text-custom-location-card1 {
+    color: #337078;
+}
+.bg-custom-location-card2 {
+  background-color: #FFE1DB;
+}
+.text-custom-location-card2 {
+  color: #EF4A25;
+}
+.bg-custom-location-card3 {
+  background-color: #f8f7b6;
+}
+.text-custom-location-card3 {
+  color: #A79251;
+}
+
+.map-div {
+  width: 100%; 
+  height: calc(80vh)
+}
+
+#GIS3:checked + .dropdown {
+  background: #FF6C88 !important;
+  border-radius: 5px !important;
+  position: relative;
+}
+b{
+    font-size: 14px;
+}
+
+#GIS3:checked + .dropdown .election-category-title {
+  color: #FFFFFF !important;
+}
+#GIS3:checked + .dropdown .election-category-title .fas {
+color: #FFFFFF !important;
+}
+
+#MAP3:checked + .dropdown {
+  background: #FF6C88 !important;
+  border-radius: 5px !important;
+  position: relative;
+}
+
+.fa-external-link-alt{
+    position: absolute;
+    top: 35%;
+    font-size: 12px;
+}
+#MAP3:checked + .dropdown .election-category-title {
+  color: #FFFFFF !important;
+}
+#MAP3:checked + .dropdown .election-category-title .fas {
+color: #FFFFFF !important;
+}
+
+.dropdown .election-category-title {
+  line-height: 1 !important;
+  font-family: 'Inter' !important;
+  font-weight: 700 !important;
+  font-size: 0.7rem !important;
+  align-items: center !important;
+  color: #FF6C88 !important;
+  cursor: pointer;
+}
+.dropdown {
+  border-bottom: 3px solid #FF6C88 !important;
+ 
+}
+.d1{
+    width: 50%;
+}
+.d2{
+    width: 100%;
+}
+
+.visually-hidden {
+  position: absolute;
+  left: -100vw;   
+}
+
+.buttons{
+  background: white;
+}
+.location-sub-btn,.clip-btn,.car-btn,.bus-btn,.run-btn{
+  border: none;
+  background-color: white;
+  
+}
 /* Media Queries */
 
 @media(max-width:720px){

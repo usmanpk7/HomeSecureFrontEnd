@@ -25,6 +25,7 @@ export class ElectionLivefeedsComponent implements OnInit {
     @Input() feedName:string;
     exhibit:string;
     interogation:string;
+    rescue:string;
     constructor(
         private _electionGalleryServiceProxy: ElectionGalleryServiceProxy,
         private _electionPollingUnit: ElectionPollingUnitServiceProxy,
@@ -47,7 +48,11 @@ export class ElectionLivefeedsComponent implements OnInit {
         console.log("LOG Intero WOrking", this.feedName);
 
         }
-      
+        else if(this.feedName=='rescue'){
+            this.rescue='Rescue Services'
+        console.log("LOG rescue WOrking", this.feedName);
+
+        }
         
     }
 

@@ -4,19 +4,8 @@
             <div class="row mt-3">
                 <div class="col-md-12">
                     <div class="row">
-                        <div class="col mr-5">
-                            <div class="card bg-custom-location-card1 p-4">
-                                <div class="row text-center">
-                                    <div class="col-md-12">
-                                        <h6 class="text-custom-location-card1 font-bold">SOS</h6>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <img src="/assets/IncidentDashboard/sos.png" width="60">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col mr-5">
+
+                        <div class="col mr-6">
                             <div class="card bg-custom-location-card2 p-4">
                                 <div class="row text-center">
                                     <div class="col-md-12">
@@ -28,11 +17,12 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col mr-5">
+
+                        <div class="col mr-6">
                             <div class="card bg-custom-location-card1 p-4">
                                 <div class="row text-center">
                                     <div class="col-md-12">
-                                        <h6 class="text-custom-location-card1 font-bold">Armed Robbery</h6>
+                                        <h6 class="text-custom-location-card1 font-bold">Theft</h6>
                                     </div>
                                     <div class="col-md-12">
                                         <img src="/assets/IncidentDashboard/armed.png" width="60">
@@ -40,7 +30,22 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col mr-5">
+
+                        <div class="col mr-6">
+                            <div class="card bg-custom-location-card1 p-4">
+                                <div class="row text-center">
+                                    <div class="col-md-12">
+                                        <h6 class="text-custom-location-card1 font-bold">Attack</h6>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <img src="/assets/IncidentDashboard/sos.png" width="60">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="col mr-6">
                             <div class="card bg-custom-location-card3 p-4">
                                 <div class="row text-center">
                                     <div class="col-md-12">
@@ -52,7 +57,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col">
+
+                        <!-- <div class="col">
                             <div class="card bg-custom-location-card1 p-4">
                                 <div class="row text-center">
                                     <div class="col-md-12">
@@ -63,14 +69,15 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
-            <div class="row mt-4">
-                <div class="col-md-2">
+
+            <div class="row">
+                <div class="col-md-2 margin">
                     <input type="checkbox" id="GIS3" [(ngModel)]="GISMAP" (change)="MapTypeGoogleToGIS()" class="visually-hidden">
-                    <div class="dropdown pb-2 pt-4 text-center">
+                    <div class="dropdown pb-2 pt-4 text-center d1">
                         <label for="GIS3">
                              <span class="election-category-title"><b>GIS</b>  
                                 <i class="fas fa-external-link-alt text-custom-danger ml-3"></i>
@@ -78,9 +85,10 @@
                         </label>   
                     </div>                 
                 </div>
-                <div class="col-md-2">
+
+                <div class="col-md-3 margin">
                     <input type="checkbox" id="MAP3" [(ngModel)]="GOOGLEMAP" (change)="MapTypeGISToGoogle()" class="visually-hidden">
-                    <div class="dropdown pb-2 pt-4 text-center">
+                    <div class="dropdown pb-2 pt-4 text-center d2">
                         <label for="MAP3">
                              <span class="election-category-title"><b>GOOGLE MAP </b> 
                                 <i class="fas fa-external-link-alt text-custom-danger ml-3"></i>
@@ -88,12 +96,32 @@
                         </label>   
                     </div>                 
                 </div>
-                <div class="col-md-8 text-right">
-                    <button class="btn btn-sm btn-outline-primary"> </button>
+                
+                <div class="col-md-7 text-right buttons btns">
+                    <button class="location-sub-btn">
+                        <img src="../../../../../assets/location sub button.png" alt="location"> 
+                    </button>
+
+                    <button class="clip-btn">
+                        <img src="../../../../../assets/clip-btn.png" alt="clip-btn"> 
+                    </button>
+
+                    <button class="car-btn">
+                        <img src="../../../../../assets/car-btn.png" alt="car-btn"> 
+                    </button>
+
+                    <button class="bus-btn">
+                        <img src="../../../../../assets/bus-btn.png" alt="bus-btn"> 
+                    </button>
+
+                    <button class="run-btn">
+                        <img src="../../../../../assets/run-btn.png" alt="run-btn"> 
+                    </button>
+
                 </div>
             </div>
             <div class="row" [hidden]="!GOOGLEMAP">
-                <div id="incidentlocationmap" class="map-div"></div>
+                <div id="incidentlocationmap" class="map-div mt-3"></div>
             </div>
             <app-esri-map [hidden]="!GISMAP"
             [center]="mapCenter"

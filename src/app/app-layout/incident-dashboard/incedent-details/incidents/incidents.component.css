@@ -99,6 +99,21 @@
 #GIS3:checked + .dropdown {
   background: #FF6C88 !important;
   border-radius: 5px !important;
+  position: relative;
+}
+b{
+  font-size: 14px;
+}
+.fa-external-link-alt{
+  position: absolute;
+  top: 35%;
+  font-size: 12px;
+}
+.d1{
+  width: 50%;
+}
+.d2{
+  width: 100%;
 }
 #GIS3:checked + .dropdown .election-category-title {
   color: #FFFFFF !important;
@@ -134,4 +149,19 @@ color: #FFFFFF !important;
 .visually-hidden {
   position: absolute;
   left: -100vw;   
+}
+
+.buttons{
+  background: white;
+}
+.location-sub-btn,.clip-btn,.car-btn,.bus-btn,.run-btn{
+  border: none;
+  background-color: white; 
+}
+
+.btns{
+  margin-top: 25px;
+}
+.margin{
+  margin-top: 25px;
 }

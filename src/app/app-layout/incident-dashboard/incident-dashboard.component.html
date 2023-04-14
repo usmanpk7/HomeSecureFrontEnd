@@ -215,7 +215,10 @@
         </div>
     </div>
     <div class="col-md-2">
-        <button class="btn btn-primary btn-block">CREATE INCIDENT</button>
+        
+        <button class="btn btn-primary btn-block">
+            <img src="../../../assets/pending_actions.png" alt="pending_actions" class="pending_actions-image">
+            CREATE INCIDENT</button>
     </div>
 </div>
 <div class="row">
@@ -228,5 +231,11 @@
 
         </div>
     </div>
-    <div class="col-md-4 pl-0"></div>
+    <div class="col-md-4 mt-5">
+        <app-election-livefeeds #livefeedComponent feedName="rescue"></app-election-livefeeds>
+    </div>
+
+    <div class="col-md-12 mt-3">
+        <app-incident-table></app-incident-table>
+    </div>
 </div>

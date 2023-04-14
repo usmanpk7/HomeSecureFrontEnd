@@ -183,3 +183,156 @@
     left: 2px;
 }
 
+
+.dashboard{
+    display: flex;
+    flex-direction: row;
+    margin-top: 3rem;
+    gap: 3px;
+}
+.dashboard button{
+    width: 155px;
+    height: 90px;
+    position: relative;
+}
+
+.btn-bur{
+    font-weight: 700;
+    background-color: #F5E6B0;
+    border: 1px solid #F5E6B0;
+    border-radius: .6rem;
+    font-size: 12px;
+    padding-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    padding-right: 50px;
+
+}
+.burglary-image{
+    width: 22px;
+    height: 18px;
+    position: absolute;
+    top: 17%;
+    right: 15%;
+}
+
+.btn-sh{
+    font-weight: 700;
+    background-color: #bcbae7;
+    border: 1px solid #bcbae7;
+    border-radius: .6rem;
+    font-size: 12px;
+    padding: 1rem;
+    display:flex;
+    justify-content: center;
+    align-items: end;
+    padding-right: 50px;
+
+}
+.gun-image{
+    width: 20px;
+    height: 15px;
+    position: absolute;
+    top: 20%;
+    right: 15%;
+}
+
+.btn-text-arm{
+    display: flex;
+   justify-content: center;
+   align-items: center;  
+   padding-bottom: 14px;  
+    color: #392F55;
+    font-size: 13px;
+}
+
+.btn-ar{
+    
+    background-color: rgb(240, 198, 115);
+    border: 1px solid rgb(241, 201, 126);
+    border-radius: .5rem;
+    font-size: 12px;
+    display:flex;
+    justify-content: start;
+    align-items: end;
+    text-align: start;
+    font-weight: 700;
+    padding: 2px;
+}
+.armed-image{
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 20%;
+    right: 15%;
+}
+
+.btn-text{
+    display: flex;
+    justify-content: center;
+    padding-left: 10px;
+    align-items: center;
+    font-size: 13px;
+    font-weight: 700;
+   color: #392F55;
+}
+
+.btn-th{
+    font-weight: 700;
+    background-color: #B9F3FF;
+    border: 1px solid #B9F3FF;
+    border-radius: .6rem;
+    font-size: 12px;
+    padding: 1rem;
+    display:flex;
+    justify-content: center;
+    align-items: end;
+    padding-right: 50px;
+}
+.theft-image{
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 20%;
+    right: 15%;
+}
+.btn-ot{
+    font-weight: 700;
+    background-color: rgb(221, 142, 154);
+    border: 1px solid rgb(196, 151, 158);
+    border-radius: .6rem;
+    font-size: 12px;
+    padding: 1rem;
+    display:flex;
+    justify-content: center;
+    align-items: end;
+    padding-right: 50px;
+    position: absolute;
+}
+.other-image{
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 20%;
+    right: 15%;
+}
+.text{
+    
+    font-size: 14px;
+    display: flex;
+    align-items: start;
+    position: relative;
+    top: -39%;
+    left: 2%;
+}
+.text-129{
+    font-size: 14px;
+    display: flex;
+    align-items: start;
+    margin-bottom: 30px;
+    padding-right: 20px;
+    position: relative;
+    top: -20%;
+    left: 2%;
+}
