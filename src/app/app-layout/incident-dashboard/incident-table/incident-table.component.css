@@ -676,6 +676,7 @@
     justify-content: space-between; 
     margin-left: 25px;
     margin-top: 30px;
+    margin-bottom: 30px;
   }
 
   .action-btn{
@@ -726,7 +727,17 @@
 
 /* Table css */
 
-:host ::ng-deep .table-header th {
-    background-color: red !important;
-    color: white !important;
+
+  .my-table th{
+    background-color: #E2E1FF;
+    font-weight: bold;
+    color: #6751ED;
   }
+  .my-table td{
+    background-color: #F0EEFC;
+    color: #685294;
+  }
+  
+  
+
+/* tr:nth-child(even) {background-color: #f2f2f2;} */

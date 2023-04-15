@@ -273,12 +273,19 @@
     </div>
 
     
-<p-table [value]="products" [(selection)]="selectedProducts" dataKey="code" 
-[tableStyle]="{'min-width': '50rem'}">
+   <!-- Table -->
+    
+   
 
-    <ng-template pTemplate="header" class="table-header">
+
+
+
+
+
+<p-table [value]="products" [(selection)]="selectedProducts" dataKey="code" [tableStyle]="{'min-width': '50rem'}" class="my-table">
+    <ng-template pTemplate="header">
         <tr>
-            <th style="width: 2rem">
+            <th style="width: 4rem">
                 <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
             </th>
             <th>Type</th>
@@ -299,20 +306,64 @@
                 <p-tableCheckbox [value]="product"></p-tableCheckbox>
             </td>
             <td>
-            {{product.type}}<img *ngIf="product.image" [src]="product.image" alt="Product Image" width="50" height="50">
-            </td>
-            <td>{{product.date}}</td>
-            <td>{{product.control}}</td>
-            <td>{{product.source}}</td>
-            <td>{{product.location}}</td>
-            <td>{{product.status}}</td>
-            <td>{{product.sla}}</td>
-            <td>{{product.report}}</td>
-            <td>{{product.geofence}}</td>
-            <td>{{product.priority}}</td>
+                {{product.type}}<img *ngIf="product.image" [src]="product.image" alt="Product Image" width="20px" height="20px"
+                style="background-color: black; padding: 2px; border-radius: 2px; margin-left: 5px;">
+                </td>
+                <td>{{product.date}}</td>
+                <td>{{product.control}}</td>
+                <td>{{product.source}}</td>
+                <td>{{product.location}}</td>
+                <td>{{product.status}}</td>
+                <td>{{product.sla}}</td>
+                <td>{{product.report}}</td>
+                <td>{{product.geofence}}</td>
+                <td>{{product.priority}}</td>
         </tr>
     </ng-template>
 </p-table>
-
+<!-- 
+   <p-table [value]="products" [(selection)]="selectedProducts" dataKey="code" 
+   [tableStyle]="{'min-width': '50rem'}" class="my-table">
+   
+       <ng-template pTemplate="header" class="table-header">
+           <tr>
+               <th style="width: 4rem">
+                   <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+               </th>
+               <th>Type</th>
+               <th>Date</th>
+               <th>Control</th>
+               <th>Sources</th>
+               <th>Location</th>
+               <th>Status</th>
+               <th>SLA</th>
+               <th>Report</th>
+               <th>Geofence</th>
+               <th>Priority</th>
+           </tr>
+       </ng-template>
+       <ng-template pTemplate="body" let-product>
+           <tr>
+               <td>
+                   <p-tableCheckbox [value]="product"></p-tableCheckbox>
+               </td>
+               <td>
+               {{product.type}}<img *ngIf="product.image" [src]="product.image" alt="Product Image" width="20px" height="20px"
+               style="background-color: black; padding: 2px; border-radius: 2px; margin-left: 5px;">
+               </td>
+               <td>{{product.date}}</td>
+               <td>{{product.control}}</td>
+               <td>{{product.source}}</td>
+               <td>{{product.location}}</td>
+               <td>{{product.status}}</td>
+               <td>{{product.sla}}</td>
+               <td>{{product.report}}</td>
+               <td>{{product.geofence}}</td>
+               <td>{{product.priority}}</td>
+           </tr>
+       </ng-template>
+   </p-table>
+   
+    -->
 
 </div>

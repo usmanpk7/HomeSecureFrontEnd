@@ -1,0 +1,126 @@
+.parent{
+    display: flex;
+    /* flex-direction: column; */
+    display: block;
+    border: 2px solid #FAFAFAFA;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    top: 0;
+    padding: 1rem;
+    margin-left: .1rem;
+    margin-top: 2rem;
+  }
+
+   
+.header{
+    display: flex;
+    color: #FF6C88;
+    border-bottom: 3px solid #FF6C88;
+    justify-content: center;
+   align-items: center;
+   width: 100%;
+   margin-top: -40px;
+  
+  }
+  .heading{
+    display: flex;
+    margin-top: 30px;   
+    text-transform: uppercase;
+    font-family: 'Inter' !important;
+    font-weight: 700 !important;
+    font-size: 15px;
+  }
+  .icon-after-headings{
+  width: 18px;
+  height: 18px; 
+  margin-top: 25px;
+  margin-left: .5rem;
+  align-self: center;
+  }
+
+ 
+  .william-section{
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .fire{
+    background-color: #FFE1DB;
+    width: 170%;
+    height: 17vh;
+    margin-left: -30px;
+  }
+  .fire-text{
+    color: #EF4A25;
+  }
+  .accident{
+    background-color: #FEFFF4;
+    width: 170%;
+    height: 17vh;
+    margin-left: -30px;
+  }
+  .armed{
+    background-color: #D4F8FF;
+    width: 170%;
+    height: 17vh;
+    margin-left: -30px;
+  }
+  .arm-text{
+ color: #337078;
+  }
+  .acc-text{
+   color: #A79251;
+  }
+
+  .police{
+    background-color: #D4F8FF;
+    width: 170%;
+    height: 17vh;
+    margin-left: -30px;
+  }
+  .police-text{
+  color: #337078;
+  }
+
+  .william-image{
+
+    width: 90px;
+    height: 70px;
+  }
+  .william-text{
+    color: #6751ED;
+    align-self: center;
+    font-weight: 700;
+  }
+  .flex{
+    display: flex;
+
+  }
+  .description{
+    display: block;
+    font-size: 8px;
+    width: 130%;
+  }
+  .time-stamp{
+    width: 100%;
+    display: block;
+    font-size: 9px;
+  }
+  .images{
+    display: flex;
+    gap: 5px;
+    margin-top: 21px;
+  }
+  .kane{
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #6751ED;
+   border-radius: 6px;
+   color: white;
+   width: 146px;
+height: 20px;
+border: 1px solid #6751ED;
+margin-left: 3px;
+  }
